@@ -1,0 +1,16 @@
+# Normalise line endings in the repo to LF regardless of who commits from
+# where. Without this, committing from Windows stores CRLF and every file
+# shows as modified for anyone on macOS or Linux — and for Lovable.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending converted.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary

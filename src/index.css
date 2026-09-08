@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Bioluminescent palette — near-black with a forest undertone */
+    --bg: 150 25% 3%;
+    --surface: 154 21% 6.5%;
+    --surface-2: 147 19% 9%;
+    --line: rgba(140, 190, 150, 0.14);
+    --line-strong: rgba(140, 190, 150, 0.26);
+
+    --accent: 142 69% 58%; /* emerald  #4ADE80 */
+    --accent-2: 83 78% 55%; /* lime     #A3E635 */
+    --accent-soft: 142 40% 38%;
+
+    --text: 132 16% 94%;
+    --muted: 141 10% 60%;
+    --faint: 140 8% 42%;
+    --warn: 36 79% 57%;
+
+    --header-h: 72px;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 24px);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    /* Ambient depth: two low-opacity light sources, fixed so they never band */
+    background-image:
+      radial-gradient(ellipse 90% 55% at 12% -8%, hsl(var(--accent) / 0.07), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 92% 4%, hsl(var(--accent-2) / 0.045), transparent 62%);
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* Numerals must never jitter when values animate or sit in tables */
+  table,
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.25);
+    color: hsl(var(--text));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Only remove the ring for pointer users who already have hover affordances */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--surface-2));
+    border: 3px solid hsl(var(--bg));
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent-soft) / 0.7);
+  }
+}
+
+@layer components {
+  /* Hairline rule that fades at both ends — used to separate sections
+     without the hard "template divider" look. */
+  .rule {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--line-strong) 18%,
+      var(--line-strong) 82%,
+      transparent
+    );
+  }
+
+  /*
+    Page container. Written by hand because Tailwind's container plugin only
+    emits padding for breakpoints listed in `container.screens` — capping that
+    at a single `2xl` key silently discarded every responsive gutter.
+
+    Fluid up to 1320px, with gutters that step up on desktop so content is
+    never crowded against the screen edge.
+  */
+  .container {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-inline: 1.75rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-inline: 3rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      padding-inline: 4.5rem;
+    }
+  }
+
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase text-accent;
+  }
+
+  .card {
+    @apply rounded-xl border border-line bg-surface/70 backdrop-blur-sm;
+  }
+
+  /* Horizontal scroll container for wide data tables — the page itself
+     must never scroll sideways. */
+  .scroll-x {
+    @apply -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0;
+    scrollbar-width: thin;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-accent-grad bg-clip-text text-transparent;
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+}
+
+/* Respect the OS setting: suppress motion, keep everything legible and in place. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
