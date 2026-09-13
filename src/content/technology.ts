@@ -92,7 +92,7 @@ export const surfaceMyth = {
 
 export const filterMyth = {
   eyebrow: "The filter in your AC",
-  headline: "Your return filter is a dust screen. It was never an air purifier.",
+  headline: "Your return filter protects the FCU. It was never designed to purify the air.",
   body: "Almost every air conditioning system across the Gulf runs a low-grade return filter — often little more than a washable mesh. It is specified to protect the coil and the fan from large debris, not to protect the people downstream of it. Everything that actually affects how you feel passes straight through.",
   /** Sized against a MERV 13A media filter, which does capture these. */
   passesThrough: [
@@ -236,10 +236,21 @@ export const testingMethod = {
   },
 };
 
+/**
+ * Laboratories, standards bodies and sampling technology behind the published
+ * results. Marks are normalised to white on transparency at a matched optical
+ * weight, the same treatment as the client wall.
+ *
+ * The last three have no artwork yet, so `PartnerRow` falls back to their name
+ * set in type. Drop a logo into /assets/partners and point `logo` at it and
+ * they switch over — no other change needed.
+ */
 export const testingPartners = [
-  { name: "Advanced IAQ Solutions", short: "IAQS", logo: "/assets/partners/iaqs.svg" },
-  { name: "MRIGlobal", short: "MRIGlobal", logo: "/assets/partners/mriglobal.svg" },
-  { name: "Microchem", short: "Microchem", logo: "/assets/partners/microchem.svg" },
-  { name: "Rem Brands", short: "Rem Brands", logo: "/assets/partners/rembrands.svg" },
-  { name: "ASHRAE", short: "ASHRAE", logo: "/assets/partners/ashrae.svg" },
+  { name: "MRIGlobal", short: "MRIGlobal", logo: "/assets/partners/mriglobal.png" },
+  { name: "ASHRAE", short: "ASHRAE", logo: "/assets/partners/ashrae.png" },
+  { name: "Sporecyte", short: "Sporecyte", logo: "/assets/partners/sporecyte.png" },
+  { name: "APACOR", short: "APACOR", logo: "/assets/partners/apacor.png" },
+  { name: "Advanced IAQ Solutions", short: "IAQS", logo: "/assets/partners/iaqs.png" },
+  { name: "Microchem", short: "Microchem", logo: "/assets/partners/microchem.png" },
+  { name: "Rem Brands", short: "Rem Brands", logo: "/assets/partners/rembrands.png" },
 ];

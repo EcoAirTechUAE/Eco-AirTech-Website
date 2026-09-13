@@ -117,8 +117,8 @@ export default function IndustryDetail() {
               Where we'd usually start for {industry.name.toLowerCase()}.
             </h2>
             <p className="mt-5 leading-relaxed text-muted">
-              Indicative only — the final specification follows the site assessment and baseline air
-              test, and depends on served volume and how the space is actually used.
+              Indicative only — the final specification follows the site assessment, and depends on
+              served volume and how the space is actually used.
             </p>
           </Reveal>
 

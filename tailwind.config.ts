@@ -38,11 +38,15 @@ export default {
         // Hero headline only. Capped well below the old 6rem — at full width
         // that filled the viewport and overwhelmed everything under it.
         "display-xl": ["clamp(2.75rem, 7vw, 6rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 4.25rem)", { lineHeight: "1.0", letterSpacing: "-0.025em" }],
-        "display-md": ["clamp(1.875rem, 3.6vw, 3rem)", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
-        "display-sm": ["clamp(1.5rem, 2.4vw, 2rem)", { lineHeight: "1.15", letterSpacing: "-0.015em" }],
+        // Headings stepped up roughly one notch. Deliberately restrained —
+        // the hero (display-xl) is left alone, since that was tuned already.
+        "display-lg": ["clamp(2.5rem, 5.2vw, 4.5rem)", { lineHeight: "1.0", letterSpacing: "-0.025em" }],
+        "display-md": ["clamp(2.125rem, 4vw, 3.375rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-sm": ["clamp(1.6875rem, 2.8vw, 2.25rem)", { lineHeight: "1.2", letterSpacing: "-0.015em" }],
         "stat": ["clamp(2.5rem, 6vw, 4.5rem)", { lineHeight: "0.9", letterSpacing: "-0.04em" }],
-        "eyebrow": ["0.6875rem", { lineHeight: "1", letterSpacing: "0.18em" }],
+        // 11px -> 13px, and tracking eased from 0.18em. Very wide letter-spacing
+        // costs legibility at small sizes, which is the opposite of the point.
+        "eyebrow": ["0.8125rem", { lineHeight: "1.1", letterSpacing: "0.14em" }],
       },
       maxWidth: {
         prose: "68ch",

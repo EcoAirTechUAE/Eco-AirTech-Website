@@ -81,11 +81,11 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "How much does it cost?",
-        a: "We price per project rather than from a list, because the specification genuinely differs between a nursery and a hotel tower. Engagements start with a site assessment and a baseline air test so you can see what is actually in your air before committing to anything. You receive a specification and a fixed price, including the ongoing service interval, before any work is scheduled.",
+        a: "We price per project rather than from a list, because the specification genuinely differs between a nursery and a hotel tower. Engagements start with a site assessment: we look at the environment and what is driving the problem before proposing anything. You receive a specification and a fixed price, including the ongoing service interval, before any work is scheduled.",
       },
       {
         q: "Can you prove it will work in my building?",
-        a: "Yes, and we prefer to. We take a baseline air sample using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform — 96% accuracy, against 50 to 70% for the traditional petri dish method most providers still use. We then re-test after installation. You get before-and-after data for your own building rather than a percentage from someone else's.",
+        a: "Where testing adds meaningful insight, yes — and in commercial, healthcare, education and hospitality settings it usually does. We take a baseline air sample using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform (96% accuracy, against 50 to 70% for the traditional petri dish method most providers still use), then re-test after installation, so you get before-and-after data for your own building rather than a percentage from someone else's. Not every project needs that. In a private home the practical answer is usually an assessment and a properly designed solution rather than a testing programme, and we will say so.",
       },
       {
         q: "Where do you operate?",

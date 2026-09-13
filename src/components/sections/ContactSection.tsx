@@ -26,7 +26,7 @@ const EMPTY: ContactPayload = {
 
 const steps = [
   "We review what you've told us and come back within one working day.",
-  "A site assessment and baseline air test, so you can see what's actually in your air.",
+  "A site assessment to understand the space and what's driving the problem. Where testing would add real insight, we test — in a home, the answer is usually assessment and design instead.",
   "A written specification and a fixed price, including the ongoing service interval.",
 ];
 
@@ -75,11 +75,14 @@ export function ContactSection() {
               Get in touch
             </p>
             <h2 className="mt-6 text-display-md font-medium">
-              Start with what's actually in your air.
+              Start with the building, not a quote.
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              Every engagement begins with a baseline test rather than a quote. You get data on your
-              own building first — and if it turns out you don't need us, we'll tell you that.
+              We begin by understanding the environment and what's driving the problem. Where
+              air-quality testing adds meaningful insight, we use it to establish the evidence.
+              Elsewhere — particularly in homes — the right approach starts with assessment,
+              consultation and solution design. And if it turns out you don't need us, we'll tell
+              you that.
             </p>
 
             <ol className="mt-10 space-y-5">

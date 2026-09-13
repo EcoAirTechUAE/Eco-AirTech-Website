@@ -11,14 +11,54 @@
     --line: rgba(140, 190, 150, 0.14);
     --line-strong: rgba(140, 190, 150, 0.26);
 
-    --accent: 142 69% 58%; /* emerald  #4ADE80 */
-    --accent-2: 83 78% 55%; /* lime     #A3E635 */
-    --accent-soft: 142 40% 38%;
+    /*
+      Sampled from the logo artwork rather than picked by eye. Contrast is
+      measured against the page ground (#060A08):
 
+        --accent    #A1D270  leaf green  11.35:1  (WCAG AAA)
+        --accent-2  #47D1A5  logo teal   10.4:1   (WCAG AAA)
+
+      The teal is the logo's own #139E71 lifted in lightness. At its native
+      value it measures 5.84:1 — fine for large text, but it partners the leaf
+      green in gradients that include the hero headline, and half a headline
+      at 5.84 was not worth it when accessibility is the point of the change.
+    */
+    --accent: 90 52% 63%;
+    --accent-2: 161 60% 55%;
+    --accent-soft: 90 35% 42%;
+
+    /*
+      Text tones, measured against the page ground:
+
+        --text   #EDF2EE  17.58:1  AAA
+        --muted  #A0AE98   8.54:1  AAA   (was #8FA396, 7.44)
+        --faint  #96A989   7.90:1  AAA   (was #637468, 4.01 — FAILED AA)
+
+      --faint was the olive grey-green used for labels, units and table
+      headers at 11–13px. At 4.01:1 it did not meet AA for normal text at any
+      size, which is exactly the combination that forces people to squint.
+      Both tones are now pulled into the leaf-green hue family so they sit
+      with the accent instead of reading as a separate, muddier colour.
+    */
     --text: 132 16% 94%;
-    --muted: 141 10% 60%;
-    --faint: 140 8% 42%;
-    --warn: 36 79% 57%;
+    --muted: 100 12% 64%;
+    --faint: 95 16% 60%;
+
+    /*
+      Was amber (#E8A33B). Technically 9.23:1, but at 11px with wide tracking
+      on a near-black ground it read poorly and sat outside the brand.
+      Now a warm off-white at ~14:1.
+
+      Deliberately not green: --warn marks the *problem* — what cleaning
+      misses, what the filter lets through — and the whole education argument
+      depends on that reading differently from the green used for the answer.
+      A warm neutral keeps the distinction without adding a second brand hue.
+
+      NB the hydroxyl canvas still draws contaminant particles in amber. That
+      value is hardcoded in HydroxylField and intentionally left alone: those
+      dots have to stay distinct from the pale hydroxyls they collide with.
+    */
+    --warn: 40 12% 84%;
 
     --header-h: 72px;
   }
@@ -144,8 +184,10 @@
     }
   }
 
+  /* Medium weight, not regular: at this size the mono face is thin, and the
+     extra stroke does more for legibility than another pixel of size would. */
   .eyebrow {
-    @apply font-mono text-eyebrow uppercase text-accent;
+    @apply font-mono text-eyebrow font-medium uppercase text-accent;
   }
 
   .card {

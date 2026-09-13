@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Bloom } from "@/components/ui/Bloom";
-import { filterProof, nanofiber } from "@/content/filters";
+import { nanofiber, odogardProcess, vsCarbon } from "@/content/filters";
 
 export function FiltersTeaser() {
   return (
@@ -42,53 +42,29 @@ export function FiltersTeaser() {
             </div>
           </Reveal>
 
-          {/* The clearest argument we have for specifying both halves together. */}
+          {/* Three figures against the incumbent, rather than the old
+              active-vs-filter table: that compared two separate studies and
+              read as though the filter made things marginally worse. */}
           <Reveal i={1}>
             <div className="card p-6 sm:p-8">
-              <h3 className="text-lg font-medium">{filterProof.headline}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{filterProof.body}</p>
+              <h3 className="text-lg font-medium">{vsCarbon.headline}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{vsCarbon.body}</p>
 
-              <div className="scroll-x mt-7">
-                <table className="w-full min-w-[440px] border-collapse text-sm">
-                  <caption className="sr-only">
-                    Reduction with and without a treated filter fitted
-                  </caption>
-                  <thead>
-                    <tr className="border-b border-line-strong text-left">
-                      <th
-                        scope="col"
-                        className="py-2.5 pr-4 font-mono text-[11px] uppercase tracking-wider text-faint"
-                      >
-                        Contaminant
-                      </th>
-                      <th
-                        scope="col"
-                        className="py-2.5 pr-4 text-right font-mono text-[11px] uppercase tracking-wider text-faint"
-                      >
-                        Active only
-                      </th>
-                      <th
-                        scope="col"
-                        className="py-2.5 text-right font-mono text-[11px] uppercase tracking-wider text-accent"
-                      >
-                        + treated filter
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-line">
-                    {filterProof.rows.map((row) => (
-                      <tr key={row.name}>
-                        <td className="py-3 pr-4 text-ink">{row.name}</td>
-                        <td className="tnum py-3 pr-4 text-right text-muted">{row.without}</td>
-                        <td className="tnum py-3 text-right font-medium text-accent">{row.with}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <dl className="mt-8 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
+                {vsCarbon.stats.map((s) => (
+                  <div key={s.label} className="bg-surface p-5">
+                    <dt className="sr-only">{s.label}</dt>
+                    <dd>
+                      <p className="tnum text-2xl font-medium text-accent">{s.value}</p>
+                      <p className="mt-2 text-sm font-medium text-ink">{s.label}</p>
+                      <p className="mt-1 text-xs text-muted">{s.context}</p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
 
-              <p className="mt-6 border-t border-line pt-5 font-mono text-[11px] leading-relaxed text-faint">
-                {filterProof.note}
+              <p className="mt-6 border-t border-line pt-5 text-sm leading-relaxed text-muted">
+                {odogardProcess.body}
               </p>
             </div>
           </Reveal>

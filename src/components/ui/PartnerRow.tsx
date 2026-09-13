@@ -10,21 +10,29 @@ interface Partner {
 function PartnerLogo({ partner }: { partner: Partner }) {
   const [failed, setFailed] = useState(false);
 
+  // No artwork supplied yet: set the name in type at a weight that sits with
+  // the logos beside it, rather than looking like a broken image.
   if (failed) {
     return (
-      <span className="whitespace-nowrap text-sm font-medium tracking-tight text-muted">
+      <span className="whitespace-nowrap text-sm font-medium tracking-tight text-muted/80 transition-colors duration-300 hover:text-ink">
         {partner.short}
       </span>
     );
   }
 
+  /*
+    Files share a 110px canvas height and a matched optical weight, so one
+    `h-*` keeps the whole row in proportion. No grayscale filter — the marks
+    are already pure white, so only the opacity lift does anything.
+  */
   return (
     <img
       src={partner.logo}
       alt={partner.name}
       loading="lazy"
+      decoding="async"
       onError={() => setFailed(true)}
-      className="h-6 w-auto max-w-[130px] object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-7"
+      className="h-9 w-auto object-contain opacity-70 transition-opacity duration-300 hover:opacity-100 sm:h-10"
     />
   );
 }

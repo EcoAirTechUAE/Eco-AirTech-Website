@@ -13,7 +13,7 @@ import {
   efficacyMatrix,
   filterFeatures,
   filterIntro,
-  filterProof,
+  filterComparison,
   hvacBenefits,
   nanofiber,
   odogard,
@@ -133,7 +133,7 @@ export default function Filters() {
               {filterFeatures.map((feature) => (
                 <li key={feature.title}>
                   <span aria-hidden className="block h-px w-10 bg-accent" />
-                  <h3 className="mt-4 text-sm font-medium">{feature.title}</h3>
+                  <h3 className="mt-4 text-base font-medium">{feature.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{feature.body}</p>
                 </li>
               ))}
@@ -147,7 +147,7 @@ export default function Filters() {
               <dl className="mt-6 grid gap-6 sm:grid-cols-2">
                 {hvacBenefits.map((b) => (
                   <div key={b.title}>
-                    <dt className="text-sm font-medium text-ink">{b.title}</dt>
+                    <dt className="text-base font-medium text-ink">{b.title}</dt>
                     <dd className="mt-1.5 text-sm leading-relaxed text-muted">{b.body}</dd>
                   </div>
                 ))}
@@ -259,55 +259,89 @@ export default function Filters() {
       <Section>
         <div className="container">
           <SectionHeading
-            eyebrow="Active + passive"
-            title={filterProof.headline}
-            lead={filterProof.body}
+            eyebrow={filterComparison.eyebrow}
+            title={filterComparison.headline}
+            lead={filterComparison.body}
           />
 
           <Reveal className="scroll-x mt-12">
-            <table className="w-full min-w-[520px] border-collapse text-sm">
+            <table className="w-full min-w-[720px] border-collapse text-sm">
               <caption className="sr-only">
-                Contaminant reduction with and without a treated filter
+                Capability comparison across filter types
               </caption>
               <thead>
-                <tr className="border-b border-line-strong text-left">
+                <tr className="border-b border-line-strong">
                   <th
                     scope="col"
-                    className="py-3 pr-6 font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
                   >
-                    Contaminant
+                    Capability
                   </th>
-                  <th
-                    scope="col"
-                    className="py-3 pr-6 text-right font-mono text-[11px] uppercase tracking-wider text-faint"
-                  >
-                    Active only
-                  </th>
-                  <th
-                    scope="col"
-                    className="py-3 text-right font-mono text-[11px] uppercase tracking-wider text-accent"
-                  >
-                    + ODOGard® MERV 13
-                  </th>
+                  {filterComparison.columns.map((col, i) => {
+                    const ours = i === filterComparison.columns.length - 1;
+                    return (
+                      <th
+                        key={col}
+                        scope="col"
+                        className={cn(
+                          "px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider",
+                          ours ? "text-accent" : "text-faint",
+                        )}
+                      >
+                        {col}
+                      </th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
-                {filterProof.rows.map((row) => (
-                  <tr key={row.name}>
+                {filterComparison.rows.map((row) => (
+                  <tr key={row.capability}>
                     <th scope="row" className="py-4 pr-6 text-left font-normal text-ink">
-                      {row.name}
+                      {row.capability}
                     </th>
-                    <td className="tnum py-4 pr-6 text-right text-muted">{row.without}</td>
-                    <td className="tnum py-4 text-right font-medium text-accent">{row.with}</td>
+                    {row.values.map((v, i) => {
+                      const ours = i === row.values.length - 1;
+                      return (
+                        <td key={i} className="px-4 py-4 text-center">
+                          {v === true ? (
+                            <>
+                              <Check
+                                aria-hidden
+                                className={cn(
+                                  "mx-auto h-4 w-4",
+                                  ours ? "text-accent" : "text-muted",
+                                )}
+                              />
+                              <span className="sr-only">Yes</span>
+                            </>
+                          ) : v === "partial" ? (
+                            <>
+                              <span aria-hidden className="text-xs text-muted">
+                                partial
+                              </span>
+                              <span className="sr-only">Partial</span>
+                            </>
+                          ) : (
+                            <>
+                              <Minus aria-hidden className="mx-auto h-4 w-4 text-faint/40" />
+                              <span className="sr-only">No</span>
+                            </>
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
             </table>
           </Reveal>
 
+          {/* States plainly where HEPA wins. A comparison that claims to beat
+              everything at everything reads as marketing, not evidence. */}
           <Reveal i={1}>
-            <p className="mt-6 font-mono text-[11px] leading-relaxed text-faint">
-              {filterProof.note}
+            <p className="mt-8 max-w-3xl border-l-2 border-line-strong pl-5 text-sm leading-relaxed text-muted">
+              {filterComparison.note}
             </p>
           </Reveal>
         </div>

@@ -57,7 +57,7 @@ export function TechnologyFilm() {
                       <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-accent">
                         {step.n}
                       </p>
-                      <h3 className="mt-2 text-sm font-medium text-ink">{step.title}</h3>
+                      <h3 className="mt-2 text-base font-medium text-ink">{step.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
                     </li>
                   ))}

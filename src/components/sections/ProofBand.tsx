@@ -49,7 +49,7 @@ export function ProofBand() {
             <p className="mt-5 max-w-prose leading-relaxed text-muted">{testingMethod.body}</p>
 
             <div className="mt-9 rounded-xl border border-line bg-surface/60 p-6">
-              <h4 className="text-sm font-medium text-ink">{testingMethod.sampling.title}</h4>
+              <h4 className="text-base font-medium text-ink">{testingMethod.sampling.title}</h4>
               <p className="mt-2 text-sm leading-relaxed text-muted">
                 {testingMethod.sampling.body}
               </p>

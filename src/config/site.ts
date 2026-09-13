@@ -94,8 +94,8 @@ export const site = {
   },
 
   social: {
-    linkedin: "", // TODO — leave empty to hide the icon
-    instagram: "", // TODO
+    linkedin: "https://www.linkedin.com/company/eco-airtech/",
+    instagram: "https://www.instagram.com/eco_airtech",
     youtube: "", // TODO
   },
 

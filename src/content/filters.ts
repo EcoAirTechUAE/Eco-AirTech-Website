@@ -263,15 +263,58 @@ export const efficacyMatrix = {
     "Most Gulf air conditioning systems run a washable mesh return filter, which sits below MERV 8 — it does not appear on this table at all.",
 };
 
-export const filterProof = {
-  headline: "What adding a treated filter actually changed",
-  body: "The same office, the same five-day protocol, the same active unit. The only variable was an ODOGard®-coated MERV 13 filter.",
+/**
+ * Filter against filter, on capability.
+ *
+ * This replaced an active-only vs active-plus-filter table that compared two
+ * separate studies side by side. Reported at different precision, it showed
+ * airborne mould at >99.99% without the filter and >99.94% with it — which
+ * reads as the filter making things worse. It was arguing against the product.
+ *
+ * The honest differentiator is not that this beats every filter at everything
+ * — a true HEPA captures more fine particulate, and that is stated below. It
+ * is that everything else forces a trade-off: efficiency against airflow, or
+ * particulate against gas phase. This is the only column without a gap.
+ */
+export const filterComparison = {
+  eyebrow: "Against the alternatives",
+  headline: "Every other filter makes you choose.",
+  body: "Filtration normally forces a trade. Raise the efficiency and you lose airflow. Add carbon for odours and you get nothing for fine particulate — and in humid Gulf air it spends much of its capacity on water vapour. The point of this media is that it does not ask you to pick.",
+  columns: ["Standard MERV 8", "True HEPA", "Activated carbon", "Filters+ MERV 13A"],
   rows: [
-    { name: "Airborne mould spores", without: ">99.99%", with: ">99.94%" },
-    { name: "Airborne bacteria", without: ">95.00%", with: ">99.99%" },
-    { name: "TVOC", without: ">99.00%", with: ">99.99%" },
-    { name: "HCHO (formaldehyde)", without: ">99.90%", with: ">99.99%" },
-    { name: "Odour intensity", without: "—", with: ">99.99%" },
+    {
+      capability: "Coarse dust, pollen, dander",
+      values: [true, true, false, true] as const,
+    },
+    {
+      capability: "Ultrafine particulate (0.3–1 μm)",
+      values: [false, true, false, true] as const,
+    },
+    {
+      capability: "Gas-phase VOCs and formaldehyde",
+      values: [false, false, true, true] as const,
+    },
+    {
+      capability: "Destroys odours rather than storing them",
+      values: [false, false, "partial", true] as const,
+    },
+    {
+      capability: "Rating holds as the filter loads",
+      values: [true, true, false, true] as const,
+    },
+    {
+      capability: "Low pressure drop — no airflow penalty",
+      values: [true, false, false, true] as const,
+    },
+    {
+      capability: "Unaffected by humidity",
+      values: [true, true, false, true] as const,
+    },
+    {
+      capability: "Retrofits existing ductwork",
+      values: [true, false, "partial", true] as const,
+    },
   ],
-  note: "Advanced IAQ Solutions, 1,240 sq ft commercial space, 5 days, real-time measurement. Ozone 0 ppm throughout.",
+  note: "A true HEPA captures more fine particulate than any MERV-rated media, and we would never claim otherwise. What it cannot do is fit most existing air handling systems without a substantial pressure-drop penalty, and it does nothing at all for gas-phase contamination. Filters+ delivers a true mechanical MERV 13A at the pressure drop of a MERV 8, and treats the gas phase in the same pass.",
 };
+
