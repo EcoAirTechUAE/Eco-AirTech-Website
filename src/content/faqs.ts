@@ -18,7 +18,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Is this just an air purifier with a good filter?",
-        a: "No, and the distinction matters. A conventional purifier is passive: it can only treat air that physically passes through it, and it holds contaminants in the media rather than breaking them down. Our systems are active — the agents leave the unit and work throughout the space, including on surfaces. That is why we can publish surface reduction figures at all. We do also supply advanced filtration, but as the second half of a system rather than the whole answer.",
+        a: "No, and the distinction matters. A conventional purifier is passive: it can only treat air that physically passes through it, and it holds contaminants in the media rather than breaking them down. What we install is a two-stage system. First we replace the existing return filter, so air is properly filtered on the way into the system rather than after it. Then the active technology works downstream of that filter — the agents leave the unit and travel with the airflow into the rooms, acting on surfaces and ductwork as well as on the air. That second stage is why we can publish surface reduction figures at all, and neither stage substitutes for the other.",
       },
       {
         q: "How is this different to a UV lamp in the AC unit?",
@@ -26,7 +26,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "What does it remove?",
-        a: "Mould spores, bacteria, viruses and other pathogens, allergens including pollen and pet dander, VOCs, HCHO formaldehyde, odours, and respirable particulates. Independent testing has recorded up to 99.9% reduction across these categories — every figure on this site is published with the protocol that produced it, including the weaker results.",
+        a: "Mould spores, bacteria, viruses and other pathogens, allergens including pollen and pet dander, VOCs, HCHO formaldehyde, odours, and respirable particulates. Independent testing has recorded up to 99.9% reduction across these categories — every figure on this site is published with the protocol that produced it — the product, the technologies fitted, the duration and who administered the test.",
       },
     ],
   },
@@ -84,8 +84,8 @@ export const faqGroups: FaqGroup[] = [
         a: "We price per project rather than from a list, because the specification genuinely differs between a nursery and a hotel tower. Engagements start with a site assessment: we look at the environment and what is driving the problem before proposing anything. You receive a specification and a fixed price, including the ongoing service interval, before any work is scheduled.",
       },
       {
-        q: "Can you prove it will work in my building?",
-        a: "Where testing adds meaningful insight, yes — and in commercial, healthcare, education and hospitality settings it usually does. We take a baseline air sample using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform (96% accuracy, against 50 to 70% for the traditional petri dish method most providers still use), then re-test after installation, so you get before-and-after data for your own building rather than a percentage from someone else's. Not every project needs that. In a private home the practical answer is usually an assessment and a properly designed solution rather than a testing programme, and we will say so.",
+        q: "What evidence is there that it works?",
+        a: "Every figure on this site is published with the protocol that produced it — the product, the technologies fitted, the duration, the space and who administered the test — so the technology can be judged on independent laboratory and live-environment data rather than on our description of it. Where a project calls for it, air-quality sampling can also form part of a commercial engagement, using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform at 96% accuracy, against 50 to 70% for the petri dish method most providers still use. Whether that applies is something we determine during the assessment and discuss with you directly.",
       },
       {
         q: "Where do you operate?",

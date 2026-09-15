@@ -106,17 +106,6 @@ export function Footer() {
             <Link to="/contact" className="transition-colors hover:text-accent">
               Contact
             </Link>
-            <span>
-              Sister company:{" "}
-              <a
-                href="https://www.arcairtech.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-accent"
-              >
-                Arc AirTech (UK)
-              </a>
-            </span>
           </div>
         </div>
 

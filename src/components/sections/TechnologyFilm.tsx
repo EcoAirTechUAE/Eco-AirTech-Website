@@ -25,7 +25,7 @@ export function TechnologyFilm() {
             </p>
 
             <blockquote className="mt-10 border-l-2 border-accent/40 pl-5">
-              <p className="font-display text-xl italic leading-snug text-ink/90 sm:text-2xl">
+              <p className="text-xl italic leading-snug text-ink/90 sm:text-2xl">
                 {ambition.statement}
               </p>
               <footer className="mt-3 font-mono text-[11px] uppercase tracking-wider text-faint">

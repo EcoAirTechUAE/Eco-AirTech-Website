@@ -21,11 +21,10 @@ export function Hero() {
       <HydroxylField density={0.85} opacity={0.8} />
 
       {/*
-        The headline carries this section. The lockup is a supporting mark
-        beside it, not a second focal point — so the text column takes most of
-        the width and the logo column is deliberately narrow.
+        The headline leads; the product render balances it. Columns are close
+        to even so the unit has room to read at this size.
       */}
-      <div className="container relative grid gap-12 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.45fr_0.55fr] lg:items-center lg:gap-x-12 lg:pb-28 lg:pt-24">
+      <div className="container relative grid gap-12 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-x-12 lg:pb-28 lg:pt-24">
         <div>
           <Reveal>
             <p className="eyebrow flex items-center gap-3">
@@ -37,7 +36,7 @@ export function Hero() {
           <Reveal i={1}>
             <h1 className="mt-7 text-display-xl font-medium">
               We recreate{" "}
-              <span className="font-display italic text-gradient">nature's disinfectant</span> —
+              <span className="italic text-gradient">nature's disinfectant</span> —
               indoors, continuously.
             </h1>
           </Reveal>
@@ -89,19 +88,20 @@ export function Hero() {
         </div>
 
         {/*
-          Small brand mark, centred in its column and vertically against the
-          text block. Capped in px rather than tied to the headline — its size
-          should not move when the headline rewraps.
+          The PTAC, keyed off its studio background so it floats on the page
+          rather than sitting in a black tile. The bloom reads through the
+          transparency, which is the whole reason a framed render did not work
+          here.
         */}
-        <Reveal i={2} className="relative">
-          <div className="relative mx-auto w-full max-w-[180px] sm:max-w-[210px]">
-            <Bloom intensity="md" className="scale-[1.7]" />
+        <Reveal i={2} className="relative hero-render-offset">
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <Bloom intensity="lg" className="scale-125" />
             <SmartImage
-              src="/assets/logo-lockup-large.png"
-              alt=""
-              label="Eco AirTech logo"
-              ratio="aspect-[4/3]"
-              className="h-auto w-full object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
+              src="/assets/devices/hero-ptac.png"
+              alt="The PTAC unit, shown with its casing separated to reveal the ARC® cell and UV lamp"
+              label="PTAC product render"
+              ratio="aspect-[3/2]"
+              className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
             />
           </div>
         </Reveal>

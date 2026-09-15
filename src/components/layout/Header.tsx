@@ -55,7 +55,7 @@ export function Header() {
       >
         <div className="container flex h-full items-center justify-between gap-6">
           <Link to="/" aria-label={`${site.name} — home`} className="shrink-0">
-            <Logo />
+            <Logo withWordmark />
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

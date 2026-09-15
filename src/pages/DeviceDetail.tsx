@@ -125,7 +125,7 @@ export default function DeviceDetail() {
 
             {device.quote && (
               <blockquote className="!mt-10 border-l-2 border-accent/40 pl-6">
-                <p className="font-display text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
+                <p className="text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
                   “{device.quote.text}”
                 </p>
                 <footer className="mt-3 text-xs text-faint">

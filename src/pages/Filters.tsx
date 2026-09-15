@@ -60,7 +60,7 @@ export default function Filters() {
                 <div className="float-right ml-6 mb-4 hidden h-28 w-28 shrink-0 overflow-hidden rounded-full ring-1 ring-accent/40 sm:block lg:h-32 lg:w-32">
                   <img
                     src="/assets/filters/nanofiber.png"
-                    alt="Electron microscope view of the nanofibre media"
+                    alt="Electron microscopy laboratory"
                     width={400}
                     height={400}
                     loading="lazy"
@@ -69,7 +69,7 @@ export default function Filters() {
                   />
                 </div>
                 <h2 className="text-xl font-medium sm:text-2xl">{nanofiber.title}</h2>
-                <p className="mt-3 font-display text-lg italic text-accent">{nanofiber.claim}</p>
+                <p className="mt-3 text-lg italic text-accent">{nanofiber.claim}</p>
                 <p className="mt-5 leading-relaxed text-muted">{nanofiber.body}</p>
                 <ul className="mt-7 space-y-3 border-t border-line pt-6">
                   {nanofiber.points.map((point) => (
@@ -96,7 +96,7 @@ export default function Filters() {
                   />
                 </div>
                 <h2 className="text-xl font-medium sm:text-2xl">{odogard.title}</h2>
-                <p className="mt-3 font-display text-lg italic text-accent">{odogard.claim}</p>
+                <p className="mt-3 text-lg italic text-accent">{odogard.claim}</p>
                 <p className="mt-5 leading-relaxed text-muted">{odogard.body}</p>
                 <div className="mt-7 border-t border-line pt-6">
                   <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
@@ -265,11 +265,30 @@ export default function Filters() {
           />
 
           <Reveal className="scroll-x mt-12">
-            <table className="w-full min-w-[720px] border-collapse text-sm">
+            <table className="w-full min-w-[760px] border-collapse text-sm">
               <caption className="sr-only">
-                Capability comparison across filter types
+                Capability comparison: filters commonly found in buildings, against the Eco AirTech
+                Filters+ MERV 13A
               </caption>
               <thead>
+                {/* Grouped header. Without it the reader has no way to tell that
+                    three of these columns are filters we do not supply. */}
+                <tr>
+                  <th />
+                  <th
+                    colSpan={filterComparison.others.length}
+                    scope="colgroup"
+                    className="rounded-t-lg border-x border-t border-line bg-surface/40 px-4 py-2.5 text-center font-mono text-[11px] uppercase tracking-wider text-faint"
+                  >
+                    {filterComparison.othersLabel}
+                  </th>
+                  <th
+                    scope="colgroup"
+                    className="rounded-t-lg border-x border-t border-accent/40 bg-accent/[0.07] px-4 py-2.5 text-center font-mono text-[11px] uppercase tracking-wider text-accent"
+                  >
+                    {filterComparison.oursLabel}
+                  </th>
+                </tr>
                 <tr className="border-b border-line-strong">
                   <th
                     scope="col"
@@ -277,62 +296,76 @@ export default function Filters() {
                   >
                     Capability
                   </th>
-                  {filterComparison.columns.map((col, i) => {
-                    const ours = i === filterComparison.columns.length - 1;
-                    return (
-                      <th
-                        key={col}
-                        scope="col"
-                        className={cn(
-                          "px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider",
-                          ours ? "text-accent" : "text-faint",
-                        )}
-                      >
-                        {col}
-                      </th>
-                    );
-                  })}
+                  {filterComparison.others.map((col) => (
+                    <th
+                      key={col}
+                      scope="col"
+                      className="border-x border-line bg-surface/40 px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider text-muted"
+                    >
+                      {col}
+                    </th>
+                  ))}
+                  <th
+                    scope="col"
+                    className="border-x border-accent/40 bg-accent/[0.07] px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider text-accent"
+                  >
+                    {filterComparison.ours}
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line">
-                {filterComparison.rows.map((row) => (
-                  <tr key={row.capability}>
-                    <th scope="row" className="py-4 pr-6 text-left font-normal text-ink">
-                      {row.capability}
-                    </th>
-                    {row.values.map((v, i) => {
-                      const ours = i === row.values.length - 1;
-                      return (
-                        <td key={i} className="px-4 py-4 text-center">
-                          {v === true ? (
-                            <>
-                              <Check
-                                aria-hidden
-                                className={cn(
-                                  "mx-auto h-4 w-4",
-                                  ours ? "text-accent" : "text-muted",
-                                )}
-                              />
-                              <span className="sr-only">Yes</span>
-                            </>
-                          ) : v === "partial" ? (
-                            <>
-                              <span aria-hidden className="text-xs text-muted">
-                                partial
-                              </span>
-                              <span className="sr-only">Partial</span>
-                            </>
-                          ) : (
-                            <>
-                              <Minus aria-hidden className="mx-auto h-4 w-4 text-faint/40" />
-                              <span className="sr-only">No</span>
-                            </>
+                {filterComparison.rows.map((row, rowIdx) => {
+                  const last = rowIdx === filterComparison.rows.length - 1;
+                  const mark = (v: boolean | "partial", isOurs: boolean) =>
+                    v === true ? (
+                      <>
+                        <Check
+                          aria-hidden
+                          className={cn("mx-auto h-4 w-4", isOurs ? "text-accent" : "text-muted")}
+                        />
+                        <span className="sr-only">Yes</span>
+                      </>
+                    ) : v === "partial" ? (
+                      <>
+                        <span aria-hidden className="text-xs text-muted">
+                          partial
+                        </span>
+                        <span className="sr-only">Partial</span>
+                      </>
+                    ) : (
+                      <>
+                        <Minus aria-hidden className="mx-auto h-4 w-4 text-faint/40" />
+                        <span className="sr-only">No</span>
+                      </>
+                    );
+
+                  return (
+                    <tr key={row.capability}>
+                      <th scope="row" className="py-4 pr-6 text-left font-normal text-ink">
+                        {row.capability}
+                      </th>
+                      {row.others.map((v: boolean | "partial", i: number) => (
+                        <td
+                          key={i}
+                          className={cn(
+                            "border-x border-line bg-surface/40 px-4 py-4 text-center",
+                            last && "rounded-b-lg border-b",
                           )}
+                        >
+                          {mark(v, false)}
                         </td>
-                      );
-                    })}
-                  </tr>
-                ))}
+                      ))}
+                      <td
+                        className={cn(
+                          "border-x border-accent/40 bg-accent/[0.07] px-4 py-4 text-center",
+                          last && "rounded-b-lg border-b",
+                        )}
+                      >
+                        {mark(row.ours, true)}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </Reveal>

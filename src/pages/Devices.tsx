@@ -17,7 +17,7 @@ export default function Devices() {
     <>
       <PageHero
         eyebrow="The range"
-        title="Five units. One technology. Whatever your building already has."
+        title="Five units. One technology."
         lead={`Every device retrofits into existing systems — no replacement plant, no redesign. Coverage runs from ${rangeCoverage}, and most buildings are specified as a combination rather than a single unit.`}
         crumbs={[{ label: "Devices" }]}
       />
@@ -36,11 +36,11 @@ export default function Devices() {
           <Reveal className="mt-20">
             <h2 className="text-display-sm font-medium">At a glance</h2>
             <div className="scroll-x mt-8">
-              <table className="w-full min-w-[760px] border-collapse text-sm">
+              <table className="w-full min-w-[620px] border-collapse text-sm">
                 <caption className="sr-only">Comparison of the Eco AirTech device range</caption>
                 <thead>
                   <tr className="border-b border-line-strong text-left">
-                    {["Device", "Coverage", "Mounting", "Technologies", "Typical use"].map((h) => (
+                    {["Device", "Coverage", "Mounting", "Technologies"].map((h) => (
                       <th
                         key={h}
                         scope="col"
@@ -64,8 +64,7 @@ export default function Devices() {
                         )}
                       </td>
                       <td className="py-5 pr-6 text-muted">{device.mount}</td>
-                      <td className="py-5 pr-6 text-muted">{device.technologies.join(" · ")}</td>
-                      <td className="py-5 text-muted">{device.bestFor.slice(0, 3).join(", ")}</td>
+                      <td className="py-5 text-muted">{device.technologies.join(" · ")}</td>
                     </tr>
                   ))}
                 </tbody>

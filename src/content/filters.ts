@@ -1,27 +1,62 @@
 /**
- * Filtration — the passive half of the system.
+ * Filtration — the first stage of a two-stage system.
  *
- * Deliberately kept separate from the devices. The active technology breaks
- * contaminants down; the filter captures what is left. Specifying one without
- * the other is the single most common mistake we see in Gulf buildings.
+ * Order matters and the site used to state it backwards. In a GCC
+ * installation the treated MERV filter REPLACES the existing return filter,
+ * so air is cleaned on the way *in*, before it reaches the fan coil. The
+ * active technology then works downstream of it. Passive first, active
+ * second — not "the filter catches what the active system leaves".
  */
 
 export const filterIntro = {
-  eyebrow: "The passive half",
+  eyebrow: "Stage one",
   headline: "The world's smartest filter",
   subhead: "Two filters in one — capturing particulates and gas-phase contaminants together.",
   body: "Most filters do one job: they hold particles. Ours holds particles and destroys the gas-phase compounds a mesh could never catch — odours, VOCs and formaldehyde — at a molecular level, in the media itself.",
 };
 
+/**
+ * How the two halves actually sequence in a Gulf installation. This is the
+ * spec a consultant or FM will want stated plainly.
+ */
+export const twoStage = {
+  eyebrow: "Two-stage air treatment",
+  headline: "Filtered on the way in. Treated on the way out.",
+  body: "In the Gulf we replace the existing return filter, so the first thing that happens to your air is proper filtration — before it reaches the fan coil, not after. The active technology then works on everything downstream of it.",
+  stages: [
+    {
+      n: "01",
+      tag: "Passive",
+      title: "The return filter is replaced",
+      body: "Air entering the system passes through MERV 13A nanofibre media with ODOGard®. Particulates are captured and gas-phase compounds are destroyed in the media, before any of it reaches the fan coil or the ductwork.",
+    },
+    {
+      n: "02",
+      tag: "Active",
+      title: "ARC® treats everything downstream",
+      body: "Sited after the filter, the ARC® cell releases hydroxyls into the airflow. They travel with the air into the served rooms, reaching surfaces, ducting and cavities that no filter can act on — because a filter can only treat what physically passes through it.",
+    },
+  ],
+  close:
+    "Each stage does what the other cannot. Filtration cannot reach a surface; an active agent cannot hold a particle. Specifying one without the other is the most common mistake we see in Gulf buildings.",
+};
+
+/**
+ * NB on the electrostatic claim: the manufacturer's MERV 13A page describes
+ * the media as combining "mechanical and electrostatic filtration", so this
+ * copy no longer says charge plays no part. The defensible argument — and the
+ * one the "A" designation actually certifies — is that the rating is sustained
+ * to end of life rather than measured only on day one.
+ */
 export const nanofiber = {
   title: "Nanofiber technology",
-  claim: "A true mechanical MERV rating, for the whole life of the filter.",
-  body: "Most high-efficiency filters cheat. They rely on a temporary electrostatic charge to lift their rating on day one — a charge that dissipates as the filter loads, taking the performance with it. Our media spins fibres 411 times thinner than a human hair into a nonwoven substrate, achieving the rating mechanically. It performs the same in month six as it did on the day it was fitted.",
+  claim: "A MERV rating that still holds at the end of the filter's life.",
+  body: "Most high-efficiency filters are rated on day one. They lean on an electrostatic charge to reach that number, and the charge fades as the media loads — so the filter you are running in month six is not the filter you were sold. Ours carries the A designation, which certifies the rated efficiency is still being delivered at the end of its service life. The structure is what sustains it: fibres spun 411 times thinner than a human hair through a nonwoven substrate.",
   points: [
     "Fibres spun 411× thinner than a human hair",
-    "No artificially inflated efficiency from temporary static charge",
-    "True mechanical MERV rating sustained throughout the filter's lifespan",
-    "Pressure drop equivalent to a MERV 8 — hospital-grade filtration your fan can still breathe through",
+    "Rated efficiency certified to end of service life, not just when new",
+    "Air resistance of a MERV 9 — hospital-grade filtration your fan can still breathe through",
+    "Holds its rating in humid air, where charge-dependent media fall away fastest",
     "Sealed frame with no bypass, so air cannot slip around the media",
     "Built with 50% less synthetic material than comparable filters, and recyclable",
   ],
@@ -280,41 +315,21 @@ export const filterComparison = {
   eyebrow: "Against the alternatives",
   headline: "Every other filter makes you choose.",
   body: "Filtration normally forces a trade. Raise the efficiency and you lose airflow. Add carbon for odours and you get nothing for fine particulate — and in humid Gulf air it spends much of its capacity on water vapour. The point of this media is that it does not ask you to pick.",
-  columns: ["Standard MERV 8", "True HEPA", "Activated carbon", "Filters+ MERV 13A"],
+  /** Grouping is explicit: three filters we do not supply, then ours. */
+  othersLabel: "Filters found in most buildings — not supplied by us",
+  oursLabel: "Our filter",
+  others: ["Standard MERV 8", "True HEPA", "Activated carbon"],
+  ours: "Filters+ MERV 13A",
   rows: [
-    {
-      capability: "Coarse dust, pollen, dander",
-      values: [true, true, false, true] as const,
-    },
-    {
-      capability: "Ultrafine particulate (0.3–1 μm)",
-      values: [false, true, false, true] as const,
-    },
-    {
-      capability: "Gas-phase VOCs and formaldehyde",
-      values: [false, false, true, true] as const,
-    },
-    {
-      capability: "Destroys odours rather than storing them",
-      values: [false, false, "partial", true] as const,
-    },
-    {
-      capability: "Rating holds as the filter loads",
-      values: [true, true, false, true] as const,
-    },
-    {
-      capability: "Low pressure drop — no airflow penalty",
-      values: [true, false, false, true] as const,
-    },
-    {
-      capability: "Unaffected by humidity",
-      values: [true, true, false, true] as const,
-    },
-    {
-      capability: "Retrofits existing ductwork",
-      values: [true, false, "partial", true] as const,
-    },
+    { capability: "Coarse dust, pollen, dander", others: [true, true, false] as const, ours: true },
+    { capability: "Ultrafine particulate (0.3–1 μm)", others: [false, true, false] as const, ours: true },
+    { capability: "Gas-phase VOCs and formaldehyde", others: [false, false, true] as const, ours: true },
+    { capability: "Destroys odours rather than storing them", others: [false, false, "partial"] as const, ours: true },
+    { capability: "Rating holds as the filter loads", others: [true, true, false] as const, ours: true },
+    { capability: "Low pressure drop — no airflow penalty", others: [true, false, false] as const, ours: true },
+    { capability: "Unaffected by humidity", others: [true, true, false] as const, ours: true },
+    { capability: "Retrofits existing ductwork", others: [true, false, "partial"] as const, ours: true },
   ],
-  note: "A true HEPA captures more fine particulate than any MERV-rated media, and we would never claim otherwise. What it cannot do is fit most existing air handling systems without a substantial pressure-drop penalty, and it does nothing at all for gas-phase contamination. Filters+ delivers a true mechanical MERV 13A at the pressure drop of a MERV 8, and treats the gas phase in the same pass.",
+  note: "A true HEPA captures more fine particulate than any MERV-rated media, and we would never claim otherwise. What it cannot do is fit most existing air handling systems without a substantial pressure-drop penalty, and it does nothing at all for gas-phase contamination. Filters+ delivers a MERV 13A rating at the air resistance of a MERV 9, and treats the gas phase in the same pass.",
 };
 

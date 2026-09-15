@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Bloom } from "@/components/ui/Bloom";
-import { nanofiber, odogardProcess, vsCarbon } from "@/content/filters";
+import { odogardProcess, twoStage, vsCarbon } from "@/content/filters";
 
 export function FiltersTeaser() {
   return (
@@ -14,14 +14,30 @@ export function FiltersTeaser() {
           <Reveal>
             <p className="eyebrow flex items-center gap-3">
               <span aria-hidden className="h-px w-8 bg-accent/50" />
-              Filtration
+              {twoStage.eyebrow}
             </p>
-            <h2 className="mt-6 text-display-md font-medium">
-              The active system breaks contaminants down. The filter catches what is left.
-            </h2>
-            <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              {nanofiber.body}
-            </p>
+            <h2 className="mt-6 text-display-md font-medium">{twoStage.headline}</h2>
+            <p className="mt-6 max-w-prose leading-relaxed text-muted">{twoStage.body}</p>
+
+            {/* The sequence, stated explicitly — passive first, then active. */}
+            <ol className="mt-8 space-y-6">
+              {twoStage.stages.map((stage) => (
+                <li key={stage.n} className="flex gap-5">
+                  <span className="tnum mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-wider text-accent">
+                    {stage.n}
+                  </span>
+                  <div>
+                    <p className="text-base font-medium text-ink">
+                      {stage.title}
+                      <span className="ml-3 font-mono text-[11px] uppercase tracking-wider text-faint">
+                        {stage.tag}
+                      </span>
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{stage.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink to="/filters" size="lg">

@@ -26,7 +26,7 @@ const EMPTY: ContactPayload = {
 
 const steps = [
   "We review what you've told us and come back within one working day.",
-  "A site assessment to understand the space and what's driving the problem. Where testing would add real insight, we test — in a home, the answer is usually assessment and design instead.",
+  "A site assessment — the space, the air handling system, and what's actually driving the problem.",
   "A written specification and a fixed price, including the ongoing service interval.",
 ];
 
@@ -77,12 +77,14 @@ export function ContactSection() {
             <h2 className="mt-6 text-display-md font-medium">
               Start with the building, not a quote.
             </h2>
+            {/* Deliberately says nothing about air testing. This block renders on
+                every page, residential included, and testing is a commercial-only
+                decision we make internally — mentioning it here invites homeowners
+                to ask for something we would not be offering them. */}
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              We begin by understanding the environment and what's driving the problem. Where
-              air-quality testing adds meaningful insight, we use it to establish the evidence.
-              Elsewhere — particularly in homes — the right approach starts with assessment,
-              consultation and solution design. And if it turns out you don't need us, we'll tell
-              you that.
+              We begin by understanding the environment and what's actually driving the problem —
+              the building, the air handling, and how the space is really used. What you get back is
+              a specification built around that, not a quote against a template.
             </p>
 
             <ol className="mt-10 space-y-5">

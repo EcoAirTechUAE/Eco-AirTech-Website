@@ -30,14 +30,19 @@ export default {
       },
       fontFamily: {
         sans: ["'Instrument Sans'", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["'Instrument Serif'", "ui-serif", "Georgia", "serif"],
+        // No `display` serif: the site sets pull-quotes in Instrument Sans
+        // italic, and Instrument Serif is no longer loaded at all. Declaring it
+        // here would invite a `font-display` class that silently falls back.
         mono: ["'JetBrains Mono'", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       fontSize: {
         // Fluid display sizes — clamp(min, preferred, max)
         // Hero headline only. Capped well below the old 6rem — at full width
         // that filled the viewport and overwhelmed everything under it.
-        "display-xl": ["clamp(2.75rem, 7vw, 6rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
+        // Driven by --hero-headline in index.css so the hero render offset
+        // cannot drift out of sync with it. Was capped at 6rem, which pushed
+        // the supporting paragraph off-screen on a laptop.
+        "display-xl": ["var(--hero-headline)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
         // Headings stepped up roughly one notch. Deliberately restrained —
         // the hero (display-xl) is left alone, since that was tuned already.
         "display-lg": ["clamp(2.5rem, 5.2vw, 4.5rem)", { lineHeight: "1.0", letterSpacing: "-0.025em" }],

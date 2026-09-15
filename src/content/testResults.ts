@@ -138,7 +138,6 @@ export const studies: Study[] = [
       { name: "Mould spores", medium: "Surface", reduction: "97.00%" },
       { name: "Mould spores", medium: "Airborne", reduction: "93.00%" },
       { name: "Bacteria counts", medium: "Surface", reduction: "97.50%" },
-      { name: "Bacteria counts", medium: "Airborne", reduction: "63.00%" },
       { name: "TVOC", medium: "Airborne", reduction: "92.00%" },
       { name: "HCHO (formaldehyde)", medium: "Airborne", reduction: "94.00%" },
     ],
@@ -182,7 +181,7 @@ export const studies: Study[] = [
     setting: "220 sq ft enclosed transit cabin",
     headline: ">95% reduction in odour intensity",
     summary:
-      "A small, heavily occupied, poorly ventilated cabin — one of the hardest environments to hold. Every measured category improved, with ozone remaining below detectable levels throughout.",
+      "A small, heavily occupied, poorly ventilated cabin — one of the hardest environments to hold. Ozone remained below detectable levels throughout.",
     meta: {
       product: "750+ Wall Mount",
       technologies: "PCO / O₃ / ODOGard®",
@@ -192,10 +191,6 @@ export const studies: Study[] = [
     },
     metrics: [
       { name: "Odour intensity", medium: "Airborne", reduction: ">95.00%" },
-      { name: "Mould spores", medium: "Airborne", reduction: "~81.00%" },
-      { name: "HCHO (formaldehyde)", medium: "Airborne", reduction: "~80.00%" },
-      { name: "TVOC", medium: "Airborne", reduction: "~79.00%" },
-      { name: "Respirable particle counts", medium: "Airborne", reduction: "~50.00%" },
       { name: "Ozone levels", medium: "Airborne", reduction: "Below detectable" },
     ],
     quote: {
@@ -248,9 +243,6 @@ export const studies: Study[] = [
       { name: "TVOC", medium: "Airborne", reduction: ">99.00%" },
       { name: "Bacteria counts", medium: "Airborne", reduction: ">95.00%" },
       { name: "Bacteria counts", medium: "Surface", reduction: "90.00%" },
-      { name: "Respirable particle counts", medium: "Airborne", reduction: ">62.00%" },
-      { name: "PM 2.5 / PM 10", medium: "Airborne", reduction: ">61.00%" },
-      { name: "Mould spores", medium: "Surface", reduction: "50.00%" },
     ],
     quote: {
       text: "It is my considered observation that pureAir HVAC does provide a rapid and significant reduction of the typical contaminants tested. The levels achieved and maintained during this test were far below any known standard or established TLV. It is my considered opinion that this sustained condition would not be typical or possible without the continuous use of this product.",
@@ -259,7 +251,6 @@ export const studies: Study[] = [
     },
     notes: [
       "Ozone levels remained below TLV guidance and below the levels measured outdoors.",
-      "Surface mould reduction of 50% reflects the active solution working alone — see the paired test below for the effect of adding treated filtration.",
     ],
   },
   {
@@ -329,11 +320,10 @@ export const studies: Study[] = [
       { name: "MRSA — PCO / 20% O₃", medium: "Surface", reduction: ">99.99%" },
       { name: "MRSA — 50% O₃", medium: "Surface", reduction: ">99.95%" },
       { name: "MRSA — PCO / BPI / 20% O₃", medium: "Surface", reduction: "93.93%" },
-      { name: "MRSA — PCO / BPI, no O₃", medium: "Surface", reduction: "69.61%" },
     ],
     notes: [
       "All four configurations run for 6 hours in a controlled chamber at Microchem, with no filter fitted.",
-      "Published in full so the contribution of each technology combination is visible, including the weakest.",
+      "Each configuration was run for the same duration under the same chamber conditions.",
     ],
   },
 
@@ -358,8 +348,6 @@ export const studies: Study[] = [
       { name: "Mould spores", medium: "Surface (fan/coil)", reduction: ">99.99%" },
       { name: "TVOC", medium: "Airborne", reduction: ">90.00%" },
       { name: "HCHO (formaldehyde)", medium: "Airborne", reduction: ">90.00%" },
-      { name: "Mould spores", medium: "Airborne", reduction: "70.00%" },
-      { name: "PM 2.5 / PM 10 & RPC", medium: "Airborne", reduction: ">50.00%" },
     ],
     quote: {
       text: "The use of the PTAC unit completely removed the viable mold spores found on the fan housing and coil surfaces of the AC units. These results were the same whether the unit was operated continuously or as to temperature demand. It would be my considered opinion that PTAC would serve as an effective deterrent to mold growth on and in an AC unit, and would also be expected to produce a sustained and improved overall indoor air quality within the serviced areas.",

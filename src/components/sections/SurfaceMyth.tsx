@@ -82,7 +82,7 @@ export function SurfaceMyth() {
         </div>
 
         <Reveal i={3}>
-          <p className="mx-auto mt-14 max-w-2xl text-center font-display text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
+          <p className="mx-auto mt-14 max-w-2xl text-center text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
             {surfaceMyth.close}
           </p>
         </Reveal>

@@ -61,6 +61,14 @@
     --warn: 40 12% 84%;
 
     --header-h: 72px;
+
+    /*
+      Hero headline size. Lives here as a variable because two things depend
+      on it: the `display-xl` type step, and the offset that aligns the hero
+      render with the headline's second line. Hard-coding the clamp in both
+      places means changing one silently breaks the other.
+    */
+    --hero-headline: clamp(2.5rem, 5.6vw, 5rem);
   }
 
   * {
@@ -188,6 +196,22 @@
      extra stroke does more for legibility than another pixel of size would. */
   .eyebrow {
     @apply font-mono text-eyebrow font-medium uppercase text-accent;
+  }
+
+  /*
+    Drops the hero render so its top edge lines up with the second line of the
+    headline. Written here rather than as a Tailwind arbitrary value: the
+    class extractor does not reliably match nested parentheses, so
+    `mt-[calc(...clamp(...)...)]` silently emits nothing.
+
+    Built from --hero-headline, so resizing the headline moves this with it:
+      2.6rem            the eyebrow plus the h1's top margin
+      + one line        the headline size x its 0.95 leading
+  */
+  @media (min-width: 1024px) {
+    .hero-render-offset {
+      margin-top: calc(2.6rem + var(--hero-headline) * 0.95);
+    }
   }
 
   .card {

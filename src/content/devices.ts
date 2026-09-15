@@ -195,7 +195,7 @@ export const devices: Device[] = [
     name: "PTAC",
     article: "The PTAC",
     kicker: "Internal mount · concealed",
-    coverage: "270 – 2,000 sq ft",
+    coverage: "up to 700 sq ft",
     mount: "Mounted inside HVAC ductwork where access is poor",
     technologies: ["ARC® PCO"],
     summary:

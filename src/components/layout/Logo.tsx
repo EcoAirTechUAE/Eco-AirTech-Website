@@ -70,11 +70,15 @@ export function Logo({
     return <span className={cn("inline-flex", className)}>{mark}</span>;
   }
 
+  // Set solid, not split-colour: the supplied lockup renders ECO AIRTECH in a
+  // single weight, and tinting half of it invents a treatment the brand does
+  // not use. Hidden below sm so the mark, nav and CTA are not fighting for
+  // room on a phone.
   return (
-    <span className={cn("flex items-center gap-2.5", className)}>
+    <span className={cn("flex items-center gap-3", className)}>
       {mark}
-      <span className="text-[0.95rem] font-semibold uppercase leading-none tracking-[0.14em]">
-        Eco<span className="text-accent">&nbsp;AirTech</span>
+      <span className="hidden text-[0.95rem] font-semibold uppercase leading-none tracking-[0.12em] text-ink sm:inline">
+        Eco AirTech
       </span>
     </span>
   );

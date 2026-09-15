@@ -20,7 +20,10 @@ export function EquationGraphic({ className }: { className?: string }) {
         <Fragment key={part.symbol}>
           <Reveal i={i} className="flex-1">
             <div className="rounded-xl border border-line bg-surface/70 p-5 text-center">
-              <p className="font-display text-3xl leading-none text-ink sm:text-4xl">
+              {/* Sans, like every other heading. The serif is reserved for
+                  italic pull-quotes; set upright on a chemical formula it was
+                  the one place the face appeared out of role. */}
+              <p className="text-3xl font-medium leading-none tracking-tight text-ink sm:text-4xl">
                 {part.symbol}
               </p>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-accent">
@@ -31,7 +34,7 @@ export function EquationGraphic({ className }: { className?: string }) {
           </Reveal>
           <span
             aria-hidden
-            className="shrink-0 self-center text-center font-display text-2xl text-faint sm:px-1"
+            className="shrink-0 self-center text-center text-2xl font-medium text-faint sm:px-1"
           >
             {i === equation.parts.length - 1 ? "=" : "+"}
           </span>
@@ -41,7 +44,7 @@ export function EquationGraphic({ className }: { className?: string }) {
       <Reveal i={3} className="flex-1">
         <div className="relative rounded-xl border border-accent/30 bg-accent/[0.07] p-5 text-center">
           <Bloom intensity="sm" animate={false} />
-          <p className="font-display text-3xl leading-none text-gradient sm:text-4xl">
+          <p className="text-3xl font-medium leading-none tracking-tight text-gradient sm:text-4xl">
             {equation.result.symbol}
           </p>
           <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-accent">
@@ -103,7 +106,7 @@ export function TheSolution() {
           {howItWorks.map((step, i) => (
             <Reveal as="li" key={step.n} i={i} className="relative">
               <div className="flex items-baseline gap-4">
-                <span className="tnum font-display text-4xl leading-none text-accent/30">
+                <span className="tnum text-4xl font-medium leading-none tracking-tight text-accent/30">
                   {step.n}
                 </span>
                 <span aria-hidden className="h-px flex-1 bg-line" />
@@ -120,7 +123,7 @@ export function TheSolution() {
             <Reveal key={pillar.id} i={i}>
               <article className="card h-full p-7 sm:p-9">
                 <h3 className="text-xl font-medium sm:text-2xl">{pillar.name}</h3>
-                <p className="mt-1.5 font-display text-lg italic text-accent">{pillar.subtitle}</p>
+                <p className="mt-1.5 text-lg italic text-accent">{pillar.subtitle}</p>
                 <p className="mt-5 leading-relaxed text-ink/90">{pillar.summary}</p>
                 <ul className="mt-6 space-y-4 border-t border-line pt-6">
                   {pillar.points.map((point) => (

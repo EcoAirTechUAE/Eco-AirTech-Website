@@ -14,7 +14,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Find out what's actually in your air."
-        lead="Tell us about the space and we'll come back within one working day. We start by understanding the environment and what's driving the problem, not by sending a quote — and if it turns out you don't need us, we'll tell you that."
+        lead="Tell us about the space and we'll come back within one working day. We start by understanding the environment and what's driving the problem, not by sending a quote."
         crumbs={[{ label: "Contact" }]}
       />
 

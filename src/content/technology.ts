@@ -38,7 +38,7 @@ export const pillars = [
     points: [
       "Ionisation brushes create a plasma of positively and negatively charged ions that disperse through the occupied space.",
       "Ions cluster around airborne particles — mould spores, bacteria, viruses, pollen — increasing their mass so they drop out of the breathing zone.",
-      "Enlarged particles are also far easier for filtration to capture, which is why the active and passive systems are designed to work as a pair.",
+      "Enlarged particles are also far easier for filtration to capture, which is why the two stages are specified together — filtration on the way into the system, active treatment downstream of it.",
     ],
   },
 ] as const;
@@ -112,7 +112,7 @@ export const growthTimeline = {
   eyebrow: "The 24-hour reality",
   headline: "Given moisture and warmth, this is how fast it comes back.",
   intro:
-    "Dubai's climate sits at 20–35°C for most of the year — squarely inside the range that favours fast-growing, warm-adapted species. Deep-clean a space on Monday and, without something actively working, the cycle has already restarted by Tuesday.",
+    "The Gulf climate sits at 20–35°C for most of the year — squarely inside the range that favours fast-growing, warm-adapted species. Deep-clean a space on Monday and, without something actively working, the cycle has already restarted by Tuesday.",
   steps: [
     { time: "Minutes–hours", title: "Spores settle", body: "Airborne spores land on a surface with available moisture." },
     { time: "12–24 hours", title: "Germination", body: "Filaments establish. Nothing is visible yet — and nothing smells wrong." },
@@ -198,7 +198,7 @@ export const howItWorks = [
 export const testingMethod = {
   eyebrow: "How we measure",
   headline: "We test in occupied buildings, not just sealed chambers.",
-  body: "A sealed laboratory is a flattering place to test air technology. Once contamination is removed it stays near zero, because nothing new is introduced. Real buildings do not behave that way — people come and go, doors open, spores arrive continuously. So we do both, and we publish both.",
+  body: "A sealed laboratory is a flattering place to test air technology. Once contamination is removed it stays near zero, because nothing new is introduced. Real buildings do not behave that way — people come and go, doors open, spores arrive continuously. So we do both, and we say which is which.",
   comparison: {
     live: {
       title: "Live testing",
@@ -241,9 +241,9 @@ export const testingMethod = {
  * results. Marks are normalised to white on transparency at a matched optical
  * weight, the same treatment as the client wall.
  *
- * The last three have no artwork yet, so `PartnerRow` falls back to their name
- * set in type. Drop a logo into /assets/partners and point `logo` at it and
- * they switch over — no other change needed.
+ * All seven now have artwork. If one is ever replaced, re-run the whole set
+ * through the normalisation rather than sizing it by hand — the weighting is
+ * relative, so a single hand-sized file will sit wrong against the others.
  */
 export const testingPartners = [
   { name: "MRIGlobal", short: "MRIGlobal", logo: "/assets/partners/mriglobal.png" },
