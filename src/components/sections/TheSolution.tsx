@@ -64,8 +64,7 @@ export function TheSolution() {
 
       <div className="container">
         <Reveal className="max-w-3xl">
-          <p className="eyebrow flex items-center gap-3">
-            <span aria-hidden className="h-px w-8 bg-accent/50" />
+          <p className="eyebrow">
             What we do instead
           </p>
           <h2 className="mt-6 text-display-md font-medium">

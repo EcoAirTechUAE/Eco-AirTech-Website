@@ -13,8 +13,7 @@ export function FaqSection() {
         <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Reveal>
-              <p className="eyebrow flex items-center gap-3">
-                <span aria-hidden className="h-px w-8 bg-accent/50" />
+              <p className="eyebrow">
                 Questions
               </p>
               <h2 className="mt-6 text-display-md font-medium">

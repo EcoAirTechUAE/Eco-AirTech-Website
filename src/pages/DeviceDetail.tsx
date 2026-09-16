@@ -137,8 +137,7 @@ export default function DeviceDetail() {
           <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {device.features.map((feature, i) => (
               <Reveal as="li" key={feature.title} i={i}>
-                <span aria-hidden className="block h-px w-10 bg-accent" />
-                <h3 className="mt-5 text-base font-medium leading-snug">{feature.title}</h3>
+                <h3 className="text-base font-medium leading-snug">{feature.title}</h3>
                 <p className="mt-2.5 body-text">{feature.body}</p>
               </Reveal>
             ))}
@@ -174,8 +173,7 @@ export default function DeviceDetail() {
         <Section surface>
           <div className="container">
             <Reveal className="max-w-2xl">
-              <p className="eyebrow flex items-center gap-3">
-                <span aria-hidden className="h-px w-8 bg-accent/50" />
+              <p className="eyebrow">
                 Test results
               </p>
               <h2 className="mt-6 text-display-md font-medium">

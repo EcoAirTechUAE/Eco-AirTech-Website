@@ -27,8 +27,7 @@ export function Hero() {
       <div className="container relative grid gap-12 pb-20 pt-14 sm:pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-x-12 lg:pb-28 lg:pt-24">
         <div>
           <Reveal>
-            <p className="eyebrow flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent/50" />
+            <p className="eyebrow">
               Air technology · United Arab Emirates &amp; GCC
             </p>
           </Reveal>

@@ -12,8 +12,7 @@ export function FiltersTeaser() {
       <div className="container">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-20">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent/50" />
+            <p className="eyebrow">
               {twoStage.eyebrow}
             </p>
             <h2 className="mt-6 text-display-md font-medium">{twoStage.headline}</h2>

@@ -155,12 +155,19 @@ for (const route of routes) {
     problems.push(`${route} renders the FAQ but does not declare FAQPage, a missed rich result`);
   }
 
-  // No em dashes in copy. They are not house style, and checking the rendered
-  // body catches them wherever they came from — a content file, a JSX string,
-  // or a title built at runtime — which grepping the source does not.
-  if (body.includes("—")) {
-    const where = body.split("—").slice(0, 3).map((s) => s.slice(-70)).join(" | ");
-    problems.push(`${route} renders an em dash after: ...${where}`);
+  // No em dashes anywhere in the served file. They are not house style.
+  //
+  // This checks the finished HTML rather than grepping the source, so it also
+  // covers titles and descriptions built at runtime from template literals,
+  // the JSON-LD, and anything sitting in a comment that View Source would
+  // show. Checking only the rendered body missed all of those.
+  if (html.includes("—")) {
+    const where = html
+      .split("—")
+      .slice(0, 3)
+      .map((s) => s.slice(-70).replace(/\s+/g, " "))
+      .join(" || ");
+    problems.push(`${route} contains an em dash after: ...${where}`);
   }
 
   const outPath =

@@ -70,8 +70,7 @@ export function ContactSection() {
       <div className="container">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent/50" />
+            <p className="eyebrow">
               Get in touch
             </p>
             <h2 className="mt-6 text-display-md font-medium">

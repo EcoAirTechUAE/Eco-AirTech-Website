@@ -13,8 +13,7 @@ export function TechnologyFilm() {
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
           <Reveal>
-            <p className="eyebrow flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent/50" />
+            <p className="eyebrow">
               Three stages
             </p>
             <h2 className="mt-6 text-display-md font-medium">The science, explained properly.</h2>
@@ -53,8 +52,7 @@ export function TechnologyFilm() {
                 <ol className="grid gap-8 sm:grid-cols-3 sm:gap-6">
                   {airflowSteps.map((step) => (
                     <li key={step.n}>
-                      <span aria-hidden className="block h-px w-8 bg-accent/50" />
-                      <p className="mt-4 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
+                      <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                         {step.n}
                       </p>
                       <h3 className="mt-2 text-base font-medium text-ink">{step.title}</h3>

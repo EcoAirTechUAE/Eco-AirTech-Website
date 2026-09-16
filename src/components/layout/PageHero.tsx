@@ -52,7 +52,6 @@ export function PageHero({
 
         <Reveal i={1}>
           <p className="eyebrow mt-8 flex items-center gap-3">
-            <span aria-hidden className="h-px w-8 bg-accent/50" />
             {eyebrow}
           </p>
           <h1 className="mt-6 max-w-4xl text-display-lg font-medium">{title}</h1>

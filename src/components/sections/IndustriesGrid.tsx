@@ -13,8 +13,7 @@ export function IndustriesGrid() {
       <div className="container">
         <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
           <Reveal className="max-w-2xl">
-            <p className="eyebrow flex items-center gap-3">
-              <span aria-hidden className="h-px w-8 bg-accent/50" />
+            <p className="eyebrow">
               Who we work with
             </p>
             <h2 className="mt-6 text-display-md font-medium">

@@ -127,8 +127,7 @@ export default function Filters() {
             <ul className="mt-10 grid gap-7 sm:grid-cols-2">
               {filterFeatures.map((feature) => (
                 <li key={feature.title}>
-                  <span aria-hidden className="block h-px w-10 bg-accent" />
-                  <h3 className="mt-4 text-base font-medium">{feature.title}</h3>
+                  <h3 className="text-base font-medium">{feature.title}</h3>
                   <p className="mt-2 body-text">{feature.body}</p>
                 </li>
               ))}

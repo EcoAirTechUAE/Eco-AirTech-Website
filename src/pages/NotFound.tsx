@@ -8,8 +8,7 @@ export default function NotFound() {
   return (
     <section className="relative overflow-hidden">
       <div className="container relative flex min-h-[70vh] flex-col justify-center py-24">
-        <p className="eyebrow flex items-center gap-3">
-          <span aria-hidden className="h-px w-8 bg-accent/50" />
+        <p className="eyebrow">
           Error 404
         </p>
         <h1 className="mt-6 max-w-2xl text-display-lg font-medium">

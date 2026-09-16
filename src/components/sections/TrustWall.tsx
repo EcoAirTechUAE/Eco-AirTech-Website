@@ -10,8 +10,7 @@ export function TrustWall() {
     <Section tight className="overflow-hidden">
       <div className="container">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow flex items-center gap-3">
-            <span aria-hidden className="h-px w-8 bg-accent/50" />
+          <p className="eyebrow">
             {trustHeading.eyebrow}
           </p>
           <h2 className="mt-5 text-display-sm font-medium">{trustHeading.headline}</h2>

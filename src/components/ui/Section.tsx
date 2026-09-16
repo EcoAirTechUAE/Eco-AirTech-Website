@@ -41,8 +41,7 @@ export function SectionHeading({ eyebrow, title, lead, className, center }: Head
   return (
     <Reveal className={cn("max-w-3xl", center && "mx-auto text-center", className)}>
       {eyebrow && (
-        <p className="eyebrow mb-5 flex items-center gap-3">
-          {!center && <span aria-hidden className="h-px w-8 bg-accent/50" />}
+        <p className="eyebrow mb-5">
           {eyebrow}
         </p>
       )}
