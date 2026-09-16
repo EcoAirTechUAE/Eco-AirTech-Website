@@ -77,15 +77,15 @@ export const site = {
   url: "https://ecoairtech.ae",
 
   contact: {
-    // TODO: replace with the live WhatsApp business number.
-    // International format, digits only, no '+' and no spaces.
-    whatsapp: "971500000000",
+    // wa.me requires international format, digits only — no '+', no spaces.
+    whatsapp: "971507382560",
     whatsappMessage:
       "Hello Eco AirTech — I'd like to know more about improving the air quality in my space.",
 
     email: "hello@ecoairtech.ae", // TODO
-    phoneDisplay: "+971 50 000 0000", // TODO
-    phoneHref: "+971500000000", // TODO
+    // Same line as WhatsApp. Split these if a separate landline is added.
+    phoneDisplay: "+971 50 738 2560",
+    phoneHref: "+971507382560",
 
     address: {
       line1: "Dubai", // TODO
