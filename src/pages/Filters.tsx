@@ -18,14 +18,9 @@ import {
   nanofiber,
   odogard,
 } from "@/content/filters";
-import { useMeta } from "@/lib/useMeta";
 import { cn } from "@/lib/utils";
 
 export default function Filters() {
-  useMeta(
-    "Filters",
-    "Recyclable MERV 13A nanofiber filtration with ODOGard® coating — a true mechanical rating that holds for the life of the filter, capturing particulates and destroying gas-phase VOCs and odours.",
-  );
 
   return (
     <>

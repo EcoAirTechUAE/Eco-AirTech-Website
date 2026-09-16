@@ -20,7 +20,7 @@ export interface ClientLogo {
 export const trustHeading = {
   eyebrow: "Proven at scale",
   headline: "The technology, trusted and in use by",
-  sub: "Across aviation, healthcare, government, hospitality and education — in the GCC, the UK and Ireland, and the United States.",
+  sub: "Across aviation, healthcare, government, hospitality and education, in the GCC, the UK and Ireland, and the United States.",
 };
 
 /**
@@ -45,5 +45,5 @@ export const clientLogos: ClientLogo[] = [
 export const ambition = {
   eyebrow: "Our ambition",
   statement:
-    "To become the GCC's most trusted name in clean air — protecting lives and elevating environments in every home, school, office, hotel and airport across the region.",
+    "To become the GCC's most trusted name in clean air, protecting lives and elevating environments in every home, school, office, hotel and airport across the region.",
 };

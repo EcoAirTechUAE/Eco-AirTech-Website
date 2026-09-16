@@ -14,11 +14,11 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "How does it actually work?",
-        a: "Ultraviolet energy activates a catalytic cell — our ARC® technology — which converts ambient humidity and oxygen already in your air into advanced oxidation products, principally hydroxyls. Hydroxyls are what sunlight produces in the outdoor atmosphere to break down contamination naturally. Because they travel as a vapour with the airflow, they reach surfaces, ductwork and cavities rather than only treating air that happens to pass through a box. Most of our units pair this with bi-polar ionisation, which charges airborne particles so they clump together and drop out of the breathing zone.",
+        a: "Ultraviolet energy activates a catalytic cell, our ARC® technology, which converts ambient humidity and oxygen already in your air into advanced oxidation products, principally hydroxyls. Hydroxyls are what sunlight produces in the outdoor atmosphere to break down contamination naturally. Because they travel as a vapour with the airflow, they reach surfaces, ductwork and cavities rather than only treating air that happens to pass through a box. Most of our units pair this with bi-polar ionisation, which charges airborne particles so they clump together and drop out of the breathing zone.",
       },
       {
         q: "Is this just an air purifier with a good filter?",
-        a: "No, and the distinction matters. A conventional purifier is passive: it can only treat air that physically passes through it, and it holds contaminants in the media rather than breaking them down. What we install is a two-stage system. First we replace the existing return filter, so air is properly filtered on the way into the system rather than after it. Then the active technology works downstream of that filter — the agents leave the unit and travel with the airflow into the rooms, acting on surfaces and ductwork as well as on the air. That second stage is why we can publish surface reduction figures at all, and neither stage substitutes for the other.",
+        a: "No, and the distinction matters. A conventional purifier is passive: it can only treat air that physically passes through it, and it holds contaminants in the media rather than breaking them down. What we install is a two-stage system. First we replace the existing return filter, so air is properly filtered on the way into the system rather than after it. Then the active technology works downstream of that filter: the agents leave the unit and travel with the airflow into the rooms, acting on surfaces and ductwork as well as on the air. That second stage is why we can publish surface reduction figures at all, and neither stage substitutes for the other.",
       },
       {
         q: "How is this different to a UV lamp in the AC unit?",
@@ -26,7 +26,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "What does it remove?",
-        a: "Mould spores, bacteria, viruses and other pathogens, allergens including pollen and pet dander, VOCs, HCHO formaldehyde, odours, and respirable particulates. Independent testing has recorded up to 99.9% reduction across these categories — every figure on this site is published with the protocol that produced it — the product, the technologies fitted, the duration and who administered the test.",
+        a: "Mould spores, bacteria, viruses and other pathogens, allergens including pollen and pet dander, VOCs, HCHO formaldehyde, odours, and respirable particulates. Independent testing has recorded up to 99.9% reduction across these categories. Every figure on this site is published with the protocol that produced it: the product, the technologies fitted, the duration and who administered the test.",
       },
     ],
   },
@@ -35,11 +35,11 @@ export const faqGroups: FaqGroup[] = [
     items: [
       {
         q: "Is it safe to run in occupied rooms?",
-        a: "Yes — it is designed to run continuously in occupied space, which is the entire point. Our systems produce approximately 0.05 ppm of gaseous hydrogen peroxide, twenty times below OSHA's permissible exposure limit of 1.0 ppm. Gaseous hydrogen peroxide is already present in the air you breathe outdoors. There is no evacuation, no downtime and nothing for occupants to do.",
+        a: "Yes. It is designed to run continuously in occupied space, which is the entire point. Our systems produce approximately 0.05 ppm of gaseous hydrogen peroxide, twenty times below OSHA's permissible exposure limit of 1.0 ppm. Gaseous hydrogen peroxide is already present in the air you breathe outdoors. There is no evacuation, no downtime and nothing for occupants to do.",
       },
       {
         q: "Does it produce ozone?",
-        a: "Our standard occupied-space configurations are specified to avoid it. Independent testing has repeatedly recorded ozone at 0 ppm for the full duration of a test, and in every other case below TLV guidance and below the levels measured outdoors on the same day. Some laboratory configurations we publish do use elevated ozone — those are chamber tests characterising the technology, clearly labelled as such, and are not how occupied buildings are specified.",
+        a: "Our standard occupied-space configurations are specified to avoid it. Independent testing has repeatedly recorded ozone at 0 ppm for the full duration of a test, and in every other case below TLV guidance and below the levels measured outdoors on the same day. Some laboratory configurations we publish do use elevated ozone. Those are chamber tests characterising the technology, clearly labelled as such, and are not how occupied buildings are specified.",
       },
       {
         q: "Is it safe around children, pets and elderly occupants?",
@@ -60,7 +60,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "Does this replace my AC servicing?",
-        a: "No — it changes what servicing has to achieve. You should still maintain your air conditioning: coils, drainage and mechanical condition all still matter. What the technology removes is the expectation that cleaning alone will control microbial and gas-phase contamination between visits, which it has never been able to do. In practice most clients find their systems stay cleaner and their filters load more slowly.",
+        a: "No. It changes what servicing has to achieve. You should still maintain your air conditioning: coils, drainage and mechanical condition all still matter. What the technology removes is the expectation that cleaning alone will control microbial and gas-phase contamination between visits, which it has never been able to do. In practice most clients find their systems stay cleaner and their filters load more slowly.",
       },
       {
         q: "What maintenance does it need?",
@@ -68,7 +68,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "How quickly will I notice a difference?",
-        a: "Odour reduction is usually noticeable within the first 24 to 48 hours. Measured contamination reductions build over the following days — our published field tests are typically run over five days, and our live-environment trials over 72 hours. Where there is existing visible growth, cosmetic repair is still required; the technology's role is to make sure it does not come back.",
+        a: "Odour reduction is usually noticeable within the first 24 to 48 hours. Measured contamination reductions build over the following days. Our published field tests are typically run over five days, and our live-environment trials over 72 hours. Where there is existing visible growth, cosmetic repair is still required; the technology's role is to make sure it does not come back.",
       },
       {
         q: "How do I know what size unit I need?",
@@ -85,7 +85,7 @@ export const faqGroups: FaqGroup[] = [
       },
       {
         q: "What evidence is there that it works?",
-        a: "Every figure on this site is published with the protocol that produced it — the product, the technologies fitted, the duration, the space and who administered the test — so the technology can be judged on independent laboratory and live-environment data rather than on our description of it. Where a project calls for it, air-quality sampling can also form part of a commercial engagement, using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform at 96% accuracy, against 50 to 70% for the petri dish method most providers still use. Whether that applies is something we determine during the assessment and discuss with you directly.",
+        a: "Every figure on this site is published with the protocol that produced it: the product, the technologies fitted, the duration, the space and who administered the test. That way the technology can be judged on independent laboratory and live-environment data rather than on our description of it. Where a project calls for it, air-quality sampling can also form part of a commercial engagement, using APACOR AirTrap XL sampling analysed by Sporecyte's AI platform at 96% accuracy, against 50 to 70% for the petri dish method most providers still use. Whether that applies is something we determine during the assessment and discuss with you directly.",
       },
       {
         q: "Where do you operate?",

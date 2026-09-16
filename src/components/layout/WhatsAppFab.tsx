@@ -73,7 +73,7 @@ export function WhatsAppFab() {
           </button>
           <p className="text-sm font-medium text-ink">Questions about your space?</p>
           <p className="mt-1 text-xs leading-relaxed text-muted">
-            Message our team directly — we usually reply within the hour.
+            Message our team directly. We usually reply within the hour.
           </p>
           <a
             href={whatsappLink()}

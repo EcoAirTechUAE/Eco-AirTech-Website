@@ -21,12 +21,12 @@ export function FaqSection() {
                 The things people ask before they commit.
               </h2>
               <p className="mt-6 leading-relaxed text-muted">
-                If yours isn't here, message us directly — you'll reach the team who specify the
+                If yours isn't here, message us directly. You'll reach the team who specify the
                 systems, not a call centre.
               </p>
 
               <ButtonAnchor
-                href={whatsappLink("Hello Eco AirTech — I have a question about your systems.")}
+                href={whatsappLink("Hello Eco AirTech, I have a question about your systems.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"

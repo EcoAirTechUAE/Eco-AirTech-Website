@@ -1,13 +1,8 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FaqSection } from "@/components/sections/FaqSection";
-import { useMeta } from "@/lib/useMeta";
 
 export default function Contact() {
-  useMeta(
-    "Contact",
-    "Book an air assessment for your home, hotel, school or workplace anywhere in the UAE and GCC. We start by understanding the space and what's driving the problem.",
-  );
 
   return (
     <>

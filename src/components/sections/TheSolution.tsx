@@ -96,7 +96,7 @@ export function TheSolution() {
               <span className="text-ink">Inside the ARC® cell.</span> Air is drawn through a
               honeycomb catalyst and across the UV lamp. The reaction converts the water vapour
               already in that air into hydroxyls, which leave with the airflow and carry on working
-              out in the room — on surfaces, in ducting, and in the cavities cleaning never reaches.
+              out in the room: on surfaces, in ducting, and in the cavities cleaning never reaches.
             </figcaption>
           </figure>
         </Reveal>

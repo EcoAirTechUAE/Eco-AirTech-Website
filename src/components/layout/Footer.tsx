@@ -21,7 +21,7 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-5 max-w-xs body-text">
-              Nature-based air technology, running continuously — so the air indoors is as clean as
+              Nature-based air technology, running continuously, so the air indoors is as clean as
               the air outdoors ought to be.
             </p>
 

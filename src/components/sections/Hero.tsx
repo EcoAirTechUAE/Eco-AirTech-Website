@@ -36,15 +36,15 @@ export function Hero() {
           <Reveal i={1}>
             <h1 className="mt-7 text-display-xl font-medium">
               We recreate{" "}
-              <span className="italic text-gradient">nature's disinfectant</span> —
-              indoors, continuously.
+              <span className="italic text-gradient">nature's disinfectant</span>,
+              indoors and continuously.
             </h1>
           </Reveal>
 
           <Reveal i={2}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
               Outdoors, sunlight and humidity produce hydroxyls that break contamination down all by
-              themselves. Our systems reproduce that reaction inside your building — eliminating up
+              themselves. Our systems reproduce that reaction inside your building, eliminating up
               to <span className="text-ink">99.9% of airborne and surface contaminants</span>, and
               never switching off.
             </p>

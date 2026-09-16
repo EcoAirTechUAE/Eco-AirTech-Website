@@ -6,14 +6,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { industries } from "@/content/industries";
-import { useMeta } from "@/lib/useMeta";
 import { cn } from "@/lib/utils";
 
 export default function Industries() {
-  useMeta(
-    "Industries",
-    "Air purification for residential, hotels, palaces and places of worship, healthcare, schools, gyms, hospitality and transportation across the UAE and GCC.",
-  );
 
   return (
     <>

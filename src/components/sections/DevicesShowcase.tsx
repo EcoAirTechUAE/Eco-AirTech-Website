@@ -20,7 +20,7 @@ export function DevicesShowcase() {
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
               Specification depends on served volume, air handling type and how a space is actually
-              used — so most buildings are addressed with a combination rather than a single unit.
+              used, so most buildings are addressed with a combination rather than a single unit.
               Coverage across the range runs from{" "}
               <span className="tnum text-ink">{rangeCoverage}</span>.
             </p>

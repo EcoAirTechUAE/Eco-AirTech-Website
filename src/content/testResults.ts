@@ -55,7 +55,7 @@ export const studies: Study[] = [
     setting: "Government housing · heavy existing contamination",
     headline: "96.4% reduction of Stachybotrys",
     summary:
-      "A 72-hour trial in a genuinely contaminated, occupied apartment block — not a chamber. Spore concentrations fell sharply across every classification present, including Stachybotrys, the species associated with significant water damage.",
+      "A 72-hour trial in a genuinely contaminated, occupied apartment block, not a chamber. Spore concentrations fell sharply across every classification present, including Stachybotrys, the species associated with significant water damage.",
     meta: {
       product: "750+ Wall Mount (no filter)",
       technologies: "PCO / O₃ / ODOGard®",
@@ -83,7 +83,7 @@ export const studies: Study[] = [
     setting: "Government housing · bathroom & ground floor",
     headline: "95.9% overall reduction",
     summary:
-      "A second 72-hour live trial in an occupied property, again under continuous real-world contamination. Cladosporium — the most abundant airborne genus in most buildings — fell by more than 98%.",
+      "A second 72-hour live trial in an occupied property, again under continuous real-world contamination. Cladosporium, the most abundant airborne genus in most buildings, fell by more than 98%.",
     meta: {
       product: "750+ Wall Mount (no filter)",
       technologies: "PCO / O₃ / ODOGard®",
@@ -156,7 +156,7 @@ export const studies: Study[] = [
     setting: "Cleaning products storage room",
     headline: "95.0% reduction of TVOC",
     summary:
-      "A deliberately hostile gas-phase environment — a sealed store of cleaning chemicals inside a school. Both TVOC and formaldehyde fell substantially over five days of real-time measurement.",
+      "A deliberately hostile gas-phase environment: a sealed store of cleaning chemicals inside a school. Both TVOC and formaldehyde fell substantially over five days of real-time measurement.",
     meta: {
       product: "750+ Wall Mount (no filter)",
       technologies: "PCO / O₃",
@@ -181,7 +181,7 @@ export const studies: Study[] = [
     setting: "220 sq ft enclosed transit cabin",
     headline: ">95% reduction in odour intensity",
     summary:
-      "A small, heavily occupied, poorly ventilated cabin — one of the hardest environments to hold. Ozone remained below detectable levels throughout.",
+      "A small, heavily occupied, poorly ventilated cabin, one of the hardest environments to hold. Ozone remained below detectable levels throughout.",
     meta: {
       product: "750+ Wall Mount",
       technologies: "PCO / O₃ / ODOGard®",
@@ -207,7 +207,7 @@ export const studies: Study[] = [
     setting: "Four-week hospital study against a control vehicle",
     headline: "89% fewer total pathogens than the control",
     summary:
-      "A hospital ran a four-week real-world study across active ambulances. Enclosed, high-turnover and time-pressured, they are among the hardest environments to keep clean — and among the highest-consequence.",
+      "A hospital ran a four-week real-world study across active ambulances. Enclosed, high-turnover and time-pressured, they are among the hardest environments to keep clean, and among the highest-consequence.",
     meta: {
       product: "750+ Wall Mount (Transit)",
       technologies: "PCO / O₃ / ODOGard®",
@@ -225,13 +225,13 @@ export const studies: Study[] = [
     id: "hvac-field-office-active",
     device: "hvac",
     kind: "field",
-    title: "Commercial office — active solution",
+    title: "Commercial office, active solution",
     setting: "Occupied workplace, no filter fitted",
     headline: ">99.99% reduction of airborne mould spores",
     summary:
-      "The in-duct unit running as an active solution alone, with no filtration assistance — isolating what the technology itself contributes.",
+      "The in-duct unit running as an active solution alone, with no filtration assistance, isolating what the technology itself contributes.",
     meta: {
-      product: "HVAC (active solution only — no filter)",
+      product: "HVAC (active solution only, no filter)",
       technologies: "PCO / BPI",
       duration: "5 days, real-time measurement",
       space: "Commercial office space",
@@ -257,7 +257,7 @@ export const studies: Study[] = [
     id: "hvac-field-office-paired",
     device: "hvac",
     kind: "field",
-    title: "Commercial office — active + passive",
+    title: "Commercial office, active + passive",
     setting: "1,240 sq ft, HVAC unit paired with a treated filter",
     headline: ">99% reduction of airborne mould, bacteria, TVOC and odours",
     summary:
@@ -317,9 +317,9 @@ export const studies: Study[] = [
       administrator: "Microchem",
     },
     metrics: [
-      { name: "MRSA — PCO / 20% O₃", medium: "Surface", reduction: ">99.99%" },
-      { name: "MRSA — 50% O₃", medium: "Surface", reduction: ">99.95%" },
-      { name: "MRSA — PCO / BPI / 20% O₃", medium: "Surface", reduction: "93.93%" },
+      { name: "MRSA, PCO / 20% O₃", medium: "Surface", reduction: ">99.99%" },
+      { name: "MRSA, 50% O₃", medium: "Surface", reduction: ">99.95%" },
+      { name: "MRSA, PCO / BPI / 20% O₃", medium: "Surface", reduction: "93.93%" },
     ],
     notes: [
       "All four configurations run for 6 hours in a controlled chamber at Microchem, with no filter fitted.",
@@ -336,9 +336,9 @@ export const studies: Study[] = [
     setting: "220 sq ft dormitory rooms",
     headline: ">99.99% reduction of mould on fan and coil surfaces",
     summary:
-      "The most direct evidence we have that the inside of an air conditioning unit is itself a contamination source. Viable mould on the fan housing and coil surfaces was removed completely — whether the unit ran continuously or only on temperature demand.",
+      "The most direct evidence we have that the inside of an air conditioning unit is itself a contamination source. Viable mould on the fan housing and coil surfaces was removed completely, whether the unit ran continuously or only on temperature demand.",
     meta: {
-      product: "PTAC (active solution only — no filter)",
+      product: "PTAC (active solution only, no filter)",
       technologies: "PCO",
       duration: "5 days, measured in real time",
       space: "220 sq ft dorm rooms",

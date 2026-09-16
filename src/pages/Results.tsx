@@ -9,7 +9,6 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { headlineResults, studies } from "@/content/testResults";
 import { devices } from "@/content/devices";
 import { testingMethod, testingPartners } from "@/content/technology";
-import { useMeta } from "@/lib/useMeta";
 import { cn } from "@/lib/utils";
 
 type Filter = "all" | "live" | "lab" | "field" | string;
@@ -29,11 +28,6 @@ export default function Results() {
     if (["live", "lab", "field"].includes(filter)) return studies.filter((s) => s.kind === filter);
     return studies.filter((s) => s.device === filter);
   }, [filter]);
-
-  useMeta(
-    "Test results",
-    "Independent laboratory and live-environment testing from IAQS, MRIGlobal, Microchem, Pace Labs and Aerosol Research & Engineering Laboratories — published with full protocols.",
-  );
 
   return (
     <>

@@ -43,7 +43,7 @@ export interface PageMeta {
 const BRAND = "Eco AirTech";
 
 /** Title tags read better as "Page — Brand"; the homepage states the offer. */
-const titled = (t: string) => `${t} — ${BRAND}`;
+const titled = (t: string) => `${t} | ${BRAND}`;
 
 /**
  * Descriptions are kept under ~160 characters. Google truncates past roughly
@@ -52,7 +52,7 @@ const titled = (t: string) => `${t} — ${BRAND}`;
  */
 const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/": {
-    title: "Eco AirTech — Nature's disinfectant, indoors and continuous",
+    title: "Eco AirTech | Nature's disinfectant, indoors and continuous",
     description:
       "Nature-based air technology for the UAE and GCC. ARC® hydroxyl systems that treat the air and the surfaces around it, continuously.",
   },
@@ -64,17 +64,17 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/devices": {
     title: titled("Air purification units for every building type"),
     description:
-      "Five units, one technology — in-duct HVAC, PTAC, 750+, OverWatch and Portable. Retrofit into the air handling you already have, from one room upwards.",
+      "Five units, one technology: in-duct HVAC, PTAC, 750+, OverWatch and Portable. Retrofit into the air handling you already have, from one room upwards.",
   },
   "/filters": {
     title: titled("MERV 13A nanofibre filters with ODOGard®"),
     description:
-      "Hospital-grade MERV 13A filtration at the air resistance of a MERV 9, rated to end of service life — with full ASHRAE 52.2 test data.",
+      "Hospital-grade MERV 13A filtration at the air resistance of a MERV 9, rated to end of service life, with full ASHRAE 52.2 test data.",
   },
   "/industries": {
     title: titled("Air quality by sector"),
     description:
-      "Homes, hotels, palaces, healthcare, schools, gyms and transport — what drives contamination in each, and how the specification differs.",
+      "Homes, hotels, palaces, healthcare, schools, gyms and transport: what drives contamination in each, and how the specification differs.",
   },
   "/results": {
     title: titled("Independent test results and protocols"),
@@ -84,7 +84,7 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/contact": {
     title: titled("Request a site assessment"),
     description:
-      "Tell us about the building and we will come back within one working day. Assessment first, then a written specification and a fixed price — for the UAE and wider GCC.",
+      "Tell us about the building and we will come back within one working day. Assessment first, then a written specification and a fixed price, for the UAE and wider GCC.",
   },
 };
 
@@ -146,7 +146,7 @@ export function metaForPath(rawPath: string): PageMeta {
   const device = devices.find((d) => `/devices/${d.slug}` === path);
   if (device) {
     return {
-      title: titled(`${device.article} — ${device.kicker}`),
+      title: titled(`${device.article}, ${device.kicker}`),
       description: clampDescription(device.summary),
       path,
       image: abs(device.image),

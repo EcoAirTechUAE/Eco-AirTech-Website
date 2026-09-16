@@ -22,7 +22,7 @@ export function IndustriesGrid() {
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
               A parent, a hotel general manager and a school principal are solving different
-              problems. Each sector below sets out what actually drives the decision there — and
+              problems. Each sector below sets out what actually drives the decision there, and
               what the evidence looks like.
             </p>
           </Reveal>

@@ -5,20 +5,15 @@ import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FiltersTeaser } from "@/components/sections/FiltersTeaser";
 import { devices, rangeCoverage } from "@/content/devices";
-import { useMeta } from "@/lib/useMeta";
 
 export default function Devices() {
-  useMeta(
-    "Devices",
-    `The Eco AirTech range — HVAC, 750+, PTAC and OverWatch. Active air purification covering ${rangeCoverage}, retrofitted into existing air conditioning systems.`,
-  );
 
   return (
     <>
       <PageHero
         eyebrow="The range"
         title="Five units. One technology."
-        lead={`Every device retrofits into existing systems — no replacement plant, no redesign. Coverage runs from ${rangeCoverage}, and most buildings are specified as a combination rather than a single unit.`}
+        lead={`Every device retrofits into existing systems, with no replacement plant and no redesign. Coverage runs from ${rangeCoverage}, and most buildings are specified as a combination rather than a single unit.`}
         crumbs={[{ label: "Devices" }]}
       />
 

@@ -2,10 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { nav } from "@/config/site";
 import { Link } from "react-router-dom";
-import { useMeta } from "@/lib/useMeta";
 
 export default function NotFound() {
-  useMeta("Page not found");
 
   return (
     <section className="relative overflow-hidden">

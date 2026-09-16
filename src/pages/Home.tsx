@@ -12,7 +12,6 @@ import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { ProofBand } from "@/components/sections/ProofBand";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { useMeta } from "@/lib/useMeta";
 
 /**
  * Landing page order is deliberate:
@@ -24,10 +23,6 @@ import { useMeta } from "@/lib/useMeta";
  * around, and they have to land before any product is mentioned.
  */
 export default function Home() {
-  useMeta(
-    "",
-    "Nature-based air technology that continuously eliminates up to 99.9% of airborne and surface contaminants. Medical-grade air for homes, hotels, schools and workplaces across the UAE and GCC.",
-  );
 
   return (
     <>

@@ -9,16 +9,10 @@ import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { devices, deviceBySlug } from "@/content/devices";
 import { studiesFor } from "@/content/testResults";
-import { useMeta } from "@/lib/useMeta";
 
 export default function DeviceDetail() {
   const { slug } = useParams();
   const device = deviceBySlug(slug);
-
-  useMeta(
-    device ? device.article : "Device",
-    device ? `${device.article} — ${device.summary}` : undefined,
-  );
 
   if (!device) return <Navigate to="/devices" replace />;
 

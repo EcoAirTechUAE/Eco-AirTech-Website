@@ -11,14 +11,11 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { industries, industryBySlug } from "@/content/industries";
 import { deviceBySlug } from "@/content/devices";
 import { site } from "@/config/site";
-import { useMeta } from "@/lib/useMeta";
 import { cn } from "@/lib/utils";
 
 export default function IndustryDetail() {
   const { slug } = useParams();
   const industry = industryBySlug(slug);
-
-  useMeta(industry?.name ?? "Industries", industry?.summary);
 
   if (!industry) return <Navigate to="/industries" replace />;
 
@@ -117,7 +114,7 @@ export default function IndustryDetail() {
               Where we'd usually start for {industry.name.toLowerCase()}.
             </h2>
             <p className="mt-5 leading-relaxed text-muted">
-              Indicative only — the final specification follows the site assessment, and depends on
+              Indicative only. The final specification follows the site assessment, and depends on
               served volume and how the space is actually used.
             </p>
           </Reveal>

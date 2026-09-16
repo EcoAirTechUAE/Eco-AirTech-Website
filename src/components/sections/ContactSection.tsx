@@ -26,7 +26,7 @@ const EMPTY: ContactPayload = {
 
 const steps = [
   "We review what you've told us and come back within one working day.",
-  "A site assessment — the space, the air handling system, and what's actually driving the problem.",
+  "A site assessment covering the space, the air handling system, and what's actually driving the problem.",
   "A written specification and a fixed price, including the ongoing service interval.",
 ];
 
@@ -82,7 +82,7 @@ export function ContactSection() {
                 decision we make internally — mentioning it here invites homeowners
                 to ask for something we would not be offering them. */}
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              We begin by understanding the environment and what's actually driving the problem —
+              We begin by understanding the environment and what's actually driving the problem:
               the building, the air handling, and how the space is really used. What you get back is
               a specification built around that, not a quote against a template.
             </p>
@@ -130,7 +130,7 @@ export function ContactSection() {
               {status === "sent" ? (
                 <div className="flex min-h-[26rem] flex-col items-center justify-center text-center">
                   <CheckCircle2 aria-hidden className="h-10 w-10 text-accent" />
-                  <h3 className="mt-6 text-2xl font-medium">Thank you — that's with us.</h3>
+                  <h3 className="mt-6 text-2xl font-medium">Thank you. That's with us.</h3>
                   <p className="mt-3 max-w-sm body-text">
                     We'll come back to you within one working day. If it's urgent, WhatsApp is the
                     fastest way to reach the team.
@@ -191,7 +191,7 @@ export function ContactSection() {
                       label="Tell us about it"
                       required
                       className="sm:col-span-2"
-                      placeholder="Approximate size, type of air conditioning, and anything you've noticed — smell, allergies, visible growth."
+                      placeholder="Approximate size, type of air conditioning, and anything you've noticed: smell, allergies, visible growth."
                       value={data.message}
                       error={errors.message}
                       onChange={(e) => set("message")(e.target.value)}

@@ -38,7 +38,7 @@ export const industries: Industry[] = [
     body: [
       "A sealed, air-conditioned home in a hot coastal climate is an unusual environment. Windows stay shut for months, humidity is drawn in and condensed continuously, and the same air recirculates through the same ductwork day after day. Whatever is in that system ends up in every room.",
       "Children are the reason most of our residential clients call. They breathe faster relative to their body size than adults, spend more time close to floors and soft furnishings where contaminants settle, and their respiratory systems are still developing. What they breathe at home for the first ten years is not a small variable.",
-      "We work with families investing in their household the same way they invest in water filtration or nutrition — as infrastructure, not as a response to a problem. Where there is an existing issue we address it; where there is not, the point is that one never establishes.",
+      "We work with families investing in their household the same way they invest in water filtration or nutrition: as infrastructure, not as a response to a problem. Where there is an existing issue we address it; where there is not, the point is that one never establishes.",
     ],
     concerns: [
       {
@@ -72,7 +72,7 @@ export const industries: Industry[] = [
     name: "Hotels & Resorts",
     kicker: "Guest experience, protected",
     summary:
-      "A guest cannot describe good air. They can describe a room that smells closed-up — and they describe it in a review that stays online permanently.",
+      "A guest cannot describe good air. They can describe a room that smells closed-up, and they describe it in a review that stays online permanently.",
     body: [
       "Air quality is one of the few parts of a guest's experience that is felt immediately and almost never articulated precisely. The complaint arrives as 'the room smelled musty', 'I couldn't sleep', 'my allergies were bad'. The cause is usually a fan coil unit that has been damp for a long time.",
       "Rooms are the hardest case in the building: they sit unoccupied and cooled for days, then are handed to someone paying a premium and expecting perfection. Housekeeping addresses surfaces beautifully; nothing in a standard turnaround addresses what is inside the unit blowing air across the bed.",
@@ -85,7 +85,7 @@ export const industries: Industry[] = [
       },
       {
         title: "Fan coil contamination",
-        body: "Warm, damp and organically loaded — and rarely inspected between deep services.",
+        body: "Warm, damp and organically loaded, and rarely inspected between deep services.",
       },
       {
         title: "Vacant room cycles",
@@ -113,14 +113,14 @@ export const industries: Industry[] = [
       "Buildings of standing, where the air handling is complex, occupancy swings between empty and full, and nothing about the intervention may be visible.",
     body: [
       "These buildings share a shape of problem: substantial served volumes, several independent air handling systems, and occupancy that swings between near-empty and completely full. Neither a palace nor a mosque tolerates visible equipment, and neither can be taken out of use while work is carried out.",
-      "In palaces and private residences the difficulty is vacancy. A wing held at temperature with no occupancy, no door movement and no change of air is close to an ideal growth environment — and the problem is rarely caught early, because nobody is in the room to notice it. Those same conditions damage what the rooms contain: textiles, timber, manuscripts and collections are all sensitive to exactly the humidity that drives microbial growth.",
-      "Places of worship present the opposite difficulty: density. A prayer hall goes from empty to full within minutes, several times a day, and at Friday prayers to capacity. The floors are carpeted throughout, worshippers are barefoot and kneel and prostrate directly onto them, and ablution facilities keep humidity high in the adjoining spaces. Warmth, moisture and heavy organic loading in the same rooms is the combination that microbial growth needs — and carpet holds all three long after cleaning.",
-      "Our units install inside existing ductwork with nothing visible in the space, and the work is scheduled around prayer times or around the household rather than the other way round. We are currently installing across palace projects in Saudi Arabia and residences in the UAE. Those clients are not named here, and will not be — discretion is a condition of the work, and we treat it as one.",
+      "In palaces and private residences the difficulty is vacancy. A wing held at temperature with no occupancy, no door movement and no change of air is close to an ideal growth environment, and the problem is rarely caught early, because nobody is in the room to notice it. Those same conditions damage what the rooms contain: textiles, timber, manuscripts and collections are all sensitive to exactly the humidity that drives microbial growth.",
+      "Places of worship present the opposite difficulty: density. A prayer hall goes from empty to full within minutes, several times a day, and at Friday prayers to capacity. The floors are carpeted throughout, worshippers are barefoot and kneel and prostrate directly onto them, and ablution facilities keep humidity high in the adjoining spaces. Warmth, moisture and heavy organic loading in the same rooms is the combination that microbial growth needs, and carpet holds all three long after cleaning.",
+      "Our units install inside existing ductwork with nothing visible in the space, and the work is scheduled around prayer times or around the household rather than the other way round. We are currently installing across palace projects in Saudi Arabia and residences in the UAE. Those clients are not named here, and will not be. Discretion is a condition of the work, and we treat it as one.",
     ],
     concerns: [
       {
         title: "Congregational density",
-        body: "Halls that fill to capacity within minutes, several times a day, then stand empty again — a load no fixed ventilation rate is sized for.",
+        body: "Halls that fill to capacity within minutes, several times a day, then stand empty again, a load no fixed ventilation rate is sized for.",
       },
       {
         title: "Carpet & ablution humidity",
@@ -147,7 +147,7 @@ export const industries: Industry[] = [
     body: [
       "Healthcare settings concentrate immunocompromised patients, antimicrobial-resistant organisms and continuous human traffic in the same air. The infection-control burden is well understood; the contribution of the air handling system to it is often less closely examined.",
       "Our technology has been tested directly against the organisms that matter in these environments. Independent laboratory testing at Microchem recorded greater than 99.99% inactivation of MRSA on surfaces over six hours, and MRIGlobal recorded 86.98% inactivation of SARS-CoV-2 on surfaces over four hours.",
-      "It is designed to run in occupied space continuously — no evacuation, no downtime, no interruption to clinical activity. It supplements infection-control protocol rather than competing with it.",
+      "It is designed to run in occupied space continuously, with no evacuation, no downtime and no interruption to clinical activity. It supplements infection-control protocol rather than competing with it.",
     ],
     concerns: [
       {
@@ -183,11 +183,11 @@ export const industries: Industry[] = [
     name: "Schools & Nurseries",
     kicker: "Where children spend their days",
     summary:
-      "A 2025 study across Dubai and Sharjah schools found that while measures exist, more needs to be done — and that younger children are the most vulnerable.",
+      "A 2025 study across Dubai and Sharjah schools found that while measures exist, more needs to be done, and that younger children are the most vulnerable.",
     body: [
       "Classrooms combine the highest occupant density of any building type with the youngest and most susceptible occupants. Thirty children in a sealed, air-conditioned room generate substantial humidity and particulate load, and recirculate it for the whole school day.",
-      "The consequences are not limited to health. Poor indoor air quality worsens asthma and allergies, and there is a well-established link between air quality and cognitive performance — attention, error rates and comprehension all decline as the air degrades. Parents increasingly ask about it directly.",
-      "Our units retrofit into existing school HVAC without disruption to teaching, and the resulting air standard can be evidenced with third-party testing rather than asserted. We have field-tested in educational settings, including a cleaning products store — a deliberately hostile gas-phase environment — where TVOC fell by 95%.",
+      "The consequences are not limited to health. Poor indoor air quality worsens asthma and allergies, and there is a well-established link between air quality and cognitive performance: attention, error rates and comprehension all decline as the air degrades. Parents increasingly ask about it directly.",
+      "Our units retrofit into existing school HVAC without disruption to teaching, and the resulting air standard can be evidenced with third-party testing rather than asserted. We have field-tested in educational settings, including a cleaning products store, a deliberately hostile gas-phase environment, where TVOC fell by 95%.",
     ],
     concerns: [
       {
@@ -223,7 +223,7 @@ export const industries: Industry[] = [
     summary:
       "People come to a gym to improve their health, then breathe harder than anywhere else in their week while doing it.",
     body: [
-      "Training multiplies exposure. Ventilation rate rises several times over resting levels, and breathing shifts from nasal to oral — bypassing the body's own filtration. Whatever is in the air of a gym is delivered deeper into the lungs and in far greater volume than in any other commercial environment.",
+      "Training multiplies exposure. Ventilation rate rises several times over resting levels, and breathing shifts from nasal to oral, bypassing the body's own filtration. Whatever is in the air of a gym is delivered deeper into the lungs and in far greater volume than in any other commercial environment.",
       "The conditions are also unusually favourable to growth: sustained humidity from perspiration and showers, warm surfaces, heavy textile and equipment loading, and continuous occupancy. Spa, sauna and pool areas add standing moisture on every surface.",
       "For operators positioning around recovery, longevity and performance, air is the one input in the building that every member consumes continuously and that almost no competitor can substantiate.",
     ],
@@ -291,7 +291,7 @@ export const industries: Industry[] = [
     name: "Transportation",
     kicker: "Fleet, transit & aviation",
     summary:
-      "Small sealed volumes, continuous occupant turnover and recirculated air — the most concentrated exposure environment there is.",
+      "Small sealed volumes, continuous occupant turnover and recirculated air: the most concentrated exposure environment there is.",
     body: [
       "A vehicle cabin is the hardest air quality problem in miniature: a very small volume, heavy occupant turnover, limited fresh air, and a recirculation system that redistributes whatever is present within seconds.",
       "The evidence here is unusually direct. A hospital ran a four-week study across active ambulances and recorded 89% fewer total pathogens in the equipped vehicle than in the control. In a 220 sq ft school bus, odour intensity fell by more than 95% and airborne mould by around 81%, with ozone remaining below detectable levels throughout.",

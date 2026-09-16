@@ -32,7 +32,7 @@ export interface ContactPayload {
 export type FieldErrors = Partial<Record<keyof ContactPayload, string>>;
 
 export const interestOptions = [
-  "Residential — my home",
+  "Residential, my home",
   "Hotel or resort",
   "Palace or place of worship",
   "Healthcare",

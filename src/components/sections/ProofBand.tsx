@@ -21,7 +21,7 @@ export function ProofBand() {
           </h2>
           <p className="mt-6 max-w-prose leading-relaxed text-muted">
             Air technology is full of unqualified percentages. Ours are published with the product,
-            the technologies fitted, the duration, the space and the laboratory — including the
+            the technologies fitted, the duration, the space and the laboratory, including the
             results that are less flattering, because a range you can interrogate is worth more than
             a headline you cannot.
           </p>

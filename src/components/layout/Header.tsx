@@ -54,7 +54,7 @@ export function Header() {
         style={{ height: "var(--header-h)" }}
       >
         <div className="container flex h-full items-center justify-between gap-6">
-          <Link to="/" aria-label={`${site.name} — home`} className="shrink-0">
+          <Link to="/" aria-label={`${site.name} home`} className="shrink-0">
             <Logo withWordmark />
           </Link>
 

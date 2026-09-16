@@ -46,10 +46,10 @@ export const ui = {
     "form.interest": "What's the space?",
     "form.message": "Tell us about it",
     "form.messagePlaceholder":
-      "Approximate size, type of air conditioning, and anything you've noticed — smell, allergies, visible growth.",
+      "Approximate size, type of air conditioning, and anything you've noticed: smell, allergies, visible growth.",
     "form.submit": "Send enquiry",
     "form.sending": "Sending…",
-    "form.success": "Thank you — that's with us.",
+    "form.success": "Thank you. That's with us.",
     "form.successBody": "We'll come back to you shortly.",
     "form.honeypot": "Website",
 
@@ -95,10 +95,10 @@ export const ui = {
     "form.interest": "نوع المكان",
     "form.message": "أخبرنا عن المكان",
     "form.messagePlaceholder":
-      "المساحة التقريبية، ونوع نظام التكييف، وأي شيء لاحظته — رائحة، أو حساسية، أو نمو ظاهر.",
+      "المساحة التقريبية، ونوع نظام التكييف، وأي شيء لاحظته: رائحة، أو حساسية، أو نمو ظاهر.",
     "form.submit": "إرسال الطلب",
     "form.sending": "جارٍ الإرسال…",
-    "form.success": "شكراً لك — وصلتنا رسالتك.",
+    "form.success": "شكراً لك، وصلتنا رسالتك.",
     "form.successBody": "سنعاود التواصل معك قريباً.",
     "form.honeypot": "Website",
 

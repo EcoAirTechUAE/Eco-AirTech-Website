@@ -120,10 +120,10 @@ for (const route of routes) {
   seenDescriptions.set(meta.description, route);
 
   if (meta.title.length > 70) {
-    problems.push(`${route} title is ${meta.title.length} chars — Google truncates past ~60-70`);
+    problems.push(`${route} title is ${meta.title.length} chars, and Google truncates past ~60-70`);
   }
   if (meta.description.length < 50 || meta.description.length > 170) {
-    problems.push(`${route} description is ${meta.description.length} chars — aim for 50-170`);
+    problems.push(`${route} description is ${meta.description.length} chars, aim for 50-170`);
   }
 
   // Exactly one canonical, and it must name this route.
@@ -152,7 +152,15 @@ for (const route of routes) {
     problems.push(`${route} declares FAQPage but does not render the FAQ`);
   }
   if (rendersFaq && !declaresFaq) {
-    problems.push(`${route} renders the FAQ but does not declare FAQPage — a missed rich result`);
+    problems.push(`${route} renders the FAQ but does not declare FAQPage, a missed rich result`);
+  }
+
+  // No em dashes in copy. They are not house style, and checking the rendered
+  // body catches them wherever they came from — a content file, a JSX string,
+  // or a title built at runtime — which grepping the source does not.
+  if (body.includes("—")) {
+    const where = body.split("—").slice(0, 3).map((s) => s.slice(-70)).join(" | ");
+    problems.push(`${route} renders an em dash after: ...${where}`);
   }
 
   const outPath =
@@ -193,7 +201,7 @@ writeFileSync(join(DIST, "robots.txt"), robots);
 if (problems.length > 0) {
   console.error("\nSEO problems found:");
   for (const problem of problems) console.error(`  ${problem}`);
-  console.error(`\n${problems.length} problem(s) — build failed.`);
+  console.error(`\n${problems.length} problem(s). Build failed.`);
   process.exit(1);
 }
 

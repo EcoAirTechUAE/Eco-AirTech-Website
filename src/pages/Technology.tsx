@@ -9,13 +9,8 @@ import { TheSolution } from "@/components/sections/TheSolution";
 import { SafetyBand } from "@/components/sections/SafetyBand";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { factors } from "@/content/technology";
-import { useMeta } from "@/lib/useMeta";
 
 export default function Technology() {
-  useMeta(
-    "Technology",
-    "ARC® photocatalytic oxidation and bi-polar ionisation explained — how hydroxyls break contaminants down at a molecular level, and why surface cleaning and AC filtration cannot.",
-  );
 
   return (
     <>
