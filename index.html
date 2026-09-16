@@ -7,21 +7,25 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#060A08" />
 
-    <title>Eco AirTech — Medical-grade air for the Gulf</title>
+    <!--
+      Generic fallback tags only.
+
+      The build prerenders a separate HTML file per route (src/prerender.tsx)
+      and replaces everything below with tags describing that specific page —
+      including its own canonical. Nothing here should be page-specific: this
+      copy is what `vite dev` shows and what an unmatched path would serve.
+
+      Previously this file carried a canonical pointing at the homepage and was
+      served for all 21 routes, which told Google every page was a duplicate
+      of / and should not be indexed on its own.
+    -->
+    <title>Eco AirTech — Nature's disinfectant, indoors and continuous</title>
     <meta
       name="description"
-      content="Nature-based air technology that continuously eliminates up to 99.9% of airborne and surface contaminants. Installed across homes, hotels, schools and workplaces in the UAE and GCC."
+      content="Nature-based air technology for the UAE and GCC. ARC® hydroxyl systems that continuously treat the air and the surfaces around it."
     />
-    <link rel="canonical" href="https://ecoairtech.ae/" />
-
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Eco AirTech — Medical-grade air for the Gulf" />
-    <meta
-      property="og:description"
-      content="Nature's disinfectant, indoors and continuous. Eliminating up to 99.9% of airborne and surface contaminants across the GCC."
-    />
-    <meta property="og:image" content="/assets/og/og-cover.jpg" />
-    <meta property="og:url" content="https://ecoairtech.ae/" />
+    <meta property="og:site_name" content="Eco AirTech" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />

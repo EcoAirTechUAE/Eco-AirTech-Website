@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run prerender",
+    "prerender": "vite build --ssr src/prerender.tsx --outDir .prerender --logLevel error && node .prerender/prerender.js",
+    "verify": "vite build --ssr src/verify.tsx --outDir .verify --logLevel error && node .verify/verify.js",
     "preview": "vite preview",
     "lint": "tsc -b --noEmit"
   },

@@ -10,3 +10,4 @@ dist-ssr
 
 # Build output of the SSR smoke test (src/verify.tsx)
 .verify
+.prerender

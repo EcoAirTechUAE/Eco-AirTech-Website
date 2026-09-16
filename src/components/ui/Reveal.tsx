@@ -22,7 +22,12 @@ export function Reveal({ children, className, i = 0, as: Tag = "div" }: RevealPr
   const reduced = useReducedMotion();
   const { ref, inView } = useInView<HTMLDivElement>();
 
-  if (reduced) {
+  // During prerender there is no viewport and no IntersectionObserver, so
+  // inView would be false and every section would be written to the static
+  // HTML at opacity-0 — invisible to anything that does not run our JS, which
+  // includes most crawlers and link unfurlers. Render plainly instead: the
+  // browser re-renders on boot and the animation runs from there.
+  if (reduced || typeof window === "undefined") {
     return <Tag className={className}>{children}</Tag>;
   }
 

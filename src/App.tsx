@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { Seo } from "@/components/layout/Seo";
 
 import Home from "@/pages/Home";
 import Technology from "@/pages/Technology";
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <div className="flex min-h-dvh flex-col">
       <ScrollToTop />
+      <Seo />
       <Header />
 
       <main id="main" className="flex-1" style={{ paddingTop: "var(--header-h)" }}>
