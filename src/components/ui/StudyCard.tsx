@@ -13,7 +13,7 @@ function KindBadge({ kind }: { kind: Study["kind"] }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider",
+        "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[0.8125rem] uppercase tracking-wider",
         kind === "lab"
           ? "border-line-strong text-muted"
           : "border-accent/30 bg-accent/10 text-accent",
@@ -33,7 +33,7 @@ function SpeciesChart({ species }: { species: NonNullable<Study["species"]> }) {
     <div className="mt-6">
       <div className="mb-4 flex items-center justify-between">
         <p className="font-mono text-eyebrow uppercase text-faint">{species.unit}</p>
-        <div className="flex items-center gap-4 font-mono text-[11px] text-faint">
+        <div className="flex items-center gap-4 font-mono text-[0.8125rem] text-faint">
           <span className="flex items-center gap-1.5">
             <span aria-hidden className="h-2 w-2 rounded-full bg-warn" /> Before
           </span>
@@ -59,7 +59,7 @@ function SpeciesChart({ species }: { species: NonNullable<Study["species"]> }) {
                 >
                   {row.species}
                 </p>
-                <p className="tnum shrink-0 font-mono text-xs text-faint">
+                <p className="tnum shrink-0 font-mono text-[0.8125rem] text-faint">
                   {row.before.toLocaleString()} → {row.after.toLocaleString()}
                   {reduction !== null && (
                     <span className="ml-2 text-accent">−{reduction}%</span>
@@ -94,7 +94,7 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
     <article className={cn("card p-6 sm:p-8", className)}>
       <div className="flex flex-wrap items-center gap-3">
         <KindBadge kind={study.kind} />
-        <p className="font-mono text-[11px] uppercase tracking-wider text-faint">{study.setting}</p>
+        <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">{study.setting}</p>
       </div>
 
       <h3 className="mt-5 text-display-sm font-medium">{study.headline}</h3>
@@ -109,13 +109,13 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
             <caption className="sr-only">Measured reductions for {study.title}</caption>
             <thead>
               <tr className="border-b border-line-strong text-left">
-                <th scope="col" className="py-2.5 pr-4 font-mono text-[11px] uppercase tracking-wider text-faint">
+                <th scope="col" className="py-2.5 pr-4 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Contaminant
                 </th>
-                <th scope="col" className="py-2.5 pr-4 font-mono text-[11px] uppercase tracking-wider text-faint">
+                <th scope="col" className="py-2.5 pr-4 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Medium
                 </th>
-                <th scope="col" className="py-2.5 text-right font-mono text-[11px] uppercase tracking-wider text-faint">
+                <th scope="col" className="py-2.5 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Reduced
                 </th>
               </tr>
@@ -137,7 +137,7 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
         <blockquote className="mt-7 border-l-2 border-accent/40 pl-5">
           <Quote aria-hidden className="mb-3 h-4 w-4 text-accent/50" />
           <p className="text-[0.95rem] italic leading-relaxed text-ink/90">“{study.quote.text}”</p>
-          <footer className="mt-3 text-xs text-faint">
+          <footer className="mt-3 text-[0.8125rem] text-faint">
             <span className="text-muted">{study.quote.author}</span> · {study.quote.role}
           </footer>
         </blockquote>
@@ -154,7 +154,7 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
           ] as const
         ).map(([label, value]) => (
           <div key={label}>
-            <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">{label}</dt>
+            <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">{label}</dt>
             <dd className="mt-1 text-muted">{value}</dd>
           </div>
         ))}
@@ -163,7 +163,7 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
       {study.notes && (
         <ul className="mt-6 space-y-2">
           {study.notes.map((note) => (
-            <li key={note} className="flex gap-2.5 text-xs leading-relaxed text-faint">
+            <li key={note} className="flex gap-2.5 text-[0.8125rem] leading-relaxed text-faint">
               <span aria-hidden className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/50" />
               {note}
             </li>

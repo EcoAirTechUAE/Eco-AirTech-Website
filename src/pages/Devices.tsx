@@ -44,7 +44,7 @@ export default function Devices() {
                       <th
                         key={h}
                         scope="col"
-                        className="py-3 pr-6 font-mono text-[11px] uppercase tracking-wider text-faint"
+                        className="py-3 pr-6 font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                       >
                         {h}
                       </th>
@@ -60,7 +60,7 @@ export default function Devices() {
                       <td className="tnum py-5 pr-6 text-muted">
                         {device.coverage}
                         {device.coverageNote && (
-                          <span className="block text-xs text-faint">{device.coverageNote}</span>
+                          <span className="block text-[0.8125rem] text-faint">{device.coverageNote}</span>
                         )}
                       </td>
                       <td className="py-5 pr-6 text-muted">{device.mount}</td>

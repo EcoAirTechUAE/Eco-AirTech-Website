@@ -30,7 +30,7 @@ export function FilterProcess() {
                 >
                   <span className="absolute inset-1 rounded-full bg-accent" />
                 </span>
-                <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-accent">
+                <p className="mt-6 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                   {step.n}
                 </p>
                 <h3 className="mt-2 text-xl font-medium">{step.title}</h3>
@@ -42,7 +42,7 @@ export function FilterProcess() {
           <Reveal i={3}>
             <ul className="mt-14 grid gap-x-8 gap-y-4 border-t border-line pt-8 sm:grid-cols-2">
               {odogardProcess.properties.map((p) => (
-                <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted">
+                <li key={p} className="flex gap-3 body-text">
                   <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
                   {p}
                 </li>
@@ -90,7 +90,7 @@ export function FilterProcess() {
                     decoding="async"
                     className="mb-4 h-14 w-14 rounded-full object-cover ring-1 ring-accent/40"
                   />
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                     Nanofibre removes
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-2">
@@ -114,14 +114,14 @@ export function FilterProcess() {
                     decoding="async"
                     className="mb-4 h-14 w-14 rounded-full object-cover ring-1 ring-accent/40"
                   />
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                     ODOGard® destroys
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {reduces.odogard.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full border border-accent/25 bg-accent/[0.07] px-3 py-1.5 text-xs text-accent"
+                        className="rounded-full border border-accent/25 bg-accent/[0.07] px-3 py-1.5 text-[0.8125rem] text-accent"
                       >
                         {item}
                       </li>
@@ -137,7 +137,7 @@ export function FilterProcess() {
             {series.map((s, i) => (
               <Reveal key={s.name} i={i}>
                 <div className="card h-full p-7">
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                     {s.name}
                   </p>
                   <h3 className="mt-3 text-lg font-medium">{s.forWhat}</h3>

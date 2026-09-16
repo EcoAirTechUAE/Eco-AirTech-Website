@@ -35,7 +35,7 @@ export function FilterMyth() {
                         <Check aria-hidden className="h-4 w-4 shrink-0 text-accent" />
                         {item.name}
                       </span>
-                      <span className="tnum shrink-0 font-mono text-xs text-faint">{item.size}</span>
+                      <span className="tnum shrink-0 font-mono text-[0.8125rem] text-faint">{item.size}</span>
                     </li>
                   ))}
                 </ul>
@@ -56,7 +56,7 @@ export function FilterMyth() {
                         <MoveRight aria-hidden className="h-4 w-4 shrink-0 text-warn" />
                         <span className="truncate">{item.name}</span>
                       </span>
-                      <span className="tnum shrink-0 font-mono text-[11px] text-faint">
+                      <span className="tnum shrink-0 font-mono text-[0.8125rem] text-faint">
                         {item.size}
                       </span>
                     </li>

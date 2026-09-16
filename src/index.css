@@ -214,6 +214,21 @@
     }
   }
 
+  /*
+    Secondary body copy — card bullets, step descriptions, figure captions.
+
+    Was text-sm (14px). These blocks are not labels; they carry real reading,
+    and at 14px in --muted they sat noticeably smaller than the 16px paragraph
+    directly above them in the same card. Raised to 16px so muted body copy is
+    one size everywhere, whatever its role.
+
+    A class rather than 32 copies of the same three utilities, so the next
+    size change is one edit and cannot be applied unevenly.
+  */
+  .body-text {
+    @apply text-base leading-relaxed text-muted;
+  }
+
   .card {
     @apply rounded-xl border border-line bg-surface/70 backdrop-blur-sm;
   }

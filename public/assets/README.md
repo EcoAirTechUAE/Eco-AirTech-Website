@@ -75,7 +75,7 @@ in place.
 
 ## Client logos — supplied ✅
 
-`clients/jumeirah.png` · `heathrow.png` · `nhs.png` · `ihg.png` · `owtc.png` ·
+`clients/jumeirah.png` · `nhs.png` · `ihg.png` · `owtc.png` ·
 `mod.png` · `dio.png` · `cvs.png` · `lq.png` · `great-places.png`
 
 All ten were normalised from mixed source files (white-on-transparent,

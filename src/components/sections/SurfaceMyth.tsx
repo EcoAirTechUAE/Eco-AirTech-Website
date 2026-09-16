@@ -32,7 +32,7 @@ export function SurfaceMyth() {
                 </span>
                 <div>
                   <h3 className="text-lg font-medium">{surfaceMyth.above.title}</h3>
-                  <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted">
+                  <p className="mt-2 max-w-prose body-text">
                     {surfaceMyth.above.body}
                   </p>
                 </div>
@@ -72,7 +72,7 @@ export function SurfaceMyth() {
                         <Icon className="h-5 w-5" />
                       </span>
                       <h3 className="mt-5 text-base font-medium">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+                      <p className="mt-2 body-text">{item.body}</p>
                     </li>
                   );
                 })}

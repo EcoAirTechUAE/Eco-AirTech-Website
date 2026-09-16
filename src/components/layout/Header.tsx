@@ -152,9 +152,6 @@ export function Header() {
             <a href={`mailto:${site.contact.email}`} className="block hover:text-ink">
               {site.contact.email}
             </a>
-            <a href={`tel:${site.contact.phoneHref}`} className="mt-1 block hover:text-ink">
-              {site.contact.phoneDisplay}
-            </a>
           </div>
         </nav>
       </div>

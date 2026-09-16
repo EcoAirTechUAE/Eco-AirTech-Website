@@ -49,7 +49,7 @@ export default function Industries() {
                       className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent"
                     />
                     {industry.video && (
-                      <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-bg/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-accent backdrop-blur-sm">
+                      <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-bg/70 px-2.5 py-1 font-mono text-[0.8125rem] uppercase tracking-wider text-accent backdrop-blur-sm">
                         <Play aria-hidden className="h-2.5 w-2.5 fill-current" />
                         Film
                       </span>
@@ -57,7 +57,7 @@ export default function Industries() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-7">
-                    <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
+                    <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                       {industry.kicker}
                     </p>
                     <h2 className="mt-3 flex items-start justify-between gap-3 text-2xl font-medium">
@@ -70,7 +70,7 @@ export default function Industries() {
                     <p className="mt-4 flex-1 leading-relaxed text-muted">{industry.summary}</p>
 
                     {industry.proof && (
-                      <p className="tnum mt-7 border-t border-line pt-5 font-mono text-xs text-faint">
+                      <p className="tnum mt-7 border-t border-line pt-5 font-mono text-[0.8125rem] text-faint">
                         <span className="text-accent">{industry.proof.value}</span>{" "}
                         {industry.proof.label}
                         <span className="mt-1 block normal-case text-faint/70">

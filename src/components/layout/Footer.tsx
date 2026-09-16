@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Mail, MapPin, Linkedin, Instagram, Youtube } from "lucide-react";
 import { site, whatsappLink } from "@/config/site";
 import { devices } from "@/content/devices";
 import { industries } from "@/content/industries";
@@ -20,7 +20,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
+            <p className="mt-5 max-w-xs body-text">
               Nature-based air technology, running continuously — so the air indoors is as clean as
               the air outdoors ought to be.
             </p>
@@ -33,15 +33,6 @@ export function Footer() {
                 >
                   <Mail aria-hidden className="h-4 w-4 shrink-0 text-faint" />
                   {site.contact.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${site.contact.phoneHref}`}
-                  className="flex items-center gap-2.5 text-muted transition-colors hover:text-accent"
-                >
-                  <Phone aria-hidden className="h-4 w-4 shrink-0 text-faint" />
-                  {site.contact.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center gap-2.5 text-muted">
@@ -90,7 +81,7 @@ export function Footer() {
           />
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-xs text-faint sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-[0.8125rem] text-faint sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
@@ -109,7 +100,7 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="mt-6 max-w-3xl text-[11px] leading-relaxed text-faint/70">
+        <p className="mt-6 max-w-3xl text-[0.8125rem] leading-relaxed text-faint/70">
           Performance figures shown across this site are drawn from independent laboratory and field
           testing, each published with the product configuration, technologies, duration and test
           conditions that produced it. Results vary with building type, air handling system,

@@ -32,7 +32,6 @@ export const trustHeading = {
 export const clientLogos: ClientLogo[] = [
   { name: "Jumeirah", logo: "/assets/clients/jumeirah.png" },
   { name: "Dubai Holding", logo: "/assets/clients/dubai-holding.png" },
-  { name: "Heathrow", logo: "/assets/clients/heathrow.png" },
   { name: "NHS", logo: "/assets/clients/nhs.png" },
   { name: "InterContinental Hotels Group", logo: "/assets/clients/ihg.png", short: "IHG" },
   { name: "One World Trade Center", logo: "/assets/clients/owtc.png", short: "One WTC" },

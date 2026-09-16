@@ -79,7 +79,7 @@ export function WhatsAppFab() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-flex text-xs font-medium text-accent hover:underline"
+            className="mt-3 inline-flex text-[0.8125rem] font-medium text-accent hover:underline"
           >
             Start a conversation →
           </a>

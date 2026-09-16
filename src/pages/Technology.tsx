@@ -21,7 +21,7 @@ export default function Technology() {
     <>
       <PageHero
         eyebrow="The technology"
-        title="Hydroxyls do outdoors what nothing indoors was doing."
+        title="Hydroxyls bring nature's air-cleaning process indoors."
         lead="Sunlight and humidity react in the atmosphere to produce hydroxyls, which break contamination down continuously and without residue. Our ARC® cell reproduces that reaction inside your building. Here is exactly how, and why it reaches what cleaning cannot."
         crumbs={[{ label: "Technology" }]}
       />
@@ -39,7 +39,7 @@ export default function Technology() {
                 <h3 className="text-base font-medium">{group.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted">
+                    <li key={item} className="flex gap-3 body-text">
                       <span
                         aria-hidden
                         className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/60"

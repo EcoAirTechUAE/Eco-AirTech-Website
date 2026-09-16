@@ -126,7 +126,8 @@ export const growthTimeline = {
 
 export const factors = {
   eyebrow: "Not one root cause",
-  headline: "It is a building systems problem, not a cleaning problem.",
+  headline:
+    "This isn't a surface-cleaning problem — it's an indoor environmental systems problem.",
   body: "Growth is rarely caused by any single failure. It emerges where moisture, organic material, temperature and time overlap — a combination of ambient humidity, ocean air, HVAC design, building age, outdoor spores carried in through doors and windows, and ordinary human activity. Chasing a single source is why the problem keeps returning.",
   groups: [
     {

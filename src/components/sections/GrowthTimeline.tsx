@@ -38,11 +38,11 @@ export function GrowthTimeline() {
                   />
                 </div>
 
-                <p className="tnum font-mono text-[11px] uppercase tracking-wider" style={{ color: hue }}>
+                <p className="tnum font-mono text-[0.8125rem] uppercase tracking-wider" style={{ color: hue }}>
                   {step.time}
                 </p>
                 <h3 className="mt-3 text-base font-medium leading-snug">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                <p className="mt-2 body-text">{step.body}</p>
               </Reveal>
             );
           })}

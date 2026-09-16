@@ -18,7 +18,7 @@ export function SafetyBand() {
               </span>
               <h2 className="mt-6 text-display-sm font-medium">{safety.headline}</h2>
               <p className="mt-5 max-w-prose leading-relaxed text-muted">{safety.body}</p>
-              <p className="mt-6 font-mono text-[11px] uppercase tracking-wider text-faint">
+              <p className="mt-6 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 {safety.footnote}
               </p>
             </div>

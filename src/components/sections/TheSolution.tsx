@@ -26,7 +26,7 @@ export function EquationGraphic({ className }: { className?: string }) {
               <p className="text-3xl font-medium leading-none tracking-tight text-ink sm:text-4xl">
                 {part.symbol}
               </p>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-accent">
+              <p className="mt-3 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                 {part.label}
               </p>
               <p className="mt-2 text-xs leading-relaxed text-muted">{part.detail}</p>
@@ -47,7 +47,7 @@ export function EquationGraphic({ className }: { className?: string }) {
           <p className="text-3xl font-medium leading-none tracking-tight text-gradient sm:text-4xl">
             {equation.result.symbol}
           </p>
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-accent">
+          <p className="mt-3 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
             {equation.result.label}
           </p>
           <p className="mt-2 text-xs leading-relaxed text-muted">{equation.result.detail}</p>
@@ -92,7 +92,7 @@ export function TheSolution() {
               ratio="aspect-[2/1]"
               className="w-full object-contain"
             />
-            <figcaption className="border-t border-line px-6 py-5 text-sm leading-relaxed text-muted sm:px-8">
+            <figcaption className="border-t border-line px-6 py-5 body-text sm:px-8">
               <span className="text-ink">Inside the ARC® cell.</span> Air is drawn through a
               honeycomb catalyst and across the UV lamp. The reaction converts the water vapour
               already in that air into hydroxyls, which leave with the airflow and carry on working
@@ -112,7 +112,7 @@ export function TheSolution() {
                 <span aria-hidden className="h-px flex-1 bg-line" />
               </div>
               <h3 className="mt-5 text-base font-medium leading-snug">{step.title}</h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-muted">{step.body}</p>
+              <p className="mt-2.5 body-text">{step.body}</p>
             </Reveal>
           ))}
         </ol>
@@ -127,7 +127,7 @@ export function TheSolution() {
                 <p className="mt-5 leading-relaxed text-ink/90">{pillar.summary}</p>
                 <ul className="mt-6 space-y-4 border-t border-line pt-6">
                   {pillar.points.map((point) => (
-                    <li key={point} className="flex gap-3.5 text-sm leading-relaxed text-muted">
+                    <li key={point} className="flex gap-3.5 body-text">
                       <span
                         aria-hidden
                         className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"

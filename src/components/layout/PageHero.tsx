@@ -27,7 +27,7 @@ export function PageHero({
         {crumbs && (
           <Reveal>
             <nav aria-label="Breadcrumb">
-              <ol className="flex flex-wrap items-center gap-1.5 text-xs text-faint">
+              <ol className="flex flex-wrap items-center gap-1.5 text-[0.8125rem] text-faint">
                 <li>
                   <Link to="/" className="transition-colors hover:text-accent">
                     Home

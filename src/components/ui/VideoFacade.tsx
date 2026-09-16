@@ -68,7 +68,7 @@ export function VideoFacade({
               <p className="eyebrow mb-2.5">Film</p>
               <p className="text-base font-medium text-ink sm:text-lg">{video.title}</p>
               {import.meta.env.DEV && (
-                <p className="mt-2 font-mono text-[11px] text-faint">
+                <p className="mt-2 font-mono text-[0.8125rem] text-faint">
                   dev only — add this video's ID in src/config/site.ts
                 </p>
               )}

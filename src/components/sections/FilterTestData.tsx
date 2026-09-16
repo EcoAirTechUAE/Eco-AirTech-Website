@@ -21,7 +21,7 @@ export function FilterTestData() {
           <dl className="grid gap-6 border-y border-line py-6 sm:grid-cols-2 lg:grid-cols-4">
             {ashrae.conditions.map((c) => (
               <div key={c.label}>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   {c.label}
                 </dt>
                 <dd className="tnum mt-1.5 text-sm font-medium text-ink">{c.value}</dd>
@@ -35,7 +35,7 @@ export function FilterTestData() {
           {ashrae.composites.map((c, i) => (
             <Reveal key={c.band} i={i}>
               <div className="card h-full p-6">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   {c.band}
                   <span className="tnum ml-2 normal-case tracking-normal">{c.range}</span>
                 </p>
@@ -51,7 +51,7 @@ export function FilterTestData() {
         </div>
 
         <Reveal i={1}>
-          <p className="mt-8 max-w-2xl border-l-2 border-accent/40 pl-5 text-sm leading-relaxed text-muted">
+          <p className="mt-8 max-w-2xl border-l-2 border-accent/40 pl-5 body-text">
             {ashrae.note}
           </p>
         </Reveal>
@@ -66,19 +66,19 @@ export function FilterTestData() {
               <tr className="border-b border-line-strong">
                 <th
                   scope="col"
-                  className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
+                  className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                 >
                   Particle size (μm)
                 </th>
                 <th
                   scope="col"
-                  className="py-3 pr-6 text-right font-mono text-[11px] uppercase tracking-wider text-faint"
+                  className="py-3 pr-6 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                 >
                   MERV 11A
                 </th>
                 <th
                   scope="col"
-                  className="py-3 text-right font-mono text-[11px] uppercase tracking-wider text-accent"
+                  className="py-3 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-accent"
                 >
                   MERV 13A
                 </th>
@@ -160,25 +160,25 @@ export function FilterTestData() {
                 <tr className="border-b border-line-strong">
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     Flow rate (CFM)
                   </th>
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     Velocity (FPM)
                   </th>
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-right font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     MERV 11A
                   </th>
                   <th
                     scope="col"
-                    className="py-3 text-right font-mono text-[11px] uppercase tracking-wider text-accent"
+                    className="py-3 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-accent"
                   >
                     MERV 13A
                   </th>
@@ -200,7 +200,7 @@ export function FilterTestData() {
           </Reveal>
 
           <Reveal i={3}>
-            <p className="mt-6 font-mono text-[11px] leading-relaxed text-faint">
+            <p className="mt-6 font-mono text-[0.8125rem] leading-relaxed text-faint">
               Measured in {pressureDrop.unit}. {pressureDrop.note}
             </p>
           </Reveal>

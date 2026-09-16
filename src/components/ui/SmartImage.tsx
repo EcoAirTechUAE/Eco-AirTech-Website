@@ -31,7 +31,7 @@ export function SmartImage({ src, alt, className, label, ratio = "aspect-[4/3]" 
       >
         <span aria-hidden className="h-8 w-8 rounded-full bg-accent/10 ring-1 ring-accent/25" />
         <p className="text-sm text-muted">{label ?? alt}</p>
-        <code className="font-mono text-[11px] text-faint">{src}</code>
+        <code className="font-mono text-[0.8125rem] text-faint">{src}</code>
       </div>
     );
   }

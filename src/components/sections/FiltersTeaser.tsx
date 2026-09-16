@@ -23,17 +23,17 @@ export function FiltersTeaser() {
             <ol className="mt-8 space-y-6">
               {twoStage.stages.map((stage) => (
                 <li key={stage.n} className="flex gap-5">
-                  <span className="tnum mt-0.5 shrink-0 font-mono text-[11px] uppercase tracking-wider text-accent">
+                  <span className="tnum mt-0.5 shrink-0 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                     {stage.n}
                   </span>
                   <div>
                     <p className="text-base font-medium text-ink">
                       {stage.title}
-                      <span className="ml-3 font-mono text-[11px] uppercase tracking-wider text-faint">
+                      <span className="ml-3 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                         {stage.tag}
                       </span>
                     </p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-muted">{stage.body}</p>
+                    <p className="mt-1.5 body-text">{stage.body}</p>
                   </div>
                 </li>
               ))}
@@ -64,7 +64,7 @@ export function FiltersTeaser() {
           <Reveal i={1}>
             <div className="card p-6 sm:p-8">
               <h3 className="text-lg font-medium">{vsCarbon.headline}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{vsCarbon.body}</p>
+              <p className="mt-2 body-text">{vsCarbon.body}</p>
 
               <dl className="mt-8 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-3">
                 {vsCarbon.stats.map((s) => (
@@ -79,7 +79,7 @@ export function FiltersTeaser() {
                 ))}
               </dl>
 
-              <p className="mt-6 border-t border-line pt-5 text-sm leading-relaxed text-muted">
+              <p className="mt-6 border-t border-line pt-5 body-text">
                 {odogardProcess.body}
               </p>
             </div>

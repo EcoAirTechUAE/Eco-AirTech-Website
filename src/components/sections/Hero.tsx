@@ -77,7 +77,7 @@ export function Hero() {
             <dl className="mt-14 grid max-w-lg grid-cols-3 gap-6 border-t border-line pt-7">
               {facts.map((f) => (
                 <div key={f.label}>
-                  <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                  <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                     {f.label}
                   </dt>
                   <dd className="tnum mt-1.5 text-sm font-medium text-ink">{f.value}</dd>

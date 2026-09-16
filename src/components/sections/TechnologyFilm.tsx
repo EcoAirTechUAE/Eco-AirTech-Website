@@ -28,7 +28,7 @@ export function TechnologyFilm() {
               <p className="text-xl italic leading-snug text-ink/90 sm:text-2xl">
                 {ambition.statement}
               </p>
-              <footer className="mt-3 font-mono text-[11px] uppercase tracking-wider text-faint">
+              <footer className="mt-3 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 {ambition.eyebrow}
               </footer>
             </blockquote>
@@ -54,11 +54,11 @@ export function TechnologyFilm() {
                   {airflowSteps.map((step) => (
                     <li key={step.n}>
                       <span aria-hidden className="block h-px w-8 bg-accent/50" />
-                      <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-accent">
+                      <p className="mt-4 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                         {step.n}
                       </p>
                       <h3 className="mt-2 text-base font-medium text-ink">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-muted">{step.body}</p>
+                      <p className="mt-2 body-text">{step.body}</p>
                     </li>
                   ))}
                 </ol>

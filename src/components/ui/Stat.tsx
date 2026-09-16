@@ -30,7 +30,7 @@ export function Stat({
         {suffix && <span className="text-[0.5em] leading-[1.4]">{suffix}</span>}
       </p>
       <p className="mt-4 text-sm font-medium leading-snug text-ink">{label}</p>
-      {context && <p className="mt-1 font-mono text-xs leading-snug text-faint">{context}</p>}
+      {context && <p className="mt-1 font-mono text-[0.8125rem] leading-snug text-faint">{context}</p>}
     </div>
   );
 }

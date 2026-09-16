@@ -108,7 +108,7 @@ export const odogardProcess = {
 /** Head-to-head against the incumbent technology. */
 export const vsCarbon = {
   eyebrow: "Against carbon",
-  headline: "The filter most buildings already use, beaten on its own ground.",
+  headline: "Transform your existing HVAC into a more effective air treatment system.",
   body: "Activated carbon is the default answer to odour and VOCs. It adsorbs — it holds molecules on a surface until that surface is saturated, and in humid Gulf air a good share of that capacity is spent on water vapour rather than on what you wanted removed.",
   stats: [
     { value: "140%", label: "Greater VOC reduction", context: "versus carbon filters" },

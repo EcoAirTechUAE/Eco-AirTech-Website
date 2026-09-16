@@ -42,7 +42,7 @@ export default function Filters() {
         <Reveal i={3}>
           <div className="mt-10 flex max-w-2xl items-start gap-4 border-l-2 border-accent/40 pl-5">
             <Award aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-            <p className="text-sm leading-relaxed text-muted">
+            <p className="body-text">
               <span className="text-ink">{award.name}</span>, {award.org}. {award.body}
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function Filters() {
                 <p className="mt-5 leading-relaxed text-muted">{nanofiber.body}</p>
                 <ul className="mt-7 space-y-3 border-t border-line pt-6">
                   {nanofiber.points.map((point) => (
-                    <li key={point} className="flex gap-3 text-sm leading-relaxed text-muted">
+                    <li key={point} className="flex gap-3 body-text">
                       <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                       {point}
                     </li>
@@ -99,14 +99,14 @@ export default function Filters() {
                 <p className="mt-3 text-lg italic text-accent">{odogard.claim}</p>
                 <p className="mt-5 leading-relaxed text-muted">{odogard.body}</p>
                 <div className="mt-7 border-t border-line pt-6">
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                  <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                     What ODOGard® treats
                   </p>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {odogard.treats.map((item) => (
                       <li
                         key={item}
-                        className="rounded-full border border-accent/25 bg-accent/[0.07] px-3 py-1.5 text-xs text-accent"
+                        className="rounded-full border border-accent/25 bg-accent/[0.07] px-3 py-1.5 text-[0.8125rem] text-accent"
                       >
                         {item}
                       </li>
@@ -134,21 +134,21 @@ export default function Filters() {
                 <li key={feature.title}>
                   <span aria-hidden className="block h-px w-10 bg-accent" />
                   <h3 className="mt-4 text-base font-medium">{feature.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{feature.body}</p>
+                  <p className="mt-2 body-text">{feature.body}</p>
                 </li>
               ))}
             </ul>
 
             {/* Specifying better filtration usually costs airflow. Here it doesn't. */}
             <div className="mt-12 border-t border-line pt-8">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 And what it does for the system
               </p>
               <dl className="mt-6 grid gap-6 sm:grid-cols-2">
                 {hvacBenefits.map((b) => (
                   <div key={b.title}>
                     <dt className="text-base font-medium text-ink">{b.title}</dt>
-                    <dd className="mt-1.5 text-sm leading-relaxed text-muted">{b.body}</dd>
+                    <dd className="mt-1.5 body-text">{b.body}</dd>
                   </div>
                 ))}
               </dl>
@@ -175,7 +175,7 @@ export default function Filters() {
                 <tr className="border-b border-line-strong">
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     Particulate
                   </th>
@@ -184,7 +184,7 @@ export default function Filters() {
                       key={col}
                       scope="col"
                       className={cn(
-                        "py-3 text-center font-mono text-[11px] uppercase tracking-wider",
+                        "py-3 text-center font-mono text-[0.8125rem] uppercase tracking-wider",
                         i === efficacyMatrix.columns.length - 1 ? "text-accent" : "text-faint",
                       )}
                     >
@@ -242,7 +242,7 @@ export default function Filters() {
           </Reveal>
 
           <Reveal i={1}>
-            <p className="mt-8 max-w-2xl border-l-2 border-warn/40 pl-5 text-sm leading-relaxed text-muted">
+            <p className="mt-8 max-w-2xl border-l-2 border-warn/40 pl-5 body-text">
               {efficacyMatrix.footnote}
             </p>
           </Reveal>
@@ -278,13 +278,13 @@ export default function Filters() {
                   <th
                     colSpan={filterComparison.others.length}
                     scope="colgroup"
-                    className="rounded-t-lg border-x border-t border-line bg-surface/40 px-4 py-2.5 text-center font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="rounded-t-lg border-x border-t border-line bg-surface/40 px-4 py-2.5 text-center font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     {filterComparison.othersLabel}
                   </th>
                   <th
                     scope="colgroup"
-                    className="rounded-t-lg border-x border-t border-accent/40 bg-accent/[0.07] px-4 py-2.5 text-center font-mono text-[11px] uppercase tracking-wider text-accent"
+                    className="rounded-t-lg border-x border-t border-accent/40 bg-accent/[0.07] px-4 py-2.5 text-center font-mono text-[0.8125rem] uppercase tracking-wider text-accent"
                   >
                     {filterComparison.oursLabel}
                   </th>
@@ -292,7 +292,7 @@ export default function Filters() {
                 <tr className="border-b border-line-strong">
                   <th
                     scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[11px] uppercase tracking-wider text-faint"
+                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
                   >
                     Capability
                   </th>
@@ -300,14 +300,14 @@ export default function Filters() {
                     <th
                       key={col}
                       scope="col"
-                      className="border-x border-line bg-surface/40 px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider text-muted"
+                      className="border-x border-line bg-surface/40 px-4 py-3 text-center font-mono text-[0.8125rem] uppercase tracking-wider text-muted"
                     >
                       {col}
                     </th>
                   ))}
                   <th
                     scope="col"
-                    className="border-x border-accent/40 bg-accent/[0.07] px-4 py-3 text-center font-mono text-[11px] uppercase tracking-wider text-accent"
+                    className="border-x border-accent/40 bg-accent/[0.07] px-4 py-3 text-center font-mono text-[0.8125rem] uppercase tracking-wider text-accent"
                   >
                     {filterComparison.ours}
                   </th>
@@ -373,7 +373,7 @@ export default function Filters() {
           {/* States plainly where HEPA wins. A comparison that claims to beat
               everything at everything reads as marketing, not evidence. */}
           <Reveal i={1}>
-            <p className="mt-8 max-w-3xl border-l-2 border-line-strong pl-5 text-sm leading-relaxed text-muted">
+            <p className="mt-8 max-w-3xl border-l-2 border-line-strong pl-5 body-text">
               {filterComparison.note}
             </p>
           </Reveal>

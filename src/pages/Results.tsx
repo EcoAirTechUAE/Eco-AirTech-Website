@@ -95,7 +95,7 @@ export default function Results() {
             </div>
           </Reveal>
 
-          <p aria-live="polite" className="mt-6 font-mono text-xs text-faint">
+          <p aria-live="polite" className="mt-6 font-mono text-[0.8125rem] text-faint">
             Showing {visible.length} of {studies.length} studies
           </p>
 
@@ -125,20 +125,20 @@ export default function Results() {
 
             <div className="mt-9 rounded-xl border border-line bg-surface/60 p-6">
               <h3 className="text-base font-medium">{testingMethod.sampling.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="mt-2 body-text">
                 {testingMethod.sampling.body}
               </p>
               <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-5 sm:grid-cols-3">
                 {testingMethod.sampling.specs.map((spec) => (
                   <div key={spec.label}>
-                    <dt className="font-mono text-[10px] uppercase tracking-wider text-faint">
+                    <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                       {spec.label}
                     </dt>
                     <dd className="tnum mt-1 text-sm font-medium text-ink">{spec.value}</dd>
                   </div>
                 ))}
               </dl>
-              <p className="mt-5 text-xs leading-relaxed text-faint">
+              <p className="mt-5 text-[0.8125rem] leading-relaxed text-faint">
                 {testingMethod.sampling.detects}
               </p>
             </div>
@@ -146,13 +146,13 @@ export default function Results() {
 
           <Reveal i={1} className="space-y-4">
             <div className="rounded-xl border border-accent/30 bg-accent/[0.06] p-6 sm:p-7">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
+              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                 {testingMethod.comparison.live.subtitle}
               </p>
               <h3 className="mt-3 text-lg font-medium">{testingMethod.comparison.live.title}</h3>
               <ul className="mt-5 space-y-3.5">
                 {testingMethod.comparison.live.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted">
+                  <li key={p} className="flex gap-3 body-text">
                     <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     {p}
                   </li>
@@ -161,7 +161,7 @@ export default function Results() {
             </div>
 
             <div className="rounded-xl border border-line bg-surface/60 p-6 sm:p-7">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 {testingMethod.comparison.lab.subtitle}
               </p>
               <h3 className="mt-3 text-lg font-medium text-muted">
@@ -169,7 +169,7 @@ export default function Results() {
               </h3>
               <ul className="mt-5 space-y-3.5">
                 {testingMethod.comparison.lab.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted">
+                  <li key={p} className="flex gap-3 body-text">
                     <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faint" />
                     {p}
                   </li>
@@ -181,7 +181,7 @@ export default function Results() {
 
         <div className="container mt-16">
           <Reveal>
-            <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+            <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
               Our testing partners
             </p>
             <PartnerRow partners={testingPartners} className="mt-6" />
@@ -209,7 +209,7 @@ function FilterChip({
       onClick={onClick}
       aria-pressed={active}
       className={cn(
-        "rounded-full border px-3.5 py-1.5 text-xs transition-colors duration-200",
+        "rounded-full border px-3.5 py-1.5 text-[0.8125rem] transition-colors duration-200",
         active
           ? "border-accent/50 bg-accent/10 text-accent"
           : "border-line-strong text-muted hover:border-accent/30 hover:text-ink",

@@ -26,7 +26,7 @@ export function DeviceCard({ device, className }: { device: Device; className?: 
         />
       </div>
 
-      <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{device.kicker}</p>
+      <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">{device.kicker}</p>
 
       <h3 className="mt-3 flex items-start justify-between gap-3 text-2xl font-medium">
         {device.article}
@@ -41,7 +41,7 @@ export function DeviceCard({ device, className }: { device: Device; className?: 
         {device.coverageNote && <span className="text-faint"> {device.coverageNote}</span>}
       </p>
 
-      <p className="mt-5 flex-1 text-sm leading-relaxed text-muted">{device.summary}</p>
+      <p className="mt-5 flex-1 body-text">{device.summary}</p>
 
       <dl className="mt-7 grid grid-cols-2 gap-4 border-t border-line pt-6">
         {device.stats.slice(0, 2).map((stat) => (
@@ -50,7 +50,7 @@ export function DeviceCard({ device, className }: { device: Device; className?: 
             <dd>
               <span className="tnum block text-xl font-medium text-accent">{stat.value}</span>
               <span className="mt-1 block text-xs leading-snug text-muted">{stat.label}</span>
-              <span className="mt-0.5 block font-mono text-[10px] uppercase tracking-wider text-faint">
+              <span className="mt-0.5 block font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 {stat.condition}
               </span>
             </dd>

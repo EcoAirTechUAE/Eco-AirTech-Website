@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { AlertCircle, CheckCircle2, Loader2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { AlertCircle, CheckCircle2, Loader2, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Button, ButtonAnchor } from "@/components/ui/Button";
@@ -90,10 +90,10 @@ export function ContactSection() {
             <ol className="mt-10 space-y-5">
               {steps.map((step, i) => (
                 <li key={step} className="flex gap-4">
-                  <span className="tnum mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-accent/30 font-mono text-[11px] text-accent">
+                  <span className="tnum mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-accent/30 font-mono text-[0.8125rem] text-accent">
                     {i + 1}
                   </span>
-                  <p className="text-sm leading-relaxed text-muted">{step}</p>
+                  <p className="body-text">{step}</p>
                 </li>
               ))}
             </ol>
@@ -105,13 +105,6 @@ export function ContactSection() {
               >
                 <Mail aria-hidden className="h-4 w-4 shrink-0 text-faint" />
                 {site.contact.email}
-              </a>
-              <a
-                href={`tel:${site.contact.phoneHref}`}
-                className="flex items-center gap-3 text-sm text-muted transition-colors hover:text-accent"
-              >
-                <Phone aria-hidden className="h-4 w-4 shrink-0 text-faint" />
-                {site.contact.phoneDisplay}
               </a>
               <p className="flex items-center gap-3 text-sm text-muted">
                 <MapPin aria-hidden className="h-4 w-4 shrink-0 text-faint" />
@@ -138,7 +131,7 @@ export function ContactSection() {
                 <div className="flex min-h-[26rem] flex-col items-center justify-center text-center">
                   <CheckCircle2 aria-hidden className="h-10 w-10 text-accent" />
                   <h3 className="mt-6 text-2xl font-medium">Thank you — that's with us.</h3>
-                  <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
+                  <p className="mt-3 max-w-sm body-text">
                     We'll come back to you within one working day. If it's urgent, WhatsApp is the
                     fastest way to reach the team.
                   </p>
@@ -236,7 +229,7 @@ export function ContactSection() {
                       )}
                       {status === "sending" ? "Sending…" : "Request an assessment"}
                     </Button>
-                    <p className="text-xs text-faint">
+                    <p className="text-[0.8125rem] text-faint">
                       We'll only use your details to respond to this enquiry.
                     </p>
                   </div>

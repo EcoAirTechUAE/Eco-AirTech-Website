@@ -60,7 +60,7 @@ export function IndustriesGrid() {
                 />
 
                 {industry.video && (
-                  <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-bg/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-accent backdrop-blur-sm">
+                  <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-bg/70 px-2.5 py-1 font-mono text-[0.8125rem] uppercase tracking-wider text-accent backdrop-blur-sm">
                     <Play aria-hidden className="h-2.5 w-2.5 fill-current" />
                     Film
                   </span>
@@ -70,7 +70,7 @@ export function IndustriesGrid() {
                   <h3 className="text-lg font-medium leading-snug">{industry.name}</h3>
                   <p className="mt-1 text-xs text-muted">{industry.kicker}</p>
                   {industry.proof && (
-                    <p className="tnum mt-4 border-t border-line pt-3 font-mono text-[11px] text-faint">
+                    <p className="tnum mt-4 border-t border-line pt-3 font-mono text-[0.8125rem] text-faint">
                       <span className="text-accent">{industry.proof.value}</span>{" "}
                       {industry.proof.label}
                     </p>

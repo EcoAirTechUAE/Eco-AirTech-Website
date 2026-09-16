@@ -50,13 +50,13 @@ export function ProofBand() {
 
             <div className="mt-9 rounded-xl border border-line bg-surface/60 p-6">
               <h4 className="text-base font-medium text-ink">{testingMethod.sampling.title}</h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="mt-2 body-text">
                 {testingMethod.sampling.body}
               </p>
               <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-5 sm:grid-cols-3">
                 {testingMethod.sampling.specs.map((spec) => (
                   <div key={spec.label}>
-                    <dt className="font-mono text-[10px] uppercase tracking-wider text-faint">
+                    <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                       {spec.label}
                     </dt>
                     <dd className="tnum mt-1 text-sm font-medium text-ink">{spec.value}</dd>
@@ -68,13 +68,13 @@ export function ProofBand() {
 
           <Reveal i={1} className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-xl border border-accent/30 bg-accent/[0.06] p-6">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-accent">
+              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                 {testingMethod.comparison.live.subtitle}
               </p>
               <h4 className="mt-3 text-lg font-medium">{testingMethod.comparison.live.title}</h4>
               <ul className="mt-5 space-y-3.5">
                 {testingMethod.comparison.live.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted">
+                  <li key={p} className="flex gap-3 body-text">
                     <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     {p}
                   </li>
@@ -83,7 +83,7 @@ export function ProofBand() {
             </div>
 
             <div className="rounded-xl border border-line bg-surface/60 p-6">
-              <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                 {testingMethod.comparison.lab.subtitle}
               </p>
               <h4 className="mt-3 text-lg font-medium text-muted">
@@ -91,7 +91,7 @@ export function ProofBand() {
               </h4>
               <ul className="mt-5 space-y-3.5">
                 {testingMethod.comparison.lab.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted">
+                  <li key={p} className="flex gap-3 body-text">
                     <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faint" />
                     {p}
                   </li>
@@ -102,7 +102,7 @@ export function ProofBand() {
         </div>
 
         <Reveal i={2} className="mt-16">
-          <p className="font-mono text-[11px] uppercase tracking-wider text-faint">
+          <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
             Our testing partners
           </p>
           <PartnerRow partners={testingPartners} className="mt-6" />

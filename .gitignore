@@ -7,3 +7,6 @@ dist-ssr
 *.tsbuildinfo
 .env
 .env.local
+
+# Build output of the SSR smoke test (src/verify.tsx)
+.verify

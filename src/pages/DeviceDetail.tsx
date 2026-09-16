@@ -44,7 +44,7 @@ export default function DeviceDetail() {
                       {stat.value}
                     </span>
                     <span className="mt-3 block text-sm leading-snug text-ink">{stat.label}</span>
-                    <span className="mt-1 block font-mono text-[10px] uppercase tracking-wider text-faint">
+                    <span className="mt-1 block font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                       {stat.condition}
                     </span>
                   </dd>
@@ -85,7 +85,7 @@ export default function DeviceDetail() {
             <h2 className="text-display-sm font-medium">Why this unit</h2>
             <dl className="mt-8 space-y-5 border-t border-line pt-7 text-sm">
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Coverage
                 </dt>
                 <dd className="tnum mt-1 text-ink">
@@ -93,13 +93,13 @@ export default function DeviceDetail() {
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Mounting
                 </dt>
                 <dd className="mt-1 text-ink">{device.mount}</dd>
               </div>
               <div>
-                <dt className="font-mono text-[11px] uppercase tracking-wider text-faint">
+                <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                   Best suited to
                 </dt>
                 <dd className="mt-2">
@@ -128,7 +128,7 @@ export default function DeviceDetail() {
                 <p className="text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
                   “{device.quote.text}”
                 </p>
-                <footer className="mt-3 text-xs text-faint">
+                <footer className="mt-3 text-[0.8125rem] text-faint">
                   <span className="text-muted">{device.quote.author}</span> · {device.quote.role}
                 </footer>
               </blockquote>
@@ -145,7 +145,7 @@ export default function DeviceDetail() {
               <Reveal as="li" key={feature.title} i={i}>
                 <span aria-hidden className="block h-px w-10 bg-accent" />
                 <h3 className="mt-5 text-base font-medium leading-snug">{feature.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">{feature.body}</p>
+                <p className="mt-2.5 body-text">{feature.body}</p>
               </Reveal>
             ))}
           </ul>
@@ -163,10 +163,10 @@ export default function DeviceDetail() {
               {device.variants.map((variant, i) => (
                 <Reveal key={variant.title} i={i}>
                   <article className="card h-full p-7">
-                    <h3 className="font-mono text-[11px] uppercase tracking-wider text-accent">
+                    <h3 className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                       {variant.title}
                     </h3>
-                    <p className="mt-4 text-sm leading-relaxed text-muted">{variant.body}</p>
+                    <p className="mt-4 body-text">{variant.body}</p>
                   </article>
                 </Reveal>
               ))}

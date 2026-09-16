@@ -82,8 +82,11 @@ export const site = {
     whatsappMessage:
       "Hello Eco AirTech — I'd like to know more about improving the air quality in my space.",
 
-    email: "hello@ecoairtech.ae", // TODO
-    // Same line as WhatsApp. Split these if a separate landline is added.
+    email: "hello@eco-airtech.com",
+
+    // Deliberately not rendered anywhere at present — enquiries are directed
+    // to WhatsApp and email only. Kept so restoring the phone is a UI change
+    // rather than hunting for the number again.
     phoneDisplay: "+971 50 738 2560",
     phoneHref: "+971507382560",
 

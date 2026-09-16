@@ -89,14 +89,14 @@ export default function IndustryDetail() {
 
           <Reveal i={1}>
             <div className="card p-7 sm:p-8">
-              <h2 className="font-mono text-[11px] uppercase tracking-wider text-accent">
+              <h2 className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
                 What matters here
               </h2>
               <ul className="mt-7 space-y-7">
                 {industry.concerns.map((concern) => (
                   <li key={concern.title}>
                     <h3 className="text-base font-medium leading-snug">{concern.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{concern.body}</p>
+                    <p className="mt-2 body-text">{concern.body}</p>
                   </li>
                 ))}
               </ul>
@@ -153,7 +153,7 @@ export default function IndustryDetail() {
                   to={`/industries/${other.slug}`}
                   className="group flex h-full flex-col justify-between rounded-xl border border-line bg-surface/50 p-5 transition-colors hover:border-accent/40 hover:bg-surface"
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-faint">
+                  <span className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
                     {other.kicker}
                   </span>
                   <span className="mt-6 flex items-center justify-between gap-2 text-base font-medium">

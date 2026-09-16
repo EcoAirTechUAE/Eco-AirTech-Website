@@ -26,7 +26,7 @@ function Wrapper({
     <div className={className}>
       <label htmlFor={id} className="mb-2 block text-sm font-medium text-ink">
         {label}
-        {!required && <span className="ml-1.5 text-xs font-normal text-faint">optional</span>}
+        {!required && <span className="ml-1.5 text-[0.8125rem] font-normal text-faint">optional</span>}
       </label>
       {children}
       {error ? (
@@ -34,7 +34,7 @@ function Wrapper({
           {error}
         </p>
       ) : (
-        hint && <p className="mt-2 text-xs text-faint">{hint}</p>
+        hint && <p className="mt-2 text-[0.8125rem] text-faint">{hint}</p>
       )}
     </div>
   );
