@@ -310,7 +310,7 @@ export function HydroxylField({
       // and nothing acting on them, and the plume only appeared once a
       // precursor happened to reach the cell. The claim is that this runs
       // continuously, so it should be mid-cycle the moment the page paints.
-      for (let i = 0; i < ambientFloor; i++) spawnAmbient();
+      for (let i = 0; i < Math.round(ambientFloor * 0.42); i++) spawnAmbient();
       emitPair();
       sinceEmit = 0;
     }
@@ -367,7 +367,7 @@ export function HydroxylField({
 
     /** Soft cone at the outlet, so the stream reads as coming out of the unit. */
     function drawPlume(t: number) {
-      const breathe = 0.82 + Math.sin(t * 1.25) * 0.18;
+      const breathe = (0.82 + Math.sin(t * 1.25) * 0.18) * (0.55 + 0.45 * settle);
       const nx = -dirY;
       const ny = dirX;
       const tipX = srcX + dirX * plumeLen * breathe;
@@ -400,6 +400,21 @@ export function HydroxylField({
       ctx!.globalCompositeOperation = "source-over";
     }
 
+    /**
+     * Seconds since the animation started, and the ease that rides on it.
+     *
+     * Starting mid-cycle was right: the claim is that this runs continuously,
+     * so an empty room on load undersells it. But arriving at full speed and
+     * full population reads as a rush in the first moment of the page. The
+     * field now opens calm and settles up to its normal rate over a few
+     * seconds, by which point the visitor is reading rather than being
+     * startled by movement.
+     */
+    const SETTLE_SECONDS = 5;
+    let elapsed = 0;
+    /** 0 on load, 1 once settled. Smoothstepped so there is no gear change. */
+    let settle = 0;
+
     let sinceEmit = 0;
 
     function frame(now: number) {
@@ -410,6 +425,10 @@ export function HydroxylField({
       }
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
+
+      elapsed += dt;
+      const ramp = Math.min(1, elapsed / SETTLE_SECONDS);
+      settle = ramp * ramp * (3 - 2 * ramp);
       const t = now / 1000;
 
       ctx!.clearRect(0, 0, w, h);
@@ -463,14 +482,14 @@ export function HydroxylField({
 
       sinceEmit += dt;
       // Keep the stream going even if no precursor happens to arrive.
-      if (sinceEmit > 0.75 && hydroxyls.length < maxHydroxyls - 1) {
+      if (sinceEmit > 1.7 - 0.95 * settle && hydroxyls.length < maxHydroxyls - 1) {
         emitPair();
         sinceEmit = 0;
       }
 
       // Top the room back up as they expire, so the far side of the hero
       // never runs empty while the plume is busy near the unit.
-      if (hydroxyls.length < ambientFloor) spawnAmbient();
+      if (hydroxyls.length < Math.round(ambientFloor * (0.42 + 0.58 * settle))) spawnAmbient();
 
       // ---- 3. Contaminants: virus, bacterium, mould spore -----------------
       for (const c of contaminants) {
@@ -549,8 +568,9 @@ export function HydroxylField({
             const dx = target.x - hx.x;
             const dy = target.y - hx.y;
             const d = Math.hypot(dx, dy) || 1;
-            hx.vx += (dx / d) * 62 * dt;
-            hx.vy += (dy / d) * 62 * dt;
+            const chase = 26 + 36 * settle;
+            hx.vx += (dx / d) * chase * dt;
+            hx.vy += (dy / d) * chase * dt;
             // Contact is measured against the organism's own body, not a
             // fixed radius: a bacterium is nearly twice the reach of a spore,
             // and a shared number made the hit land visibly short on one and
@@ -564,9 +584,10 @@ export function HydroxylField({
           }
 
           const speed = Math.hypot(hx.vx, hx.vy);
-          if (speed > 58) {
-            hx.vx = (hx.vx / speed) * 58;
-            hx.vy = (hx.vy / speed) * 58;
+          const cap = 26 + 32 * settle;
+          if (speed > cap) {
+            hx.vx = (hx.vx / speed) * cap;
+            hx.vy = (hx.vy / speed) * cap;
           }
         }
 
