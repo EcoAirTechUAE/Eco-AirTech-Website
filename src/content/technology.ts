@@ -62,7 +62,7 @@ export const surfaceMyth = {
   eyebrow: "The comfortable assumption",
   headline: "Cleaning reaches what you can see. The problem lives underneath it.",
   intro:
-    "Wiping a surface, changing a filter, repainting a wall: each removes the visible layer. But microbial contamination is a living, reproducing organism, and its structure survives well beneath the part you can see.",
+    "Wiping a surface, cleaning a filter or cleaning an HVAC unit may remove visible contamination, but it does not necessarily address the source. Microorganisms, spores and biofilms can persist in porous materials, hidden surfaces and ventilation systems, and can return within days when the right conditions remain: moisture, high humidity and an available nutrient source.",
   above: {
     label: "Above the surface: what cleaning reaches",
     title: "Visible growth & settled dust",
