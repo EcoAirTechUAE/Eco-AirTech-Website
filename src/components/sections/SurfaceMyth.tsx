@@ -1,9 +1,16 @@
-import { Eye, Layers, Wind, RotateCw } from "lucide-react";
+import { Eye, EyeOff, Wind, Timer } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { surfaceMyth } from "@/content/technology";
 
-const icons = [Layers, Wind, RotateCw];
+/**
+ * Positional, matching `surfaceMyth.below.items`: hidden reservoirs, then
+ * continuous reintroduction, then rapid recurrence. EyeOff deliberately
+ * answers the Eye on the block above, which is the contrast the whole
+ * section is drawing; Timer rather than a cycle arrow because what makes
+ * the third point land is how fast it comes back, not that it repeats.
+ */
+const icons = [EyeOff, Wind, Timer];
 
 export function SurfaceMyth() {
   return (

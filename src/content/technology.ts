@@ -64,30 +64,30 @@ export const surfaceMyth = {
   intro:
     "Wiping a surface, cleaning a filter or cleaning an HVAC unit may remove visible contamination, but it does not necessarily address the source. Microorganisms, spores and biofilms can persist in porous materials, hidden surfaces and ventilation systems, and can return within days when the right conditions remain: moisture, high humidity and an available nutrient source.",
   above: {
-    label: "Above the surface: what cleaning reaches",
-    title: "Visible growth & settled dust",
-    body: "Removed by wiping, by AC filter changes and by standard cleaning. Genuinely useful, but only ever the portion you can actually see.",
-    note: "Most cleaning and AC maintenance stops here.",
+    label: "Above the surface: what cleaning removes",
+    title: "Visible dust, debris & surface contamination",
+    body: "Removed by wiping, filter replacement and HVAC cleaning. Important and genuinely useful, but typically focused on what is accessible and visible at the time of cleaning.",
+    note: "Cleaning is essential, but it is only one part of the solution.",
   },
   below: {
-    label: "At a molecular level: what remains",
+    label: "Beyond the surface: what can remain",
     items: [
       {
-        title: "Embedded structures",
-        body: "Microscopic spores lodge deep in plaster, grout, timber, insulation and fabric, untouched by any surface treatment.",
+        title: "Hidden reservoirs",
+        body: "Spores, particles and microbial contamination can persist in porous materials, insulation, coils, drain pans, ductwork and other hard-to-reach areas beyond the visible surface.",
       },
       {
-        title: "Airborne reservoir",
-        body: "A living organism keeps releasing millions of spores back into the air long after the surface looks and smells clean.",
+        title: "Continuous reintroduction",
+        body: "Even after cleaning, outdoor air, occupant activity, moisture and HVAC circulation can continuously reintroduce particulates, microbes and odour-causing compounds into the indoor environment.",
       },
       {
-        title: "The recolonisation cycle",
-        body: "Return the same moisture and warmth and growth simply resumes. The organism was never actually removed.",
+        title: "Rapid recurrence",
+        body: "If moisture, humidity, warmth and nutrient sources remain, microbial growth can return quickly, sometimes within 24 to 48 hours in favourable conditions.",
       },
     ],
   },
   close:
-    "Contamination does not need to be visible to be active. Removing it means working at a molecular level, continuously, not cleaning once.",
+    "Contamination does not have to be visible to persist. Cleaning is important, but in environments where moisture, humidity and airborne pollutants are continually present, maintaining healthier indoor air quality often requires a continuous solution, not a one-time intervention.",
 };
 
 export const filterMyth = {
