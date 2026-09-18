@@ -168,7 +168,7 @@ export const airflowSteps = [
   {
     n: "03",
     title: "Contaminants neutralised",
-    body: "Hydroxyl radicals break mould, bacteria, viruses, VOCs and odours down into harmless molecules.",
+    body: "Hydroxyl radicals react with airborne pollutants, helping break down VOCs and odours while inactivating bacteria, viruses and mould spores.",
   },
 ];
 
