@@ -163,7 +163,7 @@ export const airflowSteps = [
   {
     n: "02",
     title: "ARC® technology activated",
-    body: "UV-C light activates a proprietary catalyst, converting the moisture already in that air into hydroxyl radicals (•OH).",
+    body: "Moisture, oxygen and UV-C light react with our proprietary metallic catalyst, creating very stable hydroxyl radicals (•OH).",
   },
   {
     n: "03",
