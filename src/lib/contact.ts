@@ -1,21 +1,13 @@
 /**
  * The single network touch point for enquiries.
  *
- * Nothing else in the app makes a request. To go live, replace the body of
- * `submitContact` with a real call — a Supabase insert, a Formspree endpoint,
- * an edge function — and everything upstream keeps working unchanged.
+ * Nothing else in the app makes a request. The form posts to /api/contact,
+ * which emails the enquiry to the team; see api/contact.ts for the endpoint
+ * and the environment variables it needs.
  *
- *   Supabase example:
- *     const { error } = await supabase.from('enquiries').insert(data)
- *     if (error) throw new Error(error.message)
- *
- *   Formspree example:
- *     const res = await fetch('https://formspree.io/f/XXXXXXX', {
- *       method: 'POST',
- *       headers: { 'Content-Type': 'application/json' },
- *       body: JSON.stringify(data),
- *     })
- *     if (!res.ok) throw new Error('Submission failed')
+ * The validation below is duplicated on the server. That is deliberate: this
+ * copy exists to give the visitor an answer without a round trip, and the
+ * server copy exists because a public endpoint cannot trust its caller.
  */
 
 export interface ContactPayload {
@@ -65,19 +57,43 @@ export function validate(data: ContactPayload): FieldErrors {
   return errors;
 }
 
+const FALLBACK_ERROR =
+  "We could not send that just now. Please message us on WhatsApp and we will pick it up.";
+
 export async function submitContact(data: ContactPayload): Promise<void> {
   // Honeypot: a bot filled the hidden field. Resolve silently so it learns nothing.
   if (data.website) return;
 
-  // TODO: replace with a real submission target before launch.
-  if (import.meta.env.DEV) {
-    // eslint-disable-next-line no-console
-    console.info("[contact] submitContact() is still a stub. Payload:", data);
+  let res: Response;
+  try {
+    res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+  } catch {
+    // Offline, or the request never left the device.
+    throw new Error(FALLBACK_ERROR);
   }
 
-  await new Promise((resolve) => setTimeout(resolve, 700));
+  if (res.ok) return;
 
-  throw new Error(
-    "This form isn't connected yet. Please reach us on WhatsApp or by email in the meantime.",
-  );
+  // The endpoint returns a plain-English `error` for anything the visitor can
+  // act on — not configured yet, provider down — so prefer it to a generic
+  // message. Anything else means the response was not the shape we expect.
+  let body: { error?: string; errors?: Record<string, string> } = {};
+  try {
+    body = await res.json();
+  } catch {
+    throw new Error(FALLBACK_ERROR);
+  }
+
+  if (body.errors) {
+    // Server-side validation disagreed with the client's. Surface the first
+    // message rather than a generic failure, so the visitor can fix it.
+    const first = Object.values(body.errors)[0];
+    throw new Error(first || FALLBACK_ERROR);
+  }
+
+  throw new Error(body.error || FALLBACK_ERROR);
 }
