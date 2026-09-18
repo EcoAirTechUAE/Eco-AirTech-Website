@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { ButtonLink, ButtonAnchor } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
@@ -14,11 +15,16 @@ const facts = [
 ];
 
 export function Hero() {
+  // The hydroxyls stream out of the actual render rather than a hardcoded
+  // point, so the plume stays on the unit when the layout reflows and when
+  // the columns stack on a phone.
+  const deviceRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="relative overflow-hidden">
       {/* Sits behind the headline and lockup, so it is deliberately dialled
-          down — legible as movement, never competing with the text. */}
-      <HydroxylField density={0.85} opacity={0.8} />
+          down: legible as movement, never competing with the text. */}
+      <HydroxylField density={0.85} opacity={0.8} sourceRef={deviceRef} />
 
       {/*
         The headline leads; the product render balances it. Columns are close
@@ -93,7 +99,7 @@ export function Hero() {
           here.
         */}
         <Reveal i={2} className="relative hero-render-offset">
-          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div ref={deviceRef} className="relative mx-auto w-full max-w-md lg:max-w-none">
             <Bloom intensity="lg" className="scale-125" />
             <SmartImage
               src="/assets/devices/hero-ptac.png"
