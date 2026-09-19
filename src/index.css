@@ -215,6 +215,49 @@
   }
 
   /*
+    Dissolves the bottom of a product render into the page.
+
+    The studio renders carry their own mirror reflection, and the PNG canvas
+    crops it mid-fall. Once the black background is keyed out that crop reads
+    as a hard horizontal line across the page. There is nothing in the asset
+    to soften it: on hero-ptac.png the final pixel row is still at 63%
+    coverage and mean alpha 147, so the reflection runs at near-full strength
+    straight into the edge.
+
+    The fade starts at 80%, below the lowest point of the device itself, so
+    only the reflection is touched and the product stays crisp. The stops
+    approximate a smoothstep curve — a plain two-stop gradient ramps linearly
+    and the start of the fade then reads as its own faint edge, which is the
+    problem again in a quieter form.
+
+    mask-repeat and mask-size are set explicitly: mask-repeat initially
+    computes to `repeat`, which would tile a fresh full-opacity copy of the
+    gradient into the drop-shadow spill below the box.
+  */
+  .render-fade {
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 80%,
+      rgba(0, 0, 0, 0.844) 85%,
+      rgba(0, 0, 0, 0.5) 90%,
+      rgba(0, 0, 0, 0.156) 95%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 80%,
+      rgba(0, 0, 0, 0.844) 85%,
+      rgba(0, 0, 0, 0.5) 90%,
+      rgba(0, 0, 0, 0.156) 95%,
+      transparent 100%
+    );
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  /*
     Secondary body copy — card bullets, step descriptions, figure captions.
 
     Was text-sm (14px). These blocks are not labels; they carry real reading,

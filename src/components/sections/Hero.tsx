@@ -107,7 +107,7 @@ export function Hero() {
               alt="The PTAC unit, shown with its casing separated to reveal the ARC® cell and UV lamp"
               label="PTAC product render"
               ratio="aspect-[3/2]"
-              className="h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
+              className="render-fade h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
             />
           </div>
         </Reveal>
