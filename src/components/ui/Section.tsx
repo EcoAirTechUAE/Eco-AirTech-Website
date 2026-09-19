@@ -18,7 +18,11 @@ export function Section({ id, children, className, tight, surface }: SectionProp
       id={id}
       className={cn(
         "relative",
-        tight ? "py-16 sm:py-20" : "py-24 sm:py-32",
+        // Two adjacent sections stack their padding, so these numbers land on
+        // the page doubled: the default reads as 224px between sections on
+        // desktop, not 112px. It was 8rem a side, which put 256px of empty
+        // page between one section's last line and the next one's eyebrow.
+        tight ? "py-16 sm:py-20" : "py-24 sm:py-28",
         surface && "border-y border-line bg-surface/40",
         className,
       )}
