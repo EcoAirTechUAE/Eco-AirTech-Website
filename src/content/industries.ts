@@ -259,28 +259,29 @@ export const industries: Industry[] = [
     name: "Hospitality & Venues",
     kicker: "Restaurants, cafés & event spaces",
     summary:
-      "Kitchens, crowds and long service hours produce a gas-phase load that extraction dilutes but never eliminates.",
+      "A dining room is judged the moment a guest walks in. The air is part of that experience, and it deserves the same care as the food and the service.",
     body: [
-      "Food service generates a continuous stream of cooking odours, grease aerosols and VOCs, alongside high occupancy and warm, humid back-of-house conditions. Extraction moves air; it does not clean it, and it does nothing for what has already settled in soft furnishings and ductwork.",
-      "The commercial consequence is straightforward: a dining room that smells of last night's service, or a function space that smells closed-up, damages the experience before anything is served.",
-      "ODOGard® addresses odour compounds at a molecular level rather than masking them, and the active technology treats the ductwork and back-of-house areas that extraction alone cannot reach.",
+      "Hospitality is the business of caring for guests, and the air is the one part of the experience every guest shares. In a full dining room people sit close together for hours, breathing the same recirculated air. We treat that air continuously while they dine, reducing what passes from one table to the next.",
+      "For most venues this is an investment in the guest experience: a room that feels fresh at the first seating and the last, an air quality standard you can evidence with independent test data, and a healthier environment for the team who work in it every day.",
+      "For venues already struggling with contamination, such as mould in the air conditioning, a persistent musty smell or a problem that returns after every deep clean, we remediate. The technology eliminates up to 99.9% of airborne and surface contaminants, reaches the ductwork and fan coils that cleaning cannot, and keeps running so the problem does not come back.",
+      "It retrofits into the air conditioning you already have and runs safely while the room is occupied, with no closure and no change to service.",
     ],
     concerns: [
       {
-        title: "Cooking odour carry-over",
-        body: "Gas-phase compounds that migrate into dining rooms and settle into furnishings.",
+        title: "Protecting guests as they dine",
+        body: "Continuous treatment of the air in the dining room itself, not only the air that happens to pass through a filter.",
       },
       {
-        title: "Back-of-house humidity",
-        body: "Warm, wet kitchen and store environments running for most of the day.",
+        title: "Cross-contamination between tables",
+        body: "Shared, recirculated air carries what one table breathes out to the next. Active treatment works in the space between them.",
       },
       {
-        title: "Grease in ductwork",
-        body: "An organic food source accumulating in exactly the place air is distributed from.",
+        title: "Remediation where there is a problem",
+        body: "Mould, bacteria and musty odours dealt with at the source, including inside the air conditioning system.",
       },
       {
-        title: "Variable occupancy",
-        body: "Function spaces that sit closed and cooled between events, then fill completely.",
+        title: "An investment guests can feel",
+        body: "A fresher room at every seating, backed by independently tested results rather than adjectives.",
       },
     ],
     devices: ["overwatch", "hvac", "ptac"],
