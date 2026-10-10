@@ -1,16 +1,10 @@
-import { useState } from "react";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { aRating, ashrae, pressureDrop } from "@/content/filters";
-import { cn } from "@/lib/utils";
+import { ashrae } from "@/content/filters";
 
 const pct = (s: string) => parseFloat(s);
 
 export function FilterTestData() {
-  // 2" is the common specification, so it opens on that rather than the first tab.
-  const [depth, setDepth] = useState(1);
-  const active = pressureDrop.sizes[depth];
-
   return (
     <Section surface>
       <div className="container">
@@ -116,102 +110,6 @@ export function FilterTestData() {
               ))}
             </tbody>
           </table>
-        </Reveal>
-
-        {/* Pressure drop */}
-        <div className="mt-24">
-          <Reveal>
-            <h3 className="text-display-sm font-medium">{pressureDrop.headline}</h3>
-            <p className="mt-5 max-w-prose leading-relaxed text-muted">{pressureDrop.body}</p>
-          </Reveal>
-
-          <Reveal i={1} className="mt-8">
-            <div
-              role="tablist"
-              aria-label="Filter depth"
-              className="inline-flex rounded-full border border-line p-1"
-            >
-              {pressureDrop.sizes.map((s, i) => (
-                <button
-                  key={s.depth}
-                  type="button"
-                  role="tab"
-                  aria-selected={depth === i}
-                  onClick={() => setDepth(i)}
-                  className={cn(
-                    "rounded-full px-5 py-2 font-mono text-xs uppercase tracking-wider transition-colors",
-                    depth === i
-                      ? "bg-accent text-[#04140A]"
-                      : "text-muted hover:text-ink",
-                  )}
-                >
-                  {s.depth}
-                </button>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal i={2} className="scroll-x mt-8">
-            <table className="w-full min-w-[520px] border-collapse text-sm">
-              <caption className="sr-only">
-                Pressure drop in inches water column for the {active.depth} filter
-              </caption>
-              <thead>
-                <tr className="border-b border-line-strong">
-                  <th
-                    scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
-                  >
-                    Flow rate (CFM)
-                  </th>
-                  <th
-                    scope="col"
-                    className="py-3 pr-6 text-left font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
-                  >
-                    Velocity (FPM)
-                  </th>
-                  <th
-                    scope="col"
-                    className="py-3 pr-6 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-faint"
-                  >
-                    MERV 11A
-                  </th>
-                  <th
-                    scope="col"
-                    className="py-3 text-right font-mono text-[0.8125rem] uppercase tracking-wider text-accent"
-                  >
-                    MERV 13A
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-line">
-                {active.rows.map((row) => (
-                  <tr key={row.cfm}>
-                    <th scope="row" className="tnum py-3.5 pr-6 text-left font-normal text-ink">
-                      {row.cfm}
-                    </th>
-                    <td className="tnum py-3.5 pr-6 text-muted">{row.fpm}</td>
-                    <td className="tnum py-3.5 pr-6 text-right text-muted">{row.merv11}</td>
-                    <td className="tnum py-3.5 text-right font-medium text-accent">{row.merv13}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Reveal>
-
-          <Reveal i={3}>
-            <p className="mt-6 font-mono text-[0.8125rem] leading-relaxed text-faint">
-              Measured in {pressureDrop.unit}. {pressureDrop.note}
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Why the rating carries an "A" */}
-        <Reveal className="mt-20">
-          <div className="card max-w-3xl p-7 sm:p-9">
-            <h3 className="text-xl font-medium sm:text-2xl">{aRating.title}</h3>
-            <p className="mt-5 leading-relaxed text-muted">{aRating.body}</p>
-          </div>
         </Reveal>
       </div>
     </Section>
