@@ -18,9 +18,7 @@ export function DevicesShowcase() {
               One technology. Five ways to fit it into a building.
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              Specification depends on served volume, air handling type and how a space is actually
-              used, so most buildings are addressed with a combination rather than a single unit.
-              Coverage across the range runs from{" "}
+              Every unit retrofits into what you already have, covering{" "}
               <span className="tnum text-ink">{rangeCoverage}</span>.
             </p>
           </Reveal>
@@ -36,7 +34,7 @@ export function DevicesShowcase() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {devices.map((device, i) => (
             <Reveal key={device.slug} i={i} className="h-full">
-              <DeviceCard device={device} className="h-full" />
+              <DeviceCard device={device} className="h-full" compact />
             </Reveal>
           ))}
         </div>

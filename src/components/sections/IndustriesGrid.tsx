@@ -20,9 +20,7 @@ export function IndustriesGrid() {
               The same technology. Very different reasons for wanting it.
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              A parent, a hotel general manager and a school principal are solving different
-              problems. Each sector below sets out what actually drives the decision there, and
-              what the evidence looks like.
+              Homes, hotels, schools and hospitals each have their own reasons. Pick yours.
             </p>
           </Reveal>
 
@@ -41,7 +39,7 @@ export function IndustriesGrid() {
             <Reveal as="li" key={industry.slug} i={i}>
               <Link
                 to={`/industries/${industry.slug}`}
-                className="group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-xl border border-line p-6 transition-colors duration-500 hover:border-accent/40"
+                className="group relative flex h-full min-h-[18rem] flex-col justify-end overflow-hidden rounded-xl border border-line p-6 transition-colors duration-500 hover:border-accent/40"
               >
                 <SmartImage
                   src={industry.image}
@@ -55,7 +53,7 @@ export function IndustriesGrid() {
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-bg via-bg/70 to-bg/20 transition-opacity duration-500 group-hover:from-bg group-hover:via-bg/60"
+                  className="absolute inset-0 bg-gradient-to-t from-bg via-bg/45 to-transparent transition-opacity duration-500 group-hover:via-bg/30"
                 />
 
                 {industry.video && (
@@ -68,12 +66,6 @@ export function IndustriesGrid() {
                 <div className="relative">
                   <h3 className="text-lg font-medium leading-snug">{industry.name}</h3>
                   <p className="mt-1 text-xs text-muted">{industry.kicker}</p>
-                  {industry.proof && (
-                    <p className="tnum mt-4 border-t border-line pt-3 font-mono text-[0.8125rem] text-faint">
-                      <span className="text-accent">{industry.proof.value}</span>{" "}
-                      {industry.proof.label}
-                    </p>
-                  )}
                 </div>
               </Link>
             </Reveal>

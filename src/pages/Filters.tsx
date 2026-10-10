@@ -5,7 +5,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Bloom } from "@/components/ui/Bloom";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { FilterMyth } from "@/components/sections/FilterMyth";
 import { FilterTestData } from "@/components/sections/FilterTestData";
 import { FilterProcess } from "@/components/sections/FilterProcess";
 import {
@@ -14,7 +13,6 @@ import {
   filterFeatures,
   filterIntro,
   filterComparison,
-  hvacBenefits,
   nanofiber,
   odogard,
 } from "@/content/filters";
@@ -29,10 +27,19 @@ export default function Filters() {
         title={filterIntro.headline}
         lead={filterIntro.subhead}
         crumbs={[{ label: "Filters" }]}
+        visual={
+          <div className="relative mx-auto aspect-square w-full max-w-sm lg:max-w-[26rem]">
+            <Bloom intensity="md" />
+            <SmartImage
+              src="/assets/filters/merv13a.png"
+              alt="MERV 13A nanofiber filter with ODOGard coating"
+              label="Filter product render"
+              ratio="aspect-square"
+              className="relative h-full w-full object-contain"
+            />
+          </div>
+        }
       >
-        <Reveal i={2}>
-          <p className="mt-8 max-w-2xl leading-relaxed text-muted">{filterIntro.body}</p>
-        </Reveal>
 
         <Reveal i={3}>
           <div className="mt-10 flex max-w-2xl items-start gap-4 border-l-2 border-accent/40 pl-5">
@@ -113,18 +120,7 @@ export default function Filters() {
           </div>
 
           <Reveal i={2} className="lg:sticky lg:top-28">
-            <div className="relative aspect-square">
-              <Bloom intensity="md" />
-              <SmartImage
-                src="/assets/filters/merv13a.png"
-                alt="MERV 13A nanofiber filter with ODOGard coating"
-                label="Filter product render"
-                ratio="aspect-square"
-                className="h-full w-full object-contain"
-              />
-            </div>
-
-            <ul className="mt-10 grid gap-7 sm:grid-cols-2">
+            <ul className="grid gap-7 sm:grid-cols-2">
               {filterFeatures.map((feature) => (
                 <li key={feature.title}>
                   <h3 className="text-base font-medium">{feature.title}</h3>
@@ -132,21 +128,6 @@ export default function Filters() {
                 </li>
               ))}
             </ul>
-
-            {/* Specifying better filtration usually costs airflow. Here it doesn't. */}
-            <div className="mt-12 border-t border-line pt-8">
-              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
-                And what it does for the system
-              </p>
-              <dl className="mt-6 grid gap-6 sm:grid-cols-2">
-                {hvacBenefits.map((b) => (
-                  <div key={b.title}>
-                    <dt className="text-base font-medium text-ink">{b.title}</dt>
-                    <dd className="mt-1.5 body-text">{b.body}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
           </Reveal>
         </div>
       </Section>
@@ -246,8 +227,6 @@ export default function Filters() {
       <FilterProcess />
 
       <FilterTestData />
-
-      <FilterMyth />
 
       {/* The paired-system proof */}
       <Section>

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Bloom } from "@/components/ui/Bloom";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { HydroxylField } from "@/components/ui/HydroxylField";
-import { equation, howItWorks, pillars } from "@/content/technology";
+import { equation, pillars } from "@/content/technology";
 import { cn } from "@/lib/utils";
 
 /** H₂O + O₂ + ARC® = AOPs, rendered as the actual equation it is. */
@@ -71,9 +71,9 @@ export function TheSolution() {
             Take the reaction that cleans the outdoor air, and run it inside.
           </h2>
           <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted">
-            Nothing exotic is being introduced into your building. The inputs are the water vapour
-            and oxygen already in the room. All our technology adds is the catalyst and the energy
-            that nature gets from sunlight.
+            Nothing exotic is introduced into your building. The inputs are the water vapour and
+            oxygen already in the room. We add the catalyst and the energy nature gets from
+            sunlight.
           </p>
         </Reveal>
 
@@ -93,28 +93,11 @@ export function TheSolution() {
             />
             <figcaption className="border-t border-line px-6 py-5 body-text sm:px-8">
               <span className="text-ink">Inside the ARC® cell.</span> Air is drawn through a
-              honeycomb catalyst and across the UV lamp. The reaction converts the water vapour
-              already in that air into hydroxyls, which leave with the airflow and carry on working
-              out in the room: on surfaces, in ducting, and in the cavities cleaning never reaches.
+              honeycomb catalyst and across the UV lamp, converting water vapour into hydroxyls
+              that leave with the airflow.
             </figcaption>
           </figure>
         </Reveal>
-
-        {/* The four-beat mechanism */}
-        <ol className="mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {howItWorks.map((step, i) => (
-            <Reveal as="li" key={step.n} i={i} className="relative">
-              <div className="flex items-baseline gap-4">
-                <span className="tnum text-4xl font-medium leading-none tracking-tight text-accent/30">
-                  {step.n}
-                </span>
-                <span aria-hidden className="h-px flex-1 bg-line" />
-              </div>
-              <h3 className="mt-5 text-base font-medium leading-snug">{step.title}</h3>
-              <p className="mt-2.5 body-text">{step.body}</p>
-            </Reveal>
-          ))}
-        </ol>
 
         {/* The two technologies, side by side */}
         <div className="mt-20 grid gap-6 lg:grid-cols-2">

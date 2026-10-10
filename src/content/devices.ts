@@ -40,7 +40,7 @@ export const devices: Device[] = [
     kicker: "In-duct · whole building",
     coverage: "800 – 3,300 sq ft",
     mount: "Installed into existing ductwork",
-    technologies: ["ARC® PCO", "Bi-Polar Ionisation"],
+    technologies: ["ARC®", "Bi-Polar Ionisation"],
     summary:
       "Our flagship in-duct system. Fitted inside the ductwork you already have, it turns the air conditioning that currently circulates contamination into the thing that removes it.",
     body: [
@@ -91,7 +91,7 @@ export const devices: Device[] = [
     kicker: "Free-standing · no installation",
     coverage: "up to 1,500 sq ft",
     mount: "Free-standing, plugged in and moved between rooms",
-    technologies: ["ARC® PCO", "Bi-Polar Ionisation", "ODOGard® HEPA+"],
+    technologies: ["ARC®", "Bi-Polar Ionisation", "ODOGard® HEPA+"],
     summary:
       "The whole system in a unit you can carry. No installation, no ductwork, no commitment. Plug it in and move it to wherever the problem is.",
     body: [
@@ -147,11 +147,11 @@ export const devices: Device[] = [
     kicker: "Wall mounted · room & zone",
     coverage: "up to 1,000 sq ft",
     mount: "Wall mounted, or fitted within AC ductwork",
-    technologies: ["ARC® PCO", "Bi-Polar Ionisation", "ODOGard® HEPA+ filter"],
+    technologies: ["ARC®", "Bi-Polar Ionisation", "ODOGard® HEPA+ filter"],
     summary:
       "The most tested unit in the range, and the one behind our strongest live-environment results. Compact enough to wall mount in a single room, powerful enough to hold a heavily contaminated one.",
     body: [
-      "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
+      "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® cell producing hydroxyls, and a bi-polar ionisation module.",
       "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on a 750+ with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
       "Its lightweight, compact design means it can be wall mounted in a room or placed within AC ductwork, and a transit variant is available for vehicles and enclosed cabins.",
     ],
@@ -167,7 +167,7 @@ export const devices: Device[] = [
         body: "Captures and neutralises unwanted VOCs and odours rather than simply holding them in the media.",
       },
       {
-        title: "ARC® advanced PCO",
+        title: "ARC® cell",
         body: "Produces hydroxyls that help prevent mould, mildew and allergens from pets, pollen and smoke from establishing.",
       },
       {
@@ -197,7 +197,7 @@ export const devices: Device[] = [
     kicker: "Internal mount · concealed",
     coverage: "up to 700 sq ft",
     mount: "Mounted inside HVAC ductwork where access is poor",
-    technologies: ["ARC® PCO"],
+    technologies: ["ARC®"],
     summary:
       "A permanently mounted internal unit for spaces where ductwork access is limited. It is also our clearest answer to the fan and coil surfaces inside your AC unit.",
     body: [
@@ -250,7 +250,7 @@ export const devices: Device[] = [
     coverage: "270 – 10,000 sq ft",
     coverageNote: "and up to 160,000 ft³",
     mount: "Ceiling suspended, wall mounted or roll-around",
-    technologies: ["ARC® PCO", "Bi-Polar Ionisation"],
+    technologies: ["ARC®", "Bi-Polar Ionisation"],
     summary:
       "Built for volume. Where a space is measured in cubic feet rather than floor area (warehouses, plant rooms, sports halls, food handling), this is the unit that covers it.",
     body: [

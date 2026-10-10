@@ -56,8 +56,20 @@ export function FilterTestData() {
           </p>
         </Reveal>
 
-        {/* Full fractional efficiency curve */}
-        <Reveal className="scroll-x mt-16">
+        {/* The band-by-band curve and pressure drops are for specifiers, so
+            they sit behind a disclosure rather than in everyone's way. */}
+        <details className="group mt-12 border-y border-line">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-base font-medium text-ink [&::-webkit-details-marker]:hidden">
+            Full test data: efficiency curve and pressure drop
+            <span
+              aria-hidden
+              className="text-2xl leading-none text-accent transition-transform duration-300 group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+
+        <div className="scroll-x pb-4 pt-6">
           <table className="w-full min-w-[560px] border-collapse text-sm">
             <caption className="sr-only">
               ASHRAE 52.2 initial fractional efficiency by particle size, MERV 11A against MERV 13A
@@ -116,10 +128,10 @@ export function FilterTestData() {
               ))}
             </tbody>
           </table>
-        </Reveal>
+        </div>
 
         {/* Pressure drop */}
-        <div className="mt-24">
+        <div className="mb-10 mt-16">
           <Reveal>
             <h3 className="text-display-sm font-medium">{pressureDrop.headline}</h3>
             <p className="mt-5 max-w-prose leading-relaxed text-muted">{pressureDrop.body}</p>
@@ -206,8 +218,10 @@ export function FilterTestData() {
           </Reveal>
         </div>
 
+        </details>
+
         {/* Why the rating carries an "A" */}
-        <Reveal className="mt-20">
+        <Reveal className="mt-14">
           <div className="card max-w-3xl p-7 sm:p-9">
             <h3 className="text-xl font-medium sm:text-2xl">{aRating.title}</h3>
             <p className="mt-5 leading-relaxed text-muted">{aRating.body}</p>

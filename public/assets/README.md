@@ -40,6 +40,7 @@ perfectly sharp at the sizes used here, so this is optional.
 | `devices/hvac.jpg` | **done** | 1000 × 667, on black. |
 | `devices/ptac.jpg` | **done** | 1000 × 634, on black. |
 | `devices/portable.jpg` | **done** | 533 × 1000, on black. |
+| `devices/750-plus-side.jpg` | **done** | 1000 × 1000, on black. The 750+ seen from below; hero image on `/devices`. |
 | `devices/overwatch.jpg` | **outstanding** | The only unit without a render — its card shows a labelled placeholder. |
 
 The supplied renders sit on black, so device cards frame them as product
@@ -61,6 +62,7 @@ in place.
 |---|---|---|
 | `tech/arc-cell-airflow.jpg` | **done** | 1400 × 691. ARC cell cutaway showing airflow. Flattened onto `#131C17` to match its container exactly. |
 | `tech/how-it-works.png` | **done** | 1200 × 403, transparent. Three-stage airflow diagram, cropped from `How technology works.png` (y 210–710) to drop the burnt-in captions — those are live text in `airflowSteps`. 570 KB is heavy for a PNG; a proper quantiser (pngquant/oxipng) would roughly halve it without visible loss. Alpha is required, so it cannot become a JPEG: the page background has scroll-fixed gradients behind it. |
+| `tech/hydroxyl-cycle.webp` | **done** | 840 × 1050, transparent. How hydroxyls form outdoors. Used on the homepage and the `/technology` hero. |
 | `tech/hydroxyl.png` | **done** | 187 × 177, transparent. Glow sprite used by the hydroxyl canvas animation. |
 
 ---

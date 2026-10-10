@@ -2,6 +2,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { DeviceCard } from "@/components/ui/DeviceCard";
+import { SmartImage } from "@/components/ui/SmartImage";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FiltersTeaser } from "@/components/sections/FiltersTeaser";
 import { devices, rangeCoverage } from "@/content/devices";
@@ -13,8 +14,19 @@ export default function Devices() {
       <PageHero
         eyebrow="The range"
         title="Five units. One technology."
-        lead={`Every device retrofits into existing systems, with no replacement plant and no redesign. Coverage runs from ${rangeCoverage}, and most buildings are specified as a combination rather than a single unit.`}
+        lead={`Every device retrofits into existing systems, with no replacement plant and no redesign. Coverage runs from ${rangeCoverage}.`}
         crumbs={[{ label: "Devices" }]}
+        visual={
+          <div className="mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl border border-line bg-black lg:max-w-[26rem]">
+            <SmartImage
+              src="/assets/devices/750-plus-side.jpg"
+              alt="The 750+ wall-mounted unit, seen from below"
+              label="750+ product render"
+              ratio="aspect-square"
+              className="h-full w-full object-contain p-8"
+            />
+          </div>
+        }
       />
 
       <Section>

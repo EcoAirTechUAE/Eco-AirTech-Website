@@ -1,11 +1,10 @@
 import { useRef } from "react";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ButtonLink, ButtonAnchor } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { HydroxylField } from "@/components/ui/HydroxylField";
 import { Bloom } from "@/components/ui/Bloom";
 import { Reveal } from "@/components/ui/Reveal";
-import { whatsappLink } from "@/config/site";
 import { rangeCoverage } from "@/content/devices";
 
 const facts = [
@@ -48,11 +47,10 @@ export function Hero() {
 
           <Reveal i={2}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-              Outdoors, sunlight drives natural atmospheric reactions that create hydroxyl
-              radicals; highly reactive molecules that help break down airborne contaminants. Our
-              systems reproduce that reaction inside your building, eliminating up to{" "}
-              <span className="text-ink">99.9% of airborne and surface contaminants</span>, and
-              never switching off.
+              Our systems reproduce the reaction that cleans the outdoor air, inside your
+              building, eliminating up to{" "}
+              <span className="text-ink">99.9% of airborne and surface contaminants</span> around
+              the clock.
             </p>
           </Reveal>
 
@@ -64,17 +62,6 @@ export function Hero() {
               </ButtonLink>
               <ButtonAnchor href="#film" variant="outline" size="lg">
                 See how it works
-              </ButtonAnchor>
-              <ButtonAnchor
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="ghost"
-                size="lg"
-                className="px-3"
-              >
-                <MessageCircle aria-hidden className="h-4 w-4" />
-                WhatsApp
               </ButtonAnchor>
             </div>
           </Reveal>
