@@ -183,27 +183,29 @@ export const industries: Industry[] = [
     name: "Schools & Nurseries",
     kicker: "Where children spend their days",
     summary:
-      "A 2025 study across Dubai and Sharjah schools found that while measures exist, more needs to be done, and that younger children are the most vulnerable.",
+      "Children share a classroom, a school bus and everything they bring back from the holidays. We help stop germs and bacteria spreading through the school day.",
     body: [
-      "Classrooms combine the highest occupant density of any building type with the youngest and most susceptible occupants. Thirty children in a sealed, air-conditioned room generate substantial humidity and particulate load, and recirculate it for the whole school day.",
-      "The consequences are not limited to health. Poor indoor air quality worsens asthma and allergies, and there is a well-established link between air quality and cognitive performance: attention, error rates and comprehension all decline as the air degrades. Parents increasingly ask about it directly.",
-      "Our units retrofit into existing school HVAC without disruption to teaching, and the resulting air standard can be evidenced with third-party testing rather than asserted. We have field-tested in educational settings, including a cleaning products store, a deliberately hostile gas-phase environment, where TVOC fell by 95%.",
+      "A classroom puts thirty children in a sealed, air-conditioned room for the whole school day, breathing the same recirculated air. They are the youngest and most susceptible occupants of any building, and what one child brings in, the class shares.",
+      "Every parent and teacher in the Gulf knows the pattern. Families travel over the summer, return on full flights, and in the first weeks of term the coughs and colds go round the class, then home to brothers, sisters and parents. The same happens after every holiday.",
+      "Our systems treat the air and surfaces in classrooms continuously while children are in them, reducing the germs, bacteria and mould that pass from child to child. The same technology fits the school bus, so protection starts on the journey in.",
+      "Cleaner air also supports learning. Poor indoor air quality worsens asthma and allergies, and attention and comprehension decline as the air degrades. A 2025 study across Dubai and Sharjah schools found that more needs to be done, and that younger children are the most vulnerable.",
+      "Units retrofit into existing school air conditioning without disruption to teaching, and the result can be evidenced with independent testing rather than asserted.",
     ],
     concerns: [
       {
-        title: "High occupant density",
-        body: "The most people per cubic metre of any building type, for six or more hours a day.",
+        title: "Stopping the spread in class",
+        body: "Thirty children in recirculated air for six or more hours a day. Continuous treatment works while they are in the room.",
       },
       {
-        title: "Asthma & allergy prevalence",
-        body: "Poor indoor air quality measurably worsens both, and children are disproportionately affected.",
+        title: "Back-to-school season",
+        body: "After summer and every holiday, illness arrives with returning families and moves through a class in days.",
       },
       {
-        title: "Concentration & learning",
-        body: "Cognitive performance is sensitive to air quality well before anyone reports feeling unwell.",
+        title: "Asthma, allergies & concentration",
+        body: "Poor air worsens both conditions and dulls attention well before anyone reports feeling unwell.",
       },
       {
-        title: "Parent expectations",
+        title: "Parent confidence",
         body: "A verifiable air standard is increasingly part of how families choose a school.",
       },
     ],
@@ -292,27 +294,29 @@ export const industries: Industry[] = [
     name: "Transportation",
     kicker: "Fleet, transit & aviation",
     summary:
-      "Small sealed volumes, continuous occupant turnover and recirculated air: the most concentrated exposure environment there is.",
+      "Travel puts people shoulder to shoulder in sealed, recirculated air. We protect passengers and crew by treating that air continuously, limiting the germs and bacteria carried from one journey to the next.",
     body: [
-      "A vehicle cabin is the hardest air quality problem in miniature: a very small volume, heavy occupant turnover, limited fresh air, and a recirculation system that redistributes whatever is present within seconds.",
-      "The evidence here is unusually direct. A hospital ran a four-week study across active ambulances and recorded 89% fewer total pathogens in the equipped vehicle than in the control. In a 220 sq ft school bus, odour intensity fell by more than 95% and airborne mould by around 81%, with ozone remaining below detectable levels throughout.",
-      "The transit variant is designed for the vibration, power and space constraints of vehicle installation, across passenger transport, executive fleet, emergency services and aviation.",
+      "Every journey brings strangers together in a small sealed space: a plane, a bus, a metro carriage, a taxi. The air is recirculated, the seats turn over all day, and whatever one passenger brings on board is shared with everyone else within seconds.",
+      "The Gulf sees this at scale every year. Families escape the summer heat, then return together on full flights, bringing home whatever they picked up abroad. It travels onward in the airport transfer, the school bus and the daily commute, and within days it is in classrooms and offices.",
+      "Our technology works while the vehicle is in service. It treats the air and the surfaces passengers touch continuously, reducing germs and bacteria between one passenger and the next, rather than waiting for the end-of-day clean.",
+      "The evidence is direct. A hospital ran a four-week study across active ambulances and recorded 89% fewer total pathogens in the equipped vehicle than in the control. In a 220 sq ft school bus, airborne mould fell by around 81% and odour intensity by more than 95%, with ozone remaining below detectable levels throughout.",
+      "The transit unit is built for the vibration, power and space limits of vehicles, across passenger transport, school and executive fleets, emergency services and aviation.",
     ],
     concerns: [
       {
-        title: "Very small sealed volumes",
-        body: "Contaminant concentration rises far faster than in any building.",
+        title: "Protecting passengers",
+        body: "People sit close together in sealed, recirculated air, often for hours at a time.",
       },
       {
-        title: "High occupant turnover",
-        body: "Continuous introduction of new contamination with no opportunity to clean between.",
+        title: "Stopping the spread between journeys",
+        body: "Seats turn over all day with no chance to clean in between. Continuous treatment works while the vehicle is moving.",
       },
       {
-        title: "Recirculated air",
-        body: "Cabin systems redistribute rather than replace, spreading contamination in seconds.",
+        title: "The return from summer",
+        body: "Full flights and school runs after the holidays carry illness back into homes, schools and workplaces.",
       },
       {
-        title: "Duty of care",
+        title: "Duty of care to crew",
         body: "Drivers and crew occupy that air for full shifts, every working day.",
       },
     ],
