@@ -2,6 +2,7 @@ import { Eye, EyeOff, Wind, Timer } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { surfaceMyth } from "@/content/technology";
+import { cn } from "@/lib/utils";
 
 /**
  * Positional, matching `surfaceMyth.below.items`: hidden reservoirs, then
@@ -12,7 +13,14 @@ import { surfaceMyth } from "@/content/technology";
  */
 const icons = [EyeOff, Wind, Timer];
 
-export function SurfaceMyth() {
+type Block = "above" | "below" | "close";
+
+/** `hide` drops individual blocks; the heading always renders. */
+export function SurfaceMyth({ hide = [] }: { hide?: Block[] }) {
+  const above = !hide.includes("above");
+  const below = !hide.includes("below");
+  const close = !hide.includes("close");
+
   return (
     <Section id="how-it-works">
       <div className="container">
@@ -22,7 +30,10 @@ export function SurfaceMyth() {
           lead={surfaceMyth.intro}
         />
 
+        {(above || below) && (
         <div className="mt-16">
+          {above && (
+          <>
           {/* Above the surface — deliberately muted. This is the part everyone
               already does, and it is genuinely useful, just incomplete. */}
           <Reveal>
@@ -59,10 +70,18 @@ export function SurfaceMyth() {
               </p>
             </div>
           </Reveal>
+          </>
+          )}
 
           {/* Below the surface — where the actual problem lives. */}
+          {below && (
           <Reveal i={2}>
-            <div className="rounded-b-2xl border border-line bg-gradient-to-b from-accent/[0.07] to-transparent p-7 sm:p-9">
+            <div
+              className={cn(
+                "border border-line bg-gradient-to-b from-accent/[0.07] to-transparent p-7 sm:p-9",
+                above ? "rounded-b-2xl" : "rounded-2xl",
+              )}
+            >
               <p className="font-mono text-eyebrow uppercase tracking-wider text-accent">
                 {surfaceMyth.below.label}
               </p>
@@ -86,13 +105,17 @@ export function SurfaceMyth() {
               </ul>
             </div>
           </Reveal>
+          )}
         </div>
+        )}
 
+        {close && (
         <Reveal i={3}>
           <p className="mx-auto mt-14 max-w-2xl text-center text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
             {surfaceMyth.close}
           </p>
         </Reveal>
+        )}
       </div>
     </Section>
   );

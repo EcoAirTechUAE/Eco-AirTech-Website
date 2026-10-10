@@ -5,7 +5,6 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { Bloom } from "@/components/ui/Bloom";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { FilterMyth } from "@/components/sections/FilterMyth";
 import { FilterTestData } from "@/components/sections/FilterTestData";
 import { FilterProcess } from "@/components/sections/FilterProcess";
 import {
@@ -246,8 +245,6 @@ export default function Filters() {
       <FilterProcess />
 
       <FilterTestData />
-
-      <FilterMyth />
 
       {/* The paired-system proof */}
       <Section>

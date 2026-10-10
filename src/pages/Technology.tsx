@@ -49,7 +49,7 @@ export default function Technology() {
         </div>
       </Section>
 
-      <SurfaceMyth />
+      <SurfaceMyth hide={["above", "below", "close"]} />
       <FilterMyth />
       <GrowthTimeline />
       <TheSolution />

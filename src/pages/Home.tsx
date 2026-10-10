@@ -5,7 +5,6 @@ import { SurfaceMyth } from "@/components/sections/SurfaceMyth";
 import { FilterMyth } from "@/components/sections/FilterMyth";
 import { GrowthTimeline } from "@/components/sections/GrowthTimeline";
 import { TheSolution } from "@/components/sections/TheSolution";
-import { SafetyBand } from "@/components/sections/SafetyBand";
 import { DevicesShowcase } from "@/components/sections/DevicesShowcase";
 import { FiltersTeaser } from "@/components/sections/FiltersTeaser";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
@@ -30,12 +29,11 @@ export default function Home() {
       <TrustWall />
       <TechnologyFilm />
 
-      <SurfaceMyth />
+      <SurfaceMyth hide={["above"]} />
       <FilterMyth />
       <GrowthTimeline />
 
       <TheSolution />
-      <SafetyBand />
 
       <DevicesShowcase />
       <FiltersTeaser />
