@@ -6,18 +6,17 @@ import { Stat } from "@/components/ui/Stat";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { PartnerRow } from "@/components/ui/PartnerRow";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { headlineResults, studies } from "@/content/testResults";
-import { devices } from "@/content/devices";
-import { testingMethod, testingPartners } from "@/content/technology";
+import { headlineResults, resultsPage, studies } from "@/content/testResults";
+import { testingPartners } from "@/content/technology";
 import { cn } from "@/lib/utils";
 
-type Filter = "all" | "live" | "lab" | "field" | string;
+type Filter = "all" | "live" | "lab" | "field";
 
 const kindFilters = [
-  { id: "all", label: "All studies" },
-  { id: "live", label: "Live environment" },
-  { id: "field", label: "Field tests" },
-  { id: "lab", label: "Laboratory" },
+  { id: "all", label: "All studies" } as const,
+  { id: "live", label: "Live environment" } as const,
+  { id: "field", label: "Field tests" } as const,
+  { id: "lab", label: "Laboratory" } as const,
 ];
 
 export default function Results() {
@@ -25,16 +24,15 @@ export default function Results() {
 
   const visible = useMemo(() => {
     if (filter === "all") return studies;
-    if (["live", "lab", "field"].includes(filter)) return studies.filter((s) => s.kind === filter);
-    return studies.filter((s) => s.device === filter);
+    return studies.filter((s) => s.kind === filter);
   }, [filter]);
 
   return (
     <>
       <PageHero
-        eyebrow="The evidence"
-        title="Every result we have, with the conditions that produced it."
-        lead="Including the weaker ones. A range you can interrogate is worth considerably more than a headline percentage you cannot."
+        eyebrow={resultsPage.eyebrow}
+        title={resultsPage.title}
+        lead={resultsPage.lead}
         crumbs={[{ label: "Results" }]}
       >
         <div className="mt-14 grid gap-10 border-t border-line pt-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -52,11 +50,23 @@ export default function Results() {
         </div>
       </PageHero>
 
+      <Section tight surface>
+        <div className="container">
+          <Reveal>
+            <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
+              {resultsPage.partnersLabel}
+            </p>
+            <PartnerRow partners={testingPartners} className="mt-6" />
+          </Reveal>
+        </div>
+      </Section>
+
       <Section>
         <div className="container">
           {/* Filters */}
           <Reveal>
-            <div className="flex flex-col gap-5 border-b border-line pb-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-5 border-b border-line pb-6 sm:flex-row sm:items-center sm:justify-between">
+              <h2 className="text-display-sm font-medium">{resultsPage.studiesHeadline}</h2>
               <div
                 role="group"
                 aria-label="Filter by test type"
@@ -72,20 +82,6 @@ export default function Results() {
                 ))}
               </div>
 
-              <div
-                role="group"
-                aria-label="Filter by device"
-                className="flex flex-wrap items-center gap-2"
-              >
-                {devices.map((d) => (
-                  <FilterChip
-                    key={d.slug}
-                    active={filter === d.slug}
-                    onClick={() => setFilter(d.slug)}
-                    label={d.article}
-                  />
-                ))}
-              </div>
             </div>
           </Reveal>
 
@@ -93,10 +89,10 @@ export default function Results() {
             Showing {visible.length} of {studies.length} studies
           </p>
 
-          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+          <div className="mt-8 grid items-start gap-5 md:grid-cols-2 lg:grid-cols-3">
             {visible.map((study, i) => (
-              <Reveal key={study.id} i={i % 2} className="h-full">
-                <StudyCard study={study} className="h-full" />
+              <Reveal key={study.id} i={i % 3}>
+                <StudyCard study={study} compact />
               </Reveal>
             ))}
           </div>
@@ -111,74 +107,14 @@ export default function Results() {
 
       {/* Methodology */}
       <Section surface>
-        <div className="container grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
-          <Reveal>
-            <p className="eyebrow">{testingMethod.eyebrow}</p>
-            <h2 className="mt-5 text-display-sm font-medium">{testingMethod.headline}</h2>
-            <p className="mt-5 max-w-prose leading-relaxed text-muted">{testingMethod.body}</p>
-
-            <div className="mt-9 rounded-xl border border-line bg-surface/60 p-6">
-              <h3 className="text-base font-medium">{testingMethod.sampling.title}</h3>
-              <p className="mt-2 body-text">
-                {testingMethod.sampling.body}
-              </p>
-              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-5 sm:grid-cols-3">
-                {testingMethod.sampling.specs.map((spec) => (
-                  <div key={spec.label}>
-                    <dt className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
-                      {spec.label}
-                    </dt>
-                    <dd className="tnum mt-1 text-sm font-medium text-ink">{spec.value}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-5 text-[0.8125rem] leading-relaxed text-faint">
-                {testingMethod.sampling.detects}
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal i={1} className="space-y-4">
-            <div className="rounded-xl border border-accent/30 bg-accent/[0.06] p-6 sm:p-7">
-              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
-                {testingMethod.comparison.live.subtitle}
-              </p>
-              <h3 className="mt-3 text-lg font-medium">{testingMethod.comparison.live.title}</h3>
-              <ul className="mt-5 space-y-3.5">
-                {testingMethod.comparison.live.points.map((p) => (
-                  <li key={p} className="flex gap-3 body-text">
-                    <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-line bg-surface/60 p-6 sm:p-7">
-              <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
-                {testingMethod.comparison.lab.subtitle}
-              </p>
-              <h3 className="mt-3 text-lg font-medium text-muted">
-                {testingMethod.comparison.lab.title}
-              </h3>
-              <ul className="mt-5 space-y-3.5">
-                {testingMethod.comparison.lab.points.map((p) => (
-                  <li key={p} className="flex gap-3 body-text">
-                    <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faint" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="container mt-16">
-          <Reveal>
-            <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
-              Our testing partners
+        <div className="container">
+          <Reveal className="max-w-3xl">
+            <p className="eyebrow">{resultsPage.method.eyebrow}</p>
+            <h2 className="mt-5 text-display-md font-medium">{resultsPage.method.headline}</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted">{resultsPage.method.body}</p>
+            <p className="mt-6 border-l-2 border-accent/40 pl-5 body-text">
+              {resultsPage.method.sampling}
             </p>
-            <PartnerRow partners={testingPartners} className="mt-6" />
           </Reveal>
         </div>
       </Section>

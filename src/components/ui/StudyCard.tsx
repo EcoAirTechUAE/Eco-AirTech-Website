@@ -89,7 +89,46 @@ function SpeciesChart({ species }: { species: NonNullable<Study["species"]> }) {
   );
 }
 
-export function StudyCard({ study, className }: { study: Study; className?: string }) {
+export function StudyCard({
+  study,
+  className,
+  compact,
+}: {
+  study: Study;
+  className?: string;
+  /**
+   * Result first: the headline, where and for how long, and who ran it. The
+   * summary, data and full test conditions sit behind a disclosure, so the
+   * protocol is always one click away but never in the way.
+   */
+  compact?: boolean;
+}) {
+  if (compact) {
+    return (
+      <article className={cn("card p-6 sm:p-7", className)}>
+        <KindBadge kind={study.kind} />
+        <h3 className="mt-5 text-2xl font-medium leading-tight text-ink">{study.headline}</h3>
+        <p className="mt-2 text-sm text-muted">{study.title}</p>
+        <p className="mt-4 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
+          {study.meta.duration} · {study.meta.administrator}
+        </p>
+
+        <details className="group mt-5 border-t border-line pt-4">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm text-muted transition-colors hover:text-accent [&::-webkit-details-marker]:hidden">
+            Data and test conditions
+            <span
+              aria-hidden
+              className="text-xl leading-none text-accent transition-transform duration-300 group-open:rotate-45"
+            >
+              +
+            </span>
+          </summary>
+          <StudyDetail study={study} />
+        </details>
+      </article>
+    );
+  }
+
   return (
     <article className={cn("card p-6 sm:p-8", className)}>
       <div className="flex flex-wrap items-center gap-3">
@@ -99,6 +138,15 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
 
       <h3 className="mt-5 text-display-sm font-medium">{study.headline}</h3>
       <p className="mt-1.5 text-sm text-muted">{study.title}</p>
+      <StudyDetail study={study} />
+    </article>
+  );
+}
+
+/** Summary, data, quote, conditions and notes: everything under the headline. */
+function StudyDetail({ study }: { study: Study }) {
+  return (
+    <>
       <p className="mt-4 max-w-prose leading-relaxed text-muted">{study.summary}</p>
 
       {study.species && <SpeciesChart species={study.species} />}
@@ -170,6 +218,6 @@ export function StudyCard({ study, className }: { study: Study; className?: stri
           ))}
         </ul>
       )}
-    </article>
+    </>
   );
 }

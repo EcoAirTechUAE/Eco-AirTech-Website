@@ -391,3 +391,19 @@ export const headlineResults = [
     studyId: "750-field-ambulance",
   },
 ];
+
+/** Framing copy for /results. The figures themselves are the studies above. */
+export const resultsPage = {
+  eyebrow: "The evidence",
+  title: "Independently tested. Proven in real buildings.",
+  lead: `${studies.length} published studies, from independent laboratories to occupied homes, offices and ambulances. The headline numbers are below, with the full data behind each one.`,
+  partnersLabel: "Tested and verified with",
+  studiesHeadline: "The results",
+  method: {
+    eyebrow: "How we test",
+    headline: "Real buildings, not just sealed chambers.",
+    body: "A sealed laboratory flatters any air technology: once contamination is removed, nothing new arrives. Occupied buildings are re-contaminated all day. We test in both, and label which is which.",
+    sampling:
+      "Air sampling uses APACOR AirTrap XL, analysed by Sporecyte's AI platform at 96% accuracy, against 50 to 70% for the petri dish method.",
+  },
+};
