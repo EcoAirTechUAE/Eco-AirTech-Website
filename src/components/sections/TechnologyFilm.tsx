@@ -2,6 +2,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { Bloom } from "@/components/ui/Bloom";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { ambition } from "@/content/clients";
 import { airflowSteps } from "@/content/technology";
 
 export function TechnologyFilm() {
@@ -17,9 +18,19 @@ export function TechnologyFilm() {
             </p>
             <h2 className="mt-6 text-display-md font-medium">The science, explained properly.</h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">
-              Here is exactly what happens inside the unit, and why it reaches places cleaning
-              never does.
+              Air technology is an easy category to make vague claims in. So rather than ask you to
+              take ours on trust, here is exactly what happens inside the unit, what it produces,
+              and why that reaches places cleaning never does.
             </p>
+
+            <blockquote className="mt-10 border-l-2 border-accent/40 pl-5">
+              <p className="text-xl italic leading-snug text-ink/90 sm:text-2xl">
+                {ambition.statement}
+              </p>
+              <footer className="mt-3 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
+                {ambition.eyebrow}
+              </footer>
+            </blockquote>
           </Reveal>
 
           {/*

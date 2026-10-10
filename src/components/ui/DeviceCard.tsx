@@ -4,16 +4,7 @@ import type { Device } from "@/content/devices";
 import { SmartImage } from "./SmartImage";
 import { cn } from "@/lib/utils";
 
-export function DeviceCard({
-  device,
-  className,
-  compact,
-}: {
-  device: Device;
-  className?: string;
-  /** Image, name and one line. Used where the card is a signpost, not a spec sheet. */
-  compact?: boolean;
-}) {
+export function DeviceCard({ device, className }: { device: Device; className?: string }) {
   return (
     <Link
       to={`/devices/${device.slug}`}
@@ -25,12 +16,7 @@ export function DeviceCard({
       {/* The renders are supplied on black, so they are framed as product
           tiles rather than floated as cut-outs — consistent across the range
           and free of the halo a mismatched backdrop would produce. */}
-      <div
-        className={cn(
-          "relative mb-7 overflow-hidden rounded-lg border border-line bg-black",
-          compact ? "h-56" : "h-44",
-        )}
-      >
+      <div className="relative mb-7 h-44 overflow-hidden rounded-lg border border-line bg-black">
         <SmartImage
           src={device.image}
           alt={`${device.article} unit`}
@@ -57,7 +43,6 @@ export function DeviceCard({
 
       <p className="mt-5 flex-1 body-text">{device.summary}</p>
 
-      {!compact && (
       <dl className="mt-7 grid grid-cols-2 gap-4 border-t border-line pt-6">
         {device.stats.slice(0, 2).map((stat) => (
           <div key={stat.label}>
@@ -72,7 +57,6 @@ export function DeviceCard({
           </div>
         ))}
       </dl>
-      )}
     </Link>
   );
 }

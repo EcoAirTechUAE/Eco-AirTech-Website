@@ -76,17 +76,13 @@ the rest on purpose.
 The UK sister company, Arc AirTech, sells mould remediation to social housing
 landlords under Awaab's Law. That framing is deliberately **not** used here.
 
-This site sells to people investing in wellness: parents, hotels, schools,
+This site sells to people investing in wellness — parents, hotels, schools,
 employers, estates. Mould appears as *evidence* that the problem is real, never
-as the pitch.
-
-The homepage is deliberately short: one section per beat (problem, solution,
-range, sectors, evidence, questions). `SurfaceMyth` carries the education
-argument in three points before any product is mentioned. The depth behind it
-(`FilterMyth`, `GrowthTimeline`, the equation, the safety figures) is on
-`/technology`, the test methodology on `/results`, and the full FAQ on
-`/contact`. Resist adding sections back to the homepage; link to the detail
-instead.
+as the pitch. The three consecutive sections after the technology film
+(`SurfaceMyth`, `FilterMyth`, `GrowthTimeline`) carry the core education
+argument: surface cleaning cannot reach embedded contamination, Gulf AC return
+filters catch only coarse dust, and growth re-establishes within 24 hours. They
+run before any product is mentioned, which is intentional.
 
 ---
 

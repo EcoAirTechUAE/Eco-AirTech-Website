@@ -22,19 +22,19 @@ export const filterIntro = {
 export const twoStage = {
   eyebrow: "Two-stage air treatment",
   headline: "Filtered on the way in. Treated on the way out.",
-  body: "We replace the existing return filter, so air is properly filtered before it reaches the fan coil. The active technology then treats everything downstream.",
+  body: "In the Gulf we replace the existing return filter, so the first thing that happens to your air is proper filtration, before it reaches the fan coil rather than after. The active technology then works on everything downstream of it.",
   stages: [
     {
       n: "01",
       tag: "Passive",
       title: "The return filter is replaced",
-      body: "MERV 13A nanofibre media with ODOGard® captures particulates and destroys odours and VOCs before they reach the fan coil.",
+      body: "Air entering the system passes through MERV 13A nanofibre media with ODOGard®. Particulates are captured and gas-phase compounds are destroyed in the media, before any of it reaches the fan coil or the ductwork.",
     },
     {
       n: "02",
       tag: "Active",
       title: "ARC® treats everything downstream",
-      body: "The ARC® cell releases hydroxyls into the airflow, reaching the rooms, surfaces and ducting that no filter can act on.",
+      body: "Sited after the filter, the ARC® cell releases hydroxyls into the airflow. They travel with the air into the served rooms, reaching surfaces, ducting and cavities that no filter can act on, because a filter can only treat what physically passes through it.",
     },
   ],
   close:
@@ -51,11 +51,13 @@ export const twoStage = {
 export const nanofiber = {
   title: "Nanofiber technology",
   claim: "A MERV rating that still holds at the end of the filter's life.",
-  body: "Most high-efficiency filters rely on an electrostatic charge that fades as the media loads. Ours carries the A designation: the rated efficiency is certified to the end of its service life, sustained by fibres 411 times thinner than a human hair.",
+  body: "Most high-efficiency filters are rated on day one. They lean on an electrostatic charge to reach that number, and the charge fades as the media loads, so the filter you are running in month six is not the filter you were sold. Ours carries the A designation, which certifies the rated efficiency is still being delivered at the end of its service life. The structure is what sustains it: fibres spun 411 times thinner than a human hair through a nonwoven substrate.",
   points: [
+    "Fibres spun 411× thinner than a human hair",
     "Rated efficiency certified to end of service life, not just when new",
     "Air resistance of a MERV 9, so it is hospital-grade filtration your fan can still breathe through",
     "Holds its rating in humid air, where charge-dependent media fall away fastest",
+    "Sealed frame with no bypass, so air cannot slip around the media",
     "Built with 50% less synthetic material than comparable filters, and recyclable",
   ],
 };
@@ -77,7 +79,7 @@ export const award = {
 export const odogardProcess = {
   eyebrow: "Three stages",
   headline: "Capture, bond, destroy.",
-  body: "A carbon filter holds an odour molecule until it is full, then releases it. ODOGard® changes the molecule permanently, so nothing comes back.",
+  body: "A carbon filter holds an odour molecule until it is full, then releases it. ODOGard® does something different: it changes the molecule permanently, so nothing is stored and nothing comes back.",
   steps: [
     {
       n: "01",
@@ -107,7 +109,7 @@ export const odogardProcess = {
 export const vsCarbon = {
   eyebrow: "Against carbon",
   headline: "Transform your existing HVAC into a more effective air treatment system.",
-  body: "Activated carbon holds molecules until it is saturated, and in humid Gulf air much of that capacity is spent on water vapour.",
+  body: "Activated carbon is the default answer to odour and VOCs. It adsorbs: it holds molecules on a surface until that surface is saturated, and in humid Gulf air a good share of that capacity is spent on water vapour rather than on what you wanted removed.",
   stats: [
     { value: "140%", label: "Greater VOC reduction", context: "versus carbon filters" },
     { value: "99%", label: "Greater odour reduction", context: "versus carbon filters" },
@@ -146,7 +148,7 @@ export const series = [
 export const odogard = {
   title: "ODOGard®",
   claim: "Gas-phase contaminants cannot be filtered. They have to be broken down.",
-  body: "ODOGard® is infused through the nanofibre itself rather than sprayed on. It neutralises odours and VOCs at a molecular level and, unlike carbon, is unaffected by Gulf humidity.",
+  body: "ODOGard® is embedded into the nanofibre itself during manufacture, infused through the core structure of the media rather than sprayed onto its surface. It neutralises odour compounds and volatile organic compounds at a molecular level instead of adsorbing them, and unlike carbon it does not take up moisture doing it. That last point matters in the Gulf: a carbon filter in humid air spends its capacity on water vapour.",
   treats: ["Pet odours", "Cooking odours", "Smoke odours", "Terpenes", "VOCs"],
 };
 
@@ -161,7 +163,7 @@ export const odogard = {
 export const ashrae = {
   eyebrow: "Independent test data",
   headline: "ASHRAE 52.2, measured band by band",
-  body: "A MERV number is one label for twelve measurements. These are the three bands the rating is derived from.",
+  body: "A MERV number is a single label for twelve separate measurements. This is the full curve behind ours: how much of each particle size the media actually captures on first pass.",
   conditions: [
     { label: "Standard", value: "ASHRAE 52.2" },
     { label: "Test aerosol", value: "KCl, neutralised" },
@@ -312,7 +314,7 @@ export const efficacyMatrix = {
 export const filterComparison = {
   eyebrow: "Against the alternatives",
   headline: "Every other filter makes you choose.",
-  body: "Raise the efficiency and you lose airflow. Add carbon for odours and you get nothing for fine particulate. This media does not ask you to pick.",
+  body: "Filtration normally forces a trade. Raise the efficiency and you lose airflow. Add carbon for odours and you get nothing for fine particulate, and in humid Gulf air it spends much of its capacity on water vapour. The point of this media is that it does not ask you to pick.",
   /** Grouping is explicit: three filters we do not supply, then ours. */
   othersLabel: "Filters found in most buildings, not supplied by us",
   oursLabel: "Our filter",

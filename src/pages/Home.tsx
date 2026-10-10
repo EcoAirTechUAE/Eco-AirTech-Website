@@ -1,8 +1,13 @@
 import { Hero } from "@/components/sections/Hero";
 import { TrustWall } from "@/components/sections/TrustWall";
+import { TechnologyFilm } from "@/components/sections/TechnologyFilm";
 import { SurfaceMyth } from "@/components/sections/SurfaceMyth";
-import { NatureIndoors } from "@/components/sections/NatureIndoors";
+import { FilterMyth } from "@/components/sections/FilterMyth";
+import { GrowthTimeline } from "@/components/sections/GrowthTimeline";
+import { TheSolution } from "@/components/sections/TheSolution";
+import { SafetyBand } from "@/components/sections/SafetyBand";
 import { DevicesShowcase } from "@/components/sections/DevicesShowcase";
+import { FiltersTeaser } from "@/components/sections/FiltersTeaser";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { ProofBand } from "@/components/sections/ProofBand";
 import { FaqSection } from "@/components/sections/FaqSection";
@@ -10,12 +15,12 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 /**
  * Landing page order is deliberate:
- *   hook → proof → the problem → the solution →
- *   the products → the sectors → evidence → objections → convert.
+ *   hook → proof → explain the problem → present the solution →
+ *   show the products → show the sectors → evidence → objections → convert.
  *
- * Each beat gets one short section. The depth behind them (filter data,
- * regrowth timeline, safety figures, test methodology, the full FAQ) lives on
- * the inner pages, one click away, so this page stays quick to read.
+ * The three "problem" sections (SurfaceMyth, FilterMyth, GrowthTimeline) run
+ * consecutively on purpose. They are the education job the brief is built
+ * around, and they have to land before any product is mentioned.
  */
 export default function Home() {
 
@@ -23,15 +28,21 @@ export default function Home() {
     <>
       <Hero />
       <TrustWall />
+      <TechnologyFilm />
 
       <SurfaceMyth />
-      <NatureIndoors />
+      <FilterMyth />
+      <GrowthTimeline />
+
+      <TheSolution />
+      <SafetyBand />
 
       <DevicesShowcase />
+      <FiltersTeaser />
       <IndustriesGrid />
 
       <ProofBand />
-      <FaqSection featured />
+      <FaqSection />
       <ContactSection />
     </>
   );

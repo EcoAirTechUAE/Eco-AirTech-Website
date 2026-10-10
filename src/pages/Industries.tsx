@@ -15,19 +15,8 @@ export default function Industries() {
       <PageHero
         eyebrow="Who we work with"
         title="Every sector has a different reason for caring about the air."
-        lead="Each sector below sets out what drives the decision there, and what the evidence looks like."
+        lead="A parent, a hotel general manager, a school principal and a fleet operator are solving genuinely different problems. Each sector below sets out what drives the decision there, and what the evidence looks like."
         crumbs={[{ label: "Industries" }]}
-        visual={
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-2xl border border-line lg:max-w-none">
-            <SmartImage
-              src="/assets/industries/hotels.jpg"
-              alt="A resort and marina on the Dubai coastline"
-              label="Hotels & Resorts"
-              ratio="absolute inset-0"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        }
       />
 
       <Section>

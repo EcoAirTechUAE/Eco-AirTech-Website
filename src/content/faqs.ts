@@ -100,24 +100,3 @@ export const faqGroups: FaqGroup[] = [
 ];
 
 export const allFaqs: Faq[] = faqGroups.flatMap((g) => g.items);
-
-/**
- * The handful shown on the homepage. The full list is on /contact.
- *
- * Picked by question text so the answers are never duplicated. The first FAQ
- * of the first group must stay in this list: the prerender uses it to detect
- * which pages render the FAQ at all.
- */
-const FEATURED = [
-  "How does it actually work?",
-  "Is it safe to run in occupied rooms?",
-  "Do I need to replace my air conditioning system?",
-  "How quickly will I notice a difference?",
-  "How much does it cost?",
-];
-
-export const featuredFaqs: Faq[] = FEATURED.map((q) => {
-  const found = allFaqs.find((f) => f.q === q);
-  if (!found) throw new Error(`Featured FAQ not found: ${q}`);
-  return found;
-});

@@ -17,7 +17,7 @@
 import { site } from "@/config/site";
 import { devices } from "@/content/devices";
 import { industries } from "@/content/industries";
-import { allFaqs, featuredFaqs } from "@/content/faqs";
+import { faqGroups } from "@/content/faqs";
 
 /**
  * The canonical origin, with no trailing slash.
@@ -306,13 +306,13 @@ export function jsonLdForPath(rawPath: string): string {
     nodes.push({
       "@type": "FAQPage",
       "@id": `${SITE_URL}${path}#faq`,
-      // The homepage shows the featured subset only, so it declares only
-      // those: marking up a question the page does not show is the violation.
-      mainEntity: (path === "/" ? featuredFaqs : allFaqs).map((item) => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: { "@type": "Answer", text: item.a },
-      })),
+      mainEntity: faqGroups.flatMap((group) =>
+        group.items.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        })),
+      ),
     });
   }
 

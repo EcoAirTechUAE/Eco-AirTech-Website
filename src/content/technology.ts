@@ -22,10 +22,11 @@ export const pillars = [
     name: "Hydroxyls",
     subtitle: "Nature's cleaning agents",
     summary:
-      "Sunlight and water vapour produce hydroxyls, the molecules that clean the outdoor air. ARC® reproduces that reaction indoors, continuously.",
+      "Every day, sunlight reacts with water vapour in the atmosphere to produce hydroxyls, the molecules that scrub the outdoor air clean. ARC® reproduces that reaction indoors, continuously.",
     points: [
-      "Breaks contaminants down at a molecular level rather than trapping them.",
-      "Travels wherever the air travels: behind furniture, inside ductwork, into soft furnishings.",
+      "Hydroxyls occur naturally. They deactivate airborne and surface contaminants at a molecular level rather than simply trapping them.",
+      "ARC® is our proprietary form of Photocatalytic Oxidation (PCO): ultraviolet energy activates a catalytic cell, converting ambient humidity into oxidising hydroxyls.",
+      "Because the agent is a vapour, it travels wherever the air travels: behind furniture, inside ductwork, into grout and soft furnishings. Not just the surfaces you can reach.",
     ],
   },
   {
@@ -33,23 +34,24 @@ export const pillars = [
     name: "Bi-Polar Ionisation",
     subtitle: "Natural electrical charges",
     summary:
-      "The charge that leaves the air feeling clean after a storm, generated inside your building.",
+      "The same charge separation that leaves the air feeling clean after a storm, generated on demand inside your building.",
     points: [
-      "Ions cluster around spores, bacteria, viruses and pollen so they drop out of the breathing zone.",
-      "The enlarged particles are far easier for filtration to capture.",
+      "Ionisation brushes create a plasma of positively and negatively charged ions that disperse through the occupied space.",
+      "Ions cluster around airborne particles (mould spores, bacteria, viruses, pollen), increasing their mass so they drop out of the breathing zone.",
+      "Enlarged particles are also far easier for filtration to capture, which is why the two stages are specified together: filtration on the way into the system, active treatment downstream of it.",
     ],
   },
 ] as const;
 
 export const safety = {
   headline: "Safe by design, not by exception",
-  body: "Our systems produce around 0.05 ppm of gaseous hydrogen peroxide, twenty times below OSHA's permissible limit. Independent testing has repeatedly recorded ozone at 0 ppm, or below outdoor levels.",
+  body: "Our systems produce approximately 0.05 ppm of gaseous hydrogen peroxide, twenty times lower than OSHA's permissible exposure limit of 1.0 ppm. Like oxygen, gaseous hydrogen peroxide is already present in the air you breathe. Independent testing has repeatedly recorded ozone at 0 ppm, or below the levels measured outdoors, for the full duration of the test.",
   figures: [
     { value: "0.05", unit: "ppm", label: "H₂O₂ produced" },
     { value: "1.0", unit: "ppm", label: "OSHA permissible limit" },
     { value: "20×", unit: "", label: "Below the limit" },
   ],
-  footnote: "Verified by Advanced IAQ Solutions (IAQS). No evacuation, no downtime.",
+  footnote: "Verified by Advanced IAQ Solutions (IAQS). Occupied-space safe, with no evacuation and no downtime.",
 };
 
 /* ------------------------------------------------------------------ *
@@ -57,30 +59,41 @@ export const safety = {
  * ------------------------------------------------------------------ */
 
 export const surfaceMyth = {
-  eyebrow: "Why cleaning is not enough",
-  headline: "Cleaning removes contamination. It doesn't stop it coming back.",
+  eyebrow: "The comfortable assumption",
+  headline: "Cleaning reaches what you can see. The problem lives underneath it.",
   intro:
-    "Cleaning, filter changes and AC servicing all help, but they are periodic. Between visits, the conditions that let contamination return are still there.",
-  items: [
-    {
-      title: "Hidden reservoirs",
-      body: "Spores and microbes persist in coils, drain pans, ductwork and porous materials that cleaning never reaches.",
-    },
-    {
-      title: "Continuous reintroduction",
-      body: "Outdoor air, people and the AC itself bring particles, microbes and odours straight back in.",
-    },
-    {
-      title: "Rapid recurrence",
-      body: "With Gulf warmth and humidity, growth can re-establish within 24 to 48 hours.",
-    },
-  ],
+    "Wiping a surface, cleaning a filter or cleaning an HVAC unit may remove visible contamination, but it does not necessarily address the source. Microorganisms, spores and biofilms can persist in porous materials, hidden surfaces and ventilation systems, and can return within days when the right conditions remain: moisture, high humidity and an available nutrient source.",
+  above: {
+    label: "Above the surface: what cleaning removes",
+    title: "Visible dust, debris & surface contamination",
+    body: "Removed by wiping, filter replacement and HVAC cleaning. Important and genuinely useful, but typically focused on what is accessible and visible at the time of cleaning.",
+    note: "Cleaning is essential, but it is only one part of the solution.",
+  },
+  below: {
+    label: "Beyond the surface: what can remain",
+    items: [
+      {
+        title: "Hidden reservoirs",
+        body: "Spores, particles and microbial contamination can persist in porous materials, insulation, coils, drain pans, ductwork and other hard-to-reach areas beyond the visible surface.",
+      },
+      {
+        title: "Continuous reintroduction",
+        body: "Even after cleaning, outdoor air, occupant activity, moisture and HVAC circulation can continuously reintroduce particulates, microbes and odour-causing compounds into the indoor environment.",
+      },
+      {
+        title: "Rapid recurrence",
+        body: "If moisture, humidity, warmth and nutrient sources remain, microbial growth can return quickly, sometimes within 24 to 48 hours in favourable conditions.",
+      },
+    ],
+  },
+  close:
+    "Contamination does not have to be visible to persist. Cleaning is important, but in environments where moisture, humidity and airborne pollutants are continually present, maintaining healthier indoor air quality often requires a continuous solution, not a one-time intervention.",
 };
 
 export const filterMyth = {
   eyebrow: "The filter in your AC",
   headline: "Your return filter protects the FCU. It was never designed to purify the air.",
-  body: "Most Gulf AC systems run a low-grade return filter, often a washable mesh. It protects the coil and fan from large debris. Everything that affects how you feel passes straight through.",
+  body: "Almost every air conditioning system across the Gulf runs a low-grade return filter, often little more than a washable mesh. It is specified to protect the coil and the fan from large debris, not to protect the people downstream of it. Everything that actually affects how you feel passes straight through.",
   /** Sized against a MERV 13A media filter, which does capture these. */
   passesThrough: [
     { name: "Mould spores", size: "1–30 μm" },
@@ -92,14 +105,14 @@ export const filterMyth = {
   ],
   caught: [{ name: "Hair, lint & coarse dust", size: "> 10 μm" }],
   close:
-    "Gases cannot be filtered by a mesh at all. They have to be broken down.",
+    "A gas-phase contaminant cannot be filtered by a mesh at all. It has to be broken down. That is a different category of technology, not a better filter.",
 };
 
 export const growthTimeline = {
   eyebrow: "The 24-hour reality",
   headline: "Given moisture and warmth, this is how fast it comes back.",
   intro:
-    "The Gulf sits at 20–35°C for most of the year, ideal for fast-growing species. Deep-clean on Monday and the cycle has restarted by Tuesday.",
+    "The Gulf climate sits at 20–35°C for most of the year, squarely inside the range that favours fast-growing, warm-adapted species. Deep-clean a space on Monday and, without something actively working, the cycle has already restarted by Tuesday.",
   steps: [
     { time: "Minutes–hours", title: "Spores settle", body: "Airborne spores land on a surface with available moisture." },
     { time: "12–24 hours", title: "Germination", body: "Filaments establish. Nothing is visible yet, and nothing smells wrong." },
@@ -108,7 +121,28 @@ export const growthTimeline = {
     { time: "1–3 weeks", title: "Mass production", body: "Heavy, sustained spore release throughout the occupied space." },
   ],
   close:
-    "The only thing that changes the outcome is a system that runs continuously.",
+    "This is why a one-off intervention cannot hold. The only thing that changes the outcome is a system that runs continuously.",
+};
+
+export const factors = {
+  eyebrow: "Not one root cause",
+  headline:
+    "This isn't a surface-cleaning problem. It's an indoor environmental systems problem.",
+  body: "Growth is rarely caused by any single failure. It emerges where moisture, organic material, temperature and time overlap: a combination of ambient humidity, ocean air, HVAC design, building age, outdoor spores carried in through doors and windows, and ordinary human activity. Chasing a single source is why the problem keeps returning.",
+  groups: [
+    {
+      title: "Environmental conditions",
+      items: ["High ambient humidity", "Moist coastal air", "Temperature fluctuation across zones"],
+    },
+    {
+      title: "Building factors",
+      items: ["HVAC design & maintenance", "Poor ventilation", "Leaks & condensation", "Building age"],
+    },
+    {
+      title: "Pollutants",
+      items: ["Outdoor spores via windows & doors", "Dust & organic debris", "Human activity & occupancy"],
+    },
+  ],
 };
 
 /**
@@ -124,24 +158,48 @@ export const airflowSteps = [
   {
     n: "01",
     title: "Clean air enters",
-    body: "Filtration captures dust, pollutants and odours before the air reaches the cell.",
+    body: "Multi-layer filtration captures dust, pollutants and odours before the air reaches the cell.",
   },
   {
     n: "02",
     title: "ARC® technology activated",
-    body: "Moisture, oxygen and UV-C light react with our catalyst to create hydroxyl radicals.",
+    body: "Moisture, oxygen and UV-C light react with our proprietary metallic catalyst, creating very stable hydroxyl radicals (•OH).",
   },
   {
     n: "03",
     title: "Contaminants neutralised",
-    body: "Hydroxyls travel with the air, breaking down VOCs and odours and inactivating bacteria, viruses and mould.",
+    body: "Hydroxyl radicals react with airborne pollutants, helping break down VOCs and odours while inactivating bacteria, viruses and mould spores.",
+  },
+];
+
+/** The four-beat "how it works" narrative used on the landing page. */
+export const howItWorks = [
+  {
+    n: "01",
+    title: "Air and moisture enter the cell",
+    body: "Ambient humidity and oxygen, already present in your space, are drawn across the ARC® catalytic cell.",
+  },
+  {
+    n: "02",
+    title: "UV energy activates the catalyst",
+    body: "The reaction converts water vapour into advanced oxidation products, principally hydroxyls, at very low concentration.",
+  },
+  {
+    n: "03",
+    title: "Agents disperse with the airflow",
+    body: "Because they travel as a vapour, they reach surfaces, ductwork and cavities that cleaning never touches.",
+  },
+  {
+    n: "04",
+    title: "Contaminants break down, continuously",
+    body: "Organic contaminants are deactivated at a molecular level, and because the system never stops, the recolonisation cycle never restarts.",
   },
 ];
 
 export const testingMethod = {
   eyebrow: "How we measure",
   headline: "We test in occupied buildings, not just sealed chambers.",
-  body: "A sealed laboratory flatters any air technology: once contamination is removed, nothing new arrives. Real buildings are constantly re-contaminated. So we test in both, and say which is which.",
+  body: "A sealed laboratory is a flattering place to test air technology. Once contamination is removed it stays near zero, because nothing new is introduced. Real buildings do not behave that way: people come and go, doors open, spores arrive continuously. So we do both, and we say which is which.",
   comparison: {
     live: {
       title: "Live testing",
