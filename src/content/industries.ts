@@ -110,29 +110,29 @@ export const industries: Industry[] = [
     name: "Palaces & Places of Worship",
     kicker: "Discreet, comprehensive, respectful",
     summary:
-      "Buildings of standing, where the air handling is complex, occupancy swings between empty and full, and nothing about the intervention may be visible.",
+      "We protect the people inside and the building itself: limiting the bacteria passed between worshippers, guests and household, and keeping mould out of the building.",
     body: [
-      "These buildings share a shape of problem: substantial served volumes, several independent air handling systems, and occupancy that swings between near-empty and completely full. Neither a palace nor a mosque tolerates visible equipment, and neither can be taken out of use while work is carried out.",
-      "In palaces and private residences the difficulty is vacancy. A wing held at temperature with no occupancy, no door movement and no change of air is close to an ideal growth environment, and the problem is rarely caught early, because nobody is in the room to notice it. Those same conditions damage what the rooms contain: textiles, timber, manuscripts and collections are all sensitive to exactly the humidity that drives microbial growth.",
-      "Places of worship present the opposite difficulty: density. A prayer hall goes from empty to full within minutes, several times a day, and at Friday prayers to capacity. The floors are carpeted throughout, worshippers are barefoot and kneel and prostrate directly onto them, and ablution facilities keep humidity high in the adjoining spaces. Warmth, moisture and heavy organic loading in the same rooms is the combination that microbial growth needs, and carpet holds all three long after cleaning.",
-      "Our units install inside existing ductwork with nothing visible in the space, and the work is scheduled around prayer times or around the household rather than the other way round. We are currently installing across palace projects in Saudi Arabia and residences in the UAE. Those clients are not named here, and will not be. Discretion is a condition of the work, and we treat it as one.",
+      "Our role in these buildings is simple. We protect the people in them, and we protect the building itself.",
+      "In a place of worship, people stand shoulder to shoulder. A prayer hall goes from empty to full within minutes, several times a day, and to capacity on Fridays. Worshippers share the same air, and kneel and prostrate on the same carpet. We treat that air and those surfaces continuously while people worship, reducing the bacteria and germs that pass from one person to the next.",
+      "The building needs protecting too. Ablution areas keep humidity high beside carpeted halls, and palace wings are held cool and closed for weeks with nobody present to notice a problem. Those are the conditions mould needs, and it damages carpets, textiles, timber and collections as well as the air. Because our systems never switch off, growth does not get the chance to establish.",
+      "Units install inside existing ductwork with nothing visible in the space, and work is scheduled around prayer times or the household. We are currently installing across palace projects in Saudi Arabia and residences in the UAE. Those clients are not named here, and will not be.",
     ],
     concerns: [
       {
-        title: "Congregational density",
-        body: "Halls that fill to capacity within minutes, several times a day, then stand empty again, a load no fixed ventilation rate is sized for.",
+        title: "Protecting worshippers",
+        body: "Close contact in a full hall, several times a day. Continuous treatment limits what passes between people.",
       },
       {
-        title: "Carpet & ablution humidity",
-        body: "Wudu facilities keep moisture high beside carpeted halls that worshippers kneel and prostrate on. Carpet holds moisture and organic matter long after cleaning.",
+        title: "Protecting the household",
+        body: "The same care for family, guests and staff in palaces and private residences.",
       },
       {
-        title: "Extended vacancy",
-        body: "Cooled, closed wings and halls with no ventilation change and nobody present to notice a developing problem.",
+        title: "Protecting the building",
+        body: "Mould kept out of carpets, ductwork, closed wings and the collections they hold.",
       },
       {
         title: "Invisible, respectful installation",
-        body: "Concealed equipment, controlled site access, work scheduled around prayer times and household routine, and confidentiality maintained permanently.",
+        body: "Concealed equipment, work scheduled around prayer times and household routine, and confidentiality maintained permanently.",
       },
     ],
     devices: ["hvac", "ptac", "overwatch"],
