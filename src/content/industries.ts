@@ -26,6 +26,7 @@ export interface Industry {
    */
   focal?: string;
   proof?: { value: string; label: string; context: string };
+  quote?: { text: string; author: string; role: string };
 }
 
 export const industries: Industry[] = [
@@ -183,39 +184,44 @@ export const industries: Industry[] = [
     name: "Schools & Nurseries",
     kicker: "Where children spend their days",
     summary:
-      "Children share a classroom, a school bus and everything they bring back from the holidays. We help stop germs and bacteria spreading through the school day.",
+      "Schools bring children together to learn, which also makes them ideal places for germs to spread. US schools with our technology installed saw absenteeism drop by 58%.",
     body: [
-      "A classroom puts thirty children in a sealed, air-conditioned room for the whole school day, breathing the same recirculated air. They are the youngest and most susceptible occupants of any building, and what one child brings in, the class shares.",
-      "Every parent and teacher in the Gulf knows the pattern. Families travel over the summer, return on full flights, and in the first weeks of term the coughs and colds go round the class, then home to brothers, sisters and parents. The same happens after every holiday.",
-      "Our systems treat the air and surfaces in classrooms continuously while children are in them, reducing the germs, bacteria and mould that pass from child to child. The same technology fits the school bus, so protection starts on the journey in.",
-      "Cleaner air also supports learning. Poor indoor air quality worsens asthma and allergies, and attention and comprehension decline as the air degrades. A 2025 study across Dubai and Sharjah schools found that more needs to be done, and that younger children are the most vulnerable.",
-      "Units retrofit into existing school air conditioning without disruption to teaching, and the result can be evidenced with independent testing rather than asserted.",
+      "Schools, nurseries and universities bring hundreds of people together in classrooms, cafeterias, sports halls, dormitories and buses. Children share the same air and the same desks, doors and equipment all day, giving airborne and surface germs countless chances to move from one person to the next, and then home to their families.",
+      "Cleaning cannot keep up. Rooms are in use from the first bell to the last, with almost no time to deep clean between classes, and illness arrives in waves: after summer, after every holiday when families return from travelling, and through each seasonal outbreak.",
+      "Our systems treat the air and surfaces continuously while children are in the room, working invisibly and without disrupting lessons. The same technology protects the school bus, the cafeteria and the staff room, as an added layer alongside good ventilation, cleaning and hygiene.",
+      "The result shows up in attendance. Schools in the US with the technology installed saw absenteeism drop by 58%, and in two separate studies over a one-year period, student absences fell by 40% and 60%.",
+      "A 2025 study across Dubai and Sharjah schools found that more needs to be done on indoor air, and that younger children are the most vulnerable. Our units retrofit into existing school air conditioning without disruption to teaching.",
     ],
     concerns: [
       {
-        title: "Stopping the spread in class",
-        body: "Thirty children in recirculated air for six or more hours a day. Continuous treatment works while they are in the room.",
+        title: "Crowded, enclosed spaces",
+        body: "Classrooms, cafeterias, dormitories and buses put many children in the same air for hours.",
       },
       {
-        title: "Back-to-school season",
-        body: "After summer and every holiday, illness arrives with returning families and moves through a class in days.",
+        title: "Shared surfaces",
+        body: "Desks, doors, cafeteria tables and sports equipment are touched all day, with little time to clean between uses.",
       },
       {
-        title: "Asthma, allergies & concentration",
-        body: "Poor air worsens both conditions and dulls attention well before anyone reports feeling unwell.",
+        title: "Seasonal waves of illness",
+        body: "After summer, after every holiday and through each outbreak, illness moves through a class in days.",
       },
       {
-        title: "Parent confidence",
-        body: "A verifiable air standard is increasingly part of how families choose a school.",
+        title: "Attendance and learning",
+        body: "Fewer sick days mean more time in class. Poor air also worsens asthma and allergies, and dulls concentration.",
       },
     ],
+    quote: {
+      text: "The implementation of [the technology] has been a game-changer for our district. The notable decrease in absenteeism underscores the positive impact of prioritizing the health and safety of our students.",
+      author: "School district",
+      role: "United States",
+    },
     devices: ["hvac", "ptac", "750-plus"],
     video: "schools",
     image: "/assets/industries/schools.jpg",
     proof: {
-      value: "95.0%",
-      label: "TVOC reduction",
-      context: "5 days, educational facility",
+      value: "58%",
+      label: "Drop in absenteeism",
+      context: "US schools with the technology installed",
     },
   },
   {

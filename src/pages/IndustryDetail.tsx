@@ -82,6 +82,17 @@ export default function IndustryDetail() {
                 {para}
               </p>
             ))}
+
+            {industry.quote && (
+              <blockquote className="!mt-10 border-l-2 border-accent/40 pl-6">
+                <p className="text-2xl italic leading-snug text-ink sm:text-[1.75rem]">
+                  “{industry.quote.text}”
+                </p>
+                <footer className="mt-3 text-[0.8125rem] text-faint">
+                  <span className="text-muted">{industry.quote.author}</span> · {industry.quote.role}
+                </footer>
+              </blockquote>
+            )}
           </Reveal>
 
           <Reveal i={1}>
