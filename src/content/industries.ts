@@ -144,28 +144,30 @@ export const industries: Industry[] = [
     name: "Healthcare",
     kicker: "Hospitals, clinics & care",
     summary:
-      "Environments where the people most vulnerable to airborne contamination are the people who have to be there.",
+      "Healthcare never stops, and neither do the pathogens moving through it. Our technology works continuously between cleaning cycles to protect patients, staff and visitors.",
     body: [
-      "Healthcare settings concentrate immunocompromised patients, antimicrobial-resistant organisms and continuous human traffic in the same air. The infection-control burden is well understood; the contribution of the air handling system to it is often less closely examined.",
-      "Our technology has been tested directly against the organisms that matter in these environments. Independent laboratory testing at Microchem recorded greater than 99.99% inactivation of MRSA on surfaces over six hours, and MRIGlobal recorded 86.98% inactivation of SARS-CoV-2 on surfaces over four hours.",
-      "It is designed to run in occupied space continuously, with no evacuation, no downtime and no interruption to clinical activity. It supplements infection-control protocol rather than competing with it.",
+      "Hospitals, clinics and long-term care homes treat the most vulnerable people in environments where pathogens spread easily, under the strain of high occupancy and stretched staff.",
+      "Surface cleaning and filtration are essential, but they leave gaps. Pathogens build up between cleaning cycles, and in long-term care, odours from bacteria and organic matter can signal a risk that manual methods alone do not remove.",
+      "Our technology closes that gap. It treats the air and surfaces continuously in occupied wards, waiting areas and treatment rooms, with no evacuation, no downtime and no interruption to clinical activity. It supplements infection-control protocol rather than replacing it.",
+      "Independent laboratory testing shows it substantially reduces bacterial and viral pathogens, including SARS-CoV-2 (99.99%), H1N1 influenza (99.93%), MRSA (99.96%), E. coli (99.67%), Listeria (99.99%), Pseudomonas aeruginosa (99.99%), Candida auris (99.99%) and Clostridium difficile spores (91.11%).",
+      "It is proven in the field too. In a four-week trial in active ambulances in Baltimore and Florida, surfaces in an equipped vehicle were swabbed regularly and compared with control vehicles running without it. Contamination was 94% to 99% lower on the stretcher bench, work table and door handles.",
     ],
     concerns: [
       {
-        title: "Antimicrobial-resistant organisms",
-        body: "Directly tested against MRSA, with results published in full alongside their protocols.",
+        title: "Airborne exposure",
+        body: "Waiting areas, exam rooms, wards and shared facilities, where patients and visitors breathe the same air.",
       },
       {
-        title: "Immunocompromised patients",
-        body: "Reducing the airborne and surface contaminant load in the spaces where exposure matters most.",
+        title: "High-touch surfaces",
+        body: "Surgical suites, ICUs and emergency departments, touched constantly between cleans.",
       },
       {
-        title: "Continuous occupancy",
-        body: "Operates safely in occupied space, so wards and clinics never need to be taken offline.",
+        title: "Gaps between cleaning cycles",
+        body: "The risk of healthcare-associated infection rises between cleans, and stretched teams have limited time for deep disinfection.",
       },
       {
-        title: "Transit & ambulance",
-        body: "Enclosed, high-turnover vehicles where infection control between patients is hardest to complete.",
+        title: "Odour in long-term care",
+        body: "Persistent odour signals bacterial contamination. The technology breaks it down at the source.",
       },
     ],
     devices: ["hvac", "ptac", "750-plus", "portable"],
@@ -174,9 +176,9 @@ export const industries: Industry[] = [
     // so the crop is biased slightly up from centre to keep both in frame.
     focal: "object-[50%_42%]",
     proof: {
-      value: ">99.99%",
-      label: "MRSA inactivation on surfaces",
-      context: "6 hours, Microchem laboratory",
+      value: "94–99%",
+      label: "Lower surface contamination",
+      context: "4 weeks, active ambulances against controls",
     },
   },
   {
@@ -211,7 +213,7 @@ export const industries: Industry[] = [
       },
     ],
     quote: {
-      text: "The implementation of [the technology] has been a game-changer for our district. The notable decrease in absenteeism underscores the positive impact of prioritizing the health and safety of our students.",
+      text: "The implementation of the technology has been a game-changer for our district. The notable decrease in absenteeism underscores the positive impact of prioritizing the health and safety of our students.",
       author: "School district",
       role: "United States",
     },
