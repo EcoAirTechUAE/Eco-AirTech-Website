@@ -233,28 +233,30 @@ export const industries: Industry[] = [
     name: "Gyms & Wellness",
     kicker: "Fitness, spa & recovery",
     summary:
-      "People come to a gym to improve their health, then breathe harder than anywhere else in their week while doing it.",
+      "People come to gyms, studios and spas to get healthier, then breathe harder there than anywhere else in their week. Heat, sweat and steam make these spaces ideal for bacteria and mould.",
     body: [
-      "Training multiplies exposure. Ventilation rate rises several times over resting levels, and breathing shifts from nasal to oral, bypassing the body's own filtration. Whatever is in the air of a gym is delivered deeper into the lungs and in far greater volume than in any other commercial environment.",
-      "The conditions are also unusually favourable to growth: sustained humidity from perspiration and showers, warm surfaces, heavy textile and equipment loading, and continuous occupancy. Spa, sauna and pool areas add standing moisture on every surface.",
-      "For operators positioning around recovery, longevity and performance, air is the one input in the building that every member consumes continuously and that almost no competitor can substantiate.",
+      "Gyms, yoga and Pilates studios and spas are built to make people healthier, but they are demanding indoor environments. Members train close together, breathe several times more air than at rest, largely through the mouth, and share mats, equipment and changing rooms all day.",
+      "The research is consistent. A study of 16 fitness facilities in the United States found Staphylococcus aureus on 38% of the surfaces sampled, and 30% of those isolates were MRSA (BMC Infectious Diseases, 2019). A study of 11 fitness centres in Lisbon found CO₂, VOCs and formaldehyde above national limits, with inadequate ventilation in most (Building and Environment, 2014).",
+      "Moisture is the bigger problem. Showers, steam rooms, saunas and pool areas add humidity to the air for the whole operating day, and warm, damp surfaces are where mould and bacteria establish. A 2026 review by Canada's National Collaborating Centre for Environmental Health notes that the humid conditions in steam rooms are an ideal environment for fungal growth, and that benches, floors, walls and door handles have all been found contaminated. Hot yoga studios hold the same warmth and humidity, with mats and props in constant skin contact.",
+      "Cleaning between classes cannot keep up. Our technology treats the air and exposed surfaces continuously, around the clock, reducing bacteria, viruses, mould and odours between cleaning cycles and through the busiest hours, and helping keep growth out of the air conditioning that serves the wet areas.",
+      "For operators positioned around wellness, recovery and longevity, the air is the one thing every member consumes continuously. A fresher changing room and a cleaner studio are noticed immediately, and it is a standard you can evidence.",
     ],
     concerns: [
       {
-        title: "Elevated respiration",
-        body: "Members breathe several times more air, more deeply, and largely through the mouth.",
+        title: "Gyms and training floors",
+        body: "Heavy breathing, close contact and shared equipment through every peak hour.",
       },
       {
-        title: "Persistent humidity",
-        body: "Perspiration, showers, pools and steam keep surfaces damp for most of the operating day.",
+        title: "Yoga and Pilates studios",
+        body: "Warm, closed rooms with mats, props and floor work in constant skin contact.",
       },
       {
-        title: "Odour management",
-        body: "Gas-phase contamination that ventilation dilutes but never actually removes.",
+        title: "Spas, saunas and steam rooms",
+        body: "Heat and standing moisture on benches, floors and walls, where mould and bacteria establish fastest.",
       },
       {
-        title: "Shared equipment & textiles",
-        body: "High-touch surfaces and absorbent materials in continuous circulation.",
+        title: "Showers and changing rooms",
+        body: "Humidity all day, damp textiles and the odours members notice first.",
       },
     ],
     devices: ["overwatch", "hvac", "750-plus"],
