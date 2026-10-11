@@ -35,28 +35,30 @@ export const industries: Industry[] = [
     name: "Residential",
     kicker: "Villas, apartments & family homes",
     summary:
-      "The air inside a home is the air a family breathes for most of their lives. In the Gulf, almost all of it has passed through an air conditioning system first.",
+      "Your home is more than the air you breathe. We treat the air and every surface continuously, through the air conditioning you already have.",
     body: [
-      "A sealed, air-conditioned home in a hot coastal climate is an unusual environment. Windows stay shut for months, humidity is drawn in and condensed continuously, and the same air recirculates through the same ductwork day after day. Whatever is in that system ends up in every room.",
-      "Children are the reason most of our residential clients call. They breathe faster relative to their body size than adults, spend more time close to floors and soft furnishings where contaminants settle, and their respiratory systems are still developing. What they breathe at home for the first ten years is not a small variable.",
-      "We work with families investing in their household the same way they invest in water filtration or nutrition: as infrastructure, not as a response to a problem. Where there is an existing issue we address it; where there is not, the point is that one never establishes.",
+      "What affects how a home feels does not only live in the air. It is on the surfaces your family touches, cooks and plays on, in the odours from cooking, pets and moisture, and in everything people and pets bring in every day.",
+      "In the Gulf the windows stay shut for months and the same air recirculates through the same ductwork, drawing in humidity as it goes. Whatever is in the system ends up in every room, which is why mould, mildew and odours seem to keep returning, even after cleaning or a filter change.",
+      "Filters and UV lamps only treat what passes through them. Our technology works through your air conditioning to carry treatment out into the rooms where your family actually lives, continuously reducing viruses, bacteria, mould, VOCs and odours in the air and on surfaces.",
+      "Children are the reason most of our residential clients call. They breathe faster for their size than adults, spend more time close to floors and soft furnishings where contaminants settle, and their lungs are still developing.",
+      "It is fitted inside your existing system by our engineers and runs silently, with nothing in the room and no sprays, chemicals or extra filters. Families treat it like water filtration: part of the home, not a response to a problem.",
     ],
     concerns: [
       {
-        title: "Nurseries & children's bedrooms",
-        body: "The rooms with the longest continuous occupancy in the house, and the occupants least able to tolerate poor air.",
+        title: "A home that never quite feels fresh",
+        body: "Even after cleaning or replacing the filters.",
       },
       {
-        title: "Humidity-driven growth",
-        body: "Coastal humidity plus constant cooling creates condensation in wall cavities, around ducting and behind furniture.",
+        title: "Lingering odours",
+        body: "Pets, cooking and moisture smells that seem to keep returning.",
       },
       {
-        title: "Allergens & pets",
-        body: "Dander, pollen carried in from outside, and dust that recirculates rather than dispersing.",
+        title: "Mould and mildew",
+        body: "Coastal humidity and constant cooling create the conditions for growth in ducts, wall cavities and behind furniture.",
       },
       {
-        title: "New-build off-gassing",
-        body: "Fresh joinery, adhesives, paints and furnishings release formaldehyde and VOCs for months after handover.",
+        title: "Children, allergies and pets",
+        body: "Nurseries and bedrooms have the longest occupancy in the house, and the occupants least able to tolerate poor air.",
       },
     ],
     devices: ["750-plus", "hvac", "ptac", "portable"],
