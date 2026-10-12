@@ -22,8 +22,8 @@ export default function Technology() {
         crumbs={[{ label: "Technology" }]}
         visual={
           <SmartImage
-            src="/assets/tech/hydroxyl-cycle.webp"
-            alt="Sunlight reacting with ozone and water vapour in the atmosphere to form hydroxyl radicals, which disperse through the air above a forest and lake"
+            src="/assets/tech/hydroxyl-nature.webp"
+            alt="Sunlight, oxygen and water vapour in the atmosphere forming hydroxyl radicals, which disperse through the air above a forest and lake"
             label="Hydroxyl formation diagram"
             ratio="aspect-[4/5]"
             className="mx-auto h-auto w-full max-w-sm object-contain lg:max-w-[26rem]"
