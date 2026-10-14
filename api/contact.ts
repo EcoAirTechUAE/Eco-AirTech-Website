@@ -19,7 +19,8 @@
  *
  * Email (optional, via resend.com):
  *   RESEND_API_KEY   from resend.com.
- *   ENQUIRY_TO       where enquiries land. Defaults to hello@eco-airtech.com.
+ *   ENQUIRY_TO       where enquiries land. One address, or several separated
+ *                    by commas. Defaults to hello@eco-airtech.com.
  *   ENQUIRY_FROM     the From address. Must be on a domain verified in
  *                    Resend. Defaults to the eco-airtech.com sender below.
  *
@@ -199,7 +200,10 @@ export default async function handler(request: Request): Promise<Response> {
     deliveries.push(
       sendEmail(resendKey!, {
         from: process.env.ENQUIRY_FROM || FROM,
-        to: [process.env.ENQUIRY_TO || TO],
+        to: (process.env.ENQUIRY_TO || TO)
+          .split(",")
+          .map((a) => a.trim())
+          .filter(Boolean),
         // So hitting reply in the inbox goes straight to the enquirer.
         reply_to: email,
         subject: `Enquiry: ${headerSafe(interest || "General")} · ${headerSafe(name)}`,
