@@ -2,8 +2,9 @@
  * The single network touch point for enquiries.
  *
  * Nothing else in the app makes a request. The form posts to /api/contact,
- * which emails the enquiry to the team; see api/contact.ts for the endpoint
- * and the environment variables it needs.
+ * which saves the enquiry to Airtable and, if configured, emails it to the
+ * team; see api/contact.ts for the endpoint and the environment variables it
+ * needs.
  *
  * The validation below is duplicated on the server. That is deliberate: this
  * copy exists to give the visitor an answer without a round trip, and the
@@ -69,7 +70,8 @@ export async function submitContact(data: ContactPayload): Promise<void> {
     res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      // The page the visitor was on tells the team which sector brought them in.
+      body: JSON.stringify({ ...data, page: window.location.pathname }),
     });
   } catch {
     // Offline, or the request never left the device.
