@@ -85,6 +85,22 @@ function headerSafe(s: string): string {
   return s.replace(/[\r\n]+/g, " ").trim();
 }
 
+/**
+ * Pulls the actual key out of an environment variable as pasted.
+ *
+ * Values copied from a browser often bring a line break, quotes or invisible
+ * characters with them, and any of those in an Authorization header makes
+ * fetch throw before the request leaves, so the provider never sees it. The
+ * base id is also often pasted as the whole Airtable URL. Matching the known
+ * shape of the key copes with all of these; anything else is used trimmed.
+ */
+function cleanSecret(value: string | undefined, shape: RegExp): string | undefined {
+  // Keys never contain spaces or non-ASCII, so anything outside printable
+  // ASCII is paste debris, including a line break in the middle.
+  const visible = (value ?? "").replace(/[^\x21-\x7E]/g, "");
+  return visible.match(shape)?.[0] ?? (visible || undefined);
+}
+
 export default async function handler(request: Request): Promise<Response> {
   if (request.method !== "POST") {
     return json(405, { error: "Method not allowed" });
@@ -124,9 +140,9 @@ export default async function handler(request: Request): Promise<Response> {
   if (message.length < 10) errors.message = "A sentence or two would help us respond properly.";
   if (Object.keys(errors).length > 0) return json(422, { errors });
 
-  const airtableToken = process.env.AIRTABLE_TOKEN;
-  const airtableBase = process.env.AIRTABLE_BASE_ID;
-  const resendKey = process.env.RESEND_API_KEY;
+  const airtableToken = cleanSecret(process.env.AIRTABLE_TOKEN, /pat[A-Za-z0-9]+\.[A-Za-z0-9]+/);
+  const airtableBase = cleanSecret(process.env.AIRTABLE_BASE_ID, /app[A-Za-z0-9]{14}/);
+  const resendKey = cleanSecret(process.env.RESEND_API_KEY, /re_[A-Za-z0-9_]+/);
 
   const useAirtable = Boolean(airtableToken && airtableBase);
   const useEmail = Boolean(resendKey);
