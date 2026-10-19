@@ -3,21 +3,17 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { ReviewCard } from "@/components/ui/ReviewCard";
-import { reviewsPage, testimonials } from "@/content/testimonials";
+import { reviewsPage, stripTestimonials } from "@/content/testimonials";
 
 /**
- * Three short quotes on the homepage, pointing to /reviews.
+ * Short quotes on the homepage, pointing to /reviews.
  *
  * Most visitors never open a reviews page, so the best few meet them on the
- * way to the contact form. Featured stories first, then the shortest of the
- * rest: a long quote in a three-up row makes the whole band uneven.
+ * way to the contact form. Which quotes, and their order, is set by `strip`
+ * in content/testimonials.ts. Renders nothing until at least one is approved.
  */
 export function ReviewsStrip() {
-  const picks = [...testimonials]
-    .sort((a, b) => Number(!!b.featured) - Number(!!a.featured) || a.quote.length - b.quote.length)
-    .slice(0, 3);
-
-  if (picks.length === 0) return null;
+  if (stripTestimonials.length === 0) return null;
 
   return (
     <Section>
@@ -34,7 +30,7 @@ export function ReviewsStrip() {
         </Reveal>
 
         <div className="mt-12 grid items-stretch gap-5 md:grid-cols-3">
-          {picks.map((t, i) => (
+          {stripTestimonials.slice(0, 3).map((t, i) => (
             <Reveal key={t.id} i={i} className="flex">
               <ReviewCard t={t} className="w-full" />
             </Reveal>

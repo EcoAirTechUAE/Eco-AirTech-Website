@@ -1,106 +1,81 @@
 import { Quote } from "lucide-react";
-import { SmartImage } from "@/components/ui/SmartImage";
 import { sectorLabel, type Testimonial } from "@/content/testimonials";
 import { cn } from "@/lib/utils";
 
-/**
- * Who said it, in one line: "Name, Role, Organisation" for named clients,
- * "Role, Property" for confidential ones. Location is shown separately.
- */
-export function attribution(t: Testimonial): { who: string; where: string } {
-  const who = [t.name, t.role].filter(Boolean).join(", ");
-  const where = [t.organisation ?? t.property, t.location].filter(Boolean).join(" · ");
-  return { who, where };
-}
-
 /** The quote with its highlight phrase picked out, if it has one. */
-export function QuoteText({ t, className }: { t: Testimonial; className?: string }) {
-  const at = t.highlight ? t.quote.indexOf(t.highlight) : -1;
+export function QuoteText({
+  quote,
+  highlight,
+  className,
+}: {
+  quote: string;
+  highlight?: string;
+  className?: string;
+}) {
+  const at = highlight ? quote.indexOf(highlight) : -1;
   return (
     <blockquote className={className}>
       <p>
+        “
         {at < 0 ? (
-          t.quote
+          quote
         ) : (
           <>
-            {t.quote.slice(0, at)}
-            <mark className="rounded-sm bg-accent/15 px-0.5 text-ink">{t.highlight}</mark>
-            {t.quote.slice(at + t.highlight!.length)}
+            {quote.slice(0, at)}
+            <mark className="rounded-sm bg-accent/15 px-0.5 text-ink">{highlight}</mark>
+            {quote.slice(at + highlight!.length)}
           </>
         )}
+        ”
       </p>
     </blockquote>
   );
 }
 
-export function SampleBadge() {
-  return (
-    <span className="rounded-full border border-warn/40 px-2 py-0.5 font-mono text-[0.6875rem] uppercase tracking-wider text-warn">
-      Sample
-    </span>
-  );
-}
-
-/** Headshot, else logo, else initials, so a card never has an empty slot. */
-export function Avatar({ t, size = "md" }: { t: Testimonial; size?: "md" | "lg" }) {
-  const box = size === "lg" ? "h-14 w-14" : "h-10 w-10";
-  if (t.photo) {
-    return (
-      <SmartImage
-        src={t.photo}
-        alt=""
-        ratio=""
-        className={cn(box, "shrink-0 rounded-full object-cover p-0")}
-      />
-    );
-  }
-  const initials = (t.name ?? t.role)
-    .split(/\s+/)
-    .filter((w) => /^[A-Za-z]/.test(w))
-    .slice(0, 2)
-    .map((w) => w[0].toUpperCase())
-    .join("");
+/**
+ * Marks a review that is awaiting approval. Only ever seen on preview
+ * builds, since pending reviews are left out of the live site.
+ */
+export function PendingBadge({ note }: { note: string }) {
   return (
     <span
-      aria-hidden
-      className={cn(
-        box,
-        "grid shrink-0 place-items-center rounded-full border border-accent/25 bg-accent/10 font-medium text-accent",
-        size === "lg" ? "text-base" : "text-[0.8125rem]",
-      )}
+      title={note}
+      className="inline-flex max-w-full items-center rounded-md border border-warn/40 px-2.5 py-1 text-[0.75rem] leading-snug text-warn"
     >
-      {initials}
+      Awaiting approval · {note}
     </span>
   );
 }
 
-/** A quote card for the grid and the homepage strip. */
+/**
+ * A text-led quote card for the grid and the homepage strip. Deliberately no
+ * portrait, rating or platform badge.
+ */
 export function ReviewCard({ t, className }: { t: Testimonial; className?: string }) {
-  const { who, where } = attribution(t);
   return (
     <figure className={cn("card flex flex-col p-6 sm:p-7", className)}>
       <div className="flex items-center justify-between gap-3">
         <Quote aria-hidden className="h-5 w-5 text-accent/70" />
-        <div className="flex items-center gap-2">
-          {t.sample && <SampleBadge />}
-          <span className="font-mono text-[0.75rem] uppercase tracking-wider text-faint">
-            {sectorLabel[t.sector]}
-          </span>
-        </div>
+        <span className="font-mono text-[0.75rem] uppercase tracking-wider text-faint">
+          {sectorLabel[t.sector]}
+        </span>
       </div>
 
-      <QuoteText t={t} className="mt-5 flex-1 leading-relaxed text-ink/90" />
+      <QuoteText
+        quote={t.quote}
+        highlight={t.highlight}
+        className="mt-5 flex-1 text-lg leading-relaxed text-ink"
+      />
 
-      <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-5">
-        <Avatar t={t} />
-        <div className="min-w-0">
-          <p className="truncate text-sm font-medium text-ink">{who}</p>
-          <p className="truncate text-[0.8125rem] text-faint">{where}</p>
-        </div>
-        {t.source && (
-          <span className="ms-auto shrink-0 text-[0.75rem] text-faint">via {t.source}</span>
-        )}
+      <figcaption className="mt-6 border-t border-line pt-5 text-sm text-muted">
+        {t.attribution}
       </figcaption>
+
+      {t.pending && (
+        <div className="mt-4">
+          <PendingBadge note={t.pending} />
+        </div>
+      )}
     </figure>
   );
 }

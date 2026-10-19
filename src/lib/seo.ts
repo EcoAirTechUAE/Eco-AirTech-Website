@@ -82,9 +82,9 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
       "Every published laboratory and live-environment result, each with the product, technologies fitted, duration, space and administering body that produced it.",
   },
   "/reviews": {
-    title: titled("Client reviews from homes, hotels and healthcare"),
+    title: titled("Client stories: what cleaner air means to our clients"),
     description:
-      "What clients across the UAE and GCC say about Eco AirTech, from family homes and villas to five-star resorts, clinics, schools and gyms.",
+      "Homeowners and hospitality clients across the UAE and GCC on what led them to Eco AirTech, and what changed in the air they live and work in.",
   },
   "/contact": {
     title: titled("Request a site assessment"),

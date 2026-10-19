@@ -1,199 +1,218 @@
 /**
  * Client reviews, for /reviews and the homepage strip.
  *
- * HOW TO ADD ONE
- * Copy an entry below and fill it in. Only `id`, `quote`, `role`, `sector`
- * and `location` are required; everything else is optional and the layout
- * adapts to what is there.
+ * APPROVAL
+ * Anything with a `pending` note is awaiting the client's permission or a
+ * wording check. It shows, badged, on local builds and Vercel preview links,
+ * and is left out of the live site automatically (see vite.config.ts). To
+ * publish one, delete its `pending` line once the approval is in writing.
  *
- * Confidentiality: much of our GCC work is contractually confidential (see
- * clients.ts). Leave `name` and `organisation` out and describe the client
- * instead, e.g. role "Director of Engineering", organisation omitted,
- * property "5-star resort". Never name a client without written permission.
+ * ATTRIBUTION
+ * Much of our work is under confidentiality agreements. Describe clients by
+ * sector and place ("Private residential client, UAE") unless they have
+ * agreed in writing to be named.
  *
- * Featured stories (`featured: true`) get the large alternating layout at
- * the top of /reviews and are the ones the homepage strip draws from. Two or
- * three is right; more and they stop feeling featured.
+ * WHAT NOT TO ADD
+ * No star ratings, review-platform badges or counters without verified
+ * figures. No portraits paired with quotes unless they are the actual
+ * client's own approved photo. Stock or generated images are illustrative
+ * only: mark them `illustrative: true` and never caption them as a client's
+ * property.
  *
- * Entries marked `sample: true` are layout placeholders and show a visible
- * "Sample" badge. Remove every one before this page goes live.
- *
- * No star ratings, deliberately: Google ignores review stars a business
- * publishes about itself, and a small count ("5.0 from 6") undersells a
- * high-value service more than it helps.
+ * HELD BACK
+ * "Could this be the future of mould-free homes?" (supplied as feedback from
+ * a UK parliamentarian) is deliberately not included. Add it only once the
+ * exact wording and permission for quote and attribution are confirmed, and
+ * never in a way that implies political or institutional endorsement.
  */
-import type { VideoSlot } from "@/config/site";
 
-export type Sector =
-  | "residential"
-  | "hotels"
-  | "palaces"
-  | "healthcare"
-  | "schools"
-  | "gyms"
-  | "hospitality"
-  | "transportation";
+export type Sector = "residential" | "hospitality" | "housing";
 
 export const sectorLabel: Record<Sector, string> = {
-  residential: "Homes",
-  hotels: "Hotels & resorts",
-  palaces: "Palaces & places of worship",
-  healthcare: "Healthcare",
-  schools: "Schools & nurseries",
-  gyms: "Gyms & wellness",
-  hospitality: "Hospitality & venues",
-  transportation: "Transportation",
+  residential: "Residential",
+  hospitality: "Hospitality",
+  housing: "Housing",
 };
+
+export interface StoryImage {
+  src: string;
+  alt: string;
+  /** Stock or generated: captioned as illustrative, never as the client's. */
+  illustrative?: boolean;
+}
 
 export interface Testimonial {
   id: string;
-  /** The words, as given. Keep the client's phrasing; trim, don't rewrite. */
+  /** The client's words. */
   quote: string;
-  /** Optional phrase from inside `quote` to emphasise. Must match exactly. */
+  /** A phrase from inside `quote` to emphasise. Must match it exactly. */
   highlight?: string;
-  /** Person's name. Omit for confidential clients. */
-  name?: string;
-  /** Always present, e.g. "Facilities Manager" or "Homeowner". */
-  role: string;
-  /** Company or property name. Omit for confidential clients. */
-  organisation?: string;
-  /** Describes the client when they cannot be named, e.g. "5-star resort". */
-  property?: string;
-  location: string;
+  /** e.g. "Private residential client, UAE". */
+  attribution: string;
   sector: Sector;
-  /** Month and year, e.g. "March 2026". */
-  date?: string;
-  /** Where the review came from, shown as a small label. */
-  source?: "Google" | "LinkedIn" | "Email" | "Site visit";
-  /** Headshot, /assets/reviews/<file>. Square, at least 160px. */
-  photo?: string;
-  /** Client logo, white on transparent like the others in /assets/clients. */
-  logo?: string;
-  /** A photo of the space or installation, for featured stories. */
-  image?: string;
-  video?: VideoSlot;
-  featured?: boolean;
-  /** Up to three outcomes, shown large beside a featured story. */
-  metrics?: { value: string; label: string }[];
-  /** id of a study in testResults.ts, to link the story to its data. */
-  studyId?: string;
-  sample?: boolean;
+  /** What is outstanding before this can go live. Remove once approved. */
+  pending?: string;
+  /** Show in the homepage strip, in this order. */
+  strip?: number;
+}
+
+export interface FeaturedStory {
+  id: string;
+  headline: string;
+  context: string;
+  sector: Sector;
+  attribution: string;
+  /** A client quotation, shown with `highlight` picked out. */
+  quote?: string;
+  highlight?: string;
+  /**
+   * For an illustrative story that is not a client quotation: body copy,
+   * shown as plain paragraphs under a visible label.
+   */
+  body?: string[];
+  /** Visible label for illustrative stories, e.g. "placeholder for design review". */
+  label?: string;
+  image?: StoryImage;
+  /** What the image should show, until one is supplied. */
+  imageBrief?: string;
+  pending?: string;
 }
 
 export const reviewsPage = {
   eyebrow: "Client stories",
-  title: "What our clients say.",
-  lead: "From family homes to five-star resorts, in their own words. Many of our GCC clients are contractually confidential, so some reviews are attributed by role and property rather than by name.",
-  featuredHeadline: "In depth",
+  title: "What cleaner air means to our clients.",
+  lead: "From the homes we live in to the places we stay, indoor air shapes our everyday experience. Here, clients share what led them to Eco AirTech, and what stood out afterwards.",
+  confidentiality:
+    "Some clients are described by sector rather than name to respect their privacy and confidentiality agreements.",
   wallHeadline: "More from our clients",
   strip: {
     eyebrow: "Client stories",
-    headline: "In their own words.",
-    cta: "Read all client stories",
+    headline: "In our clients’ words.",
+    cta: "Read our client stories",
   },
   cta: {
-    headline: "Want results like these in your building?",
-    body: "Every project starts with an assessment of the space and what's driving the problem.",
+    headline: "Tell us about the air in your space.",
+    body: "Whether it’s your home, a guest room or a wider property portfolio, tell us what you’re experiencing. Our team can help you explore the right air treatment approach.",
+    button: "Let’s talk",
   },
 };
 
-export const testimonials: Testimonial[] = [
+const PERMISSION = "Publication permission to confirm";
+
+export const featuredStories: FeaturedStory[] = [
   {
-    id: "sample-resort",
-    sample: true,
-    featured: true,
+    id: "air-diet",
+    headline: "“We think about what we eat. What about the air we breathe?”",
+    context:
+      "For this household, the starting point was a different way of thinking about wellbeing: paying attention to the air they live in every day.",
     quote:
-      "Guests stopped mentioning the smell in the lower-floor rooms within the first fortnight. What convinced our engineering team was that Eco AirTech measured before and after, rather than asking us to take it on trust.",
-    highlight: "measured before and after",
-    role: "Director of Engineering",
-    property: "5-star beach resort",
-    location: "Dubai",
-    sector: "hotels",
-    date: "2026",
-    source: "Email",
-    image: "/assets/reviews/sample-resort.jpg",
-    metrics: [
-      { value: "212", label: "rooms treated" },
-      { value: "0", label: "odour complaints in 6 months" },
-    ],
-  },
-  {
-    id: "sample-clinic",
-    sample: true,
-    featured: true,
-    quote:
-      "We needed something that worked continuously in occupied rooms, without closing a ward. Installation was done overnight across two floors and our infection control lead signed it off on the data.",
-    highlight: "worked continuously in occupied rooms",
-    name: "Dr. Sample Name",
-    role: "Medical Director",
-    organisation: "Sample Clinic",
-    location: "Abu Dhabi",
-    sector: "healthcare",
-    date: "2026",
-    logo: "/assets/reviews/sample-clinic-logo.png",
-    metrics: [
-      { value: "2", label: "floors, installed overnight" },
-      { value: "24/7", label: "treatment in occupied rooms" },
-    ],
-  },
-  {
-    id: "sample-home",
-    sample: true,
-    quote:
-      "Our daughter's allergies were worst at night. Three weeks after the unit went in, she's sleeping through. I wish we'd looked at the air conditioning years ago.",
-    highlight: "she's sleeping through",
-    name: "Sample N.",
-    role: "Homeowner",
-    location: "Dubai Hills",
+      "Very few of us think about our ‘air diet’. We wanted to look beyond traditional filters and find an air treatment solution for our home.",
+    highlight: "our ‘air diet’",
+    attribution: "Private residential client, UAE",
     sector: "residential",
-    source: "Google",
+    imageBrief:
+      "A calm, naturally lit living room with understated furnishings and no recognisable skyline.",
+    pending: "Adapted from supplied feedback: client approval of wording required",
   },
   {
-    id: "sample-school",
-    sample: true,
+    id: "hotel-trial",
+    headline: "A noticeable difference. A bigger conversation.",
+    context:
+      "Feedback following a hotel trial opened a wider discussion about mould, odour and the conditions that allow problems to return.",
     quote:
-      "Parents ask about air quality now. Being able to show them the test results, not just a brochure, made the conversation easy.",
-    role: "Head of Operations",
-    property: "British curriculum school",
-    location: "Sharjah",
-    sector: "schools",
+      "The change in the mould-related odour within 24 hours was astonishing. It made us want to explore a wider rollout. You also helped us understand that addressing mould means looking at more than one source.",
+    highlight: "within 24 hours",
+    attribution: "Senior hospitality executive, GCC",
+    sector: "hospitality",
+    imageBrief:
+      "A generic premium guest-room detail, such as a bed, curtain and soft daylight. No actual client property.",
+    // The customer's reported experience, not proof that all mould was
+    // removed or a guaranteed timeframe. Check against the trial record.
+    pending: "Adapted feedback: approval and confirmation against the trial record required",
   },
   {
-    id: "sample-gym",
-    sample: true,
-    quote:
-      "The changing rooms used to smell damp by mid-afternoon. Not any more, and members noticed before we told them.",
-    highlight: "members noticed before we told them",
-    role: "General Manager",
-    property: "Boutique fitness studio",
-    location: "Dubai Marina",
-    sector: "gyms",
-    source: "Google",
-  },
-  {
-    id: "sample-villa",
-    sample: true,
-    quote:
-      "Straightforward from the first visit. They explained what was actually growing in our ducts and fixed it without anyone pulling the ceiling down.",
-    name: "Sample A.",
-    role: "Villa owner",
-    location: "Al Barsha",
+    id: "forgot-clean-air",
+    headline: "“I forgot what clean air smelt like.”",
+    context: "Sometimes the feedback that stays with us is the simplest.",
+    quote: "I forgot what clean air smelt like.",
+    highlight: "clean air",
+    attribution: "Private residential client",
     sector: "residential",
+    imageBrief:
+      "A quiet reading corner with natural textures and soft light. No perfume, diffusers or imagery implying scent proves air quality.",
+    pending: PERMISSION,
   },
   {
-    id: "sample-majlis",
-    sample: true,
-    quote:
-      "A large majlis with heavy carpets and constant guests is hard to keep fresh. The difference was noticeable within days.",
-    role: "Estate Manager",
-    property: "Private residence",
-    location: "Abu Dhabi",
-    sector: "palaces",
+    id: "housing-illustrative",
+    label: "Illustrative housing-provider story — placeholder for design review",
+    headline: "From responding to problems to thinking about prevention.",
+    context:
+      "An example of how a future housing-sector story could explain the role of air treatment within a wider property-care programme.",
+    body: [
+      "Addressing damp, mould and condensation means looking beyond the immediate signs of a problem. A proactive approach considers ventilation, moisture sources, building conditions and ongoing maintenance.",
+      "Air treatment can form part of that wider approach. The aim is to support better indoor environments while addressing the conditions that allow problems to return.",
+    ],
+    attribution: "Example sector perspective — housing",
+    sector: "housing",
+    imageBrief:
+      "An unbranded residential building, or a property professional inspecting a generic home. Must not imply an existing housing-provider partnership.",
+    pending: "Placeholder for design review: never publish as written",
   },
 ];
 
-/** The stories that get the large layout, in order. */
-export const featuredTestimonials = testimonials.filter((t) => t.featured);
+export const testimonials: Testimonial[] = [
+  {
+    id: "forgot-clean-air",
+    quote: "I forgot what clean air smelt like.",
+    attribution: "Private residential client",
+    sector: "residential",
+    strip: 1,
+    pending: PERMISSION,
+  },
+  {
+    id: "tv-and-fridge",
+    quote: "I need you like I need my TV and fridge.",
+    attribution: "Private residential client, UAE",
+    sector: "residential",
+    strip: 2,
+    pending: PERMISSION,
+  },
+  {
+    id: "beyond-filters",
+    quote: "We wanted to look beyond traditional filters.",
+    attribution: "Private residential client, UAE",
+    sector: "residential",
+    strip: 3,
+    pending: "Adapted feedback: approval required",
+  },
+  {
+    id: "victory-heights",
+    quote:
+      "Since installing Eco AirTech, my son has had a significant reduction in asthma triggers. Having lived here eleven years, we were considering leaving the UAE. Eco AirTech has changed that.",
+    highlight: "Eco AirTech has changed that",
+    attribution: "Homeowner, Victory Heights, Dubai",
+    sector: "residential",
+    // Supplied as "has not had significant reduction", which reverses the
+    // meaning; drafted as the evident intent. Confirm the exact words.
+    pending: "Wording to confirm with the client, and publication permission",
+  },
+  {
+    id: "mould-odour",
+    quote: "The change in the mould-related odour within 24 hours was astonishing.",
+    highlight: "within 24 hours",
+    attribution: "Senior hospitality executive, GCC",
+    sector: "hospitality",
+    pending: "Adapted feedback: approval and supporting trial record required",
+  },
+];
 
-/** Everything else, for the filterable grid. */
-export const wallTestimonials = testimonials.filter((t) => !t.featured);
+/* Pending items are never rendered on the live site, so they are absent from
+   its prerendered HTML and from what search engines index. */
+const visible = <T extends { pending?: string }>(items: T[]) =>
+  __SHOW_PENDING_REVIEWS__ ? items : items.filter((item) => !item.pending);
+
+export const publishedStories = visible(featuredStories);
+export const publishedTestimonials = visible(testimonials);
+export const stripTestimonials = publishedTestimonials
+  .filter((t) => t.strip)
+  .sort((a, b) => a.strip! - b.strip!);

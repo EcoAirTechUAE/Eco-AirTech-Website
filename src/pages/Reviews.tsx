@@ -1,47 +1,43 @@
 import { useMemo, useState, type ReactNode } from "react";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { ButtonLink } from "@/components/ui/Button";
+import { ButtonAnchor } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
-import { VideoFacade } from "@/components/ui/VideoFacade";
-import {
-  Avatar,
-  QuoteText,
-  ReviewCard,
-  SampleBadge,
-  attribution,
-} from "@/components/ui/ReviewCard";
+import { PendingBadge, QuoteText, ReviewCard } from "@/components/ui/ReviewCard";
 import { ContactSection } from "@/components/sections/ContactSection";
 import {
-  featuredTestimonials,
+  publishedStories,
+  publishedTestimonials,
   reviewsPage,
   sectorLabel,
-  wallTestimonials,
+  type FeaturedStory,
   type Sector,
-  type Testimonial,
 } from "@/content/testimonials";
 import { cn } from "@/lib/utils";
 
 /**
  * /reviews
  *
- * Two layouts on purpose. Featured stories alternate media and quote so a
- * few in-depth accounts carry weight; the rest sit in a masonry grid that is
- * quick to skim and can be narrowed to the visitor's own sector. No carousel:
- * hidden slides are rarely seen and carry less weight with search engines.
+ * Featured stories alternate image and text so a few accounts carry weight;
+ * shorter quotes sit in a text-led masonry grid that can be narrowed by
+ * sector. No carousel: hidden slides are rarely seen and carry less weight
+ * with search engines. Sections with nothing approved simply don't render.
  */
 export default function Reviews() {
   const [sector, setSector] = useState<Sector | "all">("all");
 
-  // Only offer filters for sectors that actually have reviews.
+  // Filters only for sectors that actually have quotes.
   const sectors = useMemo(
-    () => [...new Set(wallTestimonials.map((t) => t.sector))],
+    () => [...new Set(publishedTestimonials.map((t) => t.sector))],
     [],
   );
   const visible = useMemo(
-    () => (sector === "all" ? wallTestimonials : wallTestimonials.filter((t) => t.sector === sector)),
+    () =>
+      sector === "all"
+        ? publishedTestimonials
+        : publishedTestimonials.filter((t) => t.sector === sector),
     [sector],
   );
 
@@ -52,24 +48,23 @@ export default function Reviews() {
         title={reviewsPage.title}
         lead={reviewsPage.lead}
         crumbs={[{ label: "Reviews" }]}
-      />
+      >
+        <p className="mt-8 max-w-prose border-l-2 border-accent/40 pl-5 text-sm leading-relaxed text-faint">
+          {reviewsPage.confidentiality}
+        </p>
+      </PageHero>
 
-      {featuredTestimonials.length > 0 && (
+      {publishedStories.length > 0 && (
         <Section>
-          <div className="container">
-            <Reveal>
-              <p className="eyebrow">{reviewsPage.featuredHeadline}</p>
-            </Reveal>
-            <div className="mt-10 space-y-20 sm:space-y-28">
-              {featuredTestimonials.map((t, i) => (
-                <FeaturedStory key={t.id} t={t} flip={i % 2 === 1} />
-              ))}
-            </div>
+          <div className="container space-y-24 sm:space-y-32">
+            {publishedStories.map((story, i) => (
+              <Story key={story.id} story={story} flip={i % 2 === 1} />
+            ))}
           </div>
         </Section>
       )}
 
-      {wallTestimonials.length > 0 && (
+      {publishedTestimonials.length > 0 && (
         <Section surface>
           <div className="container">
             <Reveal>
@@ -91,7 +86,7 @@ export default function Reviews() {
             </Reveal>
 
             <p aria-live="polite" className="sr-only">
-              Showing {visible.length} of {wallTestimonials.length} reviews
+              Showing {visible.length} of {publishedTestimonials.length} quotes
             </p>
 
             {/* CSS columns give the masonry stagger without a library; each
@@ -110,12 +105,13 @@ export default function Reviews() {
           <Reveal className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-line bg-surface/60 p-8 sm:p-10 lg:flex-row lg:items-center">
             <div className="max-w-xl">
               <h2 className="text-display-sm font-medium">{reviewsPage.cta.headline}</h2>
-              <p className="mt-3 text-muted">{reviewsPage.cta.body}</p>
+              <p className="mt-3 leading-relaxed text-muted">{reviewsPage.cta.body}</p>
             </div>
-            <ButtonLink to="/contact" size="lg">
-              Book an assessment
-              <ArrowRight aria-hidden className="h-4 w-4" />
-            </ButtonLink>
+            {/* The form is the next section down, so take them straight to it. */}
+            <ButtonAnchor href="#contact" size="lg">
+              {reviewsPage.cta.button}
+              <ArrowDown aria-hidden className="h-4 w-4" />
+            </ButtonAnchor>
           </Reveal>
         </div>
       </Section>
@@ -125,94 +121,95 @@ export default function Reviews() {
   );
 }
 
-function FeaturedStory({ t, flip }: { t: Testimonial; flip: boolean }) {
-  const { who, where } = attribution(t);
+function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
+  const illustrative = Boolean(story.label);
 
   return (
-    <article className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <Reveal className={cn(flip && "lg:order-2")}>
-        <StoryMedia t={t} />
-      </Reveal>
+    <article
+      className={cn(
+        illustrative && "rounded-2xl border border-dashed border-warn/40 p-6 sm:p-10",
+      )}
+    >
+      {story.label && (
+        <p className="mb-8 inline-block rounded-full border border-warn/40 px-3 py-1 text-[0.8125rem] text-warn">
+          {story.label}
+        </p>
+      )}
 
-      <Reveal i={1}>
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-[0.75rem] uppercase tracking-wider text-accent">
-            {sectorLabel[t.sector]}
-          </span>
-          {t.sample && <SampleBadge />}
-        </div>
+      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+        <Reveal className={cn(flip && "lg:order-2")}>
+          <StoryMedia story={story} />
+        </Reveal>
 
-        <QuoteText
-          t={t}
-          className="mt-5 text-xl leading-relaxed text-ink sm:text-[1.4rem] sm:leading-[1.55]"
-        />
+        <Reveal i={1}>
+          <p className="font-mono text-[0.75rem] uppercase tracking-wider text-accent">
+            {sectorLabel[story.sector]}
+          </p>
+          <h2 className="mt-4 text-display-sm font-medium">{story.headline}</h2>
+          <p className="mt-4 leading-relaxed text-muted">{story.context}</p>
 
-        <div className="mt-7 flex items-center gap-4">
-          <Avatar t={t} size="lg" />
-          <div>
-            <p className="font-medium text-ink">{who}</p>
-            <p className="text-sm text-faint">{where}</p>
-          </div>
-        </div>
+          {story.quote && (
+            <QuoteText
+              quote={story.quote}
+              highlight={story.highlight}
+              className="mt-7 border-l-2 border-accent/50 pl-5 text-xl leading-relaxed text-ink sm:text-[1.35rem] sm:leading-[1.55]"
+            />
+          )}
 
-        {t.metrics && t.metrics.length > 0 && (
-          <dl className="mt-8 grid grid-cols-2 gap-6 border-t border-line pt-7 sm:grid-cols-3">
-            {t.metrics.slice(0, 3).map((m) => (
-              <div key={m.label}>
-                <dt className="sr-only">{m.label}</dt>
-                <dd>
-                  <span className="tnum block text-3xl font-medium text-accent">{m.value}</span>
-                  <span className="mt-1 block text-[0.8125rem] leading-snug text-muted">
-                    {m.label}
-                  </span>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
+          {story.body && (
+            <div className="mt-7 space-y-4 leading-relaxed text-ink/90">
+              {story.body.map((para) => (
+                <p key={para.slice(0, 24)}>{para}</p>
+              ))}
+            </div>
+          )}
 
-        {t.studyId && (
-          <ButtonLink to="/results" variant="ghost" className="mt-6 px-0">
-            See the test data
-            <ArrowRight aria-hidden className="h-4 w-4" />
-          </ButtonLink>
-        )}
-      </Reveal>
+          <p className="mt-6 text-sm text-faint">— {story.attribution}</p>
+
+          {story.pending && (
+            <div className="mt-5">
+              <PendingBadge note={story.pending} />
+            </div>
+          )}
+        </Reveal>
+      </div>
     </article>
   );
 }
 
-/** Video, else a photo of the space, else the logo, else a large quote mark. */
-function StoryMedia({ t }: { t: Testimonial }) {
-  const { who, where } = attribution(t);
-
-  if (t.video) return <VideoFacade video={t.video} />;
-  if (t.image) {
+/**
+ * The supplied image, captioned as illustrative where it is stock or
+ * generated; otherwise an oversized quotation mark on a dark ground, as the
+ * brief asks, rather than an empty frame.
+ */
+function StoryMedia({ story }: { story: FeaturedStory }) {
+  if (story.image) {
     return (
-      <SmartImage
-        src={t.image}
-        alt={`${where}`}
-        label={`Photo for ${who}`}
-        className="rounded-2xl"
-      />
+      <figure>
+        <SmartImage src={story.image.src} alt={story.image.alt} className="rounded-2xl" />
+        {story.image.illustrative && (
+          <figcaption className="mt-2 text-[0.75rem] text-faint">Illustrative image</figcaption>
+        )}
+      </figure>
     );
   }
+
   return (
     <div className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-line bg-surface">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--accent)/0.12),transparent_65%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,hsl(var(--accent)/0.14),transparent_60%)]"
       />
-      {t.logo ? (
-        <SmartImage
-          src={t.logo}
-          alt={t.organisation ?? ""}
-          label={`Logo for ${t.organisation ?? who}`}
-          ratio=""
-          className="relative h-20 w-auto max-w-[60%] object-contain"
-        />
-      ) : (
-        <Quote aria-hidden className="relative h-16 w-16 text-accent/40" />
+      <span
+        aria-hidden
+        className="relative select-none font-serif text-[10rem] leading-none text-accent/35 sm:text-[14rem]"
+      >
+        “
+      </span>
+      {__SHOW_PENDING_REVIEWS__ && story.imageBrief && (
+        <p className="absolute inset-x-5 bottom-4 text-center text-[0.75rem] text-faint">
+          Image wanted: {story.imageBrief}
+        </p>
       )}
     </div>
   );
