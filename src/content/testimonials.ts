@@ -184,11 +184,11 @@ export const featuredStories: FeaturedStory[] = [
   },
   {
     id: "forgot-clean-air",
+    // The headline is the client's quote, so it isn't repeated below it.
     headline: "“I forgot what clean air smelt like.”",
-    context: "Sometimes the feedback that stays with us is the simplest.",
-    quote: "I forgot what clean air smelt like.",
-    highlight: "clean air",
-    attribution: "Private residential client",
+    context:
+      "A simple observation from a client about the difference they noticed in their home after introducing Eco AirTech.",
+    attribution: "Private residential client, UAE",
     sector: "residential",
     imageBrief:
       "A quiet reading corner with natural textures and soft light. No perfume, diffusers or imagery implying scent proves air quality.",
@@ -215,7 +215,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "forgot-clean-air",
     quote: "I forgot what clean air smelt like.",
-    attribution: "Private residential client",
+    attribution: "Private residential client, UAE",
     sector: "residential",
     strip: 1,
   },
@@ -267,12 +267,14 @@ export const leadTestimonial = publishedTestimonials.find((t) => t.lead === 1);
 export const secondLeadTestimonial = publishedTestimonials.find((t) => t.lead === 2);
 /**
  * The grid skips lead quotes and any quote a featured story on the page
- * already contains, so nothing reads twice. Those quotes still appear in the
+ * already contains, in its quote or its headline, so nothing reads twice. Those quotes still appear in the
  * homepage strip, where the stories are not shown.
  */
 const inAStory = (quote: string) => {
   const core = quote.replace(/[.!?]+$/, "");
-  return publishedStories.some((story) => story.quote?.includes(core));
+  return publishedStories.some(
+    (story) => story.quote?.includes(core) || story.headline.includes(core),
+  );
 };
 export const gridTestimonials = publishedTestimonials.filter(
   (t) => !t.lead && !inAStory(t.quote),
