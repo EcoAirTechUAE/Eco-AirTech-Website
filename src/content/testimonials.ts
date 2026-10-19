@@ -249,7 +249,18 @@ export const publishedStories = visible(featuredStories);
 export const publishedTestimonials = visible(testimonials);
 export const leadTestimonial = publishedTestimonials.find((t) => t.lead === 1);
 export const secondLeadTestimonial = publishedTestimonials.find((t) => t.lead === 2);
-export const gridTestimonials = publishedTestimonials.filter((t) => !t.lead);
+/**
+ * The grid skips lead quotes and any quote a featured story on the page
+ * already contains, so nothing reads twice. Those quotes still appear in the
+ * homepage strip, where the stories are not shown.
+ */
+const inAStory = (quote: string) => {
+  const core = quote.replace(/[.!?]+$/, "");
+  return publishedStories.some((story) => story.quote?.includes(core));
+};
+export const gridTestimonials = publishedTestimonials.filter(
+  (t) => !t.lead && !inAStory(t.quote),
+);
 
 export const stripTestimonials = publishedTestimonials
   .filter((t) => t.strip)
