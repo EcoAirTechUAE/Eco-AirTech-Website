@@ -45,6 +45,11 @@ export interface StoryImages {
   main: StoryImage;
   /** Optional second image, shown smaller and overlapping the main one. */
   inset?: StoryImage;
+  /**
+   * A headshot rather than a scene: shown framed at its own size on the dark
+   * panel, so a small portrait is never stretched soft across the column.
+   */
+  portrait?: boolean;
   /** Shown under the images, e.g. the place. */
   caption?: string;
   /** Photographer or rights holder, if the licence asks for credit. */
@@ -150,10 +155,13 @@ export const featuredStories: FeaturedStory[] = [
     quote:
       "Since installing Eco AirTech, my son has not had significant asthma triggers. Having lived here eleven years, we were considering leaving the UAE. Eco AirTech has changed that.",
     highlight: "Eco AirTech has changed that",
-    attribution: "Homeowner, Victory Heights, Dubai",
+    // Named, with his photo, as supplied by the business on 2026-10-19.
+    attribution: "Luke Eley, homeowner, Victory Heights, Dubai",
     sector: "residential",
-    // Client photo to follow: add it as images.main once supplied.
-    imageBrief: "Photo of the client, being supplied by the business.",
+    images: {
+      main: { src: "/assets/reviews/luke-eley.jpg", alt: "Luke Eley" },
+      portrait: true,
+    },
   },
   {
     id: "hotel-trial",
