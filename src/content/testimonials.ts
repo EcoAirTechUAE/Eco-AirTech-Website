@@ -108,7 +108,9 @@ export const featuredStories: FeaturedStory[] = [
     quote:
       "Very few of us think about our ‘air diet’. We wanted to look beyond traditional filters and find an air treatment solution for our home.",
     highlight: "our ‘air diet’",
-    attribution: "Private residential client, UAE",
+    // Naming Marsa Al Arab is agreed on condition the story stays positive
+    // and about investing in wellbeing. Never pair it with mould or odour.
+    attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
     imageBrief:
       "A calm, naturally lit living room with understated furnishings and no recognisable skyline.",
@@ -180,7 +182,8 @@ export const testimonials: Testimonial[] = [
   {
     id: "beyond-filters",
     quote: "We wanted to look beyond traditional filters.",
-    attribution: "Private residential client, UAE",
+    // Same Marsa Al Arab client as the "air diet" story; same condition.
+    attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
     strip: 3,
     pending: "Adapted feedback: approval required",
