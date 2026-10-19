@@ -140,6 +140,22 @@ export const featuredStories: FeaturedStory[] = [
     },
   },
   {
+    id: "victory-heights",
+    headline: "“We were considering leaving the UAE.”",
+    context:
+      "After eleven years in Dubai, one family in Victory Heights was weighing up a move for their son’s health. This is what changed their minds.",
+    // Wording confirmed by the business on 2026-10-19: "has not had
+    // significant asthma triggers". The client's own experience, not a
+    // medical claim; never reword it into one.
+    quote:
+      "Since installing Eco AirTech, my son has not had significant asthma triggers. Having lived here eleven years, we were considering leaving the UAE. Eco AirTech has changed that.",
+    highlight: "Eco AirTech has changed that",
+    attribution: "Homeowner, Victory Heights, Dubai",
+    sector: "residential",
+    // Client photo to follow: add it as images.main once supplied.
+    imageBrief: "Photo of the client, being supplied by the business.",
+  },
+  {
     id: "hotel-trial",
     headline: "A noticeable difference. A bigger conversation.",
     context:
@@ -208,17 +224,6 @@ export const testimonials: Testimonial[] = [
     attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
     strip: 3,
-  },
-  {
-    id: "victory-heights",
-    quote:
-      "Since installing Eco AirTech, my son has had a significant reduction in asthma triggers. Having lived here eleven years, we were considering leaving the UAE. Eco AirTech has changed that.",
-    highlight: "Eco AirTech has changed that",
-    attribution: "Homeowner, Victory Heights, Dubai",
-    sector: "residential",
-    // Supplied as "has not had significant reduction", which reverses the
-    // meaning; drafted as the evident intent. Confirm the exact words.
-    pending: "Wording to confirm with the client, and publication permission",
   },
   {
     id: "svp-hospitality",

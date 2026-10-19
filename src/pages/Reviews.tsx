@@ -75,8 +75,9 @@ export default function Reviews() {
             {publishedStories.map((story, i) => (
               <Fragment key={story.id}>
                 <Story story={story} flip={i % 2 === 1} />
-                {/* The second lead quote turns the page from homes to hospitality. */}
-                {i === 0 && secondLeadTestimonial && (
+                {/* The second lead quote follows the home stories and turns the
+                    page towards hospitality; after the last story if fewer. */}
+                {i === Math.min(1, publishedStories.length - 1) && secondLeadTestimonial && (
                   <div className="border-y border-line py-16 sm:py-24">
                     <LeadQuote t={secondLeadTestimonial} />
                   </div>
