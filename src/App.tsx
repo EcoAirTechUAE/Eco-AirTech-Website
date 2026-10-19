@@ -13,6 +13,7 @@ import Filters from "@/pages/Filters";
 import Industries from "@/pages/Industries";
 import IndustryDetail from "@/pages/IndustryDetail";
 import Results from "@/pages/Results";
+import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
 
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:slug" element={<IndustryDetail />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

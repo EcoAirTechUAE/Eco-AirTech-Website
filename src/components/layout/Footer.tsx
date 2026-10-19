@@ -66,6 +66,7 @@ export function Footer() {
               { label: "How it works", to: "/technology" },
               { label: "Filters", to: "/filters" },
               { label: "Test results", to: "/results" },
+              { label: "Client reviews", to: "/reviews" },
               { label: "All devices", to: "/devices" },
             ]}
           />

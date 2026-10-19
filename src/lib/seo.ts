@@ -81,6 +81,11 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
     description:
       "Every published laboratory and live-environment result, each with the product, technologies fitted, duration, space and administering body that produced it.",
   },
+  "/reviews": {
+    title: titled("Client reviews from homes, hotels and healthcare"),
+    description:
+      "What clients across the UAE and GCC say about Eco AirTech, from family homes and villas to five-star resorts, clinics, schools and gyms.",
+  },
   "/contact": {
     title: titled("Request a site assessment"),
     description:
@@ -101,6 +106,7 @@ const CRUMB_LABEL: Record<string, string> = {
   "/filters": "Filters",
   "/industries": "Industries",
   "/results": "Results",
+  "/reviews": "Reviews",
   "/contact": "Contact",
 };
 

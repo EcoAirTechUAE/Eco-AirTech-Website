@@ -9,6 +9,7 @@ import { DevicesShowcase } from "@/components/sections/DevicesShowcase";
 import { FiltersTeaser } from "@/components/sections/FiltersTeaser";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
 import { ProofBand } from "@/components/sections/ProofBand";
+import { ReviewsStrip } from "@/components/sections/ReviewsStrip";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -40,6 +41,7 @@ export default function Home() {
       <IndustriesGrid />
 
       <ProofBand />
+      <ReviewsStrip />
       <FaqSection />
       <ContactSection />
     </>
