@@ -164,7 +164,7 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
             </div>
           )}
 
-          <p className="mt-6 text-sm text-faint">— {story.attribution}</p>
+          <p className="mt-6 text-sm text-faint">{story.attribution}</p>
 
           {story.pending && (
             <div className="mt-5">

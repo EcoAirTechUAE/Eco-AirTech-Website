@@ -167,7 +167,7 @@ export const featuredStories: FeaturedStory[] = [
   },
   {
     id: "housing-illustrative",
-    label: "Illustrative housing-provider story — placeholder for design review",
+    label: "Illustrative housing-provider story: placeholder for design review",
     headline: "From responding to problems to thinking about prevention.",
     context:
       "An example of how a future housing-sector story could explain the role of air treatment within a wider property-care programme.",
@@ -175,7 +175,7 @@ export const featuredStories: FeaturedStory[] = [
       "Addressing damp, mould and condensation means looking beyond the immediate signs of a problem. A proactive approach considers ventilation, moisture sources, building conditions and ongoing maintenance.",
       "Air treatment can form part of that wider approach. The aim is to support better indoor environments while addressing the conditions that allow problems to return.",
     ],
-    attribution: "Example sector perspective — housing",
+    attribution: "Example sector perspective: housing",
     sector: "housing",
     imageBrief:
       "An unbranded residential building, or a property professional inspecting a generic home. Must not imply an existing housing-provider partnership.",
