@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { Fragment, useMemo, useState, type ReactNode } from "react";
 import { ArrowDown } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -11,10 +11,12 @@ import {
   gridTestimonials,
   leadTestimonial,
   publishedStories,
+  secondLeadTestimonial,
   reviewsPage,
   sectorLabel,
   type FeaturedStory,
   type Sector,
+  type Testimonial,
 } from "@/content/testimonials";
 import { cn } from "@/lib/utils";
 
@@ -62,21 +64,7 @@ export default function Reviews() {
             className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,hsl(var(--accent)/0.10),transparent_60%)]"
           />
           <div className="container relative py-20 sm:py-28">
-            <Reveal className="max-w-5xl">
-              <QuoteText
-                quote={leadTestimonial.quote}
-                highlight={leadTestimonial.highlight}
-                className="text-display-lg font-medium text-ink"
-              />
-              <p className="mt-8 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
-                {leadTestimonial.attribution}
-              </p>
-              {leadTestimonial.pending && (
-                <div className="mt-5">
-                  <PendingBadge note={leadTestimonial.pending} />
-                </div>
-              )}
-            </Reveal>
+            <LeadQuote t={leadTestimonial} />
           </div>
         </section>
       )}
@@ -85,8 +73,24 @@ export default function Reviews() {
         <Section>
           <div className="container space-y-24 sm:space-y-32">
             {publishedStories.map((story, i) => (
-              <Story key={story.id} story={story} flip={i % 2 === 1} />
+              <Fragment key={story.id}>
+                <Story story={story} flip={i % 2 === 1} />
+                {/* The second lead quote turns the page from homes to hospitality. */}
+                {i === 0 && secondLeadTestimonial && (
+                  <div className="border-y border-line py-16 sm:py-24">
+                    <LeadQuote t={secondLeadTestimonial} />
+                  </div>
+                )}
+              </Fragment>
             ))}
+          </div>
+        </Section>
+      )}
+
+      {publishedStories.length === 0 && secondLeadTestimonial && (
+        <Section>
+          <div className="container">
+            <LeadQuote t={secondLeadTestimonial} />
           </div>
         </Section>
       )}
@@ -145,6 +149,27 @@ export default function Reviews() {
 
       <ContactSection />
     </>
+  );
+}
+
+/** A quotation set at headline size, for the page's lead quotes. */
+function LeadQuote({ t }: { t: Testimonial }) {
+  return (
+    <Reveal className="max-w-5xl">
+      <QuoteText
+        quote={t.quote}
+        highlight={t.highlight}
+        className="text-display-lg font-medium text-ink"
+      />
+      <p className="mt-8 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
+        {t.attribution}
+      </p>
+      {t.pending && (
+        <div className="mt-5">
+          <PendingBadge note={t.pending} />
+        </div>
+      )}
+    </Reveal>
   );
 }
 

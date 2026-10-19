@@ -64,8 +64,11 @@ export interface Testimonial {
   pending?: string;
   /** Show in the homepage strip, in this order. */
   strip?: number;
-  /** The one quote set large at the top of /reviews. Left out of the grid. */
-  lead?: boolean;
+  /**
+   * Set large on /reviews, left out of the grid. 1 sits at the top of the
+   * page; 2 sits between the first and second featured stories.
+   */
+  lead?: 1 | 2;
 }
 
 export interface FeaturedStory {
@@ -109,8 +112,6 @@ export const reviewsPage = {
   },
 };
 
-const PERMISSION = "Publication permission to confirm";
-
 export const featuredStories: FeaturedStory[] = [
   {
     id: "air-diet",
@@ -137,7 +138,6 @@ export const featuredStories: FeaturedStory[] = [
       },
       caption: "Marsa Al Arab, Dubai",
     },
-    pending: "Adapted from supplied feedback: client approval of wording required",
   },
   {
     id: "hotel-trial",
@@ -165,7 +165,6 @@ export const featuredStories: FeaturedStory[] = [
     sector: "residential",
     imageBrief:
       "A quiet reading corner with natural textures and soft light. No perfume, diffusers or imagery implying scent proves air quality.",
-    pending: PERMISSION,
   },
   {
     id: "housing-illustrative",
@@ -192,16 +191,15 @@ export const testimonials: Testimonial[] = [
     attribution: "Private residential client",
     sector: "residential",
     strip: 1,
-    pending: PERMISSION,
   },
   {
     id: "tv-and-fridge",
     quote: "I need you like I need my TV and fridge.",
-    attribution: "Private residential client, UAE",
+    // Also a Marsa Al Arab resident; same condition as the air-diet story.
+    attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
     strip: 2,
-    lead: true,
-    pending: PERMISSION,
+    lead: 1,
   },
   {
     id: "beyond-filters",
@@ -210,7 +208,6 @@ export const testimonials: Testimonial[] = [
     attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
     strip: 3,
-    pending: "Adapted feedback: approval required",
   },
   {
     id: "victory-heights",
@@ -230,8 +227,8 @@ export const testimonials: Testimonial[] = [
     quote: "At last, a solution that actually works. These guys actually have the solution.",
     highlight: "a solution that actually works",
     attribution: "SVP, major hospitality group",
+    lead: 2,
     sector: "hospitality",
-    pending: PERMISSION,
   },
   {
     id: "mould-odour",
@@ -250,7 +247,8 @@ const visible = <T extends { pending?: string }>(items: T[]) =>
 
 export const publishedStories = visible(featuredStories);
 export const publishedTestimonials = visible(testimonials);
-export const leadTestimonial = publishedTestimonials.find((t) => t.lead);
+export const leadTestimonial = publishedTestimonials.find((t) => t.lead === 1);
+export const secondLeadTestimonial = publishedTestimonials.find((t) => t.lead === 2);
 export const gridTestimonials = publishedTestimonials.filter((t) => !t.lead);
 
 export const stripTestimonials = publishedTestimonials
