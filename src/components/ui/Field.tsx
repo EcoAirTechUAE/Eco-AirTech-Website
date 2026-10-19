@@ -124,7 +124,7 @@ export function SelectField({
         required={required}
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
-        className={cn(control, "appearance-none bg-[right_1rem_center] bg-no-repeat pr-10", error && "border-warn/60")}
+        className={cn(control, "appearance-none bg-surface2 bg-[position:right_1rem_center] bg-no-repeat pr-10", error && "border-warn/60")}
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%238FA396' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E\")",

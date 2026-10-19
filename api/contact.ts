@@ -177,7 +177,7 @@ export default async function handler(request: Request): Promise<Response> {
       ["Name", name],
       ["Email", email],
       ["Phone", phone || "Not given"],
-      ["Company or property", organisation || "Not given"],
+      ["Company or residential", organisation || "Not given"],
       ["Space", interest || "Not given"],
     ];
 

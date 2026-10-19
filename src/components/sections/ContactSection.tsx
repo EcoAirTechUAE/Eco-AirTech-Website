@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Button, ButtonAnchor } from "@/components/ui/Button";
 import { SelectField, TextArea, TextField } from "@/components/ui/Field";
 import { Bloom } from "@/components/ui/Bloom";
+import { ThankYouDialog } from "@/components/ui/ThankYouDialog";
 import { site, whatsappLink } from "@/config/site";
 import {
   interestOptions,
@@ -35,11 +36,15 @@ export function ContactSection() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [formError, setFormError] = useState<string | null>(null);
+  // Who just sent what, kept after the form resets so the thank-you can use it.
+  const [sent, setSent] = useState<{ name: string; interest: string } | null>(null);
+  const [thanksOpen, setThanksOpen] = useState(false);
 
   const set = (key: keyof ContactPayload) => (value: string) => {
     setData((prev) => ({ ...prev, [key]: value }));
     // Clear a field's error as soon as the visitor starts correcting it.
     setErrors((prev) => (prev[key] ? { ...prev, [key]: undefined } : prev));
+    setFormError(null);
   };
 
   async function onSubmit(e: FormEvent) {
@@ -49,13 +54,25 @@ export function ContactSection() {
     const found = validate(data);
     if (Object.keys(found).length > 0) {
       setErrors(found);
+      // The button sits below the fields, so an error under one of them is
+      // usually off-screen and the click looks like it did nothing. Say so
+      // beside the button, and take the visitor to the first field to fix.
+      setFormError("Almost there. Please check the highlighted field above.");
+      const form = e.currentTarget as HTMLFormElement;
+      requestAnimationFrame(() => {
+        const first = form.querySelector<HTMLElement>('[aria-invalid="true"]');
+        first?.scrollIntoView({ behavior: "smooth", block: "center" });
+        first?.focus({ preventScroll: true });
+      });
       return;
     }
 
     setStatus("sending");
     try {
       await submitContact(data);
+      setSent({ name: data.name, interest: data.interest });
       setStatus("sent");
+      setThanksOpen(true);
       setData(EMPTY);
     } catch (err) {
       setStatus("idle");
@@ -173,7 +190,7 @@ export function ContactSection() {
                       onChange={(e) => set("phone")(e.target.value)}
                     />
                     <TextField
-                      label="Company or property"
+                      label="Company or residential"
                       autoComplete="organization"
                       value={data.organisation}
                       onChange={(e) => set("organisation")(e.target.value)}
@@ -238,6 +255,15 @@ export function ContactSection() {
           </Reveal>
         </div>
       </div>
+
+      {sent && (
+        <ThankYouDialog
+          open={thanksOpen}
+          name={sent.name}
+          interest={sent.interest}
+          onClose={() => setThanksOpen(false)}
+        />
+      )}
     </Section>
   );
 }

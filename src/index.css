@@ -104,6 +104,34 @@
     color: hsl(var(--text));
   }
 
+  /* Tells the browser the site is dark. Without it, Chrome and Edge on Windows
+     paint native controls (selects, their option lists, autofill) light while
+     our text stays near-white, which left the form fields unreadable. */
+  :root {
+    color-scheme: dark;
+  }
+
+  select {
+    background-color: hsl(var(--surface-2));
+    color: hsl(var(--text));
+  }
+
+  select option {
+    background-color: hsl(var(--surface-2));
+    color: hsl(var(--text));
+  }
+
+  /* Autofill forces its own background with !important, so paint over it
+     with an inset shadow and set the text colour the only way it accepts. */
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: hsl(var(--text));
+    box-shadow: 0 0 0 1000px hsl(var(--surface-2)) inset;
+    caret-color: hsl(var(--text));
+    transition: background-color 9999s ease-out 0s;
+  }
+
   :focus-visible {
     outline: 2px solid hsl(var(--accent));
     outline-offset: 3px;
@@ -307,5 +335,45 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Thank-you dialog (components/ui/ThankYouDialog.tsx): a short rise and fade,
+   and a single soft pulse on the icon. Nothing loops. */
+dialog.thanks[open] {
+  animation: thanks-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+dialog.thanks[open]::backdrop {
+  animation: thanks-fade 0.3s ease-out;
+}
+dialog.thanks[open] .thanks-icon {
+  animation: thanks-pulse 1.6s ease-out 0.25s 1;
+}
+
+@keyframes thanks-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+@keyframes thanks-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes thanks-pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(var(--accent) / 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 18px hsl(var(--accent) / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.thanks[open],
+  dialog.thanks[open]::backdrop,
+  dialog.thanks[open] .thanks-icon {
+    animation: none;
   }
 }

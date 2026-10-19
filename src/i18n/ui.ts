@@ -42,7 +42,7 @@ export const ui = {
     "form.email": "Email",
     "form.phone": "Phone",
     "form.phonePlaceholder": "+971 …",
-    "form.organisation": "Company or property",
+    "form.organisation": "Company or residential",
     "form.interest": "What's the space?",
     "form.message": "Tell us about it",
     "form.messagePlaceholder":
@@ -91,7 +91,7 @@ export const ui = {
     "form.email": "البريد الإلكتروني",
     "form.phone": "رقم الهاتف",
     "form.phonePlaceholder": "+971 …",
-    "form.organisation": "الشركة أو العقار",
+    "form.organisation": "الشركة أو المسكن",
     "form.interest": "نوع المكان",
     "form.message": "أخبرنا عن المكان",
     "form.messagePlaceholder":
