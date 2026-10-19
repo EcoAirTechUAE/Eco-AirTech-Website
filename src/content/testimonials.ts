@@ -64,6 +64,8 @@ export interface Testimonial {
   pending?: string;
   /** Show in the homepage strip, in this order. */
   strip?: number;
+  /** The one quote set large at the top of /reviews. Left out of the grid. */
+  lead?: boolean;
 }
 
 export interface FeaturedStory {
@@ -126,7 +128,7 @@ export const featuredStories: FeaturedStory[] = [
     // allows use on our site and add `credit` if it requires one.
     images: {
       main: {
-        src: "/assets/reviews/marsa-al-arab-aerial.jpg",
+        src: "/assets/reviews/marsa-al-arab-aerial.webp",
         alt: "Marsa Al Arab on the Dubai coastline, with the Burj Al Arab beyond",
       },
       inset: {
@@ -198,6 +200,7 @@ export const testimonials: Testimonial[] = [
     attribution: "Private residential client, UAE",
     sector: "residential",
     strip: 2,
+    lead: true,
     pending: PERMISSION,
   },
   {
@@ -221,6 +224,16 @@ export const testimonials: Testimonial[] = [
     pending: "Wording to confirm with the client, and publication permission",
   },
   {
+    id: "svp-hospitality",
+    // Supplied as "At last a solution that acutal works. These guys acutally
+    // have the .solution"; typos corrected, wording otherwise as given.
+    quote: "At last, a solution that actually works. These guys actually have the solution.",
+    highlight: "a solution that actually works",
+    attribution: "SVP, major hospitality group",
+    sector: "hospitality",
+    pending: PERMISSION,
+  },
+  {
     id: "mould-odour",
     quote: "The change in the mould-related odour within 24 hours was astonishing.",
     highlight: "within 24 hours",
@@ -237,6 +250,9 @@ const visible = <T extends { pending?: string }>(items: T[]) =>
 
 export const publishedStories = visible(featuredStories);
 export const publishedTestimonials = visible(testimonials);
+export const leadTestimonial = publishedTestimonials.find((t) => t.lead);
+export const gridTestimonials = publishedTestimonials.filter((t) => !t.lead);
+
 export const stripTestimonials = publishedTestimonials
   .filter((t) => t.strip)
   .sort((a, b) => a.strip! - b.strip!);

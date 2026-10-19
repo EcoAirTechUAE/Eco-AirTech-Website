@@ -8,8 +8,9 @@ import { SmartImage } from "@/components/ui/SmartImage";
 import { PendingBadge, QuoteText, ReviewCard } from "@/components/ui/ReviewCard";
 import { ContactSection } from "@/components/sections/ContactSection";
 import {
+  gridTestimonials,
+  leadTestimonial,
   publishedStories,
-  publishedTestimonials,
   reviewsPage,
   sectorLabel,
   type FeaturedStory,
@@ -30,14 +31,14 @@ export default function Reviews() {
 
   // Filters only for sectors that actually have quotes.
   const sectors = useMemo(
-    () => [...new Set(publishedTestimonials.map((t) => t.sector))],
+    () => [...new Set(gridTestimonials.map((t) => t.sector))],
     [],
   );
   const visible = useMemo(
     () =>
       sector === "all"
-        ? publishedTestimonials
-        : publishedTestimonials.filter((t) => t.sector === sector),
+        ? gridTestimonials
+        : gridTestimonials.filter((t) => t.sector === sector),
     [sector],
   );
 
@@ -54,6 +55,32 @@ export default function Reviews() {
         </p>
       </PageHero>
 
+      {leadTestimonial && (
+        <section className="relative overflow-hidden border-b border-line">
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,hsl(var(--accent)/0.10),transparent_60%)]"
+          />
+          <div className="container relative py-20 sm:py-28">
+            <Reveal className="max-w-5xl">
+              <QuoteText
+                quote={leadTestimonial.quote}
+                highlight={leadTestimonial.highlight}
+                className="text-display-lg font-medium text-ink"
+              />
+              <p className="mt-8 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
+                {leadTestimonial.attribution}
+              </p>
+              {leadTestimonial.pending && (
+                <div className="mt-5">
+                  <PendingBadge note={leadTestimonial.pending} />
+                </div>
+              )}
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {publishedStories.length > 0 && (
         <Section>
           <div className="container space-y-24 sm:space-y-32">
@@ -64,7 +91,7 @@ export default function Reviews() {
         </Section>
       )}
 
-      {publishedTestimonials.length > 0 && (
+      {gridTestimonials.length > 0 && (
         <Section surface>
           <div className="container">
             <Reveal>
@@ -86,7 +113,7 @@ export default function Reviews() {
             </Reveal>
 
             <p aria-live="polite" className="sr-only">
-              Showing {visible.length} of {publishedTestimonials.length} quotes
+              Showing {visible.length} of {gridTestimonials.length} quotes
             </p>
 
             {/* CSS columns give the masonry stagger without a library; each
