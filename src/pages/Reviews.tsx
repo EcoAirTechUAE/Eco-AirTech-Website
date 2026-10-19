@@ -307,14 +307,15 @@ function StoryMedia({ story }: { story: FeaturedStory }) {
   }
 
   return (
-    <div className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-line bg-surface">
+    // The same quiet Eco Forest (#014E00) panel as the portrait frame.
+    <div className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-[#014E00]/60 bg-[#06150A]">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_30%,hsl(var(--accent)/0.14),transparent_60%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,78,0,0.55),rgba(1,78,0,0.12)_55%,transparent_80%)]"
       />
       <span
         aria-hidden
-        className="relative select-none font-serif text-[10rem] leading-none text-accent/35 sm:text-[14rem]"
+        className="relative translate-y-[22%] select-none font-serif text-[10rem] leading-none text-accent/35 sm:text-[14rem]"
       >
         “
       </span>
