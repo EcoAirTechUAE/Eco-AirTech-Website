@@ -49,7 +49,7 @@ const FORBIDDEN: [string, string][] = [
 
 /** [route, string that must appear, description] */
 const REQUIRED: [string, string, string][] = [
-  ["/technology", "Hydroxyls bring nature", "new technology headline"],
+  ["/technology", "Nature cleans the air continuously", "new technology headline"],
   ["/technology", "indoor environmental systems problem", "new myth headline"],
   ["/filters", "Transform your existing HVAC", "new filter headline"],
   ["/contact", "hello@eco-airtech.com", "new email"],

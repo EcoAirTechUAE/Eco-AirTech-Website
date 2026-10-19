@@ -60,9 +60,9 @@ export const safety = {
 
 export const surfaceMyth = {
   eyebrow: "The comfortable assumption",
-  headline: "Cleaning reaches what you can see. The problem lives underneath it.",
+  headline: "Cleaning removes contamination. It doesn't remove the conditions that allow it to return.",
   intro:
-    "Wiping a surface, cleaning a filter or cleaning an HVAC unit may remove visible contamination, but it does not necessarily address the source. Microorganisms, spores and biofilms can persist in porous materials, hidden surfaces and ventilation systems, and can return within days when the right conditions remain: moisture, high humidity and an available nutrient source.",
+    "Wiping surfaces, replacing filters and cleaning HVAC systems are important, and can significantly reduce contamination. But they are periodic interventions. Microorganisms, spores and biofilms can remain in porous materials, concealed surfaces and hard-to-reach parts of ventilation systems. When moisture, humidity, warmth and nutrient sources persist, contamination can re-establish quickly.",
   above: {
     label: "Above the surface: what cleaning removes",
     title: "Visible dust, debris & surface contamination",

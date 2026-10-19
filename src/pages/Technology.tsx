@@ -17,8 +17,8 @@ export default function Technology() {
     <>
       <PageHero
         eyebrow="The technology"
-        title="Hydroxyls bring nature's air-cleaning process indoors."
-        lead="Sunlight and humidity react in the atmosphere to produce hydroxyls, which break contamination down continuously and without residue. Our ARC® cell reproduces that reaction inside your building. Here is exactly how, and why it reaches what cleaning cannot."
+        title="Nature cleans the air continuously. We bring that chemistry indoors."
+        lead="In the atmosphere, sunlight triggers reactions that form hydroxyl radicals, which react with airborne pollutants. ARC® recreates this natural chemistry indoors, continuously treating the air and exposed surfaces, beyond the moments and places traditional cleaning can reach."
         crumbs={[{ label: "Technology" }]}
         visual={
           <SmartImage
