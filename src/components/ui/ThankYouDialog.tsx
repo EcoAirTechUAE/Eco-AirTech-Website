@@ -90,10 +90,11 @@ export function ThankYouDialog({ open, name, interest, onClose }: Props) {
 
         <div id="thanks-body" className="mt-4 space-y-3 body-text">
           <p>
-            Your message is with our team, and a real person will read it, not an autoresponder.
-            We'll be in touch within one working day to talk through {space}.
+            Cleaner air starts with a conversation. Our team will be in touch within one working
+            day to understand your needs and help you find the right air treatment solution for{" "}
+            {space}.
           </p>
-          <p>Until then, take a deep breath. Making the next one cleaner is our job.</p>
+          <p>We look forward to helping you breathe easier.</p>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
