@@ -262,16 +262,18 @@ function StoryMedia({ story }: { story: FeaturedStory }) {
   const images = story.images;
   if (images?.portrait) {
     return (
-      <figure className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-line bg-surface">
+      // Framed in Eco Forest (#014E00), the deep brand green, kept quiet so
+      // the photo leads.
+      <figure className="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-[#014E00]/60 bg-[#06150A]">
         <div
           aria-hidden
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--accent)/0.14),transparent_65%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(1,78,0,0.55),rgba(1,78,0,0.12)_55%,transparent_80%)]"
         />
         <SmartImage
           src={images.main.src}
           alt={images.main.alt}
           ratio="aspect-square"
-          className="relative aspect-square h-auto w-[min(62%,300px)] rounded-2xl border border-line-strong object-cover shadow-[0_24px_60px_-16px_rgba(0,0,0,0.8)]"
+          className="relative aspect-square h-auto w-[min(62%,300px)] rounded-2xl border border-[#014E00] object-cover shadow-[0_24px_60px_-16px_rgba(0,0,0,0.8)]"
         />
       </figure>
     );
