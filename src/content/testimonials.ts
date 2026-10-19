@@ -19,11 +19,11 @@
  * only: mark them `illustrative: true` and never caption them as a client's
  * property.
  *
- * HELD BACK
- * "Could this be the future of mould-free homes?" (supplied as feedback from
- * a UK parliamentarian) is deliberately not included. Add it only once the
- * exact wording and permission for quote and attribution are confirmed, and
- * never in a way that implies political or institutional endorsement.
+ * THE MP QUOTE
+ * "Could this be the future of mould-free homes?" (a British Member of
+ * Parliament) was published on 2026-10-19 on the business's confirmation of
+ * wording and permission. Keep it framed as a question about possibilities:
+ * never present it as political or institutional endorsement.
  */
 
 export type Sector = "residential" | "hospitality" | "housing";
@@ -78,6 +78,8 @@ export interface Testimonial {
 
 export interface FeaturedStory {
   id: string;
+  /** Replaces the sector label above the headline, e.g. "Perspective". */
+  eyebrow?: string;
   headline: string;
   context: string;
   sector: Sector;
@@ -183,15 +185,14 @@ export const featuredStories: FeaturedStory[] = [
     pending: "Adapted feedback: approval and confirmation against the trial record required",
   },
   {
-    id: "forgot-clean-air",
-    // The headline is the client's quote, so it isn't repeated below it.
-    headline: "“I forgot what clean air smelt like.”",
+    id: "mp-mould-free",
+    eyebrow: "Perspective",
+    // Wording as supplied; the question is the headline, so no quote below.
+    headline: "“Could this be the future of mould-free homes?”",
     context:
-      "A simple observation from a client about the difference they noticed in their home after introducing Eco AirTech.",
-    attribution: "Private residential client, UAE",
-    sector: "residential",
-    imageBrief:
-      "A quiet reading corner with natural textures and soft light. No perfume, diffusers or imagery implying scent proves air quality.",
+      "A question with possibilities far beyond the home: a more proactive approach to managing mould in hotels, workplaces and commercial buildings.",
+    attribution: "British Member of Parliament",
+    sector: "housing",
   },
   {
     id: "housing-illustrative",

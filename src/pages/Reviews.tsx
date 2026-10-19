@@ -214,7 +214,7 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
 
         <Reveal i={1}>
           <p className="font-mono text-[0.75rem] uppercase tracking-wider text-accent">
-            {sectorLabel[story.sector]}
+            {story.eyebrow ?? sectorLabel[story.sector]}
           </p>
           <h2 className="mt-4 text-display-sm font-medium">
             <Emphasis text={story.headline} word={story.emphasise} />
