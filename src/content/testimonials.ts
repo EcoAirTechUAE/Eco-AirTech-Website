@@ -41,6 +41,16 @@ export interface StoryImage {
   illustrative?: boolean;
 }
 
+export interface StoryImages {
+  main: StoryImage;
+  /** Optional second image, shown smaller and overlapping the main one. */
+  inset?: StoryImage;
+  /** Shown under the images, e.g. the place. */
+  caption?: string;
+  /** Photographer or rights holder, if the licence asks for credit. */
+  credit?: string;
+}
+
 export interface Testimonial {
   id: string;
   /** The client's words. */
@@ -72,7 +82,7 @@ export interface FeaturedStory {
   body?: string[];
   /** Visible label for illustrative stories, e.g. "placeholder for design review". */
   label?: string;
-  image?: StoryImage;
+  images?: StoryImages;
   /** What the image should show, until one is supplied. */
   imageBrief?: string;
   pending?: string;
@@ -112,8 +122,19 @@ export const featuredStories: FeaturedStory[] = [
     // and about investing in wellbeing. Never pair it with mould or odour.
     attribution: "Private residential client, Marsa Al Arab, Dubai",
     sector: "residential",
-    imageBrief:
-      "A calm, naturally lit living room with understated furnishings and no recognisable skyline.",
+    // Images of the development, chosen by the business. Confirm the licence
+    // allows use on our site and add `credit` if it requires one.
+    images: {
+      main: {
+        src: "/assets/reviews/marsa-al-arab-aerial.jpg",
+        alt: "Marsa Al Arab on the Dubai coastline, with the Burj Al Arab beyond",
+      },
+      inset: {
+        src: "/assets/reviews/marsa-al-arab-villas.jpg",
+        alt: "Waterfront villas at Marsa Al Arab",
+      },
+      caption: "Marsa Al Arab, Dubai",
+    },
     pending: "Adapted from supplied feedback: client approval of wording required",
   },
   {

@@ -178,18 +178,37 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
 }
 
 /**
- * The supplied image, captioned as illustrative where it is stock or
- * generated; otherwise an oversized quotation mark on a dark ground, as the
- * brief asks, rather than an empty frame.
+ * The supplied images, a main one with an optional smaller inset overlapping
+ * its corner, captioned as illustrative where stock or generated. Otherwise
+ * an oversized quotation mark on a dark ground, as the brief asks, rather
+ * than an empty frame.
  */
 function StoryMedia({ story }: { story: FeaturedStory }) {
-  if (story.image) {
+  const images = story.images;
+  if (images) {
+    const illustrative = images.main.illustrative || images.inset?.illustrative;
+    const caption = [images.caption, illustrative && "Illustrative image", images.credit && `Image: ${images.credit}`]
+      .filter(Boolean)
+      .join(" · ");
     return (
       <figure>
-        <SmartImage src={story.image.src} alt={story.image.alt} className="rounded-2xl" />
-        {story.image.illustrative && (
-          <figcaption className="mt-2 text-[0.75rem] text-faint">Illustrative image</figcaption>
-        )}
+        <div className={cn("relative", images.inset && "mb-10 sm:mb-14")}>
+          <SmartImage
+            src={images.main.src}
+            alt={images.main.alt}
+            className="w-full rounded-2xl object-cover"
+          />
+          {images.inset && (
+            <div className="absolute -bottom-10 end-4 w-[42%] overflow-hidden rounded-xl border-4 border-bg shadow-[0_18px_40px_-12px_rgba(0,0,0,0.7)] sm:-bottom-14 sm:end-6">
+              <SmartImage
+                src={images.inset.src}
+                alt={images.inset.alt}
+                className="w-full object-cover"
+              />
+            </div>
+          )}
+        </div>
+        {caption && <figcaption className="mt-3 text-[0.75rem] text-faint">{caption}</figcaption>}
       </figure>
     );
   }
