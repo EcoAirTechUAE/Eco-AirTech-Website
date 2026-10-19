@@ -153,6 +153,24 @@ export default function Reviews() {
   );
 }
 
+/** Picks out every occurrence of `word` in `text`, in the quote highlight style. */
+function Emphasis({ text, word }: { text: string; word?: string }) {
+  if (!word) return <>{text}</>;
+  const parts = text.split(word);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && (
+            <mark className="rounded-sm bg-accent/15 px-0.5 text-ink">{word}</mark>
+          )}
+        </Fragment>
+      ))}
+    </>
+  );
+}
+
 /** A quotation set at headline size, for the page's lead quotes. */
 function LeadQuote({ t }: { t: Testimonial }) {
   return (
@@ -198,8 +216,12 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
           <p className="font-mono text-[0.75rem] uppercase tracking-wider text-accent">
             {sectorLabel[story.sector]}
           </p>
-          <h2 className="mt-4 text-display-sm font-medium">{story.headline}</h2>
-          <p className="mt-4 leading-relaxed text-muted">{story.context}</p>
+          <h2 className="mt-4 text-display-sm font-medium">
+            <Emphasis text={story.headline} word={story.emphasise} />
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted">
+            <Emphasis text={story.context} word={story.emphasise} />
+          </p>
 
           {story.quote && (
             <QuoteText

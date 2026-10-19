@@ -90,6 +90,8 @@ export interface FeaturedStory {
    * shown as plain paragraphs under a visible label.
    */
   body?: string[];
+  /** A word or phrase to pick out wherever it appears in headline and context. */
+  emphasise?: string;
   /** Visible label for illustrative stories, e.g. "placeholder for design review". */
   label?: string;
   images?: StoryImages;
@@ -146,15 +148,16 @@ export const featuredStories: FeaturedStory[] = [
   },
   {
     id: "victory-heights",
-    headline: "“We were considering leaving the UAE.”",
+    headline: "“A significant drop in our son’s asthma flare-ups.”",
     context:
-      "After eleven years in Dubai, one family in Victory Heights was weighing up a move for their son’s health. This is what changed their minds.",
-    // Wording confirmed by the business on 2026-10-19: "has not had
-    // significant asthma triggers". The client's own experience, not a
-    // medical claim; never reword it into one.
+      "After eleven years in Dubai, Luke and his family were exploring ways to better manage their son’s asthma. Moving abroad was one option they considered, but their experience with Eco AirTech changed that conversation.",
+    // Wording supplied by the business on 2026-10-19, replacing the earlier
+    // version. The family's own experience, not a medical claim; never
+    // reword it into one.
     quote:
-      "Since installing Eco AirTech, my son has not had significant asthma triggers. Having lived here eleven years, we were considering leaving the UAE. Eco AirTech has changed that.",
-    highlight: "Eco AirTech has changed that",
+      "Since installing Eco AirTech, we’ve noticed significantly fewer flare-ups of our son’s asthma. We were exploring every option to support his health, including the possibility of moving abroad. Seeing this improvement has helped us feel much more comfortable staying in the place we call home.",
+    highlight: "asthma",
+    emphasise: "asthma",
     // Named, with his photo, as supplied by the business on 2026-10-19.
     attribution: "Luke Eley, homeowner, Victory Heights, Dubai",
     sector: "residential",
