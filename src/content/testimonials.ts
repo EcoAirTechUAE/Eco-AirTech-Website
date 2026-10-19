@@ -69,6 +69,8 @@ export interface Testimonial {
   pending?: string;
   /** Show in the homepage strip, in this order. */
   strip?: number;
+  /** Shown in the homepage strip but not on /reviews. */
+  homeOnly?: boolean;
   /**
    * Set large on /reviews, left out of the grid. 1 sits at the top of the
    * page; 2 sits between the first and second featured stories.
@@ -219,6 +221,8 @@ export const testimonials: Testimonial[] = [
     attribution: "Private residential client, UAE",
     sector: "residential",
     strip: 1,
+    // Homepage strip only: /reviews is kept to its five sections.
+    homeOnly: true,
   },
   {
     id: "tv-and-fridge",
@@ -278,7 +282,7 @@ const inAStory = (quote: string) => {
   );
 };
 export const gridTestimonials = publishedTestimonials.filter(
-  (t) => !t.lead && !inAStory(t.quote),
+  (t) => !t.lead && !t.homeOnly && !inAStory(t.quote),
 );
 
 export const stripTestimonials = publishedTestimonials
