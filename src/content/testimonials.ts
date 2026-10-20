@@ -199,6 +199,14 @@ export const featuredStories: FeaturedStory[] = [
       "A question with possibilities far beyond the home: a more proactive approach to managing mould in hotels, workplaces and commercial buildings.",
     attribution: "British Member of Parliament",
     sector: "housing",
+    // A product render, used uncropped at the business's request.
+    images: {
+      main: {
+        src: "/assets/reviews/nursery-750.webp",
+        alt: "A parent holding a child in a nursery, with a 750+ unit on a damp-stained wall",
+        illustrative: true,
+      },
+    },
   },
 
 ];
