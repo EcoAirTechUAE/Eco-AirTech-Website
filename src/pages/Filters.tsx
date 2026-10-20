@@ -3,6 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { FlowImage } from "@/components/ui/FlowImage";
 import { Bloom } from "@/components/ui/Bloom";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FilterTestData } from "@/components/sections/FilterTestData";
@@ -16,6 +17,7 @@ import {
   hvacBenefits,
   nanofiber,
   odogard,
+  twoStage,
 } from "@/content/filters";
 import { cn } from "@/lib/utils";
 
@@ -28,6 +30,13 @@ export default function Filters() {
         title={filterIntro.headline}
         lead={filterIntro.subhead}
         crumbs={[{ label: "Filters" }]}
+        visual={
+          <FlowImage
+            src="/assets/filters/filter-airflow.webp"
+            alt="Contaminated air passing through a MERV 13A filter and leaving clean"
+            eager
+          />
+        }
       >
         <Reveal i={2}>
           <p className="mt-8 max-w-2xl leading-relaxed text-muted">{filterIntro.body}</p>
@@ -146,6 +155,23 @@ export default function Filters() {
                 ))}
               </dl>
             </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* The filter at work in the return, before the fan coil */}
+      <Section tight>
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+          <Reveal>
+            <FlowImage
+              src="/assets/filters/filter-in-duct.webp"
+              alt="A MERV 13A filter fitted in ductwork, capturing particles from the incoming air"
+            />
+          </Reveal>
+          <Reveal i={1}>
+            <p className="eyebrow">In the system</p>
+            <h2 className="mt-5 text-display-sm font-medium">{twoStage.stages[0].title}.</h2>
+            <p className="mt-4 max-w-prose leading-relaxed text-muted">{twoStage.stages[0].body}</p>
           </Reveal>
         </div>
       </Section>
