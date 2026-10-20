@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { LoopVideo } from "@/components/ui/LoopVideo";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -16,7 +17,10 @@ export default function DeviceDetail() {
 
   if (!device) return <Navigate to="/devices" replace />;
 
-  const studies = studiesFor(device.slug);
+  const allStudies = studiesFor(device.slug);
+  const studies = device.featuredStudies
+    ? device.featuredStudies.flatMap((id) => allStudies.filter((s) => s.id === id))
+    : allStudies;
   const others = devices.filter((d) => d.slug !== device.slug);
 
   return (
@@ -108,6 +112,17 @@ export default function DeviceDetail() {
                 </dd>
               </div>
             </dl>
+
+            {device.sideImage && (
+              <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                <img
+                  src={device.sideImage.src}
+                  alt={device.sideImage.alt}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+            )}
           </Reveal>
 
           <Reveal i={1} className="space-y-5">
@@ -130,6 +145,39 @@ export default function DeviceDetail() {
           </Reveal>
         </div>
       </Section>
+
+      {/* A short parts animation */}
+      {device.inside && (
+        <Section tight>
+          <div className="container grid items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+            <Reveal>
+              <div className="aspect-video overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                <LoopVideo
+                  src={device.inside.video}
+                  poster={device.inside.poster}
+                  still={device.inside.still}
+                  label={`Animation showing the components inside ${device.article}`}
+                />
+              </div>
+            </Reveal>
+            <Reveal i={1}>
+              <p className="eyebrow">Inside {device.article}</p>
+              <h2 className="mt-5 text-display-sm font-medium">{device.inside.headline}</h2>
+              <p className="mt-4 leading-relaxed text-muted">{device.inside.body}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {device.technologies.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-full border border-line-strong px-3 py-1 font-mono text-[0.75rem] uppercase tracking-wider text-muted"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Section>
+      )}
 
       {/* Features */}
       <Section surface tight>
@@ -177,7 +225,7 @@ export default function DeviceDetail() {
                 Test results
               </p>
               <h2 className="mt-6 text-display-md font-medium">
-                {studies.length} published {studies.length === 1 ? "study" : "studies"} on this unit.
+                Published {studies.length === 1 ? "study" : "studies"} on this unit.
               </h2>
               <p className="mt-6 leading-relaxed text-muted">
                 Each is shown with the exact configuration, technologies, duration and administrator

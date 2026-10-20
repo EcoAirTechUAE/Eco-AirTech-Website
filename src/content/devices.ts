@@ -26,6 +26,24 @@ export interface Device {
   bestFor: string[];
   variants?: { title: string; body: string }[];
   quote?: { text: string; author: string; role: string };
+  /**
+   * The studies to show on this unit's page, in order, when it has more than
+   * fit comfortably. Every study still appears on /results.
+   */
+  featuredStudies?: string[];
+  /** An image under the specs in "Why this unit", filling that column. */
+  sideImage?: { src: string; alt: string };
+  /**
+   * A short, silent parts animation, played muted on a loop. `still` is
+   * shown instead to visitors who ask for reduced motion.
+   */
+  inside?: {
+    headline: string;
+    body: string;
+    video: string;
+    poster: string;
+    still?: string;
+  };
   image: string;
   silhouette: string;
 }
@@ -137,6 +155,17 @@ export const devices: Device[] = [
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
+    sideImage: {
+      src: "/assets/devices/portable-reading-poor.webp",
+      alt: "The Portable's components, with its display reading POOR air quality",
+    },
+    inside: {
+      headline: "Three technologies in one enclosure.",
+      body: "The same technologies as our fixed installations, in a free-standing unit that needs nothing but a socket.",
+      video: "/assets/devices/video/portable-parts.mp4",
+      poster: "/assets/devices/video/portable-parts-poster.webp",
+      still: "/assets/devices/portable-exploded.webp",
+    },
     image: "/assets/devices/portable.jpg",
     silhouette: "/assets/devices/portable-silhouette.svg",
   },
@@ -187,6 +216,18 @@ export const devices: Device[] = [
       "Clinics & consulting rooms",
       "Vehicles & transit cabins",
     ],
+    featuredStudies: [
+      "750-live-apartment",
+      "750-live-house",
+      "750-lab-ms2",
+      "750-field-office",
+    ],
+    inside: {
+      headline: "Three technologies, one compact unit.",
+      body: "All three technologies in one compact, self-contained unit: the ODOGard®-coated HEPA+ filter, the ARC® advanced PCO cell and the bi-polar ionisation module.",
+      video: "/assets/devices/video/750-plus-parts.mp4",
+      poster: "/assets/devices/video/750-plus-parts-poster.webp",
+    },
     image: "/assets/devices/750-plus.jpg",
     silhouette: "/assets/devices/750-plus-silhouette.svg",
   },
