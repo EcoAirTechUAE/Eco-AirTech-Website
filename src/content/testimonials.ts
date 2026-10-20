@@ -189,7 +189,7 @@ export const featuredStories: FeaturedStory[] = [
       "A trial in affected guest rooms produced results the hotel could measure. It is now rolling Eco AirTech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
     // Wording supplied by the business on 2026-10-20.
     quote:
-      "The reduction in mould-related odours (MVOCs), alongside test results showing no detectable levels of the contaminants measured within 24 hours, was astonishing. These results gave us the confidence to begin a wider rollout. You also helped us understand that addressing mould requires looking at all the contributing sources.",
+      "The reduction in mould-related odours (MVOCs), alongside test results showing no detectable levels of the contaminants measured within 24 hours, was astonishing. These results gave us the confidence to begin a wider rollout. You also helped us understand that addressing mould means looking at all the contributing sources, and rethinking how we treat indoor air. In this climate, periodic cleaning alone isn’t enough. We recognised the need for continuous air treatment as part of an ongoing approach.",
     highlight: "within 24 hours",
     attribution: "Senior hospitality executive, GCC",
     sector: "hospitality",

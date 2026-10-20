@@ -228,7 +228,13 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
             <QuoteText
               quote={story.quote}
               highlight={story.highlight}
-              className="mt-7 border-l-2 border-accent/50 pl-5 text-xl leading-relaxed text-ink sm:text-[1.35rem] sm:leading-[1.55]"
+              className={cn(
+                "mt-7 border-l-2 border-accent/50 pl-5 leading-relaxed text-ink",
+                // Long quotes step down a size so they don't dominate the story.
+                story.quote.length > 400
+                  ? "text-lg sm:text-[1.125rem] sm:leading-[1.65]"
+                  : "text-xl sm:text-[1.35rem] sm:leading-[1.55]",
+              )}
             />
           )}
 
