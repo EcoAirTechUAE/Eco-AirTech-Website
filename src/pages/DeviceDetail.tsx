@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { LoopVideo } from "@/components/ui/LoopVideo";
+import { cn } from "@/lib/utils";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -69,28 +70,37 @@ export default function DeviceDetail() {
                 alt={`${device.article} unit`}
                 label={`${device.name} product render`}
                 ratio="aspect-square"
-                className="h-full w-full object-contain p-6"
+                className={cn(
+                  "h-full w-full object-contain",
+                  device.compactHero ? "p-12 sm:p-16" : "p-6",
+                )}
               />
             </div>
           </Reveal>
         </div>
       </PageHero>
 
-      {/* A wide scene of the unit in use, first thing below the intro */}
+      {/* The unit in use, with text beside it, first thing below the intro */}
       {device.banner && (
-        <section className="pt-10 sm:pt-14">
-          <div className="container">
+        <Section tight>
+          <div className="container grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <Reveal>
-              <div className="overflow-hidden rounded-2xl border border-line">
+              {/* Capped below the source's own width so it is never enlarged soft. */}
+              <div className="max-w-[640px] overflow-hidden rounded-2xl border border-line">
                 <img
                   src={device.banner.src}
                   alt={device.banner.alt}
-                  className="aspect-[16/9] w-full object-cover sm:aspect-[21/9] sm:object-[50%_30%]"
+                  className="aspect-[3/2] w-full object-cover"
                 />
               </div>
             </Reveal>
+            <Reveal i={1}>
+              <p className="eyebrow">{device.banner.eyebrow}</p>
+              <h2 className="mt-5 text-display-sm font-medium">{device.banner.headline}</h2>
+              <p className="mt-4 max-w-prose leading-relaxed text-muted">{device.banner.body}</p>
+            </Reveal>
           </div>
-        </section>
+        </Section>
       )}
 
       {/* Positioning */}
@@ -179,12 +189,12 @@ export default function DeviceDetail() {
                 </div>
               ) : (
                 device.inside.still && (
-                  <div className="overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                  <div className="overflow-hidden rounded-2xl border border-line bg-black p-6 sm:p-10">
                     <img
                       src={device.inside.still}
                       alt={`Exploded view of the components inside ${device.article}`}
                       loading="lazy"
-                      className="mx-auto max-h-[640px] w-full object-contain"
+                      className="mx-auto w-full max-w-[340px] object-contain"
                     />
                   </div>
                 )
