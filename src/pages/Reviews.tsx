@@ -269,7 +269,7 @@ function StoryMedia({ story }: { story: FeaturedStory }) {
   }
 
   const images = story.images;
-  if (images?.portrait) {
+  if (images?.portrait || images?.framed) {
     return (
       // Framed in Eco Forest (#014E00), the deep brand green, kept quiet so
       // the photo leads.
@@ -281,8 +281,13 @@ function StoryMedia({ story }: { story: FeaturedStory }) {
         <SmartImage
           src={images.main.src}
           alt={images.main.alt}
-          ratio="aspect-square"
-          className="relative aspect-square h-auto w-[min(62%,300px)] rounded-2xl border border-[#014E00] object-cover shadow-[0_24px_60px_-16px_rgba(0,0,0,0.8)]"
+          ratio={images.portrait ? "aspect-square" : "aspect-video"}
+          className={cn(
+            "relative h-auto rounded-2xl border border-[#014E00] shadow-[0_24px_60px_-16px_rgba(0,0,0,0.8)]",
+            images.portrait
+              ? "aspect-square w-[min(62%,300px)] object-cover"
+              : "w-[86%] object-contain",
+          )}
         />
       </figure>
     );

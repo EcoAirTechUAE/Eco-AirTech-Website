@@ -52,6 +52,11 @@ export interface StoryImages {
    * panel, so a small portrait is never stretched soft across the column.
    */
   portrait?: boolean;
+  /**
+   * Any other image shown framed on the same dark panel, at its own
+   * proportions, so it is never cropped.
+   */
+  framed?: boolean;
   /** Shown under the images, e.g. the place. */
   caption?: string;
   /** Photographer or rights holder, if the licence asks for credit. */
@@ -199,13 +204,14 @@ export const featuredStories: FeaturedStory[] = [
       "A question with possibilities far beyond the home: a more proactive approach to managing mould in hotels, workplaces and commercial buildings.",
     attribution: "British Member of Parliament",
     sector: "housing",
-    // A product render, used uncropped at the business's request.
+    // A product render, used uncropped and without the illustrative caption
+    // at the business's request, framed like the Luke Eley portrait.
     images: {
       main: {
         src: "/assets/reviews/nursery-750.webp",
         alt: "A parent holding a child in a nursery, with a 750+ unit on a damp-stained wall",
-        illustrative: true,
       },
+      framed: true,
     },
   },
 
