@@ -18,7 +18,10 @@ export default function DeviceDetail() {
 
   if (!device) return <Navigate to="/devices" replace />;
 
-  const studies = studiesFor(device.slug);
+  const allStudies = studiesFor(device.slug);
+  const studies = device.featuredStudies
+    ? device.featuredStudies.flatMap((id) => allStudies.filter((s) => s.id === id))
+    : allStudies;
   const others = devices.filter((d) => d.slug !== device.slug);
 
   return (
@@ -250,7 +253,7 @@ export default function DeviceDetail() {
                 Test results
               </p>
               <h2 className="mt-6 text-display-md font-medium">
-                {studies.length} published {studies.length === 1 ? "study" : "studies"} on this unit.
+                Published {studies.length === 1 ? "study" : "studies"} on this unit.
               </h2>
               <p className="mt-6 leading-relaxed text-muted">
                 Each is shown with the exact configuration, technologies, duration and administrator

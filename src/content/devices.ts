@@ -26,6 +26,11 @@ export interface Device {
   bestFor: string[];
   variants?: { title: string; body: string }[];
   quote?: { text: string; author: string; role: string };
+  /**
+   * The studies to show on this unit's page, in order, when it has more than
+   * fit comfortably. Every study still appears on /results.
+   */
+  featuredStudies?: string[];
   /** Before-and-after renders of the unit's own air quality display. */
   readings?: {
     headline: string;
@@ -223,6 +228,12 @@ export const devices: Device[] = [
       "Classrooms",
       "Clinics & consulting rooms",
       "Vehicles & transit cabins",
+    ],
+    featuredStudies: [
+      "750-live-apartment",
+      "750-live-house",
+      "750-lab-ms2",
+      "750-field-office",
     ],
     inside: {
       headline: "Three technologies, one compact unit.",
