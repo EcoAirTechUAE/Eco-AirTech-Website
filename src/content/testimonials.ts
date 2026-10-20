@@ -26,6 +26,8 @@
  * never present it as political or institutional endorsement.
  */
 
+import { site, type VideoSlot } from "@/config/site";
+
 export type Sector = "residential" | "hospitality" | "housing";
 
 export const sectorLabel: Record<Sector, string> = {
@@ -101,6 +103,8 @@ export interface FeaturedStory {
   images?: StoryImages;
   /** What the image should show, until one is supplied. */
   imageBrief?: string;
+  /** A YouTube or Vimeo film shown in the image area, behind a click-to-play facade. */
+  video?: VideoSlot;
   pending?: string;
 }
 
@@ -180,8 +184,8 @@ export const featuredStories: FeaturedStory[] = [
     highlight: "within 24 hours",
     attribution: "Senior hospitality executive, GCC",
     sector: "hospitality",
-    imageBrief:
-      "A generic premium guest-room detail, such as a bed, curtain and soft daylight. No actual client property.",
+    // The film from the Hotels industry page.
+    video: site.videos.hotels,
     // The customer's reported experience, not proof that all mould was
     // removed or a guaranteed timeframe. Check against the trial record.
     pending: "Adapted feedback: approval and confirmation against the trial record required",
