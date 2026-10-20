@@ -377,3 +377,92 @@ dialog.thanks[open] .thanks-icon {
     animation: none;
   }
 }
+
+/* FlowImage (components/ui/FlowImage.tsx): a slow drift-and-zoom, and a soft
+   band of light travelling left to right with the airflow. */
+.flow-drift {
+  animation: flow-drift 24s ease-in-out infinite alternate;
+  transform-origin: 40% 50%;
+  will-change: transform;
+}
+.flow-sweep {
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 38%,
+    rgba(190, 240, 255, 0.16) 50%,
+    rgba(255, 255, 255, 0) 62%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  mix-blend-mode: screen;
+  animation: flow-sweep 5.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes flow-drift {
+  from {
+    transform: scale(1.01);
+  }
+  to {
+    transform: scale(1.05) translateX(-1%);
+  }
+}
+
+/* A contaminant: travels from the left edge to the filter face (--stop),
+   then shrinks and fades into the media. It never goes past --stop. */
+.flow-particle {
+  position: absolute;
+  left: -3%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #e8b46a 0%, #9a6326 45%, #4a2e12 70%, transparent 74%);
+  box-shadow: 0 0 6px 1px rgba(255, 170, 70, 0.35);
+  animation-name: flow-particle;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.35, 1);
+  animation-iteration-count: infinite;
+  will-change: left, transform, opacity;
+}
+@keyframes flow-particle {
+  0% {
+    left: -3%;
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  8% {
+    opacity: 0.95;
+  }
+  78% {
+    left: var(--stop);
+    opacity: 0.95;
+    transform: translateY(var(--wob)) scale(1);
+  }
+  90% {
+    left: var(--stop);
+    opacity: 0.6;
+    transform: translateY(var(--wob)) scale(0.6);
+  }
+  100% {
+    left: var(--stop);
+    opacity: 0;
+    transform: translateY(var(--wob)) scale(0.3);
+  }
+}
+@keyframes flow-sweep {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-drift,
+  .flow-sweep {
+    animation: none;
+  }
+  .flow-sweep,
+  .flow-particle {
+    display: none;
+  }
+}
