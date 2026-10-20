@@ -6,7 +6,6 @@ import { SmartImage } from "@/components/ui/SmartImage";
 import { FlowImage } from "@/components/ui/FlowImage";
 import { Bloom } from "@/components/ui/Bloom";
 import { ContactSection } from "@/components/sections/ContactSection";
-import { FilterTestData } from "@/components/sections/FilterTestData";
 import { FilterProcess } from "@/components/sections/FilterProcess";
 import {
   award,
@@ -271,8 +270,6 @@ export default function Filters() {
       </Section>
 
       <FilterProcess />
-
-      <FilterTestData />
 
       {/* The paired-system proof */}
       <Section>
