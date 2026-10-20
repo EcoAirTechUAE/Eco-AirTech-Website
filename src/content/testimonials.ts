@@ -187,8 +187,8 @@ export const featuredStories: FeaturedStory[] = [
     // The film from the Hotels industry page.
     video: site.videos.hotels,
     // The customer's reported experience, not proof that all mould was
-    // removed or a guaranteed timeframe. Check against the trial record.
-    pending: "Adapted feedback: approval and confirmation against the trial record required",
+    // removed or a guaranteed timeframe. Released by the business on
+    // 2026-10-20 as checked; never present it as a guaranteed result.
   },
   {
     id: "mp-mould-free",
