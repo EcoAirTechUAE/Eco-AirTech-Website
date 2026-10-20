@@ -5,7 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { LoopVideo } from "@/components/ui/LoopVideo";
-import { cn } from "@/lib/utils";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -113,6 +112,17 @@ export default function DeviceDetail() {
                 </dd>
               </div>
             </dl>
+
+            {device.sideImage && (
+              <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                <img
+                  src={device.sideImage.src}
+                  alt={device.sideImage.alt}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+            )}
           </Reveal>
 
           <Reveal i={1} className="space-y-5">
@@ -135,44 +145,6 @@ export default function DeviceDetail() {
           </Reveal>
         </div>
       </Section>
-
-      {/* The unit's own display, before and after */}
-      {device.readings && (
-        <Section tight>
-          <div className="container">
-            <Reveal className="max-w-2xl">
-              <p className="eyebrow">Onboard sensing</p>
-              <h2 className="mt-5 text-display-sm font-medium">{device.readings.headline}</h2>
-              <p className="mt-4 leading-relaxed text-muted">{device.readings.body}</p>
-            </Reveal>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2">
-              {(["poor", "good"] as const).map((state, i) => (
-                <Reveal key={state} i={i}>
-                  <figure className="overflow-hidden rounded-2xl border border-line bg-[#050807]">
-                    <img
-                      src={device.readings![state].src}
-                      alt={device.readings![state].alt}
-                      loading="lazy"
-                      className="aspect-square w-full object-cover"
-                    />
-                    <figcaption className="flex items-center gap-2 border-t border-line px-5 py-3 font-mono text-[0.75rem] uppercase tracking-wider text-faint">
-                      <span
-                        aria-hidden
-                        className={cn(
-                          "h-2 w-2 rounded-full",
-                          state === "poor" ? "bg-[#E5484D]" : "bg-accent",
-                        )}
-                      />
-                      Air quality reading: {state}
-                    </figcaption>
-                  </figure>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-4 text-[0.75rem] text-faint">Product renders.</p>
-          </div>
-        </Section>
-      )}
 
       {/* A short parts animation */}
       {device.inside && (

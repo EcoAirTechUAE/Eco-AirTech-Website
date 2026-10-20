@@ -31,13 +31,8 @@ export interface Device {
    * fit comfortably. Every study still appears on /results.
    */
   featuredStudies?: string[];
-  /** Before-and-after renders of the unit's own air quality display. */
-  readings?: {
-    headline: string;
-    body: string;
-    poor: { src: string; alt: string };
-    good: { src: string; alt: string };
-  };
+  /** An image under the specs in "Why this unit", filling that column. */
+  sideImage?: { src: string; alt: string };
   /**
    * A short, silent parts animation, played muted on a loop. `still` is
    * shown instead to visitors who ask for reduced motion.
@@ -160,17 +155,9 @@ export const devices: Device[] = [
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
-    readings: {
-      headline: "It shows you the difference.",
-      body: "The display reads the air in real time. In AUTO mode the unit raises its output when it detects poor air quality and eases back as the room clears, and the same readings go to the phone app.",
-      poor: {
-        src: "/assets/devices/portable-reading-poor.webp",
-        alt: "The Portable's display reading POOR air quality",
-      },
-      good: {
-        src: "/assets/devices/portable-reading-good.webp",
-        alt: "The Portable's display reading GOOD air quality",
-      },
+    sideImage: {
+      src: "/assets/devices/portable-reading-poor.webp",
+      alt: "The Portable's components, with its display reading POOR air quality",
     },
     inside: {
       headline: "Three technologies in one enclosure.",
