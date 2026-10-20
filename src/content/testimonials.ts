@@ -182,13 +182,14 @@ export const featuredStories: FeaturedStory[] = [
   {
     id: "hotel-trial",
     headline: "From a 24-hour trial to a hotel-wide rollout.",
-    // Facts supplied by the business on 2026-10-20: post-trial testing showed
-    // the mould removed within 24 hours, and the hotel is now rolling out.
+    // The measured result is stated in the client's own words below, so the
+    // context doesn't restate it in stronger terms.
     // "Medical grade air" was deliberately not used: no such standard exists.
     context:
-      "In a trial in affected guest rooms, testing confirmed the mould had been removed within 24 hours. The hotel is now rolling Eco AirTech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
+      "A trial in affected guest rooms produced results the hotel could measure. It is now rolling Eco AirTech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
+    // Wording supplied by the business on 2026-10-20.
     quote:
-      "The change in the mould-related odour within 24 hours was astonishing. It made us want to explore a wider rollout. You also helped us understand that addressing mould means looking at more than one source.",
+      "The reduction in mould-related odours (MVOCs), alongside test results showing no detectable levels of the contaminants measured within 24 hours, was astonishing. These results gave us the confidence to begin a wider rollout. You also helped us understand that addressing mould requires looking at all the contributing sources.",
     highlight: "within 24 hours",
     attribution: "Senior hospitality executive, GCC",
     sector: "hospitality",
@@ -257,14 +258,7 @@ export const testimonials: Testimonial[] = [
     lead: 2,
     sector: "hospitality",
   },
-  {
-    id: "mould-odour",
-    quote: "The change in the mould-related odour within 24 hours was astonishing.",
-    highlight: "within 24 hours",
-    attribution: "Senior hospitality executive, GCC",
-    sector: "hospitality",
-    pending: "Adapted feedback: approval and supporting trial record required",
-  },
+
 ];
 
 /* Pending items are never rendered on the live site, so they are absent from
