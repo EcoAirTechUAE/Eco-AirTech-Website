@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { ButtonAnchor } from "@/components/ui/Button";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { VideoFacade } from "@/components/ui/VideoFacade";
 import { PendingBadge, QuoteText, ReviewCard } from "@/components/ui/ReviewCard";
 import { ContactSection } from "@/components/sections/ContactSection";
 import {
@@ -259,6 +260,14 @@ function Story({ story, flip }: { story: FeaturedStory; flip: boolean }) {
  * than an empty frame.
  */
 function StoryMedia({ story }: { story: FeaturedStory }) {
+  if (story.video) {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-[#014E00]/60">
+        <VideoFacade video={story.video} />
+      </div>
+    );
+  }
+
   const images = story.images;
   if (images?.portrait) {
     return (
