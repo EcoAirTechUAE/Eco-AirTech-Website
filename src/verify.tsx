@@ -53,7 +53,7 @@ const REQUIRED: [string, string, string][] = [
   ["/technology", "indoor environmental systems problem", "new myth headline"],
   ["/filters", "Transform your existing HVAC", "new filter headline"],
   ["/contact", "hello@eco-airtech.com", "new email"],
-  ["/devices/overwatch", "/assets/devices/overwatch.png", "OverWatch render"],
+  ["/devices/overwatch", "/assets/devices/overwatch-unit.webp", "OverWatch render"],
   ["/", "971507382560", "live WhatsApp number"],
 ];
 

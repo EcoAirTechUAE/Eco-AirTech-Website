@@ -40,10 +40,14 @@ export interface Device {
   inside?: {
     headline: string;
     body: string;
-    video: string;
-    poster: string;
+    /** Either a silent parts video (with its poster)... */
+    video?: string;
+    poster?: string;
+    /** ...or a still image, which is also the reduced-motion fallback for a video. */
     still?: string;
   };
+  /** A wide scene shown directly under the page intro. */
+  banner?: { src: string; alt: string };
   image: string;
   silhouette: string;
 }
@@ -345,7 +349,16 @@ export const devices: Device[] = [
       "Grow houses",
       "Commercial spaces",
     ],
-    image: "/assets/devices/overwatch.png",
+    banner: {
+      src: "/assets/devices/overwatch-cafe.webp",
+      alt: "The OverWatch suspended from the ceiling of a large, busy open-plan café",
+    },
+    inside: {
+      headline: "Built to treat the whole volume.",
+      body: "ARC® and bi-polar ionisation in a single enclosure, with the casing chosen to suit the space: stainless steel, coated aluminium or roll-around.",
+      still: "/assets/devices/overwatch-exploded.webp",
+    },
+    image: "/assets/devices/overwatch-unit.webp",
     silhouette: "/assets/devices/overwatch-silhouette.svg",
   },
 ];

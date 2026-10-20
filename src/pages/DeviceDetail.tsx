@@ -76,6 +76,23 @@ export default function DeviceDetail() {
         </div>
       </PageHero>
 
+      {/* A wide scene of the unit in use, first thing below the intro */}
+      {device.banner && (
+        <section className="pt-10 sm:pt-14">
+          <div className="container">
+            <Reveal>
+              <div className="overflow-hidden rounded-2xl border border-line">
+                <img
+                  src={device.banner.src}
+                  alt={device.banner.alt}
+                  className="aspect-[16/9] w-full object-cover sm:aspect-[21/9] sm:object-[50%_30%]"
+                />
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* Positioning */}
       <Section>
         <div className="container grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -151,14 +168,27 @@ export default function DeviceDetail() {
         <Section tight>
           <div className="container grid items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <Reveal>
-              <div className="aspect-video overflow-hidden rounded-2xl border border-line bg-[#050807]">
-                <LoopVideo
-                  src={device.inside.video}
-                  poster={device.inside.poster}
-                  still={device.inside.still}
-                  label={`Animation showing the components inside ${device.article}`}
-                />
-              </div>
+              {device.inside.video && device.inside.poster ? (
+                <div className="aspect-video overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                  <LoopVideo
+                    src={device.inside.video}
+                    poster={device.inside.poster}
+                    still={device.inside.still}
+                    label={`Animation showing the components inside ${device.article}`}
+                  />
+                </div>
+              ) : (
+                device.inside.still && (
+                  <div className="overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                    <img
+                      src={device.inside.still}
+                      alt={`Exploded view of the components inside ${device.article}`}
+                      loading="lazy"
+                      className="mx-auto max-h-[640px] w-full object-contain"
+                    />
+                  </div>
+                )
+              )}
             </Reveal>
             <Reveal i={1}>
               <p className="eyebrow">Inside {device.article}</p>
