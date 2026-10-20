@@ -181,9 +181,12 @@ export const featuredStories: FeaturedStory[] = [
   },
   {
     id: "hotel-trial",
-    headline: "A noticeable difference. A bigger conversation.",
+    headline: "From a 24-hour trial to a hotel-wide rollout.",
+    // Facts supplied by the business on 2026-10-20: post-trial testing showed
+    // the mould removed within 24 hours, and the hotel is now rolling out.
+    // "Medical grade air" was deliberately not used: no such standard exists.
     context:
-      "Feedback following a hotel trial opened a wider discussion about mould, odour and the conditions that allow problems to return.",
+      "In a trial in affected guest rooms, testing confirmed the mould had been removed within 24 hours. The hotel is now rolling Eco AirTech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
     quote:
       "The change in the mould-related odour within 24 hours was astonishing. It made us want to explore a wider rollout. You also helped us understand that addressing mould means looking at more than one source.",
     highlight: "within 24 hours",
