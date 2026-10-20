@@ -35,6 +35,7 @@ export default function Filters() {
             src="/assets/filters/filter-airflow.webp"
             alt="Contaminated air passing through a MERV 13A filter and leaving clean"
             eager
+            particles={{ band: [18, 76], stop: [37, 42] }}
           />
         }
       >
@@ -166,6 +167,7 @@ export default function Filters() {
             <FlowImage
               src="/assets/filters/filter-in-duct.webp"
               alt="A MERV 13A filter fitted in ductwork, capturing particles from the incoming air"
+              particles={{ band: [22, 72], stop: [38, 42] }}
             />
           </Reveal>
           <Reveal i={1}>
