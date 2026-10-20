@@ -212,8 +212,8 @@ export const featuredStories: FeaturedStory[] = [
     // at the business's request, framed like the Luke Eley portrait.
     images: {
       main: {
-        src: "/assets/reviews/nursery-750.webp",
-        alt: "A parent holding a child in a nursery, with a 750+ unit on a damp-stained wall",
+        src: "/assets/reviews/nursery-portable.webp",
+        alt: "A parent holding a child in a nursery, with a Portable unit on the floor",
       },
       framed: true,
     },
