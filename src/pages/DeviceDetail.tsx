@@ -4,6 +4,8 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { LoopVideo } from "@/components/ui/LoopVideo";
+import { cn } from "@/lib/utils";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { DeviceCard } from "@/components/ui/DeviceCard";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -130,6 +132,77 @@ export default function DeviceDetail() {
           </Reveal>
         </div>
       </Section>
+
+      {/* The unit's own display, before and after */}
+      {device.readings && (
+        <Section tight>
+          <div className="container">
+            <Reveal className="max-w-2xl">
+              <p className="eyebrow">Onboard sensing</p>
+              <h2 className="mt-5 text-display-sm font-medium">{device.readings.headline}</h2>
+              <p className="mt-4 leading-relaxed text-muted">{device.readings.body}</p>
+            </Reveal>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {(["poor", "good"] as const).map((state, i) => (
+                <Reveal key={state} i={i}>
+                  <figure className="overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                    <img
+                      src={device.readings![state].src}
+                      alt={device.readings![state].alt}
+                      loading="lazy"
+                      className="aspect-square w-full object-cover"
+                    />
+                    <figcaption className="flex items-center gap-2 border-t border-line px-5 py-3 font-mono text-[0.75rem] uppercase tracking-wider text-faint">
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "h-2 w-2 rounded-full",
+                          state === "poor" ? "bg-[#E5484D]" : "bg-accent",
+                        )}
+                      />
+                      Air quality reading: {state}
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+            <p className="mt-4 text-[0.75rem] text-faint">Product renders.</p>
+          </div>
+        </Section>
+      )}
+
+      {/* A short parts animation */}
+      {device.inside && (
+        <Section tight>
+          <div className="container grid items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+            <Reveal>
+              <div className="aspect-video overflow-hidden rounded-2xl border border-line bg-[#050807]">
+                <LoopVideo
+                  src={device.inside.video}
+                  poster={device.inside.poster}
+                  still={device.inside.still}
+                  label={`Animation showing the components inside ${device.article}`}
+                />
+              </div>
+            </Reveal>
+            <Reveal i={1}>
+              <p className="eyebrow">Inside {device.article}</p>
+              <h2 className="mt-5 text-display-sm font-medium">{device.inside.headline}</h2>
+              <p className="mt-4 leading-relaxed text-muted">{device.inside.body}</p>
+              <ul className="mt-6 flex flex-wrap gap-2">
+                {device.technologies.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-full border border-line-strong px-3 py-1 font-mono text-[0.75rem] uppercase tracking-wider text-muted"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Section>
+      )}
 
       {/* Features */}
       <Section surface tight>

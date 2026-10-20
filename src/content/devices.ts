@@ -26,6 +26,24 @@ export interface Device {
   bestFor: string[];
   variants?: { title: string; body: string }[];
   quote?: { text: string; author: string; role: string };
+  /** Before-and-after renders of the unit's own air quality display. */
+  readings?: {
+    headline: string;
+    body: string;
+    poor: { src: string; alt: string };
+    good: { src: string; alt: string };
+  };
+  /**
+   * A short, silent parts animation, played muted on a loop. `still` is
+   * shown instead to visitors who ask for reduced motion.
+   */
+  inside?: {
+    headline: string;
+    body: string;
+    video: string;
+    poster: string;
+    still?: string;
+  };
   image: string;
   silhouette: string;
 }
@@ -137,6 +155,25 @@ export const devices: Device[] = [
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
+    readings: {
+      headline: "It shows you the difference.",
+      body: "The display reads the air in real time. In AUTO mode the unit raises its output when it detects poor air quality and eases back as the room clears, and the same readings go to the phone app.",
+      poor: {
+        src: "/assets/devices/portable-reading-poor.webp",
+        alt: "The Portable's display reading POOR air quality",
+      },
+      good: {
+        src: "/assets/devices/portable-reading-good.webp",
+        alt: "The Portable's display reading GOOD air quality",
+      },
+    },
+    inside: {
+      headline: "Three technologies in one enclosure.",
+      body: "The same technologies as our fixed installations, in a free-standing unit that needs nothing but a socket.",
+      video: "/assets/devices/video/portable-parts.mp4",
+      poster: "/assets/devices/video/portable-parts-poster.webp",
+      still: "/assets/devices/portable-exploded.webp",
+    },
     image: "/assets/devices/portable.jpg",
     silhouette: "/assets/devices/portable-silhouette.svg",
   },
@@ -187,6 +224,12 @@ export const devices: Device[] = [
       "Clinics & consulting rooms",
       "Vehicles & transit cabins",
     ],
+    inside: {
+      headline: "Three technologies, one compact unit.",
+      body: "All three technologies in one compact, self-contained unit: the ODOGard®-coated HEPA+ filter, the ARC® advanced PCO cell and the bi-polar ionisation module.",
+      video: "/assets/devices/video/750-plus-parts.mp4",
+      poster: "/assets/devices/video/750-plus-parts-poster.webp",
+    },
     image: "/assets/devices/750-plus.jpg",
     silhouette: "/assets/devices/750-plus-silhouette.svg",
   },
