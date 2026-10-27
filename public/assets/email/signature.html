@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eco AirTech Email Signature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --forest: #014E00; --teal: #07916A; --canopy: #086A00; --mist: #EEF4EE; --ink: #000000; --muted: #4f5a52; --line: #dbe5d6;
+    --display: "Archivo", Arial, sans-serif; --body: "IBM Plex Sans", Arial, sans-serif; --mono: "IBM Plex Mono", Consolas, monospace; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: var(--ink); font-family: var(--body); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 48px; }
+  .label { font: 500 12px var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+  h1 { margin: 6px 0 8px; font: 800 32px/38px var(--display); color: var(--forest); letter-spacing: -0.01em; }
+  p.lead { margin: 0 0 24px; color: var(--muted); line-height: 1.5; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-bottom: 24px; }
+  label { display: grid; gap: 5px; font: 600 13px var(--body); }
+  input { font: 15px var(--body); padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; }
+  input:focus { outline: 2px solid var(--teal); outline-offset: 0; border-color: transparent; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 24px; background: #fff; overflow-x: auto; }
+  .actions { display: flex; align-items: center; gap: 14px; margin: 18px 0 30px; flex-wrap: wrap; }
+  button { font: 600 15px var(--body); color: #fff; background: var(--forest); border: 0; border-radius: 8px; padding: 12px 20px; cursor: pointer; }
+  button:hover { background: var(--canopy); }
+  #status { font: 600 14px var(--body); color: var(--canopy); }
+  .steps { background: var(--mist); border-radius: 12px; padding: 18px 22px; }
+  .steps h2 { margin: 0 0 8px; font: 700 16px/22px var(--display); color: var(--forest); }
+  .steps ol { margin: 0 0 12px; padding-left: 20px; line-height: 1.6; font-size: 14px; }
+  .steps ol:last-child { margin-bottom: 0; }
+  @media (max-width: 560px) { form { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="label">Eco AirTech · Brand</div>
+  <h1>Email signature.</h1>
+  <p class="lead">Fill in your details, check the preview, then copy the signature into your email app. The logo is animated: fresh air flows through the house and clears it.</p>
+
+  <form id="f">
+    <label>Full name <input name="name" placeholder="e.g. Sara Ahmed" autocomplete="name"></label>
+    <label>Job title <input name="title" placeholder="e.g. Managing Director"></label>
+    <label>Phone <input name="phone" placeholder="+971 50 000 0000" autocomplete="tel"></label>
+    <label>Email <input name="email" placeholder="name@eco-airtech.com" autocomplete="email"></label>
+  </form>
+
+  <div class="card" id="preview"></div>
+
+  <div class="actions">
+    <button type="button" id="copy">Copy signature</button>
+    <span id="status" role="status"></span>
+  </div>
+
+  <div class="steps">
+    <h2>Outlook (new Outlook, Outlook on the web, Microsoft 365)</h2>
+    <ol>
+      <li>Settings → Accounts → Signatures (on the web: Settings → Mail → Compose and reply).</li>
+      <li>Create a new signature, click in the box and paste (Ctrl+V). Save, and choose it as the default.</li>
+    </ol>
+    <h2>Outlook for Windows (classic)</h2>
+    <ol>
+      <li>File → Options → Mail → Signatures → New.</li>
+      <li>Paste into the edit box, then Save. Some older versions show the first frame only, which is the logo as normal.</li>
+    </ol>
+    <h2>Fonts</h2>
+    <ol>
+      <li>The signature is set in the brand fonts: Archivo, IBM Plex Mono and IBM Plex Sans. Install them from the brand asset pack (03-fonts) so your own emails show them.</li>
+      <li>Recipients without the fonts see the brand book's fallbacks, Arial and Consolas, so the signature always looks clean.</li>
+    </ol>
+    <h2>Gmail</h2>
+    <ol>
+      <li>Settings → See all settings → General → Signature → Create new.</li>
+      <li>Paste into the box, then Save Changes at the bottom of the page.</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+  // The copied signature links to the logo on the website, so every recipient can load it.
+  // The preview uses the local copy when the website version is not there yet.
+  var LIVE = "https://ecoairtech.ae/assets/email/eco-airtech-signature.gif";
+  var LOCAL = "eco-airtech-signature.gif";
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  // Tables and inline styles only: this is what email apps reliably display.
+  // Fonts follow the brand book: Archivo for the name, IBM Plex Mono for the
+  // title, IBM Plex Sans for contacts. Email apps can't download fonts, so each
+  // falls back to the brand book's choice (Arial Bold, Consolas, Arial) where
+  // the brand fonts aren't installed.
+  var DISPLAY = "font-family:Archivo,Arial,Helvetica,sans-serif;";
+  var BODY = "font-family:'IBM Plex Sans',Arial,Helvetica,sans-serif;";
+  var MONO = "font-family:'IBM Plex Mono',Consolas,'Courier New',monospace;";
+
+  function signature(d, logo) {
+    var font = BODY;
+    var rows = [];
+    rows.push('<tr><td style="' + DISPLAY + 'font-size:17px;line-height:21px;font-weight:800;color:#014E00;padding:0 0 3px 0;">' + esc(d.name || "Full Name") + "</td></tr>");
+    if (d.title) rows.push('<tr><td style="' + MONO + 'font-size:10px;line-height:15px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:#07916A;padding:0 0 10px 0;">' + esc(d.title.toUpperCase()) + "</td></tr>");
+    else rows.push('<tr><td style="font-size:0;line-height:0;padding:0 0 8px 0;">&nbsp;</td></tr>');
+    if (d.phone) rows.push('<tr><td style="' + font + 'font-size:13px;line-height:19px;color:#000000;"><a href="tel:' + esc(d.phone.replace(/[^+\d]/g, "")) + '" style="color:#000000;text-decoration:none;">' + esc(d.phone) + "</a></td></tr>");
+    if (d.email) rows.push('<tr><td style="' + font + 'font-size:13px;line-height:19px;"><a href="mailto:' + esc(d.email) + '" style="color:#014E00;text-decoration:none;">' + esc(d.email) + "</a></td></tr>");
+    rows.push('<tr><td style="' + font + 'font-size:13px;line-height:19px;font-weight:600;"><a href="https://ecoairtech.ae" style="color:#07916A;font-weight:600;text-decoration:none;">ecoairtech.ae</a></td></tr>');
+
+    return (
+      '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">' +
+      "<tr>" +
+      '<td style="vertical-align:middle;padding:0 18px 0 0;">' +
+      '<a href="https://ecoairtech.ae" style="text-decoration:none;"><img src="' + logo + '" width="150" height="114" alt="Eco AirTech" style="display:block;width:150px;height:114px;border:0;"></a>' +
+      "</td>" +
+      '<td style="vertical-align:middle;border-left:2px solid #07916A;padding:2px 0 2px 18px;">' +
+      '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">' + rows.join("") + "</table>" +
+      "</td>" +
+      "</tr></table>"
+    );
+  }
+
+  var form = document.getElementById("f");
+  var preview = document.getElementById("preview");
+  var status = document.getElementById("status");
+  var previewLogo = LIVE;
+
+  function data() {
+    var d = {};
+    Array.prototype.forEach.call(form.elements, function (el) { d[el.name] = el.value.trim(); });
+    return d;
+  }
+  function render() {
+    preview.innerHTML = signature(data(), previewLogo);
+    var img = preview.querySelector("img");
+    img.onerror = function () { if (previewLogo !== LOCAL) { previewLogo = LOCAL; render(); } };
+  }
+  form.addEventListener("input", render);
+  render();
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var html = signature(data(), LIVE);
+    var done = function () { status.textContent = "Copied. Paste it into your signature settings."; };
+    try {
+      if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+        navigator.clipboard.write([new ClipboardItem({
+          "text/html": new Blob([html], { type: "text/html" }),
+          "text/plain": new Blob([preview.innerText], { type: "text/plain" })
+        })]).then(done, fallback);
+        return;
+      }
+    } catch (e) {}
+    fallback();
+
+    // Older browsers: copy a rendered, selected copy of the signature.
+    function fallback() {
+      var box = document.createElement("div");
+      box.style.cssText = "position:fixed;left:-9999px;top:0;background:#fff;";
+      box.innerHTML = html;
+      document.body.appendChild(box);
+      var range = document.createRange();
+      range.selectNodeContents(box);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      sel.removeAllRanges();
+      document.body.removeChild(box);
+      status.textContent = ok ? "Copied. Paste it into your signature settings." : "Copy failed. Select the preview above and press Ctrl+C.";
+    }
+  });
+</script>
+</body>
+</html>
