@@ -32,7 +32,7 @@ function Filter({ img, className = "" }: { img: (typeof filterMyth.images)[numbe
 export function FilterMyth() {
   const [aluminium, washable, synthetic] = filterMyth.images;
   return (
-    <Section surface>
+    <Section>
       <div className="container">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <Reveal>

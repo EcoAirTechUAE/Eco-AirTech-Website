@@ -32,9 +32,10 @@ export default function Technology() {
       />
 
       <TechnologyFilm />
+      <FilterMyth />
 
       {/* Why it happens at all — the multi-factor argument */}
-      <Section>
+      <Section surface>
         <div className="container">
           <SectionHeading eyebrow={factors.eyebrow} title={factors.headline} lead={factors.body} />
 
@@ -60,7 +61,6 @@ export default function Technology() {
       </Section>
 
       <SurfaceMyth hide={["above", "below", "close"]} />
-      <FilterMyth />
       <GrowthTimeline />
       <TheSolution />
       <SafetyBand />

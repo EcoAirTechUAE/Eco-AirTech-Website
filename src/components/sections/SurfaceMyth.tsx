@@ -16,13 +16,13 @@ const icons = [EyeOff, Wind, Timer];
 type Block = "above" | "below" | "close";
 
 /** `hide` drops individual blocks; the heading always renders. */
-export function SurfaceMyth({ hide = [] }: { hide?: Block[] }) {
+export function SurfaceMyth({ hide = [], surface = false }: { hide?: Block[]; surface?: boolean }) {
   const above = !hide.includes("above");
   const below = !hide.includes("below");
   const close = !hide.includes("close");
 
   return (
-    <Section id="how-it-works">
+    <Section id="how-it-works" surface={surface}>
       <div className="container">
         <SectionHeading
           eyebrow={surfaceMyth.eyebrow}

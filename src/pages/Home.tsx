@@ -29,9 +29,9 @@ export default function Home() {
       <Hero />
       <TrustWall />
       <TechnologyFilm />
-
-      <SurfaceMyth hide={["above", "below", "close"]} />
       <FilterMyth />
+
+      <SurfaceMyth hide={["above", "below", "close"]} surface />
       <GrowthTimeline />
 
       <TheSolution />
