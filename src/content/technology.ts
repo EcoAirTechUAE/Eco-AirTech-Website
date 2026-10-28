@@ -61,7 +61,9 @@ export const safety = {
 export const surfaceMyth = {
   eyebrow: "The comfortable assumption",
   headline: "A clean AC system is important. It is only part of the air quality picture.",
-  /** First paragraph is the lead; the last is the takeaway, set brighter. */
+  /** Sits directly under the headline. */
+  subhead: "A clean AC system matters. So does the air you breathe. They’re not the same thing.",
+  /** The last paragraph is the takeaway, set brighter. */
   intro: [
     "Wiping surfaces, washing filters and cleaning HVAC systems help remove accumulated dirt and contamination. These are essential maintenance tasks that support airflow, cooling performance and equipment reliability.",
     "AC cleaning services focus on cleaning the system. That is different from continuously managing the quality of the air you breathe.",

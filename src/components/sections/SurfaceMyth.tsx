@@ -27,10 +27,12 @@ export function SurfaceMyth({ hide = [], surface = false }: { hide?: Block[]; su
         <SectionHeading
           eyebrow={surfaceMyth.eyebrow}
           title={surfaceMyth.headline}
-          lead={surfaceMyth.intro[0]}
         />
         <Reveal i={1} className="max-w-3xl">
-          {surfaceMyth.intro.slice(1).map((para, i, rest) => (
+          <p className="mt-6 max-w-prose text-xl font-medium leading-snug text-ink sm:text-2xl">
+            {surfaceMyth.subhead}
+          </p>
+          {surfaceMyth.intro.map((para, i, rest) => (
             <p
               key={i}
               className={cn(
