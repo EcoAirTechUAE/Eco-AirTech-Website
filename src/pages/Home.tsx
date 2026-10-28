@@ -30,7 +30,7 @@ export default function Home() {
       <TrustWall />
       <TechnologyFilm />
 
-      <SurfaceMyth hide={["above"]} />
+      <SurfaceMyth hide={["above", "below", "close"]} />
       <FilterMyth />
       <GrowthTimeline />
 
