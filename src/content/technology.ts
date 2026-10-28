@@ -93,19 +93,16 @@ export const surfaceMyth = {
 export const filterMyth = {
   eyebrow: "The filter in your AC",
   headline: "Your return filter protects the FCU. It was never designed to purify the air.",
-  body: "Almost every air conditioning system across the Gulf runs a low-grade return filter, often little more than a washable mesh. It is specified to protect the coil and the fan from large debris, not to protect the people downstream of it. Everything that actually affects how you feel passes straight through.",
-  /** Sized against a MERV 13A media filter, which does capture these. */
-  passesThrough: [
-    { name: "Mould spores", size: "1–30 μm" },
-    { name: "Bacteria", size: "0.3–3 μm" },
-    { name: "Virus carriers", size: "0.3–1 μm" },
-    { name: "Fine smoke & PM2.5", size: "0.1–2.5 μm" },
-    { name: "VOCs & formaldehyde", size: "gas phase" },
-    { name: "Odour compounds", size: "gas phase" },
-  ],
-  caught: [{ name: "Hair, lint & coarse dust", size: "> 10 μm" }],
+  body: "Almost every fan coil unit across the Gulf runs a simple pre-filter: a washable mesh or open panel. Its job is to stop larger particles such as hair, lint and dust from damaging the coil and fan. It protects the machine, not the people breathing the air.",
   close:
-    "A gas-phase contaminant cannot be filtered by a mesh at all. It has to be broken down. That is a different category of technology, not a better filter.",
+    "That is why contamination problems keep coming back, and why AC cleaning companies are called in every quarter. Eco AirTech breaks that cycle.",
+  /** Typical FCU pre-filters, cut out so the mesh shows its open, see-through weave. */
+  images: [
+    { src: "/assets/filters/prefilter-aluminium.webp", width: 480, height: 525, label: "Aluminium mesh" },
+    { src: "/assets/filters/prefilter-washable.webp", width: 252, height: 200, label: "Washable screen" },
+    { src: "/assets/filters/prefilter-synthetic.webp", width: 640, height: 226, label: "Synthetic panel" },
+  ],
+  note: "Hold one up to the light and you can see straight through it. Spores, bacteria, smoke and odours do the same.",
 };
 
 export const growthTimeline = {
