@@ -66,7 +66,7 @@ export const surfaceMyth = {
     "Wiping surfaces, washing filters and cleaning HVAC systems help remove accumulated dirt and contamination. These are essential maintenance tasks that support airflow, cooling performance and equipment reliability.",
     "AC cleaning services focus on cleaning the system. That is different from continuously managing the quality of the air you breathe.",
     "Cleaning is a periodic intervention. Microorganisms can remain in concealed areas, porous materials and hard-to-reach components. If moisture and other conditions that support growth persist, contamination can return.",
-    "A freshly cleaned system does not, by itself, mean healthy indoor air. Better indoor air quality requires ongoing attention to moisture, ventilation, effective filtration and, where appropriate, additional air treatment—alongside regular cleaning and maintenance.",
+    "A freshly cleaned system does not, by itself, mean healthy indoor air. Better indoor air quality requires ongoing attention to moisture, ventilation, effective filtration and, where appropriate, additional air treatment, alongside regular cleaning and maintenance.",
   ],
   above: {
     label: "Above the surface: what cleaning removes",
