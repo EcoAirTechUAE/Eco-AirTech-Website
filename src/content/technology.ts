@@ -92,10 +92,12 @@ export const surfaceMyth = {
 
 export const filterMyth = {
   eyebrow: "The filter in your AC",
-  headline: "Your return filter protects the FCU. It was never designed to purify the air.",
-  body: "Almost every fan coil unit across the Gulf runs a simple pre-filter: a washable mesh or open panel. Its job is to stop larger particles such as hair, lint and dust from damaging the coil and fan. It protects the machine, not the people breathing the air.",
+  headline: "Your AC’s pre-filter is designed to protect the equipment; not your health",
+  /** Picked out of the headline in brand green. */
+  highlight: "not your health",
+  body: "Many fan coil units (FCUs) use a basic washable mesh pre-filter. Its primary job is to catch coarse debris; such as hair, lint and larger dust particles, before it builds up on the cooling coils and fan. These standard coarse pre-filters are not designed to protect human health. They offer limited filtration of the finer airborne particles people can inhale. A functioning AC and a freshly washed filter should therefore never be mistaken for clean indoor air.",
   close:
-    "That is why contamination problems keep coming back, and why AC cleaning companies are called in every quarter. Eco AirTech breaks that cycle.",
+    "AC cleaning and indoor air quality are different jobs. Cleaning removes accumulated dirt and helps maintain equipment performance. Improving the air you breathe requires a different attention.",
   /** Typical FCU pre-filters, cut out so the mesh shows its open, see-through weave. */
   images: [
     { src: "/assets/filters/prefilter-aluminium.webp", width: 480, height: 525, label: "Aluminium mesh" },

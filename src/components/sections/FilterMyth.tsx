@@ -37,7 +37,11 @@ export function FilterMyth() {
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <Reveal>
             <p className="eyebrow">{filterMyth.eyebrow}</p>
-            <h2 className="mt-6 text-display-md font-medium">{filterMyth.headline}</h2>
+            <h2 className="mt-6 text-display-md font-medium">
+              {filterMyth.headline.split(filterMyth.highlight)[0]}
+              <span className="text-accent">{filterMyth.highlight}</span>
+              {filterMyth.headline.split(filterMyth.highlight)[1]}
+            </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">{filterMyth.body}</p>
             <p className="mt-6 max-w-prose leading-relaxed text-ink/90">{filterMyth.close}</p>
           </Reveal>
