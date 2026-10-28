@@ -60,9 +60,14 @@ export const safety = {
 
 export const surfaceMyth = {
   eyebrow: "The comfortable assumption",
-  headline: "Cleaning removes contamination. It doesn't remove the conditions that allow it to return.",
-  intro:
-    "Wiping surfaces, replacing filters and cleaning HVAC systems are important, and can significantly reduce contamination. But they are periodic interventions. Microorganisms, spores and biofilms can remain in porous materials, concealed surfaces and hard-to-reach parts of ventilation systems. When moisture, humidity, warmth and nutrient sources persist, contamination can re-establish quickly.",
+  headline: "A clean AC system is important. It is only part of the air quality picture.",
+  /** First paragraph is the lead; the last is the takeaway, set brighter. */
+  intro: [
+    "Wiping surfaces, washing filters and cleaning HVAC systems help remove accumulated dirt and contamination. These are essential maintenance tasks that support airflow, cooling performance and equipment reliability.",
+    "AC cleaning services focus on cleaning the system. That is different from continuously managing the quality of the air you breathe.",
+    "Cleaning is a periodic intervention. Microorganisms can remain in concealed areas, porous materials and hard-to-reach components. If moisture and other conditions that support growth persist, contamination can return.",
+    "A freshly cleaned system does not, by itself, mean healthy indoor air. Better indoor air quality requires ongoing attention to moisture, ventilation, effective filtration and, where appropriate, additional air treatment—alongside regular cleaning and maintenance.",
+  ],
   above: {
     label: "Above the surface: what cleaning removes",
     title: "Visible dust, debris & surface contamination",
