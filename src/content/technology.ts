@@ -102,9 +102,9 @@ export const filterMyth = {
   headline: "Your AC’s pre-filter is designed to protect the equipment; not your health",
   /** Picked out of the headline in brand green. */
   highlight: "not your health",
-  body: "Many fan coil units (FCUs) use a basic washable mesh pre-filter. Its primary job is to catch coarse debris; such as hair, lint and larger dust particles, before it builds up on the cooling coils and fan. These standard coarse pre-filters are not designed to protect human health. They offer limited filtration of the finer airborne particles people can inhale. A functioning AC and a freshly washed filter should therefore never be mistaken for clean indoor air.",
+  body: "Many fan coil units (FCUs) use a basic washable mesh pre-filter. Its job is to catch hair, lint and coarse dust before they clog the cooling coils and fan. It does little to stop the fine particles you actually breathe in. So a working AC and a freshly washed filter don’t mean clean air.",
   close:
-    "AC cleaning and indoor air quality are different jobs. Cleaning removes accumulated dirt and helps maintain equipment performance. Improving the air you breathe requires a different attention.",
+    "Cleaning your AC protects the machine. Cleaning your air protects you. They’re two different jobs.",
   /** Typical FCU pre-filters, cut out so the mesh shows its open, see-through weave. */
   images: [
     { src: "/assets/filters/prefilter-aluminium.webp", width: 480, height: 525, label: "Aluminium mesh" },
