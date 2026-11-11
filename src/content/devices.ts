@@ -179,16 +179,16 @@ export const devices: Device[] = [
     slug: "750-plus",
     name: "750+",
     article: "The 750+",
-    kicker: "Wall mounted · room & zone",
+    kicker: "Wall mounted · in-duct",
     coverage: "up to 1,000 sq ft",
     mount: "Wall mounted, or fitted within AC ductwork",
     technologies: ["ARC®", "Bi-Polar Ionisation", "ODOGard® HEPA+ filter"],
     summary:
-      "The most tested unit in the range, and the one behind our strongest live-environment results. Compact enough to wall mount in a single room, powerful enough to hold a heavily contaminated one.",
+      "The most tested unit in the range, and the one behind our strongest live-environment results. Wall mount it in a room or fit it in-duct with no invasive works, then unplug it and take it with you to the next property.",
     body: [
       "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
       "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on a 750+ with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
-      "Its lightweight, compact design means it can be wall mounted in a room or placed within AC ductwork, and a transit variant is available for vehicles and enclosed cabins.",
+      "Its lightweight, compact design means it can be wall mounted in a room or fitted within existing AC ductwork. In-duct installation is plug and play: no cutting into ducts, ceilings or walls, and no specialist engineering works. That makes it ideal for the rental market, where the unit can simply be unplugged and moved to the next property. A transit variant is also available for vehicles and enclosed cabins.",
     ],
     stats: [
       { value: "99.9%", label: "Airborne mould spores", condition: "48 hours" },
@@ -210,8 +210,8 @@ export const devices: Device[] = [
         body: "Creates a plasma of electrical charges that removes allergens and airborne pathogens from the breathing zone.",
       },
       {
-        title: "Wall mount or in-duct",
-        body: "Lightweight and compact, so it can be sited in the room itself or concealed within AC ductwork.",
+        title: "Wall mount or in-duct, plug and play",
+        body: "Sits in the room or within existing AC ductwork with no invasive works, and unplugs to move with you. Ideal for rental properties.",
       },
     ],
     bestFor: [
