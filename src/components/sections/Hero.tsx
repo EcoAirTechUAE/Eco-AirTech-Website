@@ -48,11 +48,10 @@ export function Hero() {
 
           <Reveal i={2}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-              Outdoors, sunlight drives natural atmospheric reactions that create hydroxyl
-              radicals; highly reactive molecules that help break down airborne contaminants. Our
-              systems reproduce that reaction inside your building, eliminating up to{" "}
-              <span className="text-ink">99.9% of airborne and surface contaminants</span>, and
-              never switching off.
+              Outdoors, nature creates hydroxyl radicals to clean the air. We bring
+              that reaction indoors, eliminating up to{" "}
+              <span className="text-ink">99.9% of airborne and surface contaminants</span>. Around
+              the clock.
             </p>
           </Reveal>
 

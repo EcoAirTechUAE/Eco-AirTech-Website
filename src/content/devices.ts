@@ -109,6 +109,68 @@ export const devices: Device[] = [
     silhouette: "/assets/devices/hvac-silhouette.svg",
   },
   {
+    slug: "750-plus",
+    name: "750+",
+    article: "The 750+",
+    kicker: "Wall mounted · in-duct",
+    coverage: "up to 1,000 sq ft",
+    mount: "Wall mounted, or fitted within AC ductwork",
+    technologies: ["ARC®", "Bi-Polar Ionisation", "ODOGard® HEPA+ filter"],
+    summary:
+      "The most tested unit in the range, and the one behind our strongest live-environment results. Wall mount it in a room or fit it in-duct with no invasive works, then unplug it and take it with you to the next property.",
+    body: [
+      "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
+      "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on a 750+ with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
+      "Its lightweight, compact design means it can be wall mounted in a room or fitted within existing AC ductwork. In-duct installation is plug and play: no cutting into ducts, ceilings or walls, and no specialist engineering works. That makes it ideal for the rental market, where the unit can simply be unplugged and moved to the next property. A transit variant is also available for vehicles and enclosed cabins.",
+    ],
+    stats: [
+      { value: "99.9%", label: "Airborne mould spores", condition: "48 hours" },
+      { value: "97.5%", label: "Surface mould spores", condition: "48 hours" },
+      { value: "94.0%", label: "HCHO formaldehyde", condition: "5 days" },
+      { value: "92.0%", label: "TVOC", condition: "5 days" },
+    ],
+    features: [
+      {
+        title: "ODOGard® coated HEPA+ filter",
+        body: "Captures and neutralises unwanted VOCs and odours rather than simply holding them in the media.",
+      },
+      {
+        title: "ARC® advanced PCO",
+        body: "Produces hydroxyls that help prevent mould, mildew and allergens from pets, pollen and smoke from establishing.",
+      },
+      {
+        title: "Bi-polar ionisation module",
+        body: "Creates a plasma of electrical charges that removes allergens and airborne pathogens from the breathing zone.",
+      },
+      {
+        title: "Wall mount or in-duct, plug and play",
+        body: "Sits in the room or within existing AC ductwork with no invasive works, and unplugs to move with you. Ideal for rental properties.",
+      },
+    ],
+    bestFor: [
+      "Bedrooms & nurseries",
+      "Villas & apartments",
+      "Hotel rooms & suites",
+      "Classrooms",
+      "Clinics & consulting rooms",
+      "Vehicles & transit cabins",
+    ],
+    featuredStudies: [
+      "750-live-apartment",
+      "750-live-house",
+      "750-lab-ms2",
+      "750-field-office",
+    ],
+    inside: {
+      headline: "Three technologies, one compact unit.",
+      body: "All three technologies in one compact, self-contained unit: the ODOGard®-coated HEPA+ filter, the ARC® advanced PCO cell and the bi-polar ionisation module.",
+      video: "/assets/devices/video/750-plus-parts.mp4",
+      poster: "/assets/devices/video/750-plus-parts-poster.webp",
+    },
+    image: "/assets/devices/750-plus.jpg",
+    silhouette: "/assets/devices/750-plus-silhouette.svg",
+  },
+  {
     slug: "portable",
     name: "Portable",
     article: "The Portable",
@@ -174,68 +236,6 @@ export const devices: Device[] = [
     },
     image: "/assets/devices/portable.jpg",
     silhouette: "/assets/devices/portable-silhouette.svg",
-  },
-  {
-    slug: "750-plus",
-    name: "750+",
-    article: "The 750+",
-    kicker: "Wall mounted · in-duct",
-    coverage: "up to 1,000 sq ft",
-    mount: "Wall mounted, or fitted within AC ductwork",
-    technologies: ["ARC®", "Bi-Polar Ionisation", "ODOGard® HEPA+ filter"],
-    summary:
-      "The most tested unit in the range, and the one behind our strongest live-environment results. Wall mount it in a room or fit it in-duct with no invasive works, then unplug it and take it with you to the next property.",
-    body: [
-      "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
-      "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on a 750+ with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
-      "Its lightweight, compact design means it can be wall mounted in a room or fitted within existing AC ductwork. In-duct installation is plug and play: no cutting into ducts, ceilings or walls, and no specialist engineering works. That makes it ideal for the rental market, where the unit can simply be unplugged and moved to the next property. A transit variant is also available for vehicles and enclosed cabins.",
-    ],
-    stats: [
-      { value: "99.9%", label: "Airborne mould spores", condition: "48 hours" },
-      { value: "97.5%", label: "Surface mould spores", condition: "48 hours" },
-      { value: "94.0%", label: "HCHO formaldehyde", condition: "5 days" },
-      { value: "92.0%", label: "TVOC", condition: "5 days" },
-    ],
-    features: [
-      {
-        title: "ODOGard® coated HEPA+ filter",
-        body: "Captures and neutralises unwanted VOCs and odours rather than simply holding them in the media.",
-      },
-      {
-        title: "ARC® advanced PCO",
-        body: "Produces hydroxyls that help prevent mould, mildew and allergens from pets, pollen and smoke from establishing.",
-      },
-      {
-        title: "Bi-polar ionisation module",
-        body: "Creates a plasma of electrical charges that removes allergens and airborne pathogens from the breathing zone.",
-      },
-      {
-        title: "Wall mount or in-duct, plug and play",
-        body: "Sits in the room or within existing AC ductwork with no invasive works, and unplugs to move with you. Ideal for rental properties.",
-      },
-    ],
-    bestFor: [
-      "Bedrooms & nurseries",
-      "Villas & apartments",
-      "Hotel rooms & suites",
-      "Classrooms",
-      "Clinics & consulting rooms",
-      "Vehicles & transit cabins",
-    ],
-    featuredStudies: [
-      "750-live-apartment",
-      "750-live-house",
-      "750-lab-ms2",
-      "750-field-office",
-    ],
-    inside: {
-      headline: "Three technologies, one compact unit.",
-      body: "All three technologies in one compact, self-contained unit: the ODOGard®-coated HEPA+ filter, the ARC® advanced PCO cell and the bi-polar ionisation module.",
-      video: "/assets/devices/video/750-plus-parts.mp4",
-      poster: "/assets/devices/video/750-plus-parts-poster.webp",
-    },
-    image: "/assets/devices/750-plus.jpg",
-    silhouette: "/assets/devices/750-plus-silhouette.svg",
   },
   {
     slug: "ptac",
