@@ -60,15 +60,15 @@ export const safety = {
 
 export const surfaceMyth = {
   eyebrow: "The comfortable assumption",
-  headline: "A clean AC system is important. It is only part of the air quality picture.",
+  headline: "A clean AC is important. It’s only half the picture.",
   /** Sits directly under the headline. */
-  subhead: "A clean AC system matters. So does the air you breathe. They’re not the same thing.",
+  subhead: "Clean equipment and clean air are not the same thing.",
   /** The last paragraph is the takeaway, set brighter. */
   intro: [
-    "Washing filters, wiping surfaces and cleaning HVAC systems removes built-up dirt. It keeps air flowing, cooling strong and equipment reliable. It’s essential maintenance.",
+    "Washing filters, wiping surfaces and cleaning HVAC systems removes built-up dirt. It keeps air flowing, cooling strong and equipment reliable. Essential maintenance.",
     "But AC cleaning cleans the system. It doesn’t manage the air you breathe, day after day.",
     "And cleaning is a one-off. Microorganisms hide in concealed areas, porous materials and hard-to-reach parts. If the moisture that feeds them stays, they can come back.",
-    "A freshly cleaned system isn’t the same as healthy air. That takes ongoing control of moisture, ventilation and filtration, plus air treatment where it’s needed, on top of regular cleaning.",
+    "A freshly cleaned system isn’t healthy air. That takes ongoing control of moisture, ventilation and filtration, plus air treatment where it’s needed.",
   ],
   above: {
     label: "Above the surface: what cleaning removes",
