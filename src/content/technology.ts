@@ -65,10 +65,10 @@ export const surfaceMyth = {
   subhead: "A clean AC system matters. So does the air you breathe. They’re not the same thing.",
   /** The last paragraph is the takeaway, set brighter. */
   intro: [
-    "Wiping surfaces, washing filters and cleaning HVAC systems help remove accumulated dirt and contamination. These are essential maintenance tasks that support airflow, cooling performance and equipment reliability.",
-    "AC cleaning services focus on cleaning the system. That is different from continuously managing the quality of the air you breathe.",
-    "Cleaning is a periodic intervention. Microorganisms can remain in concealed areas, porous materials and hard-to-reach components. If moisture and other conditions that support growth persist, contamination can return.",
-    "A freshly cleaned system does not, by itself, mean healthy indoor air. Better indoor air quality requires ongoing attention to moisture, ventilation, effective filtration and, where appropriate, additional air treatment, alongside regular cleaning and maintenance.",
+    "Washing filters, wiping surfaces and cleaning HVAC systems removes built-up dirt. It keeps air flowing, cooling strong and equipment reliable. It’s essential maintenance.",
+    "But AC cleaning cleans the system. It doesn’t manage the air you breathe, day after day.",
+    "And cleaning is a one-off. Microorganisms hide in concealed areas, porous materials and hard-to-reach parts. If the moisture that feeds them stays, they can come back.",
+    "A freshly cleaned system isn’t the same as healthy air. That takes ongoing control of moisture, ventilation and filtration, plus air treatment where it’s needed, on top of regular cleaning.",
   ],
   above: {
     label: "Above the surface: what cleaning removes",
