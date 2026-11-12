@@ -34,11 +34,18 @@ export function IndustriesGrid() {
           </Reveal>
         </div>
 
-        {/* Eight sectors divides evenly by both 2 and 4, so the grid always
-            fills — no ragged empty cells at the bottom. */}
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Nine sectors fill a 3-column grid exactly. In two columns the odd
+            last card spans the full row so there is no empty cell. */}
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry, i) => (
-            <Reveal as="li" key={industry.slug} i={i}>
+            <Reveal
+              as="li"
+              key={industry.slug}
+              i={i}
+              className={cn(
+                industries.length % 2 === 1 && i === industries.length - 1 && "sm:col-span-2 lg:col-span-1",
+              )}
+            >
               <Link
                 to={`/industries/${industry.slug}`}
                 className="group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-xl border border-line p-6 transition-colors duration-500 hover:border-accent/40"

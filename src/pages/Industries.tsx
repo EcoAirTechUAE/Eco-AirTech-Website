@@ -23,7 +23,16 @@ export default function Industries() {
         <div className="container">
           <ul className="grid gap-5 md:grid-cols-2">
             {industries.map((industry, i) => (
-              <Reveal as="li" key={industry.slug} i={i % 2} className="h-full">
+              <Reveal
+                as="li"
+                key={industry.slug}
+                i={i % 2}
+                className={cn(
+                  "h-full",
+                  // An odd last card spans both columns rather than leaving a gap.
+                  industries.length % 2 === 1 && i === industries.length - 1 && "md:col-span-2",
+                )}
+              >
                 <Link
                   to={`/industries/${industry.slug}`}
                   className="group card flex h-full flex-col overflow-hidden transition-colors duration-500 hover:border-accent/40"
