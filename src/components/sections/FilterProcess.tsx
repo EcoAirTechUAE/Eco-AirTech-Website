@@ -1,57 +1,10 @@
-import { Section, SectionHeading } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { odogardProcess, reduces, series, vsCarbon } from "@/content/filters";
+import { reduces, series, vsCarbon } from "@/content/filters";
 
 export function FilterProcess() {
   return (
     <>
-      {/* Capture -> bond -> destroy */}
-      <Section>
-        <div className="container">
-          <SectionHeading
-            eyebrow={odogardProcess.eyebrow}
-            title={odogardProcess.headline}
-            lead={odogardProcess.body}
-          />
-
-          <ol className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
-            {odogardProcess.steps.map((step, i) => (
-              <Reveal key={step.n} i={i} className="relative">
-                {/* Connector, drawn between steps rather than after the last */}
-                {i < odogardProcess.steps.length - 1 && (
-                  <span
-                    aria-hidden
-                    className="absolute left-0 top-[7px] hidden h-px w-full bg-gradient-to-r from-accent/40 to-transparent md:block"
-                  />
-                )}
-                <span
-                  aria-hidden
-                  className="relative block h-3.5 w-3.5 rounded-full border border-accent/50 bg-bg"
-                >
-                  <span className="absolute inset-1 rounded-full bg-accent" />
-                </span>
-                <p className="mt-6 font-mono text-[0.8125rem] uppercase tracking-wider text-accent">
-                  {step.n}
-                </p>
-                <h3 className="mt-2 text-xl font-medium">{step.title}</h3>
-                <p className="mt-3 max-w-prose leading-relaxed text-muted">{step.body}</p>
-              </Reveal>
-            ))}
-          </ol>
-
-          <Reveal i={3}>
-            <ul className="mt-14 grid gap-x-8 gap-y-4 border-t border-line pt-8 sm:grid-cols-2">
-              {odogardProcess.properties.map((p) => (
-                <li key={p} className="flex gap-3 body-text">
-                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </Section>
-
       {/* Against carbon */}
       <Section surface>
         <div className="container">
