@@ -25,6 +25,8 @@ export interface Industry {
    * e.g. "object-bottom" | "object-top" | "object-[50%_35%]"
    */
   focal?: string;
+  /** Extra photos shown in a row under the main image on the detail page. */
+  gallery?: string[];
   proof?: { value: string; label: string; context: string };
   quote?: { text: string; author: string; role: string };
 }
@@ -381,6 +383,52 @@ export const industries: Industry[] = [
       value: "97%",
       label: "Surface mould reduction",
       context: "5 days, 750+ field test, commercial office",
+    },
+  },
+  {
+    slug: "malls",
+    name: "Malls & Large Venues",
+    kicker: "Shopping centres, cinemas & entertainment",
+    summary:
+      "Malls are where people dine, shop, socialise and relax, often for hours, in large shared spaces where viruses, bacteria and mould spread easily. We treat the air and the surfaces continuously, without closing a single store.",
+    body: [
+      "In the UAE, malls are far more than shopping. People come to dine, shop, socialise and relax, and for much of the year they are where families spend their evenings, because it is too hot to be anywhere else. The largest centres welcome tens of millions of visitors a year, and most are open 14 hours a day or more.",
+      "That makes them some of the most heavily shared indoor spaces anywhere. Viruses and bacteria pass between visitors through the air and on shared surfaces, while mould and other organic contaminants build up wherever moisture and people gather. Large central air handling units recirculate the same air across atriums, shops, food courts and cinemas, and REHVA, the European HVAC federation, notes that standard return filters do not normally capture viruses. The WHO is clear that the risk of airborne infection rises in crowded indoor settings. A study of nine Hong Kong shopping malls found airborne bacteria above the recommended limit in around 30% of them, driven by high occupancy.",
+      "Every zone brings its own load. Food courts add cooking odours and particles. New fit-outs and merchandise release VOCs and formaldehyde. Washrooms and children's play areas see constant turnover. Cinemas seat hundreds of people in a closed, dark room for two to three hours, and a study of 108 screenings measured CO₂ climbing from around 400 ppm to as much as 2,400 ppm as audiences filled the room, a clear measure of how much air a crowd shares.",
+      "Ventilation brings fresh air in. Our technology treats what is already there. Fitted inside existing air handling units and ductwork, it continuously reduces bacteria, viruses, mould, VOCs and odours in the air and on high-touch surfaces such as escalator rails, lift buttons, food court tables and cinema seats, while the centre stays open. For atriums and halls measured in volume rather than floor area, a single OverWatch treats up to 160,000 cubic feet.",
+      "In a five-day field test, our in-duct unit paired with a treated filter reduced airborne bacteria, TVOC, formaldehyde and odour intensity by more than 99.99%. For operators pursuing WELL Health-Safety ratings or green building standards, it is a measurable air standard backed by independent test data, and a fresher experience every visitor notices the moment they walk in.",
+    ],
+    concerns: [
+      {
+        title: "Shared, recirculated air",
+        body: "Central air handling units carry the same air across shops, food courts and cinemas all day.",
+      },
+      {
+        title: "High-touch surfaces",
+        body: "Escalator rails, lift buttons, food court tables and washroom taps, touched by thousands of people.",
+      },
+      {
+        title: "Cinemas and enclosed venues",
+        body: "Hundreds of people in a closed room for hours, on upholstered seats and carpets.",
+      },
+      {
+        title: "Odours and VOCs",
+        body: "Food court cooking, new fit-outs and cleaning products, noticed the moment visitors arrive.",
+      },
+    ],
+    devices: ["overwatch", "hvac", "750-plus"],
+    image: "/assets/industries/malls.jpg",
+    // Faces sit in the upper half; keep them in the wide crops.
+    focal: "object-[50%_30%]",
+    gallery: [
+      "/assets/industries/malls-skyline.jpg",
+      "/assets/industries/malls-couple.jpg",
+      "/assets/industries/malls-family.jpg",
+    ],
+    proof: {
+      value: ">99.99%",
+      label: "Airborne bacteria reduction",
+      context: "5 days, in-duct unit with treated filter, field test",
     },
   },
 ];

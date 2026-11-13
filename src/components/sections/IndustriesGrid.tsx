@@ -34,9 +34,9 @@ export function IndustriesGrid() {
           </Reveal>
         </div>
 
-        {/* Nine sectors fill a 3-column grid exactly. In two columns the odd
-            last card spans the full row so there is no empty cell. */}
-        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Ten sectors fill two rows of five exactly. If the count is ever odd,
+            the last card spans the full row in two columns so there is no gap. */}
+        <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {industries.map((industry, i) => (
             <Reveal
               as="li"

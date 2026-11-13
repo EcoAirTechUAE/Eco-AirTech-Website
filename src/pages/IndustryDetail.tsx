@@ -70,6 +70,24 @@ export default function IndustryDetail() {
               </div>
             )}
           </Reveal>
+
+          {industry.gallery && industry.gallery.length > 0 && (
+            <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+              {industry.gallery.map((src, i) => (
+                <Reveal as="li" key={src} i={i + 1}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line">
+                    <SmartImage
+                      src={src}
+                      alt=""
+                      label={industry.name}
+                      ratio="absolute inset-0"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  </div>
+                </Reveal>
+              ))}
+            </ul>
+          )}
         </div>
       </Section>
 
