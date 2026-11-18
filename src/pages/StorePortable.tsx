@@ -377,7 +377,7 @@ function BuyBox({ compact = false }: { compact?: boolean }) {
       {!live && <p className="mt-2 text-sm text-muted">Pre-order now and we will reserve a unit for you. Nothing is charged until stock arrives and you confirm.</p>}
 
       <ul className="mt-6 space-y-2.5 text-sm text-ink">
-        {["Covers up to 850 sq ft, enough for most homes", "Uses just 12 to 36 watts, built to run day and night", "Auto Mode reacts to what it detects", "Live readings and part life in the app", "3-year manufacturer's warranty"].map((b) => (
+        {["Covers 850 sq ft", "Uses just 12 to 36 watts, built to run day and night", "Auto Mode reacts to what it detects", "Live readings and part life in the app", "3-year manufacturer's warranty"].map((b) => (
           <li key={b} className="flex gap-2.5">
             <Check aria-hidden className="mt-0.5 h-4 w-4 shrink-0 text-accent" /> {b}
           </li>
