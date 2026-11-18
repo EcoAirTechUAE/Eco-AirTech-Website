@@ -48,8 +48,6 @@ export interface Device {
   };
   /** A scene of the unit in use, with text beside it, directly under the page intro. */
   banner?: { src: string; alt: string; eyebrow: string; headline: string; body: string };
-  /** A cut-out render shown in the hero with animated airflow in and out of it. */
-  airflowHero?: { src: string; alt: string };
   /** Shows the hero product image smaller, for renders that soften when enlarged. */
   compactHero?: boolean;
   image: string;
@@ -354,10 +352,6 @@ export const devices: Device[] = [
       body: "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",
     },
     compactHero: true,
-    airflowHero: {
-      src: "/assets/devices/overwatch-canopy.webp",
-      alt: "The OVERWATCH: contaminated air is drawn into the unit and treated air flows out through the louvres",
-    },
     inside: {
       headline: "Built to treat the whole volume.",
       body: "ARC® and bi-polar ionisation in a single enclosure, with the casing chosen to suit the space: stainless steel, coated aluminium or roll-around.",
