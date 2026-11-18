@@ -3,7 +3,7 @@
  * through Shopify behind our own pages.
  *
  * Our site renders the product page; Shopify runs the cart, payment, VAT and
- * order record, and Quiqup collects and delivers through its Shopify app.
+ * order record. Delivery partner to be confirmed.
  *
  * Until the Shopify values below are set, the store never pretends to take
  * money: the buy button becomes "Register interest" and opens WhatsApp.
@@ -35,7 +35,7 @@ export const store = {
   bnpl: [] as ("Tabby" | "Tamara")[],
   /** Number of interest-free instalments both providers offer. */
   bnplInstalments: 4,
-  delivery: "Delivered across the UAE by our courier partner, Quiqup.",
+  delivery: "Delivered across the UAE.",
   /** UAE only for now. */
   shipsTo: "United Arab Emirates",
 };

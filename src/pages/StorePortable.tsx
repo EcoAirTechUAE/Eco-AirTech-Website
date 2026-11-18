@@ -692,7 +692,7 @@ export default function StorePortable() {
               {[
                 [Zap, "Works the day it arrives"],
                 [Smartphone, "Readings in the app"],
-                [Truck, "UAE delivery by Quiqup"],
+                [Truck, "Delivered across the UAE"],
               ].map(([Icon, label]) => {
                 const I = Icon as typeof Zap;
                 return (
