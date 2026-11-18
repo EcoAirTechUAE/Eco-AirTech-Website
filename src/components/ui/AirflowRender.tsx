@@ -139,10 +139,10 @@ export function AirflowRender({ src, alt, className }: { src: string; alt: strin
         </div>
       </div>
 
-      <figcaption className="pointer-events-none absolute inset-x-0 top-0 flex justify-between p-4 font-mono text-[11px] uppercase tracking-wider sm:p-5">
+      <figcaption className="pointer-events-none absolute inset-x-0 top-0 flex justify-between p-4 font-mono text-[0.8125rem] uppercase tracking-wider sm:p-5">
         <span className="rounded-full border border-[rgba(226,178,118,0.35)] bg-black/60 px-3 py-1.5 text-[#e8c08a] backdrop-blur-sm">Contaminated air in</span>
       </figcaption>
-      <span className="pointer-events-none absolute bottom-4 right-4 rounded-full border border-accent-lime/40 bg-black/60 px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-accent-lime backdrop-blur-sm sm:bottom-5 sm:right-5">
+      <span className="pointer-events-none absolute bottom-4 right-4 rounded-full border border-accent-lime/40 bg-black/60 px-3 py-1.5 font-mono text-[0.8125rem] uppercase tracking-wider text-accent-lime backdrop-blur-sm sm:bottom-5 sm:right-5">
         Clean air out
       </span>
     </figure>
