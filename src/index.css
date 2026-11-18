@@ -466,3 +466,16 @@ dialog.thanks[open] .thanks-icon {
     display: none;
   }
 }
+
+/* Store: contaminant icon particles drift slowly; still for reduced motion. */
+@keyframes particle-drift {
+  0%, 100% { transform: translate(0, 0); opacity: 0.95; }
+  50% { transform: translate(1.6px, -2.2px); opacity: 0.55; }
+}
+.particles circle {
+  transform-box: fill-box;
+  animation: particle-drift 3.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .particles circle { animation: none; }
+}

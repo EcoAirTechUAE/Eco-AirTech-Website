@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,6 +28,22 @@ export default function Devices() {
               </Reveal>
             ))}
           </div>
+
+          {/* The MOVE can be bought online */}
+          <Reveal className="mt-8">
+            <Link
+              to="/store/portable"
+              className="group flex flex-col gap-4 rounded-2xl border border-accent/30 bg-accent/5 p-6 transition-colors hover:border-accent/60 sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">Pre-order now · UAE delivery</p>
+                <p className="mt-2 text-lg text-ink">The MOVE needs no installation. Reserve yours now, with no payment until stock arrives.</p>
+              </div>
+              <span className="inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-accent-grad px-5 text-sm font-medium text-[#04140A]">
+                Pre-order The MOVE <ArrowRight aria-hidden className="h-4 w-4" />
+              </span>
+            </Link>
+          </Reveal>
 
           {/* Specification comparison */}
           <Reveal className="mt-20">

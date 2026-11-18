@@ -15,6 +15,8 @@ import IndustryDetail from "@/pages/IndustryDetail";
 import Results from "@/pages/Results";
 import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
+import Store from "@/pages/Store";
+import StorePortable from "@/pages/StorePortable";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -36,6 +38,8 @@ export default function App() {
           <Route path="/results" element={<Results />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/store/portable" element={<StorePortable />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

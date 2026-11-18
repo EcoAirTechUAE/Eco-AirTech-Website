@@ -51,6 +51,15 @@ export default function DeviceDetail() {
               ))}
             </dl>
 
+            {device.slug === "portable" && (
+              <Link
+                to="/store/portable"
+                className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-accent-grad px-7 text-[0.95rem] font-medium text-[#04140A] transition hover:brightness-110"
+              >
+                Pre-order now, delivered in the UAE <ArrowRight aria-hidden className="h-4 w-4" />
+              </Link>
+            )}
+
             <div className="mt-10 flex flex-wrap gap-2">
               {device.technologies.map((tech) => (
                 <span

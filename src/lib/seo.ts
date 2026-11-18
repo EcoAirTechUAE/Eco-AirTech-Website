@@ -86,6 +86,11 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
     description:
       "Homeowners and hospitality clients across the UAE and GCC on what led them to Eco AirTech, and what changed in the air they live and work in.",
   },
+  "/store": {
+    title: titled("Store: pre-order The MOVE in the UAE"),
+    description:
+      "Pre-order The MOVE with UAE delivery. Active hydroxyls, bi-polar ionisation and an ODOGard® HEPA+ filter in a compact unit covering up to 850 sq ft, with no installation.",
+  },
   "/contact": {
     title: titled("Request a site assessment"),
     description:
@@ -108,6 +113,7 @@ const CRUMB_LABEL: Record<string, string> = {
   "/results": "Results",
   "/reviews": "Reviews",
   "/contact": "Contact",
+  "/store": "Store",
 };
 
 /**
@@ -146,6 +152,21 @@ export function metaForPath(rawPath: string): PageMeta {
       path,
       image: DEFAULT_OG_IMAGE,
       crumbs: crumbLabel ? [{ name: crumbLabel, path }] : [],
+    };
+  }
+
+  if (path === "/store/portable") {
+    return {
+      title: titled("The MOVE air purifier: pre-order in the UAE"),
+      description: clampDescription(
+        "The MOVE: hydroxyls, bi-polar ionisation and ODOGard® HEPA+ against mould, bacteria, viruses and odours. Covers up to 850 sq ft, 12 to 36 W, no installation, UAE delivery.",
+      ),
+      path,
+      image: abs("/assets/store/home-nursery.webp"),
+      crumbs: [
+        { name: "Store", path: "/store" },
+        { name: "The MOVE", path },
+      ],
     };
   }
 
@@ -340,6 +361,7 @@ export function jsonLdForPath(rawPath: string): string {
 export function indexableRoutes(): string[] {
   return [
     ...Object.keys(STATIC),
+    "/store/portable",
     ...devices.map((d) => `/devices/${d.slug}`),
     ...industries.map((i) => `/industries/${i.slug}`),
   ];

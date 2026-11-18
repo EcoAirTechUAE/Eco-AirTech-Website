@@ -27,6 +27,9 @@ export function DeviceCard({ device, className }: { device: Device; className?: 
       </div>
 
       <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">{device.kicker}</p>
+      {device.slug === "portable" && (
+        <span className="absolute right-10 top-10 rounded-full bg-accent-grad px-3 py-1 text-xs font-medium text-[#04140A]">Pre-order</span>
+      )}
 
       <h3 className="mt-3 flex items-start justify-between gap-3 text-2xl font-medium">
         {device.article}
