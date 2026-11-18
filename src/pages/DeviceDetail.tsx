@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { SmartImage } from "@/components/ui/SmartImage";
 import { LoopVideo } from "@/components/ui/LoopVideo";
+import { AirflowRender } from "@/components/ui/AirflowRender";
 import { cn } from "@/lib/utils";
 import { StudyCard } from "@/components/ui/StudyCard";
 import { DeviceCard } from "@/components/ui/DeviceCard";
@@ -72,7 +73,10 @@ export default function DeviceDetail() {
             </div>
           </Reveal>
 
-          <Reveal i={3} className="relative">
+          <Reveal i={3} className="relative min-w-0">
+            {device.airflowHero ? (
+              <AirflowRender src={device.airflowHero.src} alt={device.airflowHero.alt} />
+            ) : (
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-line bg-black">
               <SmartImage
                 src={device.image}
@@ -85,6 +89,7 @@ export default function DeviceDetail() {
                 )}
               />
             </div>
+            )}
           </Reveal>
         </div>
       </PageHero>

@@ -39,7 +39,11 @@ export function FilterMyth() {
             <p className="eyebrow">{filterMyth.eyebrow}</p>
             <h2 className="mt-6 text-display-md font-medium">
               {filterMyth.headline.split(filterMyth.highlight)[0]}
-              <span className="text-accent">{filterMyth.highlight}</span>
+              {/* The point of the section: its own line, larger, in the brand gradient with a soft glow. */}
+              <span className="relative mb-4 mt-3 block w-fit text-[1.22em] font-semibold leading-[1.05] tracking-tight">
+                <span className="text-gradient drop-shadow-[0_0_28px_hsl(var(--accent)/0.35)]">{filterMyth.highlight}</span>
+                <span aria-hidden className="absolute -bottom-2 left-0 h-[0.09em] w-full rounded-full bg-accent-grad opacity-80" />
+              </span>
               {filterMyth.headline.split(filterMyth.highlight)[1]}
             </h2>
             <p className="mt-6 max-w-prose leading-relaxed text-muted">{filterMyth.body}</p>

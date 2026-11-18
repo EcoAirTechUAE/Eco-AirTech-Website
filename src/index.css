@@ -479,3 +479,9 @@ dialog.thanks[open] .thanks-icon {
 @media (prefers-reduced-motion: reduce) {
   .particles circle { animation: none; }
 }
+
+/* OVERWATCH airflow render: moving particles off for reduced motion; the
+   dotted guide arrows stay so the flow still reads. */
+@media (prefers-reduced-motion: reduce) {
+  .airflow-particles { display: none; }
+}
