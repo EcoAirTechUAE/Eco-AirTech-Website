@@ -46,7 +46,7 @@ export interface Study {
 }
 
 export const studies: Study[] = [
-  /* ------------------------------- 750+ ------------------------------- */
+  /* ------------------------------ The BREEZE ------------------------------ */
   {
     id: "750-live-apartment",
     device: "750-plus",
@@ -57,7 +57,7 @@ export const studies: Study[] = [
     summary:
       "A 72-hour trial in a genuinely contaminated, occupied apartment block, not a chamber. Spore concentrations fell sharply across every classification present, including Stachybotrys, the species associated with significant water damage.",
     meta: {
-      product: "750+ Wall Mount (no filter)",
+      product: "The BREEZE Wall Mount (no filter)",
       technologies: "PCO / O₃ / ODOGard®",
       duration: "72 hours",
       space: "Apartment block corridor & rooms",
@@ -85,7 +85,7 @@ export const studies: Study[] = [
     summary:
       "A second 72-hour live trial in an occupied property, again under continuous real-world contamination. Cladosporium, the most abundant airborne genus in most buildings, fell by more than 98%.",
     meta: {
-      product: "750+ Wall Mount (no filter)",
+      product: "The BREEZE Wall Mount (no filter)",
       technologies: "PCO / O₃ / ODOGard®",
       duration: "72 hours",
       space: "Residential house",
@@ -110,7 +110,7 @@ export const studies: Study[] = [
     summary:
       "MS2 is an established surrogate for influenza and SARS-CoV-2. The unit reduced the aerosolised virus by an average net log of 1.86 ± 0.38 within four hours, demonstrating capability against airborne bio-aerosols rather than surfaces alone.",
     meta: {
-      product: "750+ Wall Mount (no filter)",
+      product: "The BREEZE Wall Mount (no filter)",
       technologies: "PCO / O₃ / ODOGard®",
       duration: "4 hours",
       space: "9.1′ × 9.1′ × 7.0′ sealed chamber (759 ft³)",
@@ -128,7 +128,7 @@ export const studies: Study[] = [
     summary:
       "Measured in real time over five days across a working office, covering airborne and surface contamination as well as gas-phase pollutants.",
     meta: {
-      product: "750+ Wall Mount (no filter)",
+      product: "The BREEZE Wall Mount (no filter)",
       technologies: "PCO / BPI / ODOGard®",
       duration: "5 days, measured in real time",
       space: "1,240 sq ft commercial space",
@@ -142,7 +142,7 @@ export const studies: Study[] = [
       { name: "HCHO (formaldehyde)", medium: "Airborne", reduction: "94.00%" },
     ],
     quote: {
-      text: "It is my considered observation that the 750+ Wall Mount does provide a significant reduction of the typical air and surface contaminants tested. ASHRAE provides guidance as to the use of supplemental air purification after increasing fresh air ventilation to a minimum of 6 air changes per hour and filtration to MERV 13. This study was performed without those improvements. It is my considered opinion that if this unit was used within the current ASHRAE guidelines an even greater efficacy could be expected.",
+      text: "It is my considered observation that the 750+ Wall Mount [now The BREEZE] does provide a significant reduction of the typical air and surface contaminants tested. ASHRAE provides guidance as to the use of supplemental air purification after increasing fresh air ventilation to a minimum of 6 air changes per hour and filtration to MERV 13. This study was performed without those improvements. It is my considered opinion that if this unit was used within the current ASHRAE guidelines an even greater efficacy could be expected.",
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
@@ -158,7 +158,7 @@ export const studies: Study[] = [
     summary:
       "A deliberately hostile gas-phase environment: a sealed store of cleaning chemicals inside a school. Both TVOC and formaldehyde fell substantially over five days of real-time measurement.",
     meta: {
-      product: "750+ Wall Mount (no filter)",
+      product: "The BREEZE Wall Mount (no filter)",
       technologies: "PCO / O₃",
       duration: "5 days, measured in real time",
       space: "3,500 ft³ storage room",
@@ -183,7 +183,7 @@ export const studies: Study[] = [
     summary:
       "A small, heavily occupied, poorly ventilated cabin, one of the hardest environments to hold. Ozone remained below detectable levels throughout.",
     meta: {
-      product: "750+ Wall Mount",
+      product: "The BREEZE Wall Mount",
       technologies: "PCO / O₃ / ODOGard®",
       duration: "5 days, measured in real time",
       space: "220 sq ft school bus",
@@ -209,7 +209,7 @@ export const studies: Study[] = [
     summary:
       "A hospital ran a four-week real-world study across active ambulances. Enclosed, high-turnover and time-pressured, they are among the hardest environments to keep clean, and among the highest-consequence.",
     meta: {
-      product: "750+ Wall Mount (Transit)",
+      product: "The BREEZE Wall Mount (Transit)",
       technologies: "PCO / O₃ / ODOGard®",
       duration: "4 weeks, weekly sampling",
       space: "Ambulance interior",
@@ -220,7 +220,7 @@ export const studies: Study[] = [
     ],
   },
 
-  /* ------------------------------- HVAC ------------------------------- */
+  /* ------------------------------ The CORE ------------------------------ */
   {
     id: "hvac-field-office-active",
     device: "hvac",
@@ -231,7 +231,7 @@ export const studies: Study[] = [
     summary:
       "The in-duct unit running as an active solution alone, with no filtration assistance, isolating what the technology itself contributes.",
     meta: {
-      product: "HVAC (active solution only, no filter)",
+      product: "The CORE (active solution only, no filter)",
       technologies: "PCO / BPI",
       duration: "5 days, real-time measurement",
       space: "Commercial office space",
@@ -245,7 +245,7 @@ export const studies: Study[] = [
       { name: "Bacteria counts", medium: "Surface", reduction: "90.00%" },
     ],
     quote: {
-      text: "It is my considered observation that pureAir HVAC does provide a rapid and significant reduction of the typical contaminants tested. The levels achieved and maintained during this test were far below any known standard or established TLV. It is my considered opinion that this sustained condition would not be typical or possible without the continuous use of this product.",
+      text: "It is my considered observation that pureAir HVAC [now The CORE] does provide a rapid and significant reduction of the typical contaminants tested. The levels achieved and maintained during this test were far below any known standard or established TLV. It is my considered opinion that this sustained condition would not be typical or possible without the continuous use of this product.",
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
@@ -258,12 +258,12 @@ export const studies: Study[] = [
     device: "hvac",
     kind: "field",
     title: "Commercial office, active + passive",
-    setting: "1,240 sq ft, HVAC unit paired with a treated filter",
+    setting: "1,240 sq ft, The CORE paired with a treated filter",
     headline: ">99% reduction of airborne mould, bacteria, TVOC and odours",
     summary:
       "The same environment with an ODOGard®-coated MERV 13 filter added. This is the configuration we specify by default, and the difference it makes is the clearest argument for treating active and passive technology as one system.",
     meta: {
-      product: "HVAC + treated filter (active + passive)",
+      product: "The CORE + treated filter (active + passive)",
       technologies: "PCO / BPI / ODOGard® MERV 13",
       duration: "5 days, real-time measurement",
       space: "1,240 sq ft room",
@@ -277,7 +277,7 @@ export const studies: Study[] = [
       { name: "Mould spores", medium: "Airborne", reduction: ">99.94%" },
     ],
     quote: {
-      text: "It is my considered observation that HVAC in combination with an ODOGard coated filter does provide a rapid and significant reduction of the typical air and surface contaminants tested. In my considered opinion, the sustained condition would not be achievable without the continual use of the technology represented.",
+      text: "It is my considered observation that HVAC [now The CORE] in combination with an ODOGard coated filter does provide a rapid and significant reduction of the typical air and surface contaminants tested. In my considered opinion, the sustained condition would not be achievable without the continual use of the technology represented.",
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },
@@ -293,7 +293,7 @@ export const studies: Study[] = [
     summary:
       "Test samples showed 0.89 log lower infectivity of SARS-CoV-2 compared with control samples after four hours of exposure.",
     meta: {
-      product: "HVAC (active solution only)",
+      product: "The CORE (active solution only)",
       technologies: "PCO / BPI",
       duration: "4 hours",
       space: "9 × 9 × 9 ft test chamber",
@@ -310,7 +310,7 @@ export const studies: Study[] = [
     summary:
       "Test samples showed greater than 4.75 log lower infectivity of MRSA compared with control samples after six hours. The test also demonstrated that the technology did not raise chamber concentrations of H₂O₂ or O₃.",
     meta: {
-      product: "HVAC (active solution only)",
+      product: "The CORE (active solution only)",
       technologies: "PCO / 20% O₃",
       duration: "6 hours",
       space: "Controlled test chamber",
@@ -327,7 +327,7 @@ export const studies: Study[] = [
     ],
   },
 
-  /* ------------------------------- PTAC ------------------------------- */
+  /* ------------------------------ The FLEX ------------------------------ */
   {
     id: "ptac-field-dorm",
     device: "ptac",
@@ -338,7 +338,7 @@ export const studies: Study[] = [
     summary:
       "The most direct evidence we have that the inside of an air conditioning unit is itself a contamination source. Viable mould on the fan housing and coil surfaces was removed completely, whether the unit ran continuously or only on temperature demand.",
     meta: {
-      product: "PTAC (active solution only, no filter)",
+      product: "The FLEX (active solution only, no filter)",
       technologies: "PCO",
       duration: "5 days, measured in real time",
       space: "220 sq ft dorm rooms",
@@ -350,7 +350,7 @@ export const studies: Study[] = [
       { name: "HCHO (formaldehyde)", medium: "Airborne", reduction: ">90.00%" },
     ],
     quote: {
-      text: "The use of the PTAC unit completely removed the viable mold spores found on the fan housing and coil surfaces of the AC units. These results were the same whether the unit was operated continuously or as to temperature demand. It would be my considered opinion that PTAC would serve as an effective deterrent to mold growth on and in an AC unit, and would also be expected to produce a sustained and improved overall indoor air quality within the serviced areas.",
+      text: "The use of the PTAC [now The FLEX] unit completely removed the viable mold spores found on the fan housing and coil surfaces of the AC units. These results were the same whether the unit was operated continuously or as to temperature demand. It would be my considered opinion that PTAC would serve as an effective deterrent to mold growth on and in an AC unit, and would also be expected to produce a sustained and improved overall indoor air quality within the serviced areas.",
       author: "Keith Roe",
       role: "Advanced IAQ Solutions",
     },

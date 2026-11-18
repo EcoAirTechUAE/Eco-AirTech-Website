@@ -213,7 +213,7 @@ export const featuredStories: FeaturedStory[] = [
     images: {
       main: {
         src: "/assets/reviews/nursery-portable.webp",
-        alt: "A parent holding a child in a nursery, with a Portable unit on the floor",
+        alt: "A parent holding a child in a nursery, with The MOVE on the floor",
       },
       framed: true,
     },

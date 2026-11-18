@@ -356,7 +356,7 @@ export const industries: Industry[] = [
       "Indoor and vertical farms control almost everything: light, water, nutrients and temperature. The air is the variable most often left to chance. Grow rooms run warm and humid, plants are packed densely, and the same air recirculates for weeks. Those are exactly the conditions mould spores need, and once grey mould (Botrytis) or powdery mildew takes hold, it can move through a closed room quickly.",
       "There is a second, invisible problem: ethylene. Plants and ripening produce release this gas, and it acts at trace levels, around 0.1 parts per million. It speeds ripening and ageing, yellows leafy greens, makes flowers and leaves drop and shortens shelf life. Research has also linked raised ethylene to more Botrytis infection in flowers. In a sealed room it builds up with nowhere to go.",
       "Our systems use advanced photocatalytic oxidation to produce hydroxyl radicals, the same molecules that clean the air outdoors. Hydroxyls break ethylene down into carbon dioxide and water. The method traces back to NASA-funded research into keeping ethylene down in sealed plant-growth chambers, and a photocatalytic ethylene scrubber first flew on the Space Shuttle in 1995.",
-      "The same chemistry breaks down mould spores, bacteria and odours in the air and on surfaces, around the clock. In five-day field tests, the 750+ cut surface mould by 97% across a working office, and the PTAC removed more than 99.99% of mould from fan and coil surfaces. In a grow room, that means fewer spores circulating between plants and cleaner fans, coils and ducts. There are no sprays and no residue on the crop, and it works alongside good humidity control, airflow and hygiene rather than replacing them.",
+      "The same chemistry breaks down mould spores, bacteria and odours in the air and on surfaces, around the clock. In five-day field tests, The BREEZE cut surface mould by 97% across a working office, and The FLEX removed more than 99.99% of mould from fan and coil surfaces. In a grow room, that means fewer spores circulating between plants and cleaner fans, coils and ducts. There are no sprays and no residue on the crop, and it works alongside good humidity control, airflow and hygiene rather than replacing them.",
       "The benefit carries on after harvest. Lower ethylene and fewer airborne spores in packing areas and cold stores help produce stay fresh for longer on its way to market. That matters in the UAE, where vertical farming is central to the National Food Security Strategy 2051, and where Dubai's Bustanica opened in 2022 as the world's largest vertical farm.",
     ],
     concerns: [
@@ -382,7 +382,7 @@ export const industries: Industry[] = [
     proof: {
       value: "97%",
       label: "Surface mould reduction",
-      context: "5 days, 750+ field test, commercial office",
+      context: "5 days, The BREEZE field test, commercial office",
     },
   },
   {

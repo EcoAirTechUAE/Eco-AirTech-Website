@@ -93,7 +93,7 @@ export function Hero() {
         </div>
 
         {/*
-          The PTAC, keyed off its studio background so it floats on the page
+          The FLEX, keyed off its studio background so it floats on the page
           rather than sitting in a black tile. The bloom reads through the
           transparency, which is the whole reason a framed render did not work
           here.
@@ -103,8 +103,8 @@ export function Hero() {
             <Bloom intensity="lg" className="scale-125" />
             <SmartImage
               src="/assets/devices/hero-ptac.png"
-              alt="The PTAC unit, shown with its casing separated to reveal the ARC® cell and UV lamp"
-              label="PTAC product render"
+              alt="The FLEX, shown with its casing separated to reveal the ARC® cell and UV lamp"
+              label="FLEX product render"
               ratio="aspect-[3/2]"
               className="render-fade h-auto w-full object-contain drop-shadow-[0_24px_60px_rgba(0,0,0,0.55)]"
             />

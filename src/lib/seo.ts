@@ -64,7 +64,7 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/devices": {
     title: titled("Air purification units for every building type"),
     description:
-      "Five units, one technology: in-duct HVAC, PTAC, 750+, OverWatch and Portable. Retrofit into the air handling you already have, from one room upwards.",
+      "Five units, one technology: The CORE (in-duct), The FLEX, The BREEZE, The OVERWATCH and The MOVE. Retrofit into the air handling you already have, from one room upwards.",
   },
   "/filters": {
     title: titled("MERV 13A nanofibre filters with ODOGard®"),

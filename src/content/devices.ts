@@ -12,7 +12,7 @@ export interface DeviceStat {
 export interface Device {
   slug: string;
   name: string;
-  article: string; // "The HVAC" etc.
+  article: string; // "The CORE" etc.
   kicker: string;
   coverage: string;
   coverageNote?: string;
@@ -59,8 +59,8 @@ export const rangeCoverage = "135 – 10,000 sq ft";
 export const devices: Device[] = [
   {
     slug: "hvac",
-    name: "HVAC",
-    article: "The HVAC",
+    name: "CORE",
+    article: "The CORE",
     kicker: "In-duct · whole building",
     coverage: "800 – 3,300 sq ft",
     mount: "Installed into existing ductwork",
@@ -68,7 +68,7 @@ export const devices: Device[] = [
     summary:
       "Our flagship in-duct system. Fitted inside the ductwork you already have, it turns the air conditioning that currently circulates contamination into the thing that removes it.",
     body: [
-      "The HVAC unit installs directly into existing ductwork and works in tandem with the incoming airflow from your air handling system. As air passes across the ARC® cell, cleaning agents are introduced into the ducting and carried through the whole building.",
+      "The CORE installs directly into existing ductwork and works in tandem with the incoming airflow from your air handling system. As air passes across the ARC® cell, cleaning agents are introduced into the ducting and carried through the whole building.",
       "That distribution is the point. Because the agents travel as a vapour with the air, coverage is even across every served room, including the parts of the building nobody thinks to clean, and the inside of the ductwork itself.",
       "Keeping ducts clear of contaminant build-up also reduces strain on the system. Cleaner ducts mean more efficient airflow, better performance from the air handling equipment, and less mould-related maintenance over the life of the installation.",
     ],
@@ -110,8 +110,8 @@ export const devices: Device[] = [
   },
   {
     slug: "750-plus",
-    name: "750+",
-    article: "The 750+",
+    name: "BREEZE",
+    article: "The BREEZE",
     kicker: "Wall mounted · in-duct",
     coverage: "up to 1,000 sq ft",
     mount: "Wall mounted, or fitted within AC ductwork",
@@ -119,8 +119,8 @@ export const devices: Device[] = [
     summary:
       "The most tested unit in the range, and the one behind our strongest live-environment results. Wall mount it in a room or fit it in-duct with no invasive works, then unplug it and take it with you to the next property.",
     body: [
-      "The 750+ combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
-      "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on a 750+ with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
+      "The BREEZE combines all three technologies in a single self-contained unit: an ODOGard®-coated HEPA+ filter for particulates and gas-phase odours, the ARC® advanced PCO cell producing hydroxyls, and a bi-polar ionisation module.",
+      "It is the unit we take into the hardest environments. Both of our 72-hour live trials in occupied, deliberately re-contaminated housing were run on The BREEZE with no filter fitted, a deliberately conservative configuration, and still returned reductions of 96.4% and 95.9%.",
       "Its lightweight, compact design means it can be wall mounted in a room or fitted within existing AC ductwork. In-duct installation is plug and play: no cutting into ducts, ceilings or walls, and no specialist engineering works. That makes it ideal for the rental market, where the unit can simply be unplugged and moved to the next property. A transit variant is also available for vehicles and enclosed cabins.",
     ],
     stats: [
@@ -172,8 +172,8 @@ export const devices: Device[] = [
   },
   {
     slug: "portable",
-    name: "Portable",
-    article: "The Portable",
+    name: "MOVE",
+    article: "The MOVE",
     kicker: "Free-standing · no installation",
     coverage: "up to 1,500 sq ft",
     mount: "Free-standing, plugged in and moved between rooms",
@@ -181,8 +181,8 @@ export const devices: Device[] = [
     summary:
       "The whole system in a unit you can carry. No installation, no ductwork, no commitment. Plug it in and move it to wherever the problem is.",
     body: [
-      "Every other unit in the range is fitted. The Portable is not. It carries the same three technologies (the ARC® cell producing hydroxyls, bi-polar ionisation, and an ODOGard®-coated HEPA+ filter) in a free-standing enclosure that needs nothing but a socket.",
-      "That makes it the fastest way to act. Where a fixed installation is being specified, the Portable holds the space in the meantime. Where a room needs a deep reset, whether that is a suite between guests, a villa at handover or a nursery after building work, it is moved in, run, and moved on to the next room.",
+      "Every other unit in the range is fitted. The MOVE is not. It carries the same three technologies (the ARC® cell producing hydroxyls, bi-polar ionisation, and an ODOGard®-coated HEPA+ filter) in a free-standing enclosure that needs nothing but a socket.",
+      "That makes it the fastest way to act. Where a fixed installation is being specified, The MOVE holds the space in the meantime. Where a room needs a deep reset, whether that is a suite between guests, a villa at handover or a nursery after building work, it is moved in, run, and moved on to the next room.",
       "It also tells you what it is doing. Onboard sensing tracks air quality, temperature and humidity and reports to a phone app, along with remaining life on each of the three consumables. In AUTO mode the unit raises and lowers its own output against what it detects, rather than running flat out regardless.",
       "Because it is redeployable, a single unit can serve a portfolio, which is why it tends to be the first thing operators buy and the last thing they retire.",
     ],
@@ -225,7 +225,7 @@ export const devices: Device[] = [
     },
     sideImage: {
       src: "/assets/devices/portable-reading-poor.webp",
-      alt: "The Portable's components, with its display reading POOR air quality",
+      alt: "The MOVE's components, with its display reading POOR air quality",
     },
     inside: {
       headline: "Three technologies in one enclosure.",
@@ -239,8 +239,8 @@ export const devices: Device[] = [
   },
   {
     slug: "ptac",
-    name: "PTAC",
-    article: "The PTAC",
+    name: "FLEX",
+    article: "The FLEX",
     kicker: "Internal mount · concealed",
     coverage: "up to 700 sq ft",
     mount: "Mounted inside HVAC ductwork where access is poor",
@@ -248,7 +248,7 @@ export const devices: Device[] = [
     summary:
       "A permanently mounted internal unit for spaces where ductwork access is limited. It is also our clearest answer to the fan and coil surfaces inside your AC unit.",
     body: [
-      "The PTAC is designed to disappear. Permanently mounted inside the ductwork, it provides continuous purification in buildings where access is poor or where no equipment can be visible.",
+      "The FLEX is designed to disappear. Permanently mounted inside the ductwork, it provides continuous purification in buildings where access is poor or where no equipment can be visible.",
       "It carries a reactive surface area more than sixteen times greater than comparable products, using the same category of active air purification technology developed and used by NASA.",
       "Its most striking result addresses something most buildings never inspect. In student residences, viable mould found on the fan housing and coil surfaces of the AC units was removed completely, the same result whether the unit ran continuously or only on temperature demand. The inside of an air conditioner is a warm, damp, organically-loaded environment; left alone, it becomes a distribution system for exactly what you are trying to remove.",
     ],
@@ -291,8 +291,8 @@ export const devices: Device[] = [
   },
   {
     slug: "overwatch",
-    name: "OverWatch",
-    article: "The OverWatch",
+    name: "OVERWATCH",
+    article: "The OVERWATCH",
     kicker: "Large volume · industrial",
     coverage: "270 – 10,000 sq ft",
     coverageNote: "and up to 160,000 ft³",
@@ -301,7 +301,7 @@ export const devices: Device[] = [
     summary:
       "Built for volume. Where a space is measured in cubic feet rather than floor area (warehouses, plant rooms, sports halls, food handling), this is the unit that covers it.",
     body: [
-      "The OverWatch treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be permanently installed or moved between areas as required.",
+      "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be permanently installed or moved between areas as required.",
       "Three casings are available depending on the environment. The stainless steel unit is water-resistant for spaces requiring washing and rinsing, and is recommended for food processing and storage. The powder-coated aluminium unit suspends from the facility ceiling for easy maintenance. The roll-around floor model offers portability and also reduces odours embedded in rugs and upholstery.",
       "In food handling and horticultural settings it is used to maintain a cleaner environment around meats, fruits, vegetables and flowers.",
     ],
@@ -353,10 +353,10 @@ export const devices: Device[] = [
     ],
     banner: {
       src: "/assets/devices/overwatch-cafe.webp",
-      alt: "The OverWatch suspended from the ceiling of a large, busy open-plan café",
+      alt: "The OVERWATCH suspended from the ceiling of a large, busy open-plan café",
       eyebrow: "In use",
       headline: "Made for spaces measured in volume.",
-      body: "The OverWatch treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",
+      body: "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",
     },
     compactHero: true,
     inside: {
