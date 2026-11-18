@@ -26,7 +26,7 @@ export const store = {
    * Shown only while Shopify is not connected. Leave null rather than guess:
    * the page then says the price is confirmed at launch.
    */
-  launchPriceAed: 2900 as number | null,
+  launchPriceAed: 2995 as number | null,
   /**
    * Buy now, pay later, offered in Shopify's checkout through the Tabby and Tamara apps.
    * List a provider here only once its merchant account is approved and live at checkout,
