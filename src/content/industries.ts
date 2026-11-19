@@ -353,10 +353,10 @@ export const industries: Industry[] = [
     summary:
       "Indoor farms control the light, water and nutrients. The air is often left to chance. We continuously break down the ethylene and mould spores that shorten the life of a crop.",
     body: [
-      "Indoor farms control the light, the water and the nutrients. The air is left to chance. Warm, humid, densely planted rooms breathing the same air for weeks are exactly what mould needs, and once Botrytis or powdery mildew takes hold, it moves through a closed room fast.",
-      "Then there is ethylene. Plants release it, and at just 0.1 parts per million it yellows leafy greens, drops flowers and cuts shelf life. In a sealed room, it has nowhere to go.",
-      "We break it down. Our systems produce hydroxyl radicals, the same molecules that clean the air outdoors, which turn ethylene into carbon dioxide and water. The approach traces back to NASA-funded research for sealed plant-growth chambers. The same chemistry destroys mould spores, bacteria and odours in the air and on surfaces, around the clock. No sprays. No residue on the crop.",
-      "The results are measured. In five-day field tests, The BREEZE cut surface mould by 97% and The FLEX removed more than 99.99% of mould from fan and coil surfaces. The benefit lasts beyond harvest, keeping produce fresher in packing areas and cold stores on its way to market. In a country building its food security on vertical farming, that matters.",
+      "Indoor farms control the light, water and nutrients. The air is left to chance. Warm, humid, crowded grow rooms are exactly what mould needs, and Botrytis or powdery mildew can sweep through a closed room fast.",
+      "Then there is ethylene. At just 0.1 parts per million it yellows greens, drops flowers and cuts shelf life. In a sealed room, it builds with nowhere to go.",
+      "We break both down. Hydroxyl radicals, the molecules that clean the air outdoors, turn ethylene into carbon dioxide and water and destroy mould spores in the air and on surfaces, around the clock. No sprays. No residue. Fresher produce from grow room to cold store.",
+      "Proven in the field: 97% less surface mould in five days with The BREEZE, and more than 99.99% of mould cleared from fan and coil surfaces with The FLEX.",
     ],
     concerns: [
       {
