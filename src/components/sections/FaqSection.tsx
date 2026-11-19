@@ -25,7 +25,7 @@ export function FaqSection() {
               </p>
 
               <ButtonAnchor
-                href={whatsappLink("Hello Eco AirTech, I have a question about your systems.")}
+                href={whatsappLink("Hello Eco Airtech, I have a question about your systems.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"

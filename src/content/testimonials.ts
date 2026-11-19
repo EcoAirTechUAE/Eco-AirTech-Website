@@ -116,7 +116,7 @@ export interface FeaturedStory {
 export const reviewsPage = {
   eyebrow: "Client stories",
   title: "What cleaner air means to our clients.",
-  lead: "From the homes we live in to the places we stay, indoor air shapes our everyday experience. Here, clients share what led them to Eco AirTech, and what stood out afterwards.",
+  lead: "From the homes we live in to the places we stay, indoor air shapes our everyday experience. Here, clients share what led them to Eco Airtech, and what stood out afterwards.",
   confidentiality:
     "Some clients are described by sector rather than name to respect their privacy and confidentiality agreements.",
   wallHeadline: "More from our clients",
@@ -163,12 +163,12 @@ export const featuredStories: FeaturedStory[] = [
     id: "victory-heights",
     headline: "“A significant drop in our son’s asthma flare-ups.”",
     context:
-      "After eleven years in Dubai, Luke and his family were exploring ways to better manage their son’s asthma. Moving abroad was one option they considered, but their experience with Eco AirTech changed that conversation.",
+      "After eleven years in Dubai, Luke and his family were exploring ways to better manage their son’s asthma. Moving abroad was one option they considered, but their experience with Eco Airtech changed that conversation.",
     // Wording supplied by the business on 2026-10-19, replacing the earlier
     // version. The family's own experience, not a medical claim; never
     // reword it into one.
     quote:
-      "Since installing Eco AirTech, we’ve noticed significantly fewer flare-ups of our son’s asthma. We were exploring every option to support his health, including the possibility of moving abroad. Seeing this improvement has helped us feel much more comfortable staying in the place we call home.",
+      "Since installing Eco Airtech, we’ve noticed significantly fewer flare-ups of our son’s asthma. We were exploring every option to support his health, including the possibility of moving abroad. Seeing this improvement has helped us feel much more comfortable staying in the place we call home.",
     highlight: "asthma",
     emphasise: "asthma",
     // Named, with his photo, as supplied by the business on 2026-10-19.
@@ -186,7 +186,7 @@ export const featuredStories: FeaturedStory[] = [
     // context doesn't restate it in stronger terms.
     // "Medical grade air" was deliberately not used: no such standard exists.
     context:
-      "A trial in affected guest rooms produced results the hotel could measure. It is now rolling Eco AirTech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
+      "A trial in affected guest rooms produced results the hotel could measure. It is now rolling Eco Airtech out more widely, both to treat the remaining affected rooms and to give every guest cleaner, healthier air throughout their stay.",
     // Wording supplied by the business on 2026-10-20.
     quote:
       "The reduction in mould-related odours (MVOCs), alongside test results showing no detectable levels of the contaminants measured within 24 hours, was astonishing. These results gave us the confidence to begin a wider rollout. You also helped us understand that addressing mould means looking at all the contributing sources, and rethinking how we treat indoor air. In this climate, periodic cleaning alone isn’t enough. We recognised the need for continuous air treatment as part of an ongoing approach.",

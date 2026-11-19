@@ -50,7 +50,7 @@ export default function Devices() {
             <h2 className="text-display-sm font-medium">At a glance</h2>
             <div className="scroll-x mt-8">
               <table className="w-full min-w-[620px] border-collapse text-sm">
-                <caption className="sr-only">Comparison of the Eco AirTech device range</caption>
+                <caption className="sr-only">Comparison of the Eco Airtech device range</caption>
                 <thead>
                   <tr className="border-b border-line-strong text-left">
                     {["Device", "Coverage", "Mounting", "Technologies"].map((h) => (

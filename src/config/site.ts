@@ -72,7 +72,7 @@ const videos: Record<VideoKey, VideoSlot> = {
 };
 
 export const site = {
-  name: "Eco AirTech",
+  name: "Eco Airtech",
   tagline: "Leaders in Air Technology",
   url: "https://ecoairtech.ae",
 
@@ -80,7 +80,7 @@ export const site = {
     // wa.me requires international format, digits only — no '+', no spaces.
     whatsapp: "971507382560",
     whatsappMessage:
-      "Hello Eco AirTech, I'd like to know more about improving the air quality in my space.",
+      "Hello Eco Airtech, I'd like to know more about improving the air quality in my space.",
 
     email: "hello@eco-airtech.com",
 

@@ -4,7 +4,7 @@
  * Wording note: the credentials deck presents these as organisations where
  * the *technology* is trusted and in use — largely through our UK and US
  * operations. The copy reflects that precisely. It does not claim them as
- * Eco AirTech GCC clients.
+ * Eco Airtech GCC clients.
  *
  * GCC work is real but contractually confidential, so it is presented as a
  * separate, deliberately unnamed panel.

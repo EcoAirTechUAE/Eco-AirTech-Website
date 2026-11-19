@@ -40,7 +40,7 @@ export interface PageMeta {
   crumbs: { name: string; path: string }[];
 }
 
-const BRAND = "Eco AirTech";
+const BRAND = "Eco Airtech";
 
 /** Title tags read better as "Page — Brand"; the homepage states the offer. */
 const titled = (t: string) => `${t} | ${BRAND}`;
@@ -52,7 +52,7 @@ const titled = (t: string) => `${t} | ${BRAND}`;
  */
 const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/": {
-    title: "Eco AirTech | Nature's disinfectant, indoors and continuous",
+    title: "Eco Airtech | Nature's disinfectant, indoors and continuous",
     description:
       "Nature-based air technology for the UAE and GCC. ARC® hydroxyl systems that treat the air and the surfaces around it, continuously.",
   },
@@ -84,7 +84,7 @@ const STATIC: Record<string, Omit<PageMeta, "path" | "image" | "crumbs">> = {
   "/reviews": {
     title: titled("Client stories: what cleaner air means to our clients"),
     description:
-      "Homeowners and hospitality clients across the UAE and GCC on what led them to Eco AirTech, and what changed in the air they live and work in.",
+      "Homeowners and hospitality clients across the UAE and GCC on what led them to Eco Airtech, and what changed in the air they live and work in.",
   },
   "/store": {
     title: titled("Store: pre-order The MOVE in the UAE"),

@@ -1,4 +1,4 @@
-# Eco AirTech — GCC marketing site
+# Eco Airtech — GCC marketing site
 
 Vite + React + TypeScript + Tailwind. The stack deliberately mirrors
 Lovable's own scaffold (`@/*` alias, Tailwind config file, react-router) so

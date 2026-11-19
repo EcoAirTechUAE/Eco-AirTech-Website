@@ -292,7 +292,7 @@ function PreorderForm({ qty }: { qty: number }) {
       {failure && (
         <p className="text-sm text-warn">
           {failure}{" "}
-          <a href={whatsappLink(`Hello Eco AirTech, I would like to pre-order ${qty} ${store.productName}.`)} target="_blank" rel="noopener noreferrer" className="underline">
+          <a href={whatsappLink(`Hello Eco Airtech, I would like to pre-order ${qty} ${store.productName}.`)} target="_blank" rel="noopener noreferrer" className="underline">
             Open WhatsApp
           </a>
         </p>

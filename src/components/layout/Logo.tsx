@@ -78,7 +78,7 @@ export function Logo({
     <span className={cn("flex items-center gap-3", className)}>
       {mark}
       <span className="hidden text-[0.95rem] font-semibold uppercase leading-none tracking-[0.12em] text-ink sm:inline">
-        Eco AirTech
+        Eco Airtech
       </span>
     </span>
   );

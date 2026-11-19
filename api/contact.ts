@@ -34,7 +34,7 @@
 export const config = { runtime: "edge" };
 
 const TO = "hello@eco-airtech.com";
-const FROM = "Eco AirTech website <enquiries@eco-airtech.com>";
+const FROM = "Eco Airtech website <enquiries@eco-airtech.com>";
 
 /** Caps that stop a bot pasting a novel into the inbox. */
 const LIMITS: Record<string, number> = {

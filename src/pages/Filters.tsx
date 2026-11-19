@@ -283,7 +283,7 @@ export default function Filters() {
           <Reveal className="scroll-x mt-12">
             <table className="w-full min-w-[760px] border-collapse text-sm">
               <caption className="sr-only">
-                Capability comparison: filters commonly found in buildings, against the Eco AirTech
+                Capability comparison: filters commonly found in buildings, against the Eco Airtech
                 Filters+ MERV 13A
               </caption>
               <thead>

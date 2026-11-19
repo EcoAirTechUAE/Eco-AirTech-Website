@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 /**
- * Eco AirTech's own contaminant icons: a clean white line drawing of the
+ * Eco Airtech's own contaminant icons: a clean white line drawing of the
  * source, and a cloud of coloured particles that drifts slowly (still for
  * anyone who prefers reduced motion). One visual language for the whole set,
  * so eight different subjects read as one family.

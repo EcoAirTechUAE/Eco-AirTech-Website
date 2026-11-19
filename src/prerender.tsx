@@ -54,7 +54,7 @@ function headFor(path: string): string {
     `<meta name="description" content="${attr(meta.description)}" />`,
     `<link rel="canonical" href="${attr(canonical)}" />`,
     `<meta property="og:type" content="website" />`,
-    `<meta property="og:site_name" content="Eco AirTech" />`,
+    `<meta property="og:site_name" content="Eco Airtech" />`,
     `<meta property="og:locale" content="en_GB" />`,
     `<meta property="og:title" content="${attr(meta.title)}" />`,
     `<meta property="og:description" content="${attr(meta.description)}" />`,

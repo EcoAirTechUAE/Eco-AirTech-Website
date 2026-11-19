@@ -5,7 +5,7 @@
  * produced it — product, technologies fitted, duration, space and who ran it.
  * A percentage without its protocol is marketing; with it, it is evidence.
  *
- * Source: Eco AirTech credentials deck.
+ * Source: Eco Airtech credentials deck.
  */
 
 export type Medium = "Airborne" | "Surface" | "Surface (fan/coil)" | "Air & surface";

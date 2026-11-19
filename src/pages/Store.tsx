@@ -22,7 +22,7 @@ export default function Store() {
         <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_15%_0%,hsl(var(--accent)/0.14),transparent_70%),radial-gradient(ellipse_45%_60%_at_95%_20%,hsl(var(--accent-2)/0.10),transparent_70%)]" />
         <div className="container relative pb-10 pt-16 sm:pt-24">
           <Reveal>
-            <div className="eyebrow text-accent">Eco AirTech store · UAE</div>
+            <div className="eyebrow text-accent">Eco Airtech store · UAE</div>
             <h1 className="mt-4 max-w-3xl text-display-lg font-medium text-ink">Protection you can plug in.</h1>
             <p className="mt-5 max-w-2xl text-lg body-text">
               The same technology we fit in hotels and homes, in a unit you can order online. It treats the air and the surfaces around it against mould, bacteria, viruses and odours, and it is delivered to your door.
