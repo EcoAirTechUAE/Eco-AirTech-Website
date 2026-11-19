@@ -337,8 +337,8 @@ export const devices: Device[] = [
       "Commercial spaces",
     ],
     banner: {
-      src: "/assets/devices/overwatch-cafe.webp",
-      alt: "The OVERWATCH suspended from the ceiling of a large, busy open-plan café",
+      src: "/assets/devices/overwatch-grow-hall.webp",
+      alt: "The OVERWATCH suspended from the ceiling of a large indoor growing hall",
       eyebrow: "In use",
       headline: "Made for spaces measured in volume.",
       body: "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",

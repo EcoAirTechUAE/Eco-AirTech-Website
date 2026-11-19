@@ -379,6 +379,7 @@ export const industries: Industry[] = [
     ],
     devices: ["overwatch", "750-plus", "ptac"],
     image: "/assets/industries/horticulture.jpg",
+    gallery: ["/assets/industries/horticulture-vertical-farm.jpg", "/assets/industries/horticulture-greenhouse.jpg"],
     proof: {
       value: "97%",
       label: "Surface mould reduction",

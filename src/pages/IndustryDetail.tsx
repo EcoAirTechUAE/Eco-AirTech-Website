@@ -72,10 +72,10 @@ export default function IndustryDetail() {
           </Reveal>
 
           {industry.gallery && industry.gallery.length > 0 && (
-            <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+            <ul className={cn("mt-4 grid gap-4", industry.gallery.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3")}>
               {industry.gallery.map((src, i) => (
                 <Reveal as="li" key={src} i={i + 1}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line">
+                  <div className={cn("relative overflow-hidden rounded-2xl border border-line", industry.gallery!.length === 2 ? "aspect-[16/9]" : "aspect-[4/3]")}>
                     <SmartImage
                       src={src}
                       alt=""
