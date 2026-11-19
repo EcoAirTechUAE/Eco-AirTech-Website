@@ -327,20 +327,6 @@ export const devices: Device[] = [
         body: "Addresses gas-phase contamination as well as airborne particulates across the full volume.",
       },
     ],
-    variants: [
-      {
-        title: "Stainless steel",
-        body: "Water-resistant for spaces where washing and rinsing is required. Recommended for food processing facilities, food warehouses and storage.",
-      },
-      {
-        title: "Coated aluminium",
-        body: "Powder-coated, water-resistant and easy to maintain. Installs suspended from the facility ceiling. Suited to warehouses and greenhouses.",
-      },
-      {
-        title: "Roll-around",
-        body: "Portable aluminium floor model. Also reduces odours embedded in rugs and upholstery, and is recommended for remediation across hospitals, schools, gyms and hospitality.",
-      },
-    ],
     bestFor: [
       "Warehouses",
       "Distribution centres",
@@ -386,7 +372,7 @@ export const devices: Device[] = [
         caption: "Controls and power housing",
       },
     ],
-    image: "/assets/devices/overwatch-unit.webp",
+    image: "/assets/devices/overwatch-render.webp",
     silhouette: "/assets/devices/overwatch-silhouette.svg",
   },
 ];

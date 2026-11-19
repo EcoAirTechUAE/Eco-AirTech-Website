@@ -26,23 +26,25 @@ export function DeviceCard({ device, className }: { device: Device; className?: 
         />
       </div>
 
-      <p className="font-mono text-[0.8125rem] uppercase tracking-wider text-accent">{device.kicker}</p>
+      {/* Two lines reserved, so the names line up across a row whether the label wraps or not. */}
+      <p className="font-mono text-[0.8125rem] uppercase leading-5 tracking-wider text-accent sm:min-h-10">{device.kicker}</p>
       {device.slug === "portable" && (
         <span className="absolute right-10 top-10 rounded-full bg-accent-grad px-3 py-1 text-xs font-medium text-[#04140A]">Pre-order</span>
       )}
 
-      <h3 className="mt-3 flex items-start justify-between gap-3 text-2xl font-medium">
-        {device.article}
+      {/* One line, full width, so the names sit level across a row. */}
+      <h3 className="mt-3 whitespace-nowrap text-2xl font-medium lg:text-xl xl:text-2xl">{device.article}</h3>
+
+      <div className="mt-1.5 flex items-start justify-between gap-3">
+        <p className="tnum text-sm text-muted">
+          {device.coverage}
+          {device.coverageNote && <span className="text-faint"> {device.coverageNote}</span>}
+        </p>
         <ArrowUpRight
           aria-hidden
-          className="mt-1 h-5 w-5 shrink-0 text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+          className="h-5 w-5 shrink-0 text-faint transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
         />
-      </h3>
-
-      <p className="tnum mt-1.5 text-sm text-muted">
-        {device.coverage}
-        {device.coverageNote && <span className="text-faint"> {device.coverageNote}</span>}
-      </p>
+      </div>
 
       <p className="mt-5 flex-1 body-text">{device.summary}</p>
 
