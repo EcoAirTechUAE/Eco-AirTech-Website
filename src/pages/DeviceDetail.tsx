@@ -201,9 +201,12 @@ export default function DeviceDetail() {
                   <div className="overflow-hidden rounded-2xl border border-line bg-black p-6 sm:p-10">
                     <img
                       src={device.inside.still}
-                      alt={`Exploded view of the components inside ${device.article}`}
+                      alt={device.inside.stillAlt ?? `Exploded view of the components inside ${device.article}`}
                       loading="lazy"
-                      className="mx-auto w-full max-w-[340px] object-contain"
+                      className={cn(
+                        "mx-auto w-full object-contain",
+                        device.inside.wide ? "max-w-[720px]" : "max-w-[340px]",
+                      )}
                     />
                   </div>
                 )
@@ -224,6 +227,35 @@ export default function DeviceDetail() {
                 ))}
               </ul>
             </Reveal>
+          </div>
+        </Section>
+      )}
+
+      {/* Further renders of the unit */}
+      {device.gallery && (
+        <Section tight>
+          <div className="container">
+            <Reveal>
+              <h2 className="text-display-sm font-medium">A closer look</h2>
+            </Reveal>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {device.gallery.map((shot, i) => (
+                <Reveal as="figure" key={shot.src} i={i % 2}>
+                  <div className="flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-line bg-black p-6 sm:p-10">
+                    <img
+                      src={shot.src}
+                      alt={shot.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="max-h-full w-full object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 font-mono text-[0.8125rem] uppercase tracking-wider text-faint">
+                    {shot.caption}
+                  </figcaption>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </Section>
       )}

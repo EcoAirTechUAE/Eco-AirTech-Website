@@ -45,7 +45,13 @@ export interface Device {
     poster?: string;
     /** ...or a still image, which is also the reduced-motion fallback for a video. */
     still?: string;
+    /** Alt text for the still, when it is not an exploded view. */
+    stillAlt?: string;
+    /** The still is a landscape render rather than a tall exploded view. */
+    wide?: boolean;
   };
+  /** Further product renders, shown as a captioned grid. */
+  gallery?: { src: string; alt: string; caption: string }[];
   /** A scene of the unit in use, with text beside it, directly under the page intro. */
   banner?: { src: string; alt: string; eyebrow: string; headline: string; body: string };
   /** Shows the hero product image smaller, for renders that soften when enlarged. */
@@ -351,12 +357,35 @@ export const devices: Device[] = [
       headline: "Made for spaces measured in volume.",
       body: "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",
     },
-    compactHero: true,
     inside: {
       headline: "Built to treat the whole volume.",
       body: "ARC® and bi-polar ionisation in a single enclosure, with the casing chosen to suit the space: stainless steel, coated aluminium or roll-around.",
-      still: "/assets/devices/overwatch-exploded.webp",
+      still: "/assets/devices/overwatch-cells.webp",
+      stillAlt: "The OVERWATCH's ARC® cells glowing beneath the control housings",
+      wide: true,
     },
+    gallery: [
+      {
+        src: "/assets/devices/overwatch-underside.webp",
+        alt: "The OVERWATCH seen from below, with the ARC® cells lit behind the outlet louvres",
+        caption: "Outlet louvres, cells lit",
+      },
+      {
+        src: "/assets/devices/overwatch-front.webp",
+        alt: "The OVERWATCH from the front, with its angled outlet hood",
+        caption: "Front, with outlet hood",
+      },
+      {
+        src: "/assets/devices/overwatch-fans.webp",
+        alt: "The OVERWATCH intake side, showing its four fans",
+        caption: "Intake, four fans",
+      },
+      {
+        src: "/assets/devices/overwatch-interior.webp",
+        alt: "Inside the OVERWATCH: the control board and power housing above the cells",
+        caption: "Controls and power housing",
+      },
+    ],
     image: "/assets/devices/overwatch-unit.webp",
     silhouette: "/assets/devices/overwatch-silhouette.svg",
   },
