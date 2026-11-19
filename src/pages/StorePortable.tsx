@@ -4,6 +4,7 @@ import { ArrowRight, Check, Minus, Plus, ShieldCheck, Smartphone, Truck, Zap } f
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Accordion } from "@/components/ui/Accordion";
+import { LoopVideo } from "@/components/ui/LoopVideo";
 import { ContaminantIcon, type ContaminantKey } from "@/components/store/ContaminantIcon";
 import { store, storeLive } from "@/config/store";
 import { whatsappLink } from "@/config/site";
@@ -529,6 +530,29 @@ export default function StorePortable() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* Inside: the parts animation, straight after the features it explains */}
+      <Section tight>
+        <div className="container grid items-center gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+          <Reveal>
+            <div className="aspect-video overflow-hidden rounded-2xl border border-line bg-black">
+              <LoopVideo
+                src="/assets/devices/video/portable-parts.mp4"
+                poster="/assets/devices/video/portable-parts-poster.webp"
+                still="/assets/devices/portable-exploded.webp"
+                label={`Animation showing the components inside ${store.productName}`}
+              />
+            </div>
+          </Reveal>
+          <Reveal i={1}>
+            <div className="eyebrow text-accent">Inside {store.productName}</div>
+            <h2 className="mt-3 text-display-sm font-medium text-ink">Three layers of protection in one compact unit.</h2>
+            <p className="mt-4 body-text">
+              Active hydroxyls, bi-polar ionisation and an ODOGard® HEPA+ filter, built into a body small enough to carry from room to room.
+            </p>
+          </Reveal>
         </div>
       </Section>
 
