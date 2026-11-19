@@ -345,11 +345,11 @@ export const devices: Device[] = [
       "Commercial spaces",
     ],
     banner: {
-      src: "/assets/devices/overwatch-grow-hall.webp",
-      alt: "The OVERWATCH suspended from the ceiling of a large indoor growing hall",
+      src: "/assets/devices/overwatch-in-cafe.webp",
+      alt: "The OVERWATCH suspended from the ceiling of a large, busy open-plan café",
       second: {
-        src: "/assets/devices/overwatch-cafe.webp",
-        alt: "The OVERWATCH suspended from the ceiling of a large, busy open-plan café",
+        src: "/assets/devices/overwatch-grow-hall.webp",
+        alt: "The OVERWATCH suspended from the ceiling of a large indoor growing hall",
       },
       eyebrow: "In use",
       headline: "Made for spaces measured in volume.",
