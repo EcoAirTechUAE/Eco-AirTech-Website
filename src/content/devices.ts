@@ -53,7 +53,15 @@ export interface Device {
   /** Further product renders, shown as a captioned grid. */
   gallery?: { src: string; alt: string; caption: string }[];
   /** A scene of the unit in use, with text beside it, directly under the page intro. */
-  banner?: { src: string; alt: string; eyebrow: string; headline: string; body: string };
+  banner?: {
+    src: string;
+    alt: string;
+    /** A second scene, shown beside the first. */
+    second?: { src: string; alt: string };
+    eyebrow: string;
+    headline: string;
+    body: string;
+  };
   /** Shows the hero product image smaller, for renders that soften when enlarged. */
   compactHero?: boolean;
   image: string;
@@ -339,6 +347,10 @@ export const devices: Device[] = [
     banner: {
       src: "/assets/devices/overwatch-grow-hall.webp",
       alt: "The OVERWATCH suspended from the ceiling of a large indoor growing hall",
+      second: {
+        src: "/assets/devices/overwatch-cafe.webp",
+        alt: "The OVERWATCH suspended from the ceiling of a large, busy open-plan café",
+      },
       eyebrow: "In use",
       headline: "Made for spaces measured in volume.",
       body: "The OVERWATCH treats large occupied spaces that conventional room purifiers cannot reach, covering up to 160,000 cubic feet. It can be suspended from the ceiling, wall mounted or rolled into place, and installed permanently or moved between areas as required.",

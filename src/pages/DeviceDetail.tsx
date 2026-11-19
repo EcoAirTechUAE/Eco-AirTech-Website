@@ -107,6 +107,16 @@ export default function DeviceDetail() {
               <p className="eyebrow">{device.banner.eyebrow}</p>
               <h2 className="mt-5 text-display-sm font-medium">{device.banner.headline}</h2>
               <p className="mt-4 max-w-prose leading-relaxed text-muted">{device.banner.body}</p>
+              {device.banner.second && (
+                <div className="mt-8 max-w-[640px] overflow-hidden rounded-2xl border border-line">
+                  <img
+                    src={device.banner.second.src}
+                    alt={device.banner.second.alt}
+                    loading="lazy"
+                    className="aspect-[3/2] w-full object-cover"
+                  />
+                </div>
+              )}
             </Reveal>
           </div>
         </Section>
